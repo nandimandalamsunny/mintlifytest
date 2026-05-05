@@ -1,0 +1,104 @@
+.layout-container {
+  --docs-sticky-offset: var(--navbar-height);
+  --docs-scroll-offset: calc(var(--navbar-height) + 2rem);
+  --docs-toc-offset: calc(var(--navbar-height) + 2rem);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background);
+  color: var(--foreground);
+  width: 100%;
+  max-width: 100vw;
+}
+
+.layout-container--has-subnav {
+  --docs-sticky-offset: calc(var(--navbar-height) + var(--subnav-height));
+  --docs-scroll-offset: calc(var(--navbar-height) + var(--subnav-height) + 2rem);
+  --docs-toc-offset: calc(var(--navbar-height) + var(--subnav-height) + 2rem);
+}
+
+.layout-content-wrapper {
+  flex: 1;
+  display: flex;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  border-left: 1px solid rgba(255, 255, 255, 0.05);
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  min-width: 0;
+}
+
+.layout-main {
+  flex: 1;
+  min-width: 0;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+
+/* Custom Scrollbar for Main Content */
+.layout-main::-webkit-scrollbar {
+  width: 6px;
+}
+.layout-main::-webkit-scrollbar-track {
+  background: transparent;
+}
+.layout-main::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+.layout-main::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.layout-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(250px, var(--toc-width));
+}
+
+@media (max-width: 1280px) {
+  .layout-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.layout-article {
+  padding: 3rem 2rem 5rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  min-width: 0;
+}
+
+.layout-article :is(h1, h2, h3) {
+  scroll-margin-top: var(--docs-scroll-offset);
+}
+
+@media (min-width: 768px) {
+  .layout-article {
+    padding: 3rem 3rem 8rem;
+  }
+}
+
+@media (max-width: 1180px) {
+  .layout-content-wrapper {
+    max-width: 100%;
+  }
+
+  .layout-article {
+    padding: 2.5rem 1.75rem 6rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .layout-content-wrapper {
+    border-left: 0;
+    border-right: 0;
+  }
+
+  .layout-main {
+    border-right: 0;
+  }
+
+  .layout-article {
+    border-right: 0;
+    padding: 2.25rem 1.5rem 5rem;
+  }
+}

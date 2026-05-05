@@ -1,0 +1,62 @@
+/* ───────── Wrapper ───────── */
+.subnav-bar {
+  position: sticky;
+  top: var(--navbar-height);
+  z-index: 100;
+  width: 100%;
+  backdrop-filter: blur(12px);
+  background: rgba(8, 8, 15, 0.75);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.subnav-bar::-webkit-scrollbar {
+  display: none;
+}
+
+/* ───────── Inner Layout ───────── */
+.subnav-inner {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: var(--subnav-height);
+  padding: 0 clamp(16px, 4vw, 32px);
+  min-width: max-content;
+}
+
+/* ───────── Link ───────── */
+.subnav-link {
+  flex: 0 0 auto;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.5);
+  padding: 6px 12px;
+  border-radius: 999px;
+  transition: all 0.18s ease;
+  white-space: nowrap;
+}
+
+/* active */
+.subnav-link.active {
+  color: #fff;
+  background: rgba(139, 92, 246, 0.15);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+/* subtle press */
+.subnav-link:active {
+  transform: scale(0.97);
+}
+
+/* ───────── Mobile tweak ───────── */
+@media (max-width: 768px) {
+  .subnav-inner {
+    gap: 0.35rem;
+  }
+
+  .subnav-link {
+    padding: 5px 10px;
+  }
+}

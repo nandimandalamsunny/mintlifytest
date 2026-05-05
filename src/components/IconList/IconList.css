@@ -1,0 +1,81 @@
+.icon-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin: 2rem 0;
+}
+
+.icon-list-item {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.icon-list-left {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon-list-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9CA3AF;
+  background: rgba(255, 255, 255, 0.02);
+  transition: all 0.2s ease;
+}
+
+.icon-list-item:hover .icon-list-circle {
+  border-color: rgba(139, 92, 246, 0.4);
+  color: #F9FAFB;
+  background: rgba(139, 92, 246, 0.05);
+}
+
+.icon-list-content {
+  padding-top: 10px;
+}
+
+.icon-list-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #F9FAFB;
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.icon-list-desc {
+  font-size: 14.5px;
+  line-height: 24px;
+  color: #9CA3AF;
+  margin: 0;
+}
+
+.icon-list-sub {
+  margin: 0.75rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.icon-list-sub li {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.icon-list-sub li::before {
+  content: "•";
+  color: rgba(139, 92, 246, 0.6);
+  font-size: 18px;
+  line-height: 1;
+  margin-top: 2px;
+}

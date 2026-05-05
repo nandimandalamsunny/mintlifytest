@@ -1,0 +1,162 @@
+.sidebar-container {
+  position: fixed;
+  top: var(--navbar-height);
+  height: calc(100vh - var(--navbar-height));
+  width: var(--sidebar-width);
+  background: var(--background);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  overflow-y: auto;
+  z-index: 80;
+  transition: transform 0.2s ease;
+}
+
+@media (min-width: 768px) {
+  .sidebar-container {
+    position: sticky;
+    top: var(--docs-sticky-offset);
+    height: calc(100vh - var(--docs-sticky-offset));
+  }
+}
+
+@media (max-width: 1180px) {
+  .sidebar-inner {
+    padding: 1.1rem 0.85rem 1.75rem;
+  }
+
+  .sidebar-link {
+    padding: 0.46rem 0.65rem 0.46rem 0.9rem;
+    font-size: 0.86rem;
+  }
+
+  .sidebar-link--child {
+    font-size: 0.82rem;
+    padding-left: 1.1rem;
+  }
+}
+
+/* ── Inner Layout ───────────────────────────────── */
+.sidebar-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1.35rem 1rem 2rem;
+}
+
+/* ── Section ───────────────────────────────────── */
+.sidebar-section {
+  margin-bottom: 1.5rem;
+}
+
+/* ── Label ───────────────────────────────────── */
+.sidebar-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+/* ── Links Wrapper ─────────────────────────────── */
+.sidebar-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+/* ── Link ───────────────────────────────────── */
+.sidebar-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.5rem 0.75rem 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.65);
+  transition: all 0.15s ease;
+}
+
+.sidebar-link:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* ── Active State (Clean) ─────────────────────── */
+.sidebar-link.active {
+  color: white;
+  font-weight: 500;
+}
+
+.sidebar-link--group {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  text-align: left;
+}
+
+.sidebar-group.active > .sidebar-link--group {
+  color: white;
+}
+
+.sidebar-children {
+  margin-top: 0.25rem;
+  padding-left: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.sidebar-link--child {
+  font-size: 0.86rem;
+  padding-left: 1.25rem;
+  color: rgba(255, 255, 255, 0.58);
+}
+
+.sidebar-group-chevron {
+  flex-shrink: 0;
+  font-size: 1.2rem;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.45);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.sidebar-link:hover .sidebar-group-chevron,
+.sidebar-link.active .sidebar-group-chevron {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.sidebar-group-chevron--open {
+  transform: rotate(90deg);
+}
+
+/* ── Left Indicator (KEY IMPROVEMENT) ─────────── */
+.sidebar-indicator {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 60%;
+  width: 2px;
+  border-radius: 999px;
+  background: transparent;
+  transition: all 0.2s ease;
+}
+
+.sidebar-link:hover .sidebar-indicator {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-link.active .sidebar-indicator {
+  background: #a78bfa;
+}
+
+/* ── Scrollbar Hidden ─────────────────────────── */
+.sidebar-container::-webkit-scrollbar {
+  display: none;
+}
+.sidebar-container {
+  scrollbar-width: none;
+}

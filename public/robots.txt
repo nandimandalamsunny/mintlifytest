@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://docs.revolte.ai/sitemap.xml
+Host: https://docs.revolte.ai

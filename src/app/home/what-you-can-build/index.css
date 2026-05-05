@@ -1,0 +1,151 @@
+/* ───────── Container ───────── */
+.wycb-container {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 8px;
+}
+
+/* ───────── Header ───────── */
+.wycb-header {
+  margin-bottom: 2.5rem;
+}
+
+.wycb-title {
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 60px;
+  letter-spacing: -0.03em;
+  color: #f9fafb;
+}
+
+.wycb-subtitle {
+  margin-top: 0.75rem;
+  max-width: 60ch;
+  font-size: 18px;
+  line-height: 28px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* ───────── Stepper ───────── */
+.wycb-stepper {
+  margin-bottom: 2.5rem;
+  opacity: 0.8;
+}
+
+/* ───────── Grid ───────── */
+.wycb-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+@media (max-width: 768px) {
+  .wycb-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ───────── Card ───────── */
+.wycb-card {
+  position: relative;
+  border-radius: 12px;
+  padding: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.02);
+  transition: all 0.2s ease;
+  overflow: hidden;
+}
+
+.wycb-card:hover {
+  border-color: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* subtle glow */
+.wycb-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    rgba(139, 92, 246, 0.12),
+    transparent 50%
+  );
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.wycb-card:hover::after {
+  opacity: 1;
+}
+
+/* ───────── Card inner ───────── */
+.wycb-card-inner {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+/* ───────── Icon ───────── */
+.wycb-icon {
+  margin-top: 4px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.02);
+  color: white;
+}
+
+/* ───────── Text ───────── */
+.wycb-card-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #f9fafb;
+}
+
+.wycb-card-desc {
+  margin-top: 4px;
+  font-size: 14px;
+  line-height: 22px;
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 40ch;
+}
+
+/* ───────── Footer note ───────── */
+.wycb-note {
+  margin-top: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.02);
+  text-align: center;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.wycb-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  background: rgba(139, 92, 246, 0.1);
+}
+
+.wycb-dot div {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: #8b5cf6;
+}

@@ -1,0 +1,215 @@
+/* ============================= */
+/* Layout */
+/* ============================= */
+
+.page-container {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ============================= */
+/* Typography */
+/* ============================= */
+
+.section-label {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #8b5cf6;
+  margin-bottom: 1rem;
+}
+
+.page-title {
+  font-size: clamp(40px, 5vw, 56px);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: #f9fafb;
+  margin-bottom: 1.25rem;
+}
+
+.page-subtitle {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 32px;
+  color: #f9fafb;
+  margin-bottom: 0.75rem;
+}
+
+.page-description {
+  font-size: 16px;
+  line-height: 26px;
+  color: #9ca3af;
+  margin-bottom: 2.75rem;
+  max-width: 680px;
+}
+
+/* ============================= */
+/* Sections */
+/* ============================= */
+
+.section-block {
+  margin-top: 3.5rem;
+}
+
+.section-title {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #f9fafb;
+  margin-bottom: 1.25rem;
+}
+
+.section-eyebrow {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #6b7280;
+  margin-bottom: 0.75rem;
+}
+
+.border-top {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 3rem;
+}
+
+/* ============================= */
+/* Cards */
+/* ============================= */
+
+.card-grid-3 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.card-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .card-grid-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .card-grid-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.doc-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 14px;
+  border: 1px solid #2a2a2e;
+  background: linear-gradient(180deg, #111217 0%, #0d0e13 100%);
+  padding: 1.5rem;
+  transition: all 0.2s ease;
+}
+
+.doc-card.large {
+  padding: 1.75rem;
+}
+
+.doc-card:hover {
+  border-color: rgba(139, 92, 246, 0.35);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.doc-card-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #f9fafb;
+  margin-bottom: 0.5rem;
+}
+
+.doc-card-description {
+  font-size: 14px;
+  line-height: 22px;
+  color: #9ca3af;
+  margin-bottom: 1.25rem;
+}
+
+.doc-card-link {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #8b5cf6;
+}
+
+.doc-card-link:hover {
+  text-decoration: none;
+}
+
+
+/* ============================= */
+/* Feature List */
+/* ============================= */
+
+.feature-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.feature-item {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  font-size: 15px;
+  color: #9ca3af;
+  line-height: 24px;
+}
+
+.feature-icon-wrapper {
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+/* ============================= */
+/* Info Banner */
+/* ============================= */
+
+.info-banner {
+  margin-top: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  border: 1px solid rgba(139, 92, 246, 0.18);
+  background: rgba(139, 92, 246, 0.05);
+}
+
+.info-banner-text {
+  font-size: 14px;
+  color: #9ca3af;
+  margin: 0;
+}
+
+/* ============================= */
+/* Small polish */
+/* ============================= */
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
