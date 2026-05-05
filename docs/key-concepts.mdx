@@ -1,0 +1,102 @@
+---
+title: "Key Concepts"
+---
+
+Revolte becomes much easier to use once the underlying model is clear. These concepts appear across the product and explain how work moves from a requirement to a deployed, observable application.
+
+## Core objects
+
+| Concept | What it means | Why it matters |
+| --- | --- | --- |
+| Workspace | The top-level operating boundary for your team in Revolte | Access, projects, applications, and operational settings all live here |
+| Project | A logical grouping of related applications and product work | Helps organize delivery by product area or system |
+| Application | A deployable unit such as a frontend, API, service, or worker | Builds, deployments, logs, services, and variables are scoped around it |
+| Environment | A release target such as preview, QA, staging, or production | Controls where code runs and how configuration is applied |
+
+## Delivery concepts
+
+| Concept | What it means | Why it matters |
+| --- | --- | --- |
+| Build | The process of converting a requirement into implementation work | It is the entry point for intent-driven generation |
+| Pull request | The review surface for generated output | Keeps engineers in control before code is merged |
+| Deployment | A release of a specific application version to an environment | Connects approved code to a running system |
+| Preview deployment | A temporary deployment used to validate a branch or change before merge | Reduces release risk and speeds up feedback |
+
+## Runtime and operations concepts
+
+| Concept | What it means | Why it matters |
+| --- | --- | --- |
+| Environment variables | Runtime values injected into an application at deploy time | Separate configuration from source code |
+| Secrets | Sensitive values such as tokens, credentials, and signing keys | Protects high-risk configuration and operational access |
+| Services | Supporting infrastructure such as storage buckets or cron jobs | Gives applications the runtime capabilities they need |
+| Activity timeline | A chronological record of build or deployment events | Helps explain what happened and when |
+| Logs | Detailed execution records from deployments or running applications | Primary source for debugging specific failures |
+| Metrics | Aggregated signals such as latency, errors, throughput, or delivery health | Helps teams detect regressions and monitor overall health |
+
+## How the concepts fit together
+
+Use this flow as the mental model for the platform:
+
+```txt
+Workspace -> Project -> Application -> Build -> Pull Request -> Deployment -> Environment -> Logs and Metrics
+```
+
+Each level adds more context:
+
+- The workspace defines ownership and access.
+- The project organizes related product work.
+- The application is the deployable unit.
+- The build produces reviewable change.
+- The deployment moves that change into an environment.
+- Observability confirms whether the running system behaves correctly.
+
+## Example: shipping a feature
+
+<Steps>
+  <Step title="Choose the application">
+    Select the application inside the right project and workspace so Revolte can use the correct repository and runtime context.
+  </Step>
+  <Step title="Start a build">
+    Provide the requirement that should become implementation work.
+  </Step>
+  <Step title="Review the pull request">
+    Validate the code, tests, and configuration produced by the build.
+  </Step>
+  <Step title="Deploy to an environment">
+    Release the approved change to preview, QA, staging, or production.
+  </Step>
+  <Step title="Inspect logs and metrics">
+    Confirm the result in the running system and decide whether more iteration is needed.
+  </Step>
+</Steps>
+
+## When each concept becomes important
+
+<CardGroup cols={2}>
+  <Card title="When building">
+    Focus on the application, build request, pull request, and repository context.
+  </Card>
+  <Card title="When deploying">
+    Focus on environments, variables, secrets, preview deployments, and release history.
+  </Card>
+  <Card title="When debugging">
+    Focus on activity timelines, logs, metrics, and the specific deployment that introduced change.
+  </Card>
+  <Card title="When operating at scale">
+    Focus on workspace access, services, ownership boundaries, and environment isolation.
+  </Card>
+</CardGroup>
+
+## Next steps
+
+<CardGroup cols={3}>
+  <Card title="Quick Start" href="/docs/quick-start">
+    Follow the shortest path through the product.
+  </Card>
+  <Card title="Create Your First Feature" href="/docs/build/quick-start">
+    Start a real build workflow from a requirement.
+  </Card>
+  <Card title="Deploy Your Application" href="/docs/deploy/quick-start">
+    Learn how code moves into a managed environment.
+  </Card>
+</CardGroup>

@@ -1,0 +1,104 @@
+---
+title: "Logs"
+---
+
+> ⚠️ **Prerequisite**  
+> You need an active workspace and application.  
+> → Start with [Monitor Your System](/docs/observe/quick-start)
+
+Logs are detailed execution records from builds, deployments, and running applications. Use them when you need exact evidence about what happened.
+
+![Revolte logs view with filters, severity breakdown, and runtime log entries](/images/docs/doc-info-1.png)
+
+## Why logs matter
+
+Metrics can tell you that something changed. Logs help explain why. They show failed commands, missing variables, startup crashes, request errors, and application messages that are too detailed for a timeline or chart.
+
+## Log types
+
+| Log type | Use for |
+| --- | --- |
+| Deployment logs | Build, provisioning, release, and pipeline issues |
+| Application logs | Runtime requests, errors, warnings, and application behavior |
+
+## Deployment logs
+
+Deployment logs show the release process step by step.
+
+Use them to debug:
+
+- Failed builds
+- Dependency installation errors
+- Missing commands
+- Infrastructure provisioning issues
+- Port or health check failures
+- Missing environment variables
+
+## Application logs
+
+Application logs show behavior after the app is running.
+
+Use them to debug:
+
+- API errors
+- Failed background jobs
+- Authentication failures
+- Unexpected responses
+- Runtime exceptions
+- Request-specific issues
+
+## Debugging workflow
+
+<Steps>
+  <Step title="Start with the timestamp">
+    Use the deployment time, incident start time, or first user report as the initial window.
+  </Step>
+
+  <Step title="Choose the log type">
+    Use deployment logs for release failures and application logs for runtime behavior.
+  </Step>
+
+  <Step title="Find the first error">
+    Start at the earliest failure, not the last repeated error. The first error usually points closest to the cause.
+  </Step>
+
+  <Step title="Correlate with deployment history">
+    Check whether the issue started after a specific deployment or configuration change.
+  </Step>
+
+  <Step title="Decide the fix">
+    Retry, update configuration, open a Build request, or roll back based on the evidence.
+  </Step>
+</Steps>
+
+## What to look for
+
+- First error in the timeline
+- Repeated warnings before failure
+- Missing required variables
+- Exit codes
+- Health check failures
+- Request IDs or trace identifiers
+- External service failures
+
+## Example scenario
+
+If an application deploys successfully but returns `500` responses, start with application logs around the first failed request. If the logs mention a missing database URL, update the variable in the target environment and redeploy.
+
+## Best practices
+
+- Check logs before retrying a failed deployment.
+- Use time windows around the deployment event.
+- Pair logs with metrics to measure user impact.
+- Avoid exposing secrets in application log output.
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Metrics" href="/docs/observe/metrics">
+    Measure impact and detect trends around log events.
+  </Card>
+  <Card title="Activity Timeline" href="/docs/deploy/deployment-activity">
+    See the release timeline that produced the logs.
+  </Card>
+</CardGroup>

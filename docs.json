@@ -1,0 +1,106 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "maple",
+  "name": "Revolte",
+  "description": "Documentation for building, deploying, observing, and controlling applications with Revolte.",
+  "logo": {
+    "light": "/images/brand/revolte-logo.svg",
+    "dark": "/images/brand/revolte-logo.svg"
+  },
+  "favicon": "/images/brand/revolte-fav-icon.svg",
+  "appearance": {
+    "default": "dark"
+  },
+  "icons": {
+    "library": "lucide"
+  },
+  "colors": {
+    "primary": "#8B5CF6",
+    "light": "#A78BFA",
+    "dark": "#8B5CF6"
+  },
+  "navigation": {
+    "groups": [
+      {
+        "group": "Start Here",
+        "pages": [
+          "docs/index",
+          "docs/quick-start",
+          "docs/key-concepts"
+        ]
+      },
+      {
+        "group": "Build Applications",
+        "pages": [
+          "docs/build/quick-start",
+          "docs/build/review-output",
+          {
+            "group": "Workflows",
+            "expanded": false,
+            "pages": [
+              "docs/build/cli-workflow",
+              "docs/build/web-workflow"
+            ]
+          },
+          "docs/build/pipeline"
+        ]
+      },
+      {
+        "group": "Deploy & Release",
+        "pages": [
+          "docs/deploy/quick-start",
+          "docs/deploy/environments",
+          {
+            "group": "Configuration",
+            "expanded": false,
+            "pages": [
+              "docs/deploy/environment-variables",
+              "docs/deploy/preview"
+            ]
+          },
+          {
+            "group": "Deployment History",
+            "expanded": false,
+            "pages": [
+              "docs/deploy/deployment-activity",
+              "docs/deploy/past-deployments"
+            ]
+          }
+        ]
+      },
+      {
+        "group": "Monitor & Debug",
+        "pages": [
+          "docs/observe/quick-start",
+          "docs/observe/logs",
+          "docs/observe/metrics",
+          "docs/troubleshooting/overview"
+        ]
+      },
+      {
+        "group": "Access & Control",
+        "pages": [
+          "docs/control/users-roles",
+          "docs/control/services"
+        ]
+      },
+      {
+        "group": "Platform Capabilities",
+        "pages": [
+          "docs/platform/overview",
+          "docs/platform/environments",
+          "docs/platform/preview",
+          "docs/platform/ci-cd",
+          "docs/platform/observability",
+          "docs/platform/security"
+        ]
+      },
+      {
+        "group": "Troubleshooting",
+        "pages": [
+          "docs/troubleshooting/common-issues"
+        ]
+      }
+    ]
+  }
+}

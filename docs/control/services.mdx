@@ -1,0 +1,114 @@
+---
+title: "Services & Infrastructure"
+---
+
+> ⚠️ **Prerequisite**  
+> You need an active workspace and application.  
+> → Start with [Control Settings](/docs/control/overview)
+
+Services are managed infrastructure components that support your application at runtime. They give applications common capabilities without requiring the team to manually provision and maintain separate infrastructure.
+
+## Why services exist
+
+Applications often need more than code and deployment. They need persistent file storage, scheduled work, and secure credentials. Services centralize these supporting capabilities so they are configured intentionally and tied to the application lifecycle.
+
+## Service types
+
+| Service | Use for |
+| --- | --- |
+| Storage buckets | Persistent files, media, and generated assets |
+| Cron jobs | Scheduled background work |
+| Secrets | Sensitive runtime values such as tokens and credentials |
+
+## Storage buckets
+
+Storage buckets provide persistent object storage for files and application assets.
+
+Use buckets for:
+
+- User uploads
+- Generated files
+- Media assets
+- Durable application data that does not belong in source control
+
+## Cron jobs
+
+Cron jobs run scheduled tasks in the background.
+
+Use cron jobs for:
+
+- Cleanup routines
+- Data synchronization
+- Retry workflows
+- Scheduled reports
+- Maintenance tasks
+
+## Secrets
+
+Secrets store sensitive runtime values.
+
+Use secrets for:
+
+- API tokens
+- Signing keys
+- Database credentials
+- Webhook secrets
+
+## Service workflow
+
+<Steps>
+  <Step title="Identify the runtime need">
+    Decide whether the application needs storage, scheduled work, or sensitive credentials.
+  </Step>
+
+  <Step title="Create or configure the service">
+    Add the service in the workspace or application context.
+  </Step>
+
+  <Step title="Scope it correctly">
+    Tie the service to the correct application and environment.
+  </Step>
+
+  <Step title="Add required variables or secrets">
+    Provide the configuration the application needs at runtime.
+  </Step>
+
+  <Step title="Deploy and verify">
+    Release the application and check logs or metrics to confirm the service is working.
+  </Step>
+</Steps>
+
+## Example scenarios
+
+<Tabs>
+  <Tab title="Storage">
+    Use a bucket when a user uploads profile images that must persist across deployments.
+  </Tab>
+
+  <Tab title="Cron">
+    Use a cron job to run a nightly cleanup task that removes expired sessions.
+  </Tab>
+
+  <Tab title="Secrets">
+    Use secrets for a payment provider token or webhook signing key.
+  </Tab>
+</Tabs>
+
+## Best practices
+
+- Use buckets for persistent files, not source repositories.
+- Use cron jobs for recurring work that should not depend on incoming requests.
+- Store sensitive values as secrets.
+- Keep service ownership clear for audit and maintenance.
+- Verify service behavior after deployment using logs.
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Environment Variables" href="/docs/deploy/environment-variables">
+    Scope service configuration by environment.
+  </Card>
+  <Card title="Logs" href="/docs/observe/logs">
+    Debug service integration failures.
+  </Card>
+</CardGroup>

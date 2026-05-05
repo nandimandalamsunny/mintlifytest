@@ -1,0 +1,75 @@
+---
+title: "Control Settings"
+---
+
+Control is Revolte's governance and configuration layer. It keeps workspace access, role ownership, supporting services, and sensitive runtime settings manageable as your team builds and deploys faster.
+
+## Why Control exists
+
+Build and Deploy are designed to move work quickly. Control gives that speed boundaries: who can access the workspace, who can change production-sensitive settings, and which services support an application at runtime.
+
+Use Control to:
+
+- Invite teammates with the right access level
+- Assign workspace roles
+- Configure managed services
+- Store sensitive runtime values
+- Keep operational ownership clear
+- Reduce accidental changes to production systems
+
+## What Control manages
+
+| Area | Purpose |
+| --- | --- |
+| Users | Workspace membership and team access |
+| Roles | Permission levels such as Admin, Developer, and Viewer |
+| Services | Managed runtime components such as storage, cron jobs, and secrets |
+| Ownership | Clear responsibility for access and configuration changes |
+
+## How it fits with the platform
+
+<Steps>
+  <Step title="Define access">
+    Invite users and assign roles before they build, deploy, or inspect applications.
+  </Step>
+
+  <Step title="Configure services">
+    Add supporting runtime capabilities such as buckets, scheduled jobs, and secrets.
+  </Step>
+
+  <Step title="Deploy with controlled configuration">
+    Use Deploy to apply environment-specific values and release changes safely.
+  </Step>
+
+  <Step title="Observe and audit">
+    Use logs, metrics, and release history to understand how changes affect the system.
+  </Step>
+</Steps>
+
+## When to use Control
+
+Use Control when:
+
+- A new teammate joins the workspace
+- Someone's responsibilities change
+- An application needs storage, scheduled work, or sensitive credentials
+- Production access should be restricted
+- You need a clear operational owner for services or configuration
+
+## Operational boundaries
+
+Control manages access and supporting infrastructure. Use Build when changing application behavior and Deploy when releasing code or applying environment configuration.
+
+> ✅ **Recommended practice**  
+> Keep Control changes deliberate. Access, secrets, and services affect every build and deployment that depends on them.
+
+## Recommended path
+
+<CardGroup cols={2}>
+  <Card title="Users & Access" href="/docs/control/users-roles">
+    Invite users, assign roles, and review workspace access.
+  </Card>
+  <Card title="Runtime Services" href="/docs/control/services">
+    Configure storage, cron jobs, and secrets for applications.
+  </Card>
+</CardGroup>

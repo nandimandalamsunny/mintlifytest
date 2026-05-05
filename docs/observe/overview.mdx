@@ -1,0 +1,75 @@
+---
+title: "How Observe Works"
+---
+
+Observe is Revolte's visibility layer. It connects deployment activity, logs, metrics, and release context so teams can verify releases, debug failures, and understand system health without switching between disconnected tools.
+
+## Why Observe exists
+
+Shipping code is only half the workflow. Teams also need to know whether a deployment completed, whether the application started, whether users are affected, and whether a release introduced a regression.
+
+Observe helps answer:
+
+- Why did deployment fail?
+- Is the application responding correctly?
+- Did latency increase after a release?
+- Which deployment introduced a regression?
+- How often are we deploying?
+- How quickly do we recover from failures?
+
+## How Observe works
+
+<Steps>
+  <Step title="Capture activity">
+    Revolte records deployment events so you can see what happened and in what order.
+  </Step>
+
+  <Step title="Collect logs">
+    Deployment and application logs provide execution-level detail for failures and runtime behavior.
+  </Step>
+
+  <Step title="Aggregate metrics">
+    Metrics show performance, reliability, resource usage, and delivery trends over time.
+  </Step>
+
+  <Step title="Correlate with releases">
+    Logs and metrics are most useful when tied back to the deployment that changed the system.
+  </Step>
+
+  <Step title="Support decisions">
+    Use the evidence to retry, fix configuration, roll back, scale, or keep monitoring.
+  </Step>
+</Steps>
+
+## Logs vs metrics
+
+| Signal | Use it for | Example question |
+| --- | --- | --- |
+| Activity | Release sequence | Did the deployment reach the deploy stage? |
+| Logs | Exact details | Which command failed? |
+| Metrics | Trends and impact | Did error rate increase after the release? |
+
+## When to use Observe
+
+Use Observe:
+
+- After deploying new code
+- When a build or deployment fails
+- During incident response
+- Before deciding to roll back
+- When tracking delivery performance
+- When investigating runtime errors
+
+## Recommended path
+
+<CardGroup cols={3}>
+  <Card title="Monitor Your System" href="/docs/observe/quick-start">
+    Verify a release or investigate an issue with the right signal.
+  </Card>
+  <Card title="Logs" href="/docs/observe/logs">
+    Inspect exact deployment and runtime events.
+  </Card>
+  <Card title="Metrics" href="/docs/observe/metrics">
+    Track health, performance, and delivery trends.
+  </Card>
+</CardGroup>

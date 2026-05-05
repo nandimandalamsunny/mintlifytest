@@ -1,0 +1,109 @@
+---
+title: "Preview Environments"
+---
+
+> ⚠️ **Prerequisite**  
+> You need an active workspace and application.  
+> → Start with [Deploy Your Application](/docs/deploy/quick-start)
+
+Preview deployments create temporary, isolated versions of your application for a pull request or feature branch. They let teams test real behavior before merging code.
+
+## Why previews exist
+
+Code review catches implementation issues, but some problems only appear when the application is running: UI states, API integration, environment variables, routing, auth, or build-time configuration. Previews give reviewers a live environment without touching production.
+
+## How previews work
+
+<Steps>
+  <Step title="Trigger">
+    A pull request, branch update, or manual action requests a preview.
+  </Step>
+
+  <Step title="Build">
+    Revolte packages the application version for the preview environment.
+  </Step>
+
+  <Step title="Provision">
+    Revolte creates an isolated runtime with the appropriate preview configuration.
+  </Step>
+
+  <Step title="Share URL">
+    Reviewers open a unique preview URL to test the change.
+  </Step>
+
+  <Step title="Clean up">
+    The preview can be removed after review or when the pull request is closed.
+  </Step>
+</Steps>
+
+## When to use previews
+
+Use previews for:
+
+- UI review
+- API contract validation
+- Stakeholder feedback
+- Testing feature branches
+- Reproducing bugs safely
+- Validating generated Build output before merge
+
+## What each preview includes
+
+A preview can include:
+
+- A deployed application instance
+- A unique preview URL
+- Environment-specific variables
+- Logs and deployment activity
+- Access controls based on workspace settings
+
+## Review workflow
+
+<Steps>
+  <Step title="Open the preview URL">
+    Confirm the application loads and the target change is visible.
+  </Step>
+
+  <Step title="Test the behavior">
+    Exercise the primary flow, edge cases, and permission paths.
+  </Step>
+
+  <Step title="Check logs">
+    Look for runtime errors, failed requests, or missing configuration.
+  </Step>
+
+  <Step title="Compare with the pull request">
+    Make sure the running behavior matches the code diff.
+  </Step>
+
+  <Step title="Merge or request changes">
+    Approve only after the preview validates the expected behavior.
+  </Step>
+</Steps>
+
+## Limits
+
+Preview environments are temporary. Do not use them for:
+
+- Production traffic
+- Long-lived data storage
+- Permanent integrations
+- Manual changes that should be version-controlled
+
+## Best practices
+
+- Keep preview data isolated from production.
+- Share preview URLs only with intended reviewers.
+- Clean up stale previews.
+- Use preview validation before merging high-impact changes.
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Activity Timeline" href="/docs/deploy/deployment-activity">
+    Inspect preview deployment progress.
+  </Card>
+  <Card title="Logs" href="/docs/observe/logs">
+    Debug runtime errors in preview environments.
+  </Card>
+</CardGroup>

@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "docs": "npx -p node@20 -p mintlify mint dev"
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.2.4",

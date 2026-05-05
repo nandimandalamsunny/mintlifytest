@@ -8,65 +8,67 @@ type QuickStartStep = {
   step: number;
   heading: string;
   description: string;
+  image?: string;
   code?: string;
 };
 
 const defaultSteps: QuickStartStep[] = [
   {
     step: 1,
-    heading: "Account Creation",
-    description: "Create your Revolte account to begin. This centralized identity manages your organizations, clusters, and automated pipelines across all environments."
+    heading: "Sign up",
+    description: "Create your Revolte account to start the onboarding flow. This gives you access to the workspace, project, and deployment setup that follows."
   },
   {
     step: 2,
-    heading: "Define Organization Workspace",
-    description: "Establish your team's centralized workspace. Revolte uses these details to partition resources and secure your environment from the start."
+    heading: "Complete workspace details",
+    description: "Add your organization details so Revolte can create the right workspace context for your team and applications.",
+    image: "/images/quickstart/quick-start-1.png",
   },
   {
     step: 3,
-    heading: "Target Cloud Infrastructure",
-    description: "Choose your deployment target. Revolte automatically orchestrates the underlying provider services, eliminating manual cluster or instance setup."
+    heading: "Select a cloud target",
+    description: "Choose where Revolte should run and manage your application infrastructure.",
+    image: "/images/quickstart/quick-start-2.png",
   },
   {
     step: 4,
-    heading: "Connect Source Control",
-    description: "Link your GitHub or GitLab repositories. This establishes the foundation for your automated CI/CD pipeline and feature generation."
+    heading: "Connect source control",
+    description: "Connect the Git provider that contains the repository Revolte will use for generated pull requests and delivery workflows.",
+    image: "/images/quickstart/quick-start-3.png",
   },
   {
     step: 5,
-    heading: "Integrate Product Management",
-    description: "Connect tools like Jira or Linear. Revolte uses this data to translate requirements directly into production-ready code."
+    heading: "Connect project management",
+    description: "Optionally connect tools like Jira so requirements and delivery workflows can stay linked.",
+    image: "/images/quickstart/quick-start-4.png",
   },
   {
     step: 6,
-    heading: "Orchestrate Project Settings",
-    description: "Finalize your project's high-level configurations. The platform prepares the cross-tool integrations required for autonomous builds."
+    heading: "Create the project",
+    description: "Create or select the project that will group related applications under the same product context.",
+    image: "/images/quickstart/quick-start-5.png",
   },
   {
     step: 7,
-    heading: "Initialize Application",
-    description: "Define your application's identity. Revolte creates the underlying repository structures and initializes the base system architecture."
+    heading: "Create the application",
+    description: "Name the application and choose the repository Revolte should manage.",
+    image: "/images/quickstart/quick-start-6.png",
   },
   {
     step: 8,
-    heading: "Automate Pipeline Workflows",
-    description: "Define your environment strategy. The platform automatically generates your CI/CD YAMLs and rollout rules for Preview and Production stages."
+    heading: "Configure the pipeline",
+    description: "Review the framework, branch mapping, workflow toggles, and generated pipeline configuration.",
+    image: "/images/quickstart/quick-start-7.png",
   },
   {
     step: 9,
-    heading: "Validate and Launch",
-    description: "Review the automated configuration. Once confirmed, Revolte activates your global pipeline, and your application goes live instantly."
+    heading: "Launch the application",
+    description: "Confirm the final checklist and start the first deployment workflow for the application.",
+    image: "/images/quickstart/quick-start-8.png",
   }
 ];
 
 import CodeBlock from "@/components/CodeBlock/CodeBlock";
-
-function getImagePath(step: number) {
-  // Account creation (step 1) has no image.
-  // Other steps use images 1-8.
-  return `/images/quickstart/quick-start-${step - 1}.png`;
-}
-
 
 function getStepId(step: QuickStartStep) {
   return step.heading
@@ -87,7 +89,7 @@ export default function QuickStartTimeline({ steps }: QuickStartTimelineProps) {
       {displaySteps.map((item, index) => {
         const isLast = index === displaySteps.length - 1;
         const stepId = getStepId(item);
-        const hasMedia = item.code || item.step > 1;
+        const hasMedia = Boolean(item.code || item.image);
 
         return (
           <article key={item.step} className="qs-step">
@@ -111,7 +113,7 @@ export default function QuickStartTimeline({ steps }: QuickStartTimelineProps) {
                     <CodeBlock code={item.code} language="bash" />
                   ) : (
                     <Image
-                      src={getImagePath(item.step)}
+                      src={item.image!}
                       alt={item.heading}
                       width={1600}
                       height={900}

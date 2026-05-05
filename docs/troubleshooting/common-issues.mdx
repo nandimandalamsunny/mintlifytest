@@ -1,0 +1,170 @@
+---
+title: "Common Issues"
+---
+
+> ⚠️ **Prerequisite**  
+> You need an active workspace and application.  
+> → Start with [Debugging Workflow](/docs/troubleshooting/overview)
+
+Use this page as a first-pass checklist when a build, deployment, or runtime workflow fails. Each issue includes the symptom, likely causes, and the first fix to try.
+
+## Build execution timeout
+
+**Symptom:** The build runs longer than expected and fails.
+
+**Why it happens:**
+
+- Slow dependency installation
+- Large test suite
+- Long-running build step
+- Build command waiting for input
+
+**Fix:**
+
+<Steps>
+  <Step title="Check build logs">
+    Find the slowest or last completed step.
+  </Step>
+
+  <Step title="Remove interactive commands">
+    Build scripts should not wait for terminal input.
+  </Step>
+
+  <Step title="Reduce scope">
+    Split unrelated work into smaller build requests.
+  </Step>
+
+  <Step title="Optimize setup">
+    Review dependency installation and test commands for avoidable work.
+  </Step>
+</Steps>
+
+## Missing environment variable
+
+**Symptom:** Deployment succeeds but the application crashes, or deployment fails with a missing variable error.
+
+**Why it happens:** The application expects a value at build time or runtime, but the target environment does not define it.
+
+**Fix:**
+
+1. Open the target environment.
+2. Add the required variable or secret.
+3. Confirm the variable name matches the application code.
+4. Redeploy the application.
+
+## Repository authentication failed
+
+**Symptom:** Revolte cannot read the repository or open a pull request.
+
+**Why it happens:** The Git provider connection, repository permission, organization access, or target branch is unavailable.
+
+**Fix:**
+
+- Reconnect the Git provider.
+- Confirm repository permissions.
+- Check that the target branch exists.
+- Verify the workspace still has access to the organization or project.
+
+## Application failed to respond
+
+**Symptom:** Deployment completes but health checks fail.
+
+**Likely causes:**
+
+- App listens on `localhost` instead of `0.0.0.0`
+- App uses the wrong port
+- Start command exits early
+- Required runtime variable is missing
+
+**Fix example:**
+
+```js
+const port = process.env.PORT || 3000;
+app.listen(port, "0.0.0.0");
+```
+
+Then confirm the deployment target port matches the application.
+
+## No start command found
+
+**Symptom:** Revolte cannot determine how to launch the application.
+
+**Why it happens:** The application root or start command is missing or points to the wrong package.
+
+**Fix:**
+
+- Add a `start` script.
+- Confirm the application root directory.
+- Redeploy after the configuration update.
+
+```json
+{
+  "scripts": {
+    "start": "node server.js"
+  }
+}
+```
+
+## Out of memory
+
+**Symptom:** The application exits or deployment fails due to memory limits.
+
+**Why it happens:** The application uses more memory than the runtime allows, often during startup, build, or a high-volume request path.
+
+**Fix:**
+
+- Check metrics for memory usage.
+- Inspect logs for memory-related crashes.
+- Reduce memory-heavy startup work.
+- Increase the runtime size if the workload requires it.
+
+## Cron job execution failed
+
+**Symptom:** A scheduled task does not run successfully.
+
+**Likely causes:**
+
+- Invalid schedule
+- Unreachable target URL
+- Missing secret
+- Handler returns an error
+
+**Fix:**
+
+- Confirm the schedule is valid.
+- Confirm the target URL is reachable.
+- Check required secrets.
+- Inspect application logs for the cron request.
+
+## Rollback did not resolve the issue
+
+**Symptom:** Reverting to a previous deployment does not fix production behavior.
+
+**Likely causes:**
+
+- The issue is caused by environment variables
+- The issue is caused by a backing service
+- The old version depends on changed external state
+- A migration or data change was not reverted
+
+**Fix:**
+
+- Compare variables between the current and previous deployment.
+- Check service configuration.
+- Review metrics before and after rollback.
+- Inspect application logs for the restored version.
+- Confirm whether external state changed independently of the deployment.
+
+## Next steps
+
+<CardGroup cols={3}>
+  <Card title="Activity Timeline" href="/docs/deploy/deployment-activity">
+    Find the stage where the release failed.
+  </Card>
+  <Card title="Logs" href="/docs/observe/logs">
+    Inspect exact failure details.
+  </Card>
+  <Card title="Metrics" href="/docs/observe/metrics">
+    Measure impact after a fix or rollback.
+  </Card>
+</CardGroup>

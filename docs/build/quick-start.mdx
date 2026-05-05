@@ -1,0 +1,184 @@
+---
+title: "Create Your First Feature"
+---
+
+Build is the fastest path from a product requirement to a reviewed code change. Use it when you know what the application should do and want Revolte to generate the implementation, tests, and pull request around that intent.
+
+This guide walks through two layers of setup:
+
+- Completing the first workspace and application setup
+- Submitting a focused build request that produces a pull request
+
+## New to Revolte?
+
+Build is one part of a larger delivery loop. If you land here first, use this quick model:
+
+<CardGroup cols={2}>
+  <Card title="Build">
+    Describe a requirement. Revolte generates code, tests, documentation, and a pull request.
+  </Card>
+  <Card title="Deploy">
+    Merge approved work. Revolte releases it through preview, QA, staging, or production.
+  </Card>
+  <Card title="Observe">
+    Check logs, metrics, and activity to confirm the release is healthy.
+  </Card>
+  <Card title="Control">
+    Manage users, roles, services, secrets, storage, and scheduled jobs.
+  </Card>
+</CardGroup>
+
+> ✅ **Need the product overview first?**  
+> Read [Introduction to Revolte](/docs) to understand the full platform in 2 to 5 minutes.
+
+> ⚠️ **Prerequisite**  
+> You need a Git repository that Revolte can read and write to, plus the required permissions from your Git provider.
+
+## Before you start
+
+Make sure you have:
+
+- A repository you want Revolte to manage
+- Access to the branch where Revolte should open pull requests
+- Any required repository permissions from your Git provider
+- A clear idea of the application or system you want to set up
+
+## Visual setup walkthrough
+
+If you are new to Revolte, complete the guided setup before submitting your first build request. The screenshots below follow the onboarding flow in order, from `quick-start-1` through `quick-start-8`.
+
+This setup gives Revolte the context it needs to generate code safely: workspace details, repository access, project mapping, application configuration, and deployment pipeline settings.
+
+<Steps>
+  <Step title="Sign up">
+    Create your Revolte account to begin the onboarding flow. This gives you access to the workspace, project, and application setup that follows.
+  </Step>
+
+  <Step title="Complete workspace details">
+    Confirm your organization details and role so Revolte can tailor the workspace context.
+
+    ![Workspace details modal for entering organization name, role, and referral source](/images/quickstart/quick-start-1.png)
+  </Step>
+
+  <Step title="Select a cloud target">
+    Choose where Revolte should run and manage the application infrastructure.
+
+    ![Cloud target selection with Revolte Cloud selected](/images/quickstart/quick-start-2.png)
+  </Step>
+
+  <Step title="Connect source control">
+    Connect the Git provider that contains the repository Revolte should use for generated pull requests.
+
+    ![Source control integration options with GitHub, GitLab, Bitbucket, and custom token fields](/images/quickstart/quick-start-3.png)
+  </Step>
+
+  <Step title="Connect project management">
+    Optionally connect a product management tool so issues or requirements can be linked to build workflows.
+
+    ![Project management integration step with Jira selected](/images/quickstart/quick-start-4.png)
+  </Step>
+
+  <Step title="Create the project">
+    Create or select the project that will group related applications under the same product context.
+
+    ![Project creation form with project name and Jira project mapping](/images/quickstart/quick-start-5.png)
+  </Step>
+
+  <Step title="Create the application">
+    Name the application and select the repository Revolte should manage.
+
+    ![Application creation form with application name and repository selection](/images/quickstart/quick-start-6.png)
+  </Step>
+
+  <Step title="Configure the pipeline">
+    Review the generated configuration, framework selection, branch mapping, and workflow toggles.
+
+    ![Pipeline configuration screen showing framework, branch mapping, workflow toggles, and generated YAML](/images/quickstart/quick-start-7.png)
+  </Step>
+
+  <Step title="Launch the application">
+    Confirm the launch checklist and start the first deployment workflow.
+
+    ![Launch confirmation checklist over generated Revolte configuration](/images/quickstart/quick-start-8.png)
+  </Step>
+</Steps>
+
+## Submit your first build
+
+After the application is connected and the pipeline is configured, use Build to generate your first implementation.
+
+<Steps>
+  <Step title="Open the application">
+    From your workspace, select the project and application you want to change. Revolte uses this context to understand repository structure, framework conventions, branch mapping, and deployment targets.
+  </Step>
+
+  <Step title="Describe the requirement">
+    Write the requirement in plain language. Focus on behavior, inputs, outputs, validation, and expected edge cases.
+
+    ```txt
+    Add a REST endpoint that returns a user's recent activity with pagination, authentication, and tests.
+    ```
+  </Step>
+
+  <Step title="Let Revolte generate the change">
+    Revolte analyzes the repository, plans the implementation, modifies code, creates tests, and prepares supporting documentation where needed.
+  </Step>
+
+  <Step title="Review the pull request">
+    Inspect the generated pull request like any teammate's change. Check the diff, tests, configuration updates, and implementation summary before approving.
+  </Step>
+
+  <Step title="Merge when ready">
+    After approval, merge the pull request. Deploy can then release the application according to your configured pipeline and environment rules.
+  </Step>
+</Steps>
+
+## Write a strong requirement
+
+A good Build request tells Revolte what should be true after the change lands.
+
+<Tabs>
+  <Tab title="Good">
+    ```txt
+    Add JWT authentication to the user profile API. Require a valid bearer token, return 401 for missing or invalid tokens, and add tests for success, missing token, and expired token cases.
+    ```
+  </Tab>
+
+  <Tab title="Too vague">
+    ```txt
+    Add auth.
+    ```
+  </Tab>
+</Tabs>
+
+Include:
+
+- The user-facing or API behavior
+- Inputs and expected outputs
+- Authentication or permission rules
+- Existing patterns Revolte should follow
+- Error states that should be handled
+- Test expectations for critical paths
+
+## What you should receive
+
+A successful build should produce:
+
+- Source changes scoped to the requirement
+- Unit or integration tests for the new behavior
+- Documentation updates when the change affects usage or operation
+- A pull request with implementation context and validation evidence
+
+## Next steps
+
+<CardGroup cols={3}>
+  <Card title="How Build Works" href="/docs/build/overview">
+    Understand how Build turns requirements into reviewable engineering work.
+  </Card>
+  <Card title="CLI Workflow" href="/docs/build/cli-workflow">
+    Use Revolte from your terminal when you want local repository context.
+  </Card>
+  <Card title="Validate Output" href="/docs/build/review-output">
+    Validate generated code, tests, configuration, and pull request details.
+  </Card>
+</CardGroup>

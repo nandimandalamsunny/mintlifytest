@@ -1,0 +1,76 @@
+---
+title: "Platform Capabilities"
+---
+
+Revolte is not only a workflow for generating code. It is also a platform layer that gives teams the operational structure needed to ship repeatedly without rebuilding the same delivery systems from scratch.
+
+## Platform Foundations
+
+These capabilities explain what Revolte provides beyond feature generation:
+
+- Environment isolation for controlled releases
+- Preview deployments for change review
+- CI/CD automation for repeatable delivery
+- Built-in observability for runtime visibility
+- Security and access controls for operational discipline
+
+## Capability Overview
+
+| Capability | What it provides | Why it matters |
+| --- | --- | --- |
+| Environments & Isolation | Separate release targets with scoped configuration and runtime boundaries | Keeps QA, staging, and production from interfering with each other |
+| Preview Deployments | Temporary running versions of branch or pull request changes | Gives teams fast review and validation before merge |
+| CI/CD Automation | Managed build, validation, and deployment workflows | Reduces manual pipeline setup and delivery drift |
+| Observability | Logs, metrics, and activity signals connected to releases | Makes post-deployment verification and debugging faster |
+| Security & Access Control | Controlled access, scoped configuration, and safer operational workflows | Helps teams move quickly without losing governance |
+
+## How The Platform Connects
+
+<Steps>
+  <Step title="Build and review">
+    Teams generate a change, inspect the output, and decide whether it is ready to move forward.
+  </Step>
+  <Step title="Validate in isolated environments">
+    Preview and environment boundaries make it possible to test change safely before production rollout.
+  </Step>
+  <Step title="Release through automation">
+    CI/CD automation applies the same repeatable delivery flow across environments.
+  </Step>
+  <Step title="Observe the running system">
+    Logs, metrics, and activity history confirm whether the release behaves as expected.
+  </Step>
+  <Step title="Operate with control">
+    Access rules, configuration boundaries, and runtime controls help teams keep the platform reliable as usage scales.
+  </Step>
+</Steps>
+
+## When To Use This Section
+
+Use this section when you want to understand how Revolte behaves as a platform, not only as a build interface.
+
+This is especially useful when:
+
+- You are designing your release model
+- You need to explain how Revolte fits into your delivery architecture
+- You are onboarding teammates who will own operations or platform decisions
+- You want to understand what is managed for you and what still needs review
+
+## Explore The Platform
+
+<CardGroup cols={2}>
+  <Card title="Environments & Isolation" href="/docs/platform/environments">
+    Learn how Revolte separates release stages and runtime context.
+  </Card>
+  <Card title="Preview Deployments" href="/docs/platform/preview">
+    See how branch-level validation works before merge.
+  </Card>
+  <Card title="CI/CD Automation" href="/docs/platform/ci-cd">
+    Understand how build and release workflows are automated.
+  </Card>
+  <Card title="Observability" href="/docs/platform/observability">
+    Understand how Revolte surfaces logs, metrics, and activity signals.
+  </Card>
+  <Card title="Security & Access Control" href="/docs/platform/security">
+    Learn how access and configuration boundaries are managed.
+  </Card>
+</CardGroup>

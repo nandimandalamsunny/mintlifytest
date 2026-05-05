@@ -1,0 +1,106 @@
+---
+title: "Environment Variables"
+---
+
+> ⚠️ **Prerequisite**  
+> You need an active workspace and application.  
+> → Start with [Deploy Your Application](/docs/deploy/quick-start)
+
+Environment variables are configuration values injected into your application at build time or runtime. They keep deployment-specific values out of source code and let each environment run with the right settings.
+
+## Why variables matter
+
+The same codebase often needs different configuration in preview, staging, and production. Hardcoding those values creates security risk and makes releases brittle.
+
+Use environment variables to:
+
+- Keep secrets out of source control
+- Use different services by environment
+- Change runtime behavior without editing code
+- Rotate credentials safely
+- Control feature rollout by stage
+
+## What to store
+
+Use variables for:
+
+- Database connection strings
+- API keys
+- Public app URLs
+- Service endpoints
+- Feature flags
+- Region or runtime settings
+
+## Secrets
+
+Secrets are sensitive variables such as credentials, signing keys, tokens, and private URLs.
+
+Secrets should:
+
+- Stay out of source control
+- Be scoped only to the environments that need them
+- Be visible only to authorized users
+- Be rotated when access changes
+
+> ⚠️ **Do not commit secrets**  
+> If a value grants access to data, infrastructure, or third-party services, store it as a secret instead of putting it in the repository.
+
+## Scope by environment
+
+| Variable | Preview | Staging | Production |
+| --- | --- | --- | --- |
+| `APP_URL` | Preview URL | Staging URL | Public URL |
+| `DATABASE_URL` | Test database | Staging database | Production database |
+| `FEATURE_FLAG_X` | Enabled for testing | Enabled for validation | Controlled rollout |
+
+## Safe update workflow
+
+<Steps>
+  <Step title="Update a lower environment">
+    Add or change the variable in preview or QA first.
+  </Step>
+
+  <Step title="Deploy and verify">
+    Confirm the application starts and behaves correctly with the new value.
+  </Step>
+
+  <Step title="Promote to staging">
+    Apply the same change to a production-like environment.
+  </Step>
+
+  <Step title="Update production">
+    Change production only after validation and approval.
+  </Step>
+
+  <Step title="Monitor after release">
+    Watch logs and metrics for startup errors, failed requests, or integration issues.
+  </Step>
+</Steps>
+
+## Common issues
+
+| Issue | What to check |
+| --- | --- |
+| Missing variable | Name mismatch, wrong environment, redeploy needed |
+| Wrong credentials | Preview using production values or stale secrets |
+| Runtime crash | Required value missing during app startup |
+| Integration failure | Endpoint or token differs between environments |
+
+## Best practices
+
+- Name variables consistently across environments.
+- Document required variables in the repository.
+- Rotate credentials regularly.
+- Restrict edit access for production secrets.
+- Check deployment logs when configuration changes fail.
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Environments" href="/docs/deploy/environments">
+    Understand how variables are scoped by release stage.
+  </Card>
+  <Card title="Logs" href="/docs/observe/logs">
+    Debug missing variables and runtime configuration failures.
+  </Card>
+</CardGroup>

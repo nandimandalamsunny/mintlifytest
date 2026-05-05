@@ -1,0 +1,100 @@
+---
+title: "Deploy Your Application"
+---
+
+Deploy takes approved code and releases it to a managed environment. Use this guide when your application is connected to Revolte and you are ready to configure the first reliable release path.
+
+Deploy is not only a launch button. It connects branch mapping, build settings, environment variables, deployment activity, logs, metrics, and release history into one workflow.
+
+## Before you start
+
+You need:
+
+- A Revolte workspace
+- A connected application
+- Repository access
+- A branch you want to deploy
+- Any required environment variables or secrets
+- A clear target environment, such as preview, QA, staging, or production
+
+> ⚠️ **Prerequisite**  
+> If you have not created an application yet, start with [Create Your First Feature](/docs/build/quick-start).
+
+## Deployment workflow
+
+<Steps>
+  <Step title="Select the application">
+    Open the application you want to deploy. Each application has its own environments, services, variables, and deployment history.
+  </Step>
+
+  <Step title="Configure deployment settings">
+    Define how Revolte should build and run the application. Typical settings include framework, root directory, build command, start command, target port, and branch mapping.
+  </Step>
+
+  <Step title="Map branches to environments">
+    Connect branches to release targets so Revolte knows where each change should deploy.
+
+    ```txt
+    main -> production
+    develop -> staging
+    feature/* -> preview
+    ```
+  </Step>
+
+  <Step title="Add required variables">
+    Add environment-specific values before deployment. Common examples include database URLs, API keys, feature flags, public URLs, and third-party credentials.
+  </Step>
+
+  <Step title="Trigger deployment">
+    Deploy after a merge, branch update, preview request, or manual dashboard action, depending on your configuration.
+  </Step>
+
+  <Step title="Verify the release">
+    Open the deployed URL, review activity, inspect logs, watch metrics, and confirm the expected commit is live.
+  </Step>
+</Steps>
+
+## How deployment works
+
+At a high level, Revolte follows this path:
+
+```txt
+Source change -> Build artifact -> Provision runtime -> Deploy -> Verify -> Observe
+```
+
+During this flow, Revolte captures deployment activity and logs so you can debug failed releases without jumping between separate tools.
+
+## When to deploy
+
+Deploy when:
+
+- A pull request has been reviewed and merged
+- A branch is ready for environment validation
+- A preview is needed for a pull request
+- A rollback is required after a failed release
+- A configuration change needs to be applied to an environment
+
+## Verify after deployment
+
+Use this checklist immediately after the first release:
+
+- The deployed URL loads successfully
+- The expected commit is live
+- Required environment variables are present
+- Activity Timeline shows completed stages
+- Logs do not show startup or runtime errors
+- Metrics do not show immediate regressions
+
+## Next steps
+
+<CardGroup cols={3}>
+  <Card title="Environments" href="/docs/deploy/environments">
+    Structure preview, QA, staging, and production release targets.
+  </Card>
+  <Card title="Preview Environments" href="/docs/deploy/preview">
+    Validate pull requests in isolated temporary environments.
+  </Card>
+  <Card title="Past Deployments" href="/docs/deploy/past-deployments">
+    Review release history and recover from failed deployments.
+  </Card>
+</CardGroup>

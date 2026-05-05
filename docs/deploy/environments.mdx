@@ -1,0 +1,102 @@
+---
+title: "Environments"
+---
+
+> ⚠️ **Prerequisite**  
+> You need an active workspace and application.  
+> → Start with [Deploy Your Application](/docs/deploy/quick-start)
+
+Environments are isolated release targets for an application. They let teams test, approve, and ship changes without treating every deployment like production.
+
+## Why environments exist
+
+Different stages of delivery need different levels of risk, data, access, and validation. A preview deployment should be easy to create and discard. Production should be stable, restricted, and observable.
+
+Environments help you:
+
+- Keep production isolated from test changes
+- Use different variables and secrets by stage
+- Track which version is running where
+- Promote changes through a controlled path
+- Give teammates a predictable place to validate work
+
+## Environment types
+
+| Environment | Purpose | Typical lifetime | Common users |
+| --- | --- | --- | --- |
+| Preview | Validate a pull request or feature branch | Short-lived | Developers, reviewers, product |
+| QA | Functional testing before release readiness | Long-lived | QA and engineering |
+| Staging | Production-like validation | Long-lived | Engineering and operations |
+| Production | Live user traffic | Long-lived | Restricted release owners |
+
+## How branch mapping works
+
+Branch mapping tells Revolte where code should deploy.
+
+```txt
+feature/* -> preview
+develop -> QA
+staging -> staging
+main -> production
+```
+
+Use branch mapping to make release behavior predictable. When a branch changes, Revolte can infer the target environment and apply the right deployment settings.
+
+## Promotion model
+
+<Steps>
+  <Step title="Preview">
+    Validate a pull request in an isolated temporary environment.
+  </Step>
+
+  <Step title="QA">
+    Confirm expected functionality and catch issues before release readiness.
+  </Step>
+
+  <Step title="Staging">
+    Verify the change under production-like configuration.
+  </Step>
+
+  <Step title="Production">
+    Release approved, validated changes to users.
+  </Step>
+</Steps>
+
+## Environment-specific configuration
+
+Each environment can define its own:
+
+- Runtime variables
+- Secrets
+- Service endpoints
+- Deployment rules
+- Access expectations
+
+This prevents accidental coupling between lower environments and production resources.
+
+## Example
+
+A payments API might use:
+
+- Preview: test payment provider keys and sample data
+- Staging: production-like payment sandbox and full integration tests
+- Production: live credentials and restricted deployment permissions
+
+## Best practices
+
+- Keep production variables separate from lower environments.
+- Use previews for pull request validation.
+- Use staging for release readiness checks.
+- Review Activity Timeline before promoting critical changes.
+- Limit who can deploy to production.
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Environment Variables" href="/docs/deploy/environment-variables">
+    Add per-environment runtime configuration.
+  </Card>
+  <Card title="Preview Environments" href="/docs/deploy/preview">
+    Create temporary environments for pull request review.
+  </Card>
+</CardGroup>

@@ -16,10 +16,10 @@ export const QUICK_START_CONTENT: MainContentProps = {
       id: "introduction",
       blocks: [
         createContentBlock(
-          "This guide walkthrough the automated onboarding process. Revolte handles the heavy lifting — from cloud orchestration to CI/CD pipeline generation — allowing you to focus entirely on defining your product."
+          "This guide walks through the onboarding flow from sign-up to launch. Revolte handles the heavy lifting across cloud setup, repository integration, and pipeline configuration so your team can focus on the product."
         ),
         createCalloutBlock(
-          "No manual infrastructure configuration or YAML editing is required. The platform automates your entire environment setup invisibly.",
+          "Start by signing up, then follow the guided setup screens in order. Each step below maps directly to the screenshots from the onboarding flow.",
           true
         )
       ]
@@ -55,4 +55,3 @@ export const QUICK_START_CONTENT: MainContentProps = {
     }
   ],
 };
-

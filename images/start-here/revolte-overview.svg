@@ -1,0 +1,99 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="160" y1="80" x2="1440" y2="820" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#111424"/>
+      <stop offset="1" stop-color="#0A0B12"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="355" y1="247" x2="1245" y2="247" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7C3AED"/>
+      <stop offset="0.55" stop-color="#8B5CF6"/>
+      <stop offset="1" stop-color="#22D3EE"/>
+    </linearGradient>
+    <linearGradient id="panelStroke" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#8B5CF6" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#22D3EE" stop-opacity="0.22"/>
+    </linearGradient>
+    <filter id="glow" x="272" y="190" width="1056" height="114" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="28" result="blur"/>
+      <feBlend in="SourceGraphic" in2="blur" mode="screen"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" rx="32" fill="url(#bg)"/>
+  <g opacity="0.18">
+    <path d="M120 160H1480" stroke="#7C3AED"/>
+    <path d="M120 260H1480" stroke="#7C3AED"/>
+    <path d="M120 360H1480" stroke="#7C3AED"/>
+    <path d="M120 460H1480" stroke="#7C3AED"/>
+    <path d="M120 560H1480" stroke="#7C3AED"/>
+    <path d="M120 660H1480" stroke="#7C3AED"/>
+    <path d="M120 760H1480" stroke="#7C3AED"/>
+    <path d="M220 80V820" stroke="#7C3AED"/>
+    <path d="M420 80V820" stroke="#7C3AED"/>
+    <path d="M620 80V820" stroke="#7C3AED"/>
+    <path d="M820 80V820" stroke="#7C3AED"/>
+    <path d="M1020 80V820" stroke="#7C3AED"/>
+    <path d="M1220 80V820" stroke="#7C3AED"/>
+    <path d="M1420 80V820" stroke="#7C3AED"/>
+  </g>
+
+  <text x="120" y="132" fill="#A78BFA" font-size="22" font-family="system-ui, -apple-system, sans-serif" letter-spacing="2">REVOLTE</text>
+  <text x="120" y="196" fill="#F8FAFC" font-size="58" font-weight="700" font-family="system-ui, -apple-system, sans-serif">From intent to production software</text>
+  <text x="120" y="238" fill="#CBD5E1" font-size="26" font-family="system-ui, -apple-system, sans-serif">AI-native software development, release orchestration, observability, and operational control in one delivery platform.</text>
+
+  <g filter="url(#glow)">
+    <path d="M355 247H1245" stroke="url(#accent)" stroke-width="6" stroke-linecap="round"/>
+  </g>
+
+  <g font-family="system-ui, -apple-system, sans-serif">
+    <rect x="286" y="202" width="138" height="92" rx="20" fill="#121624" stroke="url(#panelStroke)"/>
+    <text x="355" y="236" text-anchor="middle" fill="#A78BFA" font-size="15" letter-spacing="1.2">INPUT</text>
+    <text x="355" y="266" text-anchor="middle" fill="#F8FAFC" font-size="26" font-weight="700">Intent</text>
+
+    <rect x="464" y="202" width="138" height="92" rx="20" fill="#121624" stroke="url(#panelStroke)"/>
+    <text x="533" y="236" text-anchor="middle" fill="#A78BFA" font-size="15" letter-spacing="1.2">BUILD</text>
+    <text x="533" y="266" text-anchor="middle" fill="#F8FAFC" font-size="26" font-weight="700">Code</text>
+
+    <rect x="642" y="202" width="138" height="92" rx="20" fill="#121624" stroke="url(#panelStroke)"/>
+    <text x="711" y="236" text-anchor="middle" fill="#A78BFA" font-size="15" letter-spacing="1.2">REVIEW</text>
+    <text x="711" y="266" text-anchor="middle" fill="#F8FAFC" font-size="26" font-weight="700">PR</text>
+
+    <rect x="820" y="202" width="138" height="92" rx="20" fill="#121624" stroke="url(#panelStroke)"/>
+    <text x="889" y="236" text-anchor="middle" fill="#A78BFA" font-size="15" letter-spacing="1.2">RELEASE</text>
+    <text x="889" y="266" text-anchor="middle" fill="#F8FAFC" font-size="26" font-weight="700">Deploy</text>
+
+    <rect x="998" y="202" width="138" height="92" rx="20" fill="#121624" stroke="url(#panelStroke)"/>
+    <text x="1067" y="236" text-anchor="middle" fill="#A78BFA" font-size="15" letter-spacing="1.2">OPERATE</text>
+    <text x="1067" y="266" text-anchor="middle" fill="#F8FAFC" font-size="26" font-weight="700">Observe</text>
+
+    <rect x="1176" y="202" width="138" height="92" rx="20" fill="#121624" stroke="url(#panelStroke)"/>
+    <text x="1245" y="236" text-anchor="middle" fill="#A78BFA" font-size="15" letter-spacing="1.2">CONTROL</text>
+    <text x="1245" y="266" text-anchor="middle" fill="#F8FAFC" font-size="26" font-weight="700">Manage</text>
+  </g>
+
+  <g font-family="system-ui, -apple-system, sans-serif">
+    <rect x="140" y="356" width="400" height="176" rx="24" fill="#0F1320" stroke="#2A3550"/>
+    <text x="174" y="405" fill="#F8FAFC" font-size="28" font-weight="700">Repository-aware generation</text>
+    <text x="174" y="444" fill="#CBD5E1" font-size="21">Revolte reads the codebase, applies local conventions,</text>
+    <text x="174" y="474" fill="#CBD5E1" font-size="21">writes implementation, adds tests, and prepares</text>
+    <text x="174" y="504" fill="#CBD5E1" font-size="21">reviewable pull requests.</text>
+
+    <rect x="600" y="356" width="400" height="176" rx="24" fill="#0F1320" stroke="#2A3550"/>
+    <text x="634" y="405" fill="#F8FAFC" font-size="28" font-weight="700">Release orchestration</text>
+    <text x="634" y="444" fill="#CBD5E1" font-size="21">Branch mapping, environment configuration, preview</text>
+    <text x="634" y="474" fill="#CBD5E1" font-size="21">deployments, deployment history, and rollback-aware</text>
+    <text x="634" y="504" fill="#CBD5E1" font-size="21">delivery workflows live in one release layer.</text>
+
+    <rect x="1060" y="356" width="400" height="176" rx="24" fill="#0F1320" stroke="#2A3550"/>
+    <text x="1094" y="405" fill="#F8FAFC" font-size="28" font-weight="700">Runtime visibility and control</text>
+    <text x="1094" y="444" fill="#CBD5E1" font-size="21">Logs, metrics, activity timelines, secrets, storage,</text>
+    <text x="1094" y="474" fill="#CBD5E1" font-size="21">cron jobs, and access control keep delivery</text>
+    <text x="1094" y="504" fill="#CBD5E1" font-size="21">observable and operationally disciplined.</text>
+  </g>
+
+  <g font-family="system-ui, -apple-system, sans-serif">
+    <text x="140" y="640" fill="#A78BFA" font-size="18" letter-spacing="1.4">CORE OUTCOMES</text>
+    <text x="140" y="694" fill="#F8FAFC" font-size="42" font-weight="700">Faster implementation. Safer releases. Clearer operations.</text>
+    <text x="140" y="742" fill="#CBD5E1" font-size="24">Built for engineering teams that want to ship with platform-level discipline without building a large internal DevOps stack first.</text>
+  </g>
+</svg>

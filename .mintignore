@@ -1,0 +1,15 @@
+src/**
+public/**
+node_modules/**
+.next/**
+package-lock.json
+package.json
+next.config.ts
+tsconfig.json
+tailwind.config.js
+postcss.config.mjs
+eslint.config.mjs
+AGENTS.md
+CLAUDE.md
+README.md
+docs/README.md

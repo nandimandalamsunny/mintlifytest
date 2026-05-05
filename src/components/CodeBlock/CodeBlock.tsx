@@ -11,13 +11,46 @@ interface CodeBlockProps {
 export default function CodeBlock({ code, language }: CodeBlockProps) {
   const [copied, setCopied] = useState(false);
 
+  const fallbackCopy = (value: string) => {
+    const textArea = document.createElement("textarea");
+    textArea.value = value;
+    textArea.setAttribute("readonly", "");
+    textArea.style.position = "fixed";
+    textArea.style.top = "0";
+    textArea.style.left = "-9999px";
+    textArea.style.opacity = "0";
+
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    textArea.setSelectionRange(0, value.length);
+
+    const copiedWithFallback = document.execCommand("copy");
+    document.body.removeChild(textArea);
+
+    if (!copiedWithFallback) {
+      throw new Error("Fallback copy failed");
+    }
+  };
+
   const handleCopy = async () => {
     try {
-      await navigator.clipboard.writeText(code);
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(code);
+      } else {
+        fallbackCopy(code);
+      }
+
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch (err) {
-      console.error("Failed to copy!", err);
+      try {
+        fallbackCopy(code);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+      } catch (fallbackError) {
+        console.error("Failed to copy!", fallbackError || err);
+      }
     }
   };
 
@@ -25,6 +58,7 @@ export default function CodeBlock({ code, language }: CodeBlockProps) {
     <div className="code-block-container group">
       {language && <div className="code-block-lang">{language}</div>}
       <button 
+        type="button"
         onClick={handleCopy}
         className="code-block-copy-btn"
         aria-label="Copy code"

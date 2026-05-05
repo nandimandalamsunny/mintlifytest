@@ -1,0 +1,145 @@
+---
+title: "Metrics"
+---
+
+> ⚠️ **Prerequisite**  
+> You need an active workspace and application.  
+> → Start with [Monitor Your System](/docs/observe/quick-start)
+
+Metrics turn application and delivery activity into measurable trends. Use them to understand whether the system is healthy and whether releases are improving or hurting performance.
+
+![Revolte insights dashboard showing infrastructure and service-level metrics](/images/docs/doc-info-2.png)
+
+## Why metrics matter
+
+Logs explain individual events. Metrics show patterns across time. They help you see whether a release changed latency, whether memory usage is climbing, whether deployments are failing more often, or whether recovery time is improving.
+
+## Dashboard coverage
+
+Revolte supports more than one dashboard view. Documentation for the broader dashboard library is expanding, and the sections below mark the next dashboard guides that will be added.
+
+<CardGroup cols={2}>
+  <Card title="Infrastructure Dashboard" icon="server">
+    Coming soon. Track CPU, memory, network throughput, and instance-level system behavior.
+  </Card>
+  <Card title="DORA Dashboard" icon="gauge">
+    Coming soon. Measure deployment frequency, lead time for changes, change failure rate, and mean time to recovery.
+  </Card>
+  <Card title="Delivery Quality Dashboard" icon="activity">
+    Coming soon. Review build success, deployment success, and release reliability trends over time.
+  </Card>
+  <Card title="Security Dashboard" icon="shield-check">
+    Coming soon. Monitor security posture, delivery risk, and release-level exposure signals.
+  </Card>
+  <Card title="Maintainability Dashboard" icon="wrench">
+    Coming soon. Understand code quality, technical debt, and long-term maintainability signals.
+  </Card>
+  <Card title="Productivity Dashboard" icon="zap">
+    Coming soon. Measure engineering throughput, execution efficiency, and team delivery trends.
+  </Card>
+</CardGroup>
+
+## System metrics
+
+System metrics can include:
+
+- CPU usage
+- Memory usage
+- Network throughput
+- Request latency
+- Error rate
+- Instance health
+
+## Delivery metrics
+
+Revolte can also surface delivery-focused metrics such as:
+
+- Deployment frequency
+- Lead time for changes
+- Change failure rate
+- Mean time to recovery
+
+These help teams balance speed and reliability.
+
+## DORA metrics
+
+DORA metrics give teams a delivery-level view of engineering performance. In Revolte, they help connect release velocity and operational reliability in the same workflow.
+
+Track these indicators over time:
+
+- Deployment frequency
+- Lead time for changes
+- Change failure rate
+- Mean time to recovery
+
+Use them to understand whether the team is shipping quickly, whether releases are stable, and whether incidents are resolved efficiently.
+
+![Revolte DORA dashboard showing deployment frequency, lead time, change failure rate, and recovery metrics](/images/docs/doc-info-4.png)
+
+![Revolte delivery quality dashboard showing build success rate and deployment success rate trends](/images/docs/doc-info-5.png)
+
+## When to use metrics
+
+Use metrics to:
+
+- Confirm a deployment is healthy
+- Detect regressions after release
+- Understand long-term performance trends
+- Compare environments
+- Decide whether to roll back, scale, or optimize
+
+## Metrics workflow
+
+<Steps>
+  <Step title="Select the application">
+    Open the application and choose the environment or service you want to inspect.
+  </Step>
+
+  <Step title="Set the time range">
+    Use a window that includes the deployment or incident timestamp.
+  </Step>
+
+  <Step title="Compare before and after">
+    Look for changes in latency, error rate, CPU, memory, or throughput around the release.
+  </Step>
+
+  <Step title="Open logs for spikes">
+    Use logs to investigate the exact cause behind abnormal metrics.
+  </Step>
+
+  <Step title="Choose an action">
+    Roll back, scale, optimize, fix configuration, or continue monitoring.
+  </Step>
+</Steps>
+
+## Reading metrics after deployment
+
+After a release, check:
+
+- Error rate
+- Latency
+- Resource usage
+- Deployment success state
+- Any trend that changed at the release timestamp
+
+## Empty states
+
+If no metrics appear yet, the application may not have received traffic or executed workloads. Generate traffic, wait for collection, then refresh the view.
+
+## Best practices
+
+- Always correlate metrics with deployment history.
+- Use logs for exact failure details.
+- Watch both performance and reliability.
+- Track delivery metrics over time, not from a single release.
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Logs" href="/docs/observe/logs">
+    Investigate the events behind metric changes.
+  </Card>
+  <Card title="Past Deployments" href="/docs/deploy/past-deployments">
+    Compare metrics against release history.
+  </Card>
+</CardGroup>
