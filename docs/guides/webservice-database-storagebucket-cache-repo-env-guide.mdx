@@ -1,0 +1,132 @@
+---
+title: "Webservice + Database + StorageBucket + Cache: Repo Preference & Environment Settings"
+---
+
+This guide explains how to configure a Webservice with Database, StorageBucket, and Cache in Revolte, covering Repo Preference and Environment Settings. Visual references are provided for each step.
+
+## Step 1: Choose a Preset
+
+Select the **Webservice + Database + StorageBucket + Cache** preset to deploy a backend service with all major managed resources.
+
+![Choose Webservice + Database + StorageBucket + Cache Preset](../../images/preset-14.png)
+
+- **Webservice + Database + StorageBucket + Cache**: Backend service with auto-managed database, object storage, and cache (e.g., APIs with persistent data, file uploads, and fast access).
+
+## Step 2: Repo Preference
+
+Configure repository interaction for your service:
+
+- **Application and branch setting**: Choose the branch and framework for your backend service.
+- **Setup Agent Workflow**: Enable to automate developer workflows.
+- **Set up pre build Workflow**: Enable code review and summarization before builds.
+- **Pipeline**: Configure code quality and test suite steps.
+- **Setup Build & deployment workflow**: Enable to automate build and deployment for your service.
+
+## Step 3: Environment Settings
+
+After repo preferences, configure environment-specific settings for your service.
+
+### 3.1 Environment Settings Overview
+
+![Environment Settings Overview](../../images/environment_settings/envsettings-14.png)
+
+In the Environment Settings panel, select the **Web service**, **Database**, **StorageBucket**, and **Cache** tabs to configure backend, database, storage, and cache details for each environment (QA, Staging, Production, Preview).
+
+#### Fields in Web Service Tab:
+- **Service Name**: Unique name for the service (e.g., api-service)
+- **Entry Point**: Main file to launch (e.g., index.js)
+- **Specifications**: Define CPU, memory, and storage requirements
+- **CPU & Memory**: Set resource limits for the service
+- **Storage Value**: Specify disk storage allocation
+- **Properties**:
+  - **Health Endpoint**: Path for health checks (e.g., /health)
+  - **Port**: Port number for the service (e.g., 8080)
+- **Pre Script**: List of scripts to run before service starts (empty by default)
+- **Load Balancer Mode**: Choose between dedicated or shared load balancer
+- **Insights**: Select metrics for CPU, swap, memory, and disk
+- **Variables**: Set environment variables (e.g., BASE_URL, DB_CONNECTION_STRING, STORAGE_BUCKET_URL, CACHE_URL)
+
+#### Fields in Database Tab:
+- **Database Type**: e.g., PostgreSQL, MySQL
+- **Database Name**: Name for your database
+- **User/Password**: Credentials for database access
+- **Connection String**: Auto-generated or custom
+- **Storage**: Disk allocation for the database
+- **Backup & Restore**: Options for data safety
+- **Variables**: Environment variables for database connection
+
+#### Fields in StorageBucket Tab:
+- **Bucket Name**: Name for your storage bucket
+- **Region**: Storage region (e.g., us-east-1)
+- **Access Policy**: Public or private access
+- **Lifecycle Rules**: Configure object expiration or transitions
+- **Storage Class**: Standard, infrequent access, etc.
+- **Variables**: Environment variables for storage access
+
+#### Fields in Cache Tab:
+- **Cache Type**: e.g., Redis, Memcached
+- **Cache Name**: Name for your cache instance
+- **Max Memory**: Maximum memory allocation for the cache
+- **Eviction Policy**: How cache evicts entries (e.g., LRU, LFU)
+- **Variables**: Environment variables for cache connection
+
+### 3.2 Example: Staging Environment
+
+![Staging Webservice + Database + StorageBucket + Cache Example](../../images/environment_settings/envsettings-14-1.png)
+
+- **Service Name**: api-service
+- **Entry Point**: index.js
+- **Specifications**: Set as needed for your workload
+- **CPU & Memory**: Configure based on expected usage
+- **Storage Value**: Allocate disk space
+- **Properties**:
+  - **Health Endpoint**: /health
+  - **Port**: 8080
+- **Pre Script**: (empty)
+- **Load Balancer Mode**: dedicated
+- **Insights**: idle, system, user, swap usage, total/free memory, disk used/total/free
+- **Variables**: BASE_URL, DB_CONNECTION_STRING, STORAGE_BUCKET_URL, CACHE_URL
+
+![Staging Database Example](../../images/environment_settings/envsettings-14-2.png)
+
+- **Database Type**: PostgreSQL
+- **Database Name**: revolte_db
+- **User/Password**: Set credentials for access
+- **Connection String**: Provided for application use
+- **Storage**: Allocate disk space for the database
+- **Backup & Restore**: Configure as needed
+- **Variables**: Set DB connection variables for your app
+
+![Staging StorageBucket Example](../../images/environment_settings/envsettings-14-3.png)
+
+- **Bucket Name**: revolte-bucket
+- **Region**: us-east-1
+- **Access Policy**: private
+- **Lifecycle Rules**: Set as needed for object management
+- **Storage Class**: Standard
+- **Variables**: Set storage access variables for your app
+
+![Staging Cache Example](../../images/environment_settings/envsettings-14-4.png)
+
+- **Cache Type**: Redis
+- **Cache Name**: revolte-cache
+- **Max Memory**: 512MB
+- **Eviction Policy**: LRU
+- **Variables**: Set cache connection variables for your app
+
+#### How to Configure Each Field
+1. Fill in all required fields for Web Service, Database, StorageBucket, and Cache tabs as described above.
+2. Repeat for each environment tab (QA, Staging, Production, Preview) as needed.
+
+### Commit Details
+
+At the bottom of the configuration panel, you will find **Commit Details**:
+- **File Name**: The YAML file to be committed (e.g., revolte.yml)
+- **Commit Message**: Enter a descriptive message for your changes.
+- **Choose Branch**: Select the branch to commit the configuration to.
+- **Commit**: Save and apply your configuration.
+- **Skip & deploy**: Skip commit and proceed to deployment (not recommended for production).
+
+> **Tip:** Always review your configuration and commit with a clear message to maintain traceability.
+
+For more details, refer to the [Guide Overview](./overview.mdx).

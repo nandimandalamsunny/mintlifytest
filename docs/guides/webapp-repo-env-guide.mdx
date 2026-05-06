@@ -1,0 +1,109 @@
+---
+title: "Webapp Service: Repo Preference & Environment Settings"
+---
+
+This guide walks through configuring the first Webapp service in Revolte, focusing on the Repo Preference and Environment Settings steps. Each section includes annotated explanations and visual references to help you set up your application confidently.
+
+## Step 1: Choose a Preset
+
+Selecting a preset defines the type of service you want to deploy. For a static web application, choose the **Webapp** preset.
+
+![Choose Webapp Preset](../../images/preset-1.png)
+
+- **Webapp**: Build & deploy static apps instantly.
+- Other options include Webservice, Cron, and combinations with databases or storage.
+
+## Step 2: Repo Preference
+
+Configure how Revolte interacts with your repository:
+
+- **Application and branch setting**: Select the branch and framework for your application.
+- **Setup Agent Workflow**: Enable to automate developer workflows.
+- **Set up pre build Workflow**: Enable code review and summarization before builds.
+- **Pipeline**: Configure code quality and test suite steps.
+- **Setup Build & deployment workflow**: Enable to automate build and deployment for your service.
+
+Refer to the screenshot above for the layout and options.
+
+
+## Step 3: Environment Settings
+
+After setting repo preferences, configure environment-specific settings for your service. Each environment tab (QA, Staging, Production, Preview) allows you to tailor configuration for different deployment targets.
+
+### 3.1 Environment Settings Overview
+
+![Environment Settings Overview](../../images/environment_settings/envsetting-1.png)
+
+In the Environment Settings panel, you will see tabs for each environment:
+
+- **Staging**: Used for pre-production testing. Changes are validated here before going live.
+- **QA**: Dedicated for quality assurance and testing by your QA team.
+- **Production**: The live environment serving end users.
+- **Preview**: Temporary environments for feature branches or pull requests.
+
+#### What’s in the Image (envsetting-1.png):
+
+1. **Environment Tabs**: Switch between QA, Staging, Production, and Preview to configure each separately.
+2. **Services List**: Shows all services configured for the selected environment.
+3. **Service Details**: For each service, you can set:
+	 - **Type**: e.g., WEB APP
+	 - **Name**: Service identifier (e.g., web-app_service)
+	 - **Entry Point**: Main file to launch (e.g., index.js)
+	 - **Properties**:
+		 - **indexPage**: Main HTML file (e.g., index.html)
+		 - **errorPage**: Error fallback (e.g., error.html)
+		 - **enableCdn**: Toggle CDN usage
+		 - **variables**: Key-value pairs for environment variables (e.g., BASE_URL)
+
+#### How to Configure:
+
+1. Select the environment tab you want to configure.
+2. For each service, fill in the required fields:
+	 - Set the type to match your service (e.g., WEB APP).
+	 - Name your service for easy identification.
+	 - Specify the entry point file.
+	 - Set properties like indexPage and errorPage.
+	 - Enable or disable CDN as needed.
+	 - Add environment variables (e.g., BASE_URL).
+3. Repeat for each environment as needed.
+
+### 3.2 Example: Staging Environment
+
+![Staging Environment Example](../../images/environment_settings/envsetting-1-1.png)
+
+This image shows a filled-out configuration for the Staging environment:
+
+- **Type**: WEB APP — Indicates this is a web application service.
+- **Name**: web-app_service — The unique name for this service.
+- **Entry Point**: index.js — The main file to start the app.
+- **Properties**:
+	- **indexPage**: index.html — The default page served.
+	- **errorPage**: error.html — The fallback page for errors.
+	- **enableCdn**: false — CDN is disabled for this environment.
+	- **variables**:
+		- **BASE_URL**: /api/v1 — The base URL for API calls in this environment.
+
+#### How to Configure Each Tab
+
+- **QA**: Use for internal testing. Set variables and properties to mimic production, but with test data or endpoints.
+- **Staging**: Closely mirror production settings. Use real data and endpoints, but restrict access to internal users.
+- **Production**: Set all variables and properties for live traffic. Enable CDN and other optimizations as needed.
+- **Preview**: Use for feature branches. Set variables to point to test endpoints or mock services.
+
+### Commit Details
+
+At the bottom of the configuration panel, you will find **Commit Details**:
+
+- **File Name**: The YAML file to be committed (e.g., revolte.yml)
+- **Commit Message**: Enter a descriptive message for your changes.
+- **Choose Branch**: Select the branch to commit the configuration to.
+- **Commit**: Save and apply your configuration.
+- **Skip & deploy**: Skip commit and proceed to deployment (not recommended for production).
+
+> **Tip:** Consistent configuration across environments helps prevent deployment issues and makes debugging easier.
+
+## Next Steps
+
+Repeat similar configuration for QA, production, and preview environments as needed. Adjust variables and properties to match your deployment requirements.
+
+For more details, refer to the [Guide Overview](./overview.mdx).

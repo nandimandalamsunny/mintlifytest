@@ -1,0 +1,132 @@
+---
+title: "Webservice + StorageBucket: Repo Preference & Environment Settings"
+---
+
+This guide explains how to configure a Webservice with an attached StorageBucket in Revolte, covering both Repo Preference and Environment Settings. Visual references are provided for each step.
+
+## Step 1: Choose a Preset
+
+Select the **Webservice + StorageBucket** preset to deploy a backend service with managed object storage.
+
+![Choose Webservice + StorageBucket Preset](../../images/preset-6.png)
+
+- **Webservice + StorageBucket**: Backend service for APIs or microservices with object storage support (e.g., file uploads, static asset storage).
+- Other options include Webapp, Cron, and combinations with databases or cache.
+
+## Step 2: Repo Preference
+
+Configure repository interaction for your webservice+storagebucket service:
+
+- **Application and branch setting**: Choose the branch and framework for your backend service.
+- **Setup Agent Workflow**: Enable to automate developer workflows.
+- **Set up pre build Workflow**: Enable code review and summarization before builds.
+- **Pipeline**: Configure code quality and test suite steps.
+- **Setup Build & deployment workflow**: Enable to automate build and deployment for your service.
+
+## Step 3: Environment Settings
+
+After repo preferences, configure environment-specific settings for your webservice+storagebucket service.
+
+### 3.1 Environment Settings Overview
+
+![Environment Settings Overview](../../images/environment_settings/envsettings-6.png)
+
+In the Environment Settings panel, select the **Web service** and **StorageBucket** tabs to configure backend and storage details for each environment (QA, Staging, Production, Preview).
+
+#### Fields in Web Service Tab:
+
+- **Service Name**: Unique name for the service (e.g., file-api-service)
+- **Entry Point**: Main file to launch (e.g., index.js)
+- **Specifications**: Define CPU, memory, and storage requirements
+- **CPU & Memory**: Set resource limits for the service
+- **Storage Value**: Specify disk storage allocation
+- **Properties**:
+  - **Health Endpoint**: Path for health checks (e.g., /health)
+  - **Port**: Port number for the service (e.g., 8080)
+- **Pre Script**: List of scripts to run before service starts (empty by default)
+- **Load Balancer Mode**: Choose between dedicated or shared load balancer
+- **Insights**:
+  - **CPU**: Select insights (idle, system, user)
+  - **Swap**: Select swap usage insights
+  - **Memory**: Select memory insights (total, free)
+  - **Disk**: Select disk insights (used, total, free)
+- **Variables**: Set environment variables (e.g., STORAGE_BUCKET_URL)
+
+#### Fields in StorageBucket Tab:
+
+- **Bucket Name**: Name for your storage bucket
+- **Region**: Storage region (e.g., us-east-1)
+- **Access Policy**: Public or private access
+- **Lifecycle Rules**: Configure object expiration or transitions
+- **Storage Class**: Standard, infrequent access, etc.
+- **Variables**: Environment variables for storage access
+
+### 3.2 Example: Staging Environment
+
+![Staging Webservice + StorageBucket Example](../../images/environment_settings/envsettings-6-1.png)
+
+This image shows a filled-out configuration for the Staging environment:
+
+- **Service Name**: file-api-service
+- **Entry Point**: index.js
+- **Specifications**: Set as needed for your workload
+- **CPU & Memory**: Configure based on expected usage
+- **Storage Value**: Allocate disk space
+- **Properties**:
+  - **Health Endpoint**: /health
+  - **Port**: 8080
+- **Pre Script**: (empty)
+- **Load Balancer Mode**: dedicated
+- **Insights**:
+  - **CPU**: idle, system, user
+  - **Swap**: swap usage
+  - **Memory**: total memory, free memory
+  - **Disk**: disk used, disk total, disk free
+- **Variables**:
+  - **STORAGE_BUCKET_URL**: https://bucket.example.com
+
+![Staging StorageBucket Example](../../images/environment_settings/envsettings-6-2.png)
+
+- **Bucket Name**: revolte-bucket
+- **Region**: us-east-1
+- **Access Policy**: private
+- **Lifecycle Rules**: Set as needed for object management
+- **Storage Class**: Standard
+- **Variables**: Set storage access variables for your app
+
+#### How to Configure Each Field
+
+1. **Service Name**: Enter a unique, descriptive name for the service.
+2. **Entry Point**: Specify the main file to start the service.
+3. **Specifications**: Define CPU, memory, and storage needs.
+4. **CPU & Memory**: Set resource limits for performance and cost control.
+5. **Storage Value**: Allocate disk space for the service.
+6. **Properties**:
+   - **Health Endpoint**: Path for health checks.
+   - **Port**: Port number the service listens on.
+7. **Pre Script**: Add any scripts to run before the service starts (optional).
+8. **Load Balancer Mode**: Choose dedicated for isolated traffic or shared for cost savings.
+9. **Insights**: Select which metrics to monitor for CPU, swap, memory, and disk.
+10. **Variables**: Add environment variables required by your service.
+11. **StorageBucket Tab**: Fill in bucket name, region, access policy, lifecycle rules, and storage class.
+
+#### How to Configure Each Tab
+
+- **QA**: Use for internal testing. Set variables and properties to mimic production, but with test data or endpoints.
+- **Staging**: Mirror production settings for final validation.
+- **Production**: Set all variables and properties for live traffic. Optimize resources and enable monitoring.
+- **Preview**: Use for feature branches. Set variables to point to test endpoints or mock services.
+
+### Commit Details
+
+At the bottom of the configuration panel, you will find **Commit Details**:
+
+- **File Name**: The YAML file to be committed (e.g., revolte.yml)
+- **Commit Message**: Enter a descriptive message for your changes.
+- **Choose Branch**: Select the branch to commit the configuration to.
+- **Commit**: Save and apply your configuration.
+- **Skip & deploy**: Skip commit and proceed to deployment (not recommended for production).
+
+> **Tip:** Always review your configuration and commit with a clear message to maintain traceability.
+
+For more details, refer to the [Guide Overview](./overview.mdx).

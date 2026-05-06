@@ -1,0 +1,97 @@
+---
+title: "Webservice + Cache: Repo Preference & Environment Settings"
+---
+
+This guide explains how to configure a Webservice with an attached Cache in Revolte, covering both Repo Preference and Environment Settings. Visual references are provided for each step.
+
+## Step 1: Choose a Preset
+
+Select the **Webservice + Cache** preset to deploy a backend service with managed caching for faster responses.
+
+![Choose Webservice + Cache Preset](../../images/preset-8.png)
+
+- **Webservice + Cache**: Backend service with caching for faster responses (e.g., APIs with Redis or Memcached).
+- Other options include Webapp, Cron, and combinations with databases or storage.
+
+## Step 2: Repo Preference
+
+Configure repository interaction for your webservice+cache service:
+
+- **Application and branch setting**: Choose the branch and framework for your backend service.
+- **Setup Agent Workflow**: Enable to automate developer workflows.
+- **Set up pre build Workflow**: Enable code review and summarization before builds.
+- **Pipeline**: Configure code quality and test suite steps.
+- **Setup Build & deployment workflow**: Enable to automate build and deployment for your service.
+
+## Step 3: Environment Settings
+
+After repo preferences, configure environment-specific settings for your webservice+cache service.
+
+### 3.1 Environment Settings Overview
+
+![Environment Settings Overview](../../images/environment_settings/envsettings-8.png)
+
+In the Environment Settings panel, select the **Web service** and **Cache** tabs to configure backend and cache details for each environment (QA, Staging, Production, Preview).
+
+#### Fields in Web Service Tab:
+- **Service Name**: Unique name for the service (e.g., cache-api-service)
+- **Entry Point**: Main file to launch (e.g., index.js)
+- **Specifications**: Define CPU, memory, and storage requirements
+- **CPU & Memory**: Set resource limits for the service
+- **Storage Value**: Specify disk storage allocation
+- **Properties**:
+  - **Health Endpoint**: Path for health checks (e.g., /health)
+  - **Port**: Port number for the service (e.g., 8080)
+- **Pre Script**: List of scripts to run before service starts (empty by default)
+- **Load Balancer Mode**: Choose between dedicated or shared load balancer
+- **Insights**: Select metrics for CPU, swap, memory, and disk
+- **Variables**: Set environment variables (e.g., CACHE_URL)
+
+#### Fields in Cache Tab:
+- **Cache Type**: e.g., Redis, Memcached
+- **Cache Name**: Name for your cache instance
+- **Max Memory**: Maximum memory allocation for the cache
+- **Eviction Policy**: How cache evicts entries (e.g., LRU, LFU)
+- **Variables**: Environment variables for cache connection
+
+### 3.2 Example: Staging Environment
+
+![Staging Webservice + Cache Example](../../images/environment_settings/envsettings-8-1.png)
+
+- **Service Name**: cache-api-service
+- **Entry Point**: index.js
+- **Specifications**: Set as needed for your workload
+- **CPU & Memory**: Configure based on expected usage
+- **Storage Value**: Allocate disk space
+- **Properties**:
+  - **Health Endpoint**: /health
+  - **Port**: 8080
+- **Pre Script**: (empty)
+- **Load Balancer Mode**: dedicated
+- **Insights**: idle, system, user, swap usage, total/free memory, disk used/total/free
+- **Variables**: CACHE_URL
+
+![Staging Cache Example](../../images/environment_settings/envsettings-8-2.png)
+
+- **Cache Type**: Redis
+- **Cache Name**: revolte-cache
+- **Max Memory**: 512MB
+- **Eviction Policy**: LRU
+- **Variables**: Set cache connection variables for your app
+
+#### How to Configure Each Field
+1. Fill in all required fields for Web Service and Cache tabs as described above.
+2. Repeat for each environment tab (QA, Staging, Production, Preview) as needed.
+
+### Commit Details
+
+At the bottom of the configuration panel, you will find **Commit Details**:
+- **File Name**: The YAML file to be committed (e.g., revolte.yml)
+- **Commit Message**: Enter a descriptive message for your changes.
+- **Choose Branch**: Select the branch to commit the configuration to.
+- **Commit**: Save and apply your configuration.
+- **Skip & deploy**: Skip commit and proceed to deployment (not recommended for production).
+
+> **Tip:** Always review your configuration and commit with a clear message to maintain traceability.
+
+For more details, refer to the [Guide Overview](./overview.mdx).
