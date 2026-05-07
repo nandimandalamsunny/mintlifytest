@@ -13,19 +13,19 @@ AI Agents in Revolte are not standalone chatbots; they are workflow-aware orches
 
 These agents collaborate through shared context and state, moving a change from a raw concept to a monitored production release:
 
-*   **Requirement Analysis**: Refining ambiguous prompts into actionable implementation plans.
-*   **Validation**: Running semantic checks against repository conventions and style guides.
-*   **Deployment Reasoning**: Assessing environment health and deployment readiness.
-*   **Operational Control**: Analyzing runtime logs to detect anomalies and suggest implementation-level fixes.
+- **Requirement Analysis**: Refining ambiguous prompts into actionable implementation plans.
+- **Validation**: Running semantic checks against repository conventions and style guides.
+- **Deployment Reasoning**: Assessing environment health and deployment readiness.
+- **Operational Control**: Analyzing runtime logs to detect anomalies and suggest implementation-level fixes.
 
 ## The Case for Specialization
 
 Modern software engineering requires a high degree of precision across disconnected domains. A generalized model lacks the operational depth needed for enterprise governance. Revolte's multi-agent architecture improves delivery outcomes through:
 
-*   **Accuracy**: Agents operate with domain-specific prompts and tools, reducing hallucinations and increasing implementation precision.
-*   **Reliability**: Specialized validation agents act as quality gates, ensuring that generated code is tested and compliant before review.
-*   **Governance**: Every agent action is traceable, allowing teams to audit the reasoning behind implementation choices and deployment decisions.
-*   **Traceability**: By separating intent from implementation, Revolte provides a clear lineage of how a requirement became a pull request.
+- **Accuracy**: Agents operate with domain-specific prompts and tools, reducing hallucinations and increasing implementation precision.
+- **Reliability**: Specialized validation agents act as quality gates, ensuring that generated code is tested and compliant before review.
+- **Governance**: Every agent action is traceable, allowing teams to audit the reasoning behind implementation choices and deployment decisions.
+- **Traceability**: By separating intent from implementation, Revolte provides a clear lineage of how a requirement became a pull request.
 
 ## Active Agents
 
@@ -34,18 +34,18 @@ The following specialized systems are currently integrated into the Revolte orch
 ### Business Analyst (BA) Agent
 The BA Agent bridges the gap between natural-language intent and technical implementation. It is the entry point for every build workflow.
 
-*   **Responsibilities**: Intent refinement, implementation planning, and acceptance criteria preparation.
-*   **Workflow Fit**: Operates during the initial **Intent → Build** phase to ensure engineering work is grounded in clear requirements.
+- **Responsibilities**: Intent refinement, implementation planning, and acceptance criteria preparation.
+- **Workflow Fit**: Operates during the initial **Intent -> Build** phase so engineering work starts from clear requirements.
 
 ### Code Review Agent
 The Code Review Agent acts as an automated peer reviewer, enforcing quality and consistency across the codebase.
 
-*   **Responsibilities**: Semantic code analysis, repository convention validation, and architectural verification.
-*   **Workflow Fit**: Operates during the **Review** phase, preparing implementation summaries and identifying potential logic errors before human review.
+- **Responsibilities**: Semantic code analysis, repository convention validation, and architectural verification.
+- **Workflow Fit**: Operates during the **Review** phase, preparing implementation summaries and identifying potential logic errors before human review.
 
 ## Multi-Agent Orchestration Lifecycle
 
-Revolte manages the lifecycle of a change through a coordinated handoff between specialized systems. This orchestration ensures that no change is implemented without proper planning or delivered without rigorous validation.
+Revolte manages the lifecycle of a change through a coordinated handoff between specialized systems. This orchestration keeps planning, implementation, review, deployment, and observation connected.
 
 ```mermaid
 graph TD
@@ -73,7 +73,7 @@ Revolte is evolving toward a fully autonomous engineering system. We are expandi
     **Infrastructure Reasoning** | Owns infrastructure-as-code generation, deployment optimization, and environment health validation.
   </Card>
   <Card title="Security Agent" icon="shield-check">
-    **Compliance & Security** | Performs continuous vulnerability analysis, secure deployment checks, and ensures changes adhere to organizational security policies.
+    **Compliance & Security** | Performs vulnerability analysis, secure deployment checks, and policy-focused review.
   </Card>
   <Card title="Documentation Agent" icon="book-sparkles">
     **Technical Documentation** | Automatically maintains API references, internal guides, and workflow documentation in sync with repository changes.
@@ -86,9 +86,9 @@ Traditional engineering workflows rely on disconnected tooling and manual contex
 
 Revolte differentiates itself by **distributing engineering reasoning** across coordinated agents. This architecture provides:
 
-*   **Scalability**: Automate the repetitive parts of the review and build cycle without sacrificing quality.
-*   **Governance**: Enforce organizational standards across every commit and deployment automatically.
-*   **Delivery Confidence**: Ensure that every pull request has been semantically reviewed and validated against your specific repository context.
+- **Scalability**: Automate the repetitive parts of the review and build cycle without sacrificing quality.
+- **Governance**: Enforce organizational standards across every commit and deployment automatically.
+- **Delivery Confidence**: Give every pull request semantic review and validation against your repository context.
 
 ## Next Steps
 

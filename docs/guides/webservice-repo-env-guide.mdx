@@ -1,35 +1,45 @@
 ---
-title: "Webservice: Repo Preference & Environment Settings"
+title: "Web Service: Repo Preference & Environment Settings"
+description: "Configure repository preferences and environment settings for a web service."
 ---
 
-This guide explains how to configure a Webservice as your next service in Revolte, covering both Repo Preference and Environment Settings. Visual references are provided for each step.
+This guide explains how to configure a Web service as your next service in Revolte, covering both Repo Preference and Environment Settings. Visual references are provided for each step.
+
+## Prerequisites
+
+Before you configure this preset, make sure you have:
+
+- A Revolte workspace with an application created
+- Repository access for the target application
+- Permission to edit YAML configuration and commit changes
+- Environment-specific values for QA, staging, production, and preview
 
 ## Step 1: Choose a Preset
 
-Select the **Webservice** preset to deploy a backend service for APIs or microservices.
+Select the **Web service** preset to deploy a backend service for APIs or microservices.
 
-![Choose Webservice Preset](../../images/preset-2.png)
+![Choose Web Service Preset](/images/guides/repo_preference/preset-2.png)
 
-- **Webservice**: Backend service for APIs or microservices.
-- Other options include Webapp, Cron, and combinations with databases or storage.
+- **Web service**: Backend service for APIs or microservices.
+- Other options include Web app, Cron, and combinations with databases or storage.
 
 ## Step 2: Repo Preference
 
-Configure repository interaction for your webservice:
+Configure repository interaction for your web service:
 
 - **Application and branch setting**: Choose the branch and framework for your backend service.
-- **Setup Agent Workflow**: Enable to automate developer workflows.
-- **Set up pre build Workflow**: Enable code review and summarization before builds.
+- **Agent workflow**: Enable to automate developer workflows.
+- **Pre-build workflow**: Enable code review and summarization before builds.
 - **Pipeline**: Configure code quality and test suite steps.
-- **Setup Build & deployment workflow**: Enable to automate build and deployment for your service.
+- **Build and deployment workflow**: Enable to automate build and deployment for your service.
 
 ## Step 3: Environment Settings
 
-After repo preferences, configure environment-specific settings for your webservice.
+After repo preferences, configure environment-specific settings for your web service.
 
 ### 3.1 Environment Settings Overview
 
-![Environment Settings Overview](../../images/environment_settings/envsettings-2.png)
+![Environment Settings Overview](/images/guides/environment_settings/envsettings-2.png)
 
 In the Environment Settings panel, select the **Web service** tab to configure backend service details for each environment (QA, Staging, Production, Preview).
 
@@ -54,7 +64,7 @@ In the Environment Settings panel, select the **Web service** tab to configure b
 
 ### 3.2 Example: Staging Environment
 
-![Staging Webservice Example](../../images/environment_settings/envsettings-2-1.png)
+![Staging Web Service Example](/images/guides/environment_settings/envsettings-2-1.png)
 
 This image shows a filled-out configuration for the Staging environment:
 
@@ -110,4 +120,4 @@ At the bottom of the configuration panel, you will find **Commit Details**:
 
 > **Tip:** Always review your configuration and commit with a clear message to maintain traceability.
 
-For more details, refer to the [Guide Overview](./overview.mdx).
+For more details, refer to the [configuration guide overview](/docs/guides/overview).

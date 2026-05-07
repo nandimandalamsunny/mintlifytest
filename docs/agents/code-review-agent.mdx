@@ -1,10 +1,10 @@
 ---
 title: "Code Review Agent"
 sidebarTitle: "Code Review Agent"
-description: "The Code Review Agent ensures that every generated change is semantically sound and adheres to your team's specific coding standards."
+description: "Use the Code Review Agent to review generated changes against repository behavior, conventions, and team standards."
 ---
 
-The **Code Review Agent** acts as an automated peer reviewer. While the [BA Agent](/docs/agents/ba-agent) focuses on *what* should be built, the Code Review Agent focuses on *how* it was built—ensuring that the final code is clean, efficient, and consistent with the rest of your repository.
+The **Code Review Agent** acts as an automated peer reviewer. While the [BA Agent](/docs/agents/ba-agent) focuses on *what* should be built, the Code Review Agent focuses on *how* it was built, checking whether the final code is clean, efficient, and consistent with the rest of your repository.
 
 ## Core Responsibilities
 
@@ -18,7 +18,7 @@ The Code Review Agent is responsible for the final polish and validation of a ge
     Learns and applies your repository's specific coding patterns, naming conventions, and architectural preferences.
   </Card>
   <Card title="PR Summarization" icon="list">
-    Generates the [Code Review and Summarisation](/docs/build/pre-build-workflows#code-review-and-summarisation) found in your pull requests, explaining the implementation details in plain language.
+    Generates the [Code Review and Summarization](/docs/build/pre-build-workflows#code-review-and-summarization) found in your pull requests, explaining the implementation details in plain language.
   </Card>
   <Card title="Fix Suggestions" icon="wrench">
     Identifies areas for improvement and leaves inline suggestions directly on the pull request for human reviewers to consider.
@@ -27,7 +27,7 @@ The Code Review Agent is responsible for the final polish and validation of a ge
 
 ## Integration with Pre-Build Workflows
 
-The Code Review Agent's behavior is directly controlled by your **[Pre-Build Workflows](/docs/build/pre-build-workflows)**. Through the YML configuration, you can decide:
+The Code Review Agent's behavior is directly controlled by your **[Pre-Build Workflows](/docs/build/pre-build-workflows)**. Through the YAML configuration, you can decide:
 
 - **Comment Style**: Choose between balanced, concise, or verbose reviews.
 - **File Exclusions**: Skip automated reviews for specific directories or file types.
@@ -36,7 +36,7 @@ The Code Review Agent's behavior is directly controlled by your **[Pre-Build Wor
 ## Why use the Code Review Agent?
 
 - **Reduced Review Time**: Human reviewers can focus on high-level architecture rather than catching simple style or logic errors.
-- **Consistency**: Ensures that AI-generated code looks and feels like it was written by your own team.
+- **Consistency**: Helps generated code follow the patterns your team already uses.
 - **Traceability**: Provides a clear explanation of *why* certain implementation choices were made.
 
 <Note title="Collaborative Review">

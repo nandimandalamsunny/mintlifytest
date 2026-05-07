@@ -64,9 +64,11 @@
                 "group": "Build Applications",
                 "expanded": false,
                 "pages": [
+                  "docs/build/overview",
                   "docs/build/quick-start",
                   "docs/build/review-output",
-                  "docs/build/pipeline",
+                  "docs/build/code-generation-flow",
+                  "docs/build/environment-configuration",
                   {
                     "group": "Advanced Configuration",
                     "expanded": false,
@@ -83,6 +85,7 @@
                 "group": "Deploy & Release",
                 "expanded": false,
                 "pages": [
+                  "docs/deploy/overview",
                   "docs/deploy/quick-start",
                   "docs/deploy/environments",
                   {
@@ -101,6 +104,7 @@
                 "group": "Monitor & Debug",
                 "expanded": false,
                 "pages": [
+                  "docs/observe/overview",
                   "docs/observe/quick-start",
                   "docs/observe/logs",
                   "docs/observe/metrics",
@@ -110,7 +114,7 @@
               {
                 "group": "Access & Control",
                 "expanded": false,
-                "pages": ["docs/control/users-roles", "docs/control/services"]
+                "pages": ["docs/control/overview", "docs/control/users-roles", "docs/control/services"]
               },
               {
                 "group": "Platform Capabilities",
@@ -171,6 +175,43 @@
         ]
       },
       {
+        "tab": "Guides",
+        "groups": [
+          {
+            "group": "Configuration Guides",
+            "pages": [
+              "docs/guides/overview",
+              {
+                "group": "Web Services",
+                "expanded": false,
+                "pages": [
+                  "docs/guides/webapp-repo-env-guide",
+                  "docs/guides/webservice-repo-env-guide",
+                  "docs/guides/webservice-cache-repo-env-guide",
+                  "docs/guides/webservice-database-cache-repo-env-guide",
+                  "docs/guides/webservice-storagebucket-repo-env-guide",
+                  "docs/guides/webservice-storagebucket-cache-repo-env-guide",
+                  "docs/guides/webservice-database-storagebucket-repo-env-guide",
+                  "docs/guides/webservice-database-storagebucket-cache-repo-env-guide"
+                ]
+              },
+              {
+                "group": "Cron Services",
+                "expanded": false,
+                "pages": [
+                  "docs/guides/cron-repo-env-guide",
+                  "docs/guides/cron-cache-repo-env-guide",
+                  "docs/guides/cron-database-repo-env-guide",
+                  "docs/guides/cron-database-cache-repo-env-guide",
+                  "docs/guides/cron-storagebucket-cache-repo-env-guide",
+                  "docs/guides/cron-database-storagebucket-cache-repo-env-guide"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
         "tab": "Agents",
         "groups": [
           {
@@ -223,29 +264,22 @@
             "item": "Changelog",
             "icon": "list-timeline",
             "description": "Latest updates and releases",
-            "href": "https://mintlify.com/docs/changelog"
+            "href": "/docs/changelog"
           },
           {
-            "item": "Blog",
-            "icon": "newspaper",
-            "description": "Articles and tutorials",
-            "href": "https://mintlify.com/blog"
+            "item": "Configuration Guides",
+            "icon": "settings",
+            "description": "Service preset setup walkthroughs",
+            "href": "/docs/guides/overview"
           },
           {
-            "item": "Careers",
-            "icon": "briefcase",
-            "description": "Join our growing team",
-            "href": "https://mintlify.com/careers"
+            "item": "Troubleshooting",
+            "icon": "circle-help",
+            "description": "Common issues and debugging paths",
+            "href": "/docs/troubleshooting/common-issues"
           }
         ]
       }
     ]
-  },
-  "footer": {
-    "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
-    }
   }
 }

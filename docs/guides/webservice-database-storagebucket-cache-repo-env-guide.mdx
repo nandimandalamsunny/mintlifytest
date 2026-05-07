@@ -1,26 +1,36 @@
 ---
-title: "Webservice + Database + StorageBucket + Cache: Repo Preference & Environment Settings"
+title: "Web Service + Database + Storage Bucket + Cache: Repo Preference & Environment Settings"
+description: "Configure repository preferences and environment settings for a web service with database, storage, and cache."
 ---
 
-This guide explains how to configure a Webservice with Database, StorageBucket, and Cache in Revolte, covering Repo Preference and Environment Settings. Visual references are provided for each step.
+This guide explains how to configure a Web service with Database, Storage Bucket, and Cache in Revolte, covering Repo Preference and Environment Settings. Visual references are provided for each step.
+
+## Prerequisites
+
+Before you configure this preset, make sure you have:
+
+- A Revolte workspace with an application created
+- Repository access for the target application
+- Permission to edit YAML configuration and commit changes
+- Environment-specific values for QA, staging, production, and preview
 
 ## Step 1: Choose a Preset
 
-Select the **Webservice + Database + StorageBucket + Cache** preset to deploy a backend service with all major managed resources.
+Select the **Web service + Database + Storage Bucket + Cache** preset to deploy a backend service with all major managed resources.
 
-![Choose Webservice + Database + StorageBucket + Cache Preset](../../images/preset-14.png)
+![Choose Web Service + Database + Storage Bucket + Cache Preset](/images/guides/repo_preference/preset-14.png)
 
-- **Webservice + Database + StorageBucket + Cache**: Backend service with auto-managed database, object storage, and cache (e.g., APIs with persistent data, file uploads, and fast access).
+- **Web service + Database + Storage Bucket + Cache**: Backend service with auto-managed database, object storage, and cache (e.g., APIs with persistent data, file uploads, and fast access).
 
 ## Step 2: Repo Preference
 
 Configure repository interaction for your service:
 
 - **Application and branch setting**: Choose the branch and framework for your backend service.
-- **Setup Agent Workflow**: Enable to automate developer workflows.
-- **Set up pre build Workflow**: Enable code review and summarization before builds.
+- **Agent workflow**: Enable to automate developer workflows.
+- **Pre-build workflow**: Enable code review and summarization before builds.
 - **Pipeline**: Configure code quality and test suite steps.
-- **Setup Build & deployment workflow**: Enable to automate build and deployment for your service.
+- **Build and deployment workflow**: Enable to automate build and deployment for your service.
 
 ## Step 3: Environment Settings
 
@@ -28,9 +38,9 @@ After repo preferences, configure environment-specific settings for your service
 
 ### 3.1 Environment Settings Overview
 
-![Environment Settings Overview](../../images/environment_settings/envsettings-14.png)
+![Environment Settings Overview](/images/guides/environment_settings/envsettings-14.png)
 
-In the Environment Settings panel, select the **Web service**, **Database**, **StorageBucket**, and **Cache** tabs to configure backend, database, storage, and cache details for each environment (QA, Staging, Production, Preview).
+In the Environment Settings panel, select the **Web service**, **Database**, **Storage Bucket**, and **Cache** tabs to configure backend, database, storage, and cache details for each environment (QA, Staging, Production, Preview).
 
 #### Fields in Web Service Tab:
 - **Service Name**: Unique name for the service (e.g., api-service)
@@ -55,7 +65,7 @@ In the Environment Settings panel, select the **Web service**, **Database**, **S
 - **Backup & Restore**: Options for data safety
 - **Variables**: Environment variables for database connection
 
-#### Fields in StorageBucket Tab:
+#### Fields in Storage Bucket Tab:
 - **Bucket Name**: Name for your storage bucket
 - **Region**: Storage region (e.g., us-east-1)
 - **Access Policy**: Public or private access
@@ -72,7 +82,7 @@ In the Environment Settings panel, select the **Web service**, **Database**, **S
 
 ### 3.2 Example: Staging Environment
 
-![Staging Webservice + Database + StorageBucket + Cache Example](../../images/environment_settings/envsettings-14-1.png)
+![Staging Web Service + Database + Storage Bucket + Cache Example](/images/guides/environment_settings/envsettings-14-1.png)
 
 - **Service Name**: api-service
 - **Entry Point**: index.js
@@ -87,7 +97,7 @@ In the Environment Settings panel, select the **Web service**, **Database**, **S
 - **Insights**: idle, system, user, swap usage, total/free memory, disk used/total/free
 - **Variables**: BASE_URL, DB_CONNECTION_STRING, STORAGE_BUCKET_URL, CACHE_URL
 
-![Staging Database Example](../../images/environment_settings/envsettings-14-2.png)
+![Staging Database Example](/images/guides/environment_settings/envsettings-14-2.png)
 
 - **Database Type**: PostgreSQL
 - **Database Name**: revolte_db
@@ -97,7 +107,7 @@ In the Environment Settings panel, select the **Web service**, **Database**, **S
 - **Backup & Restore**: Configure as needed
 - **Variables**: Set DB connection variables for your app
 
-![Staging StorageBucket Example](../../images/environment_settings/envsettings-14-3.png)
+![Staging Storage Bucket Example](/images/guides/environment_settings/envsettings-14-3.png)
 
 - **Bucket Name**: revolte-bucket
 - **Region**: us-east-1
@@ -106,7 +116,7 @@ In the Environment Settings panel, select the **Web service**, **Database**, **S
 - **Storage Class**: Standard
 - **Variables**: Set storage access variables for your app
 
-![Staging Cache Example](../../images/environment_settings/envsettings-14-4.png)
+![Staging Cache Example](/images/guides/environment_settings/envsettings-14-4.png)
 
 - **Cache Type**: Redis
 - **Cache Name**: revolte-cache
@@ -115,7 +125,7 @@ In the Environment Settings panel, select the **Web service**, **Database**, **S
 - **Variables**: Set cache connection variables for your app
 
 #### How to Configure Each Field
-1. Fill in all required fields for Web Service, Database, StorageBucket, and Cache tabs as described above.
+1. Fill in all required fields for Web Service, Database, Storage Bucket, and Cache tabs as described above.
 2. Repeat for each environment tab (QA, Staging, Production, Preview) as needed.
 
 ### Commit Details
@@ -129,4 +139,4 @@ At the bottom of the configuration panel, you will find **Commit Details**:
 
 > **Tip:** Always review your configuration and commit with a clear message to maintain traceability.
 
-For more details, refer to the [Guide Overview](./overview.mdx).
+For more details, refer to the [configuration guide overview](/docs/guides/overview).

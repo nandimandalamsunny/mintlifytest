@@ -3,11 +3,28 @@ title: "Validation Pipeline"
 description: "Configure automated code quality and test checks that run before a generated change is finalized."
 ---
 
-The **Pipeline** section in the YML Configuration allows you to enforce quality standards on every generated commit. This ensures that any code produced by Revolte passes your repository's linting rules and test suite before it reaches the review stage.
+The **Pipeline** section in the YAML Configuration lets you define quality standards for generated commits. Revolte runs the selected linting and test checks before the change is marked ready for review.
 
 <Note title="Note on Terminology">
   In this context, **Pipeline** refers to pre-build validation checks, not the CI/CD deployment pipeline that releases your application to production.
 </Note>
+
+<Frame caption="Configure automated Code Quality and Test Suite checks in the Pipeline section.">
+  <img src="/images/pipeline.png" alt="Validation pipeline configuration screen" width="600" />
+</Frame>
+
+<Important title="Branch-specific workflows">
+  Validation pipelines and preview environments can be configured independently for different branches. This allows teams to run focused checks on feature branches while maintaining full test coverage for production and staging targets.
+</Important>
+
+## Prerequisites
+
+Before configuring validation checks, make sure you have:
+
+- A connected Revolte application
+- Permission to edit the application's YAML configuration
+- The exact lint, format, build, or test commands your repository uses
+- Enough confidence that the selected commands can run reliably in the repository context
 
 ## Code Quality (Linting)
 
@@ -24,13 +41,18 @@ Use the **Code Quality** settings to decide whether Revolte should run lint or s
     Skip generated assets, lockfiles, or snapshots that should not be subjected to lint checks.
   </Card>
   <Card title="Clean Commits" icon="target">
-     catch formatting issues automatically so your Git history stays clean.
+    Catch formatting issues automatically so your Git history stays clean.
   </Card>
 </CardGroup>
 
 ## Test Suite
 
 The **Test Suite** configuration allows you to run your existing repository tests against generated changes. Revolte will report the results as part of the implementation context.
+
+<Frame caption="Review test execution results and lint failures within the implementation context.">
+  <img src="/images/test-suite.png" alt="Test suite results and lint failures screen" width="600" />
+</Frame>
+
 
 ### Configuration
 
@@ -52,7 +74,16 @@ You can use any command your team trusts, such as:
 
 ## Configuration Workflow
 
-1. Go to **Projects** and select your application.
-2. Open **YML Configuration**.
-3. Select the **Repo Preference** tab.
-4. Navigate to the **Pipeline** section to enable Code Quality and Test Suite checks.
+1. From the dashboard, select **Projects** and open the specific project details.
+2. Select the application you want to configure.
+3. Open **YAML Configuration** from the application surface.
+4. Select the **Repo Preference** tab and navigate to the **Pipeline** section.
+5. Enable and configure Code Quality (Linting) and Test Suite checks.
+
+## Handling Configuration Errors
+
+If your YAML configuration contains errors, Revolte will highlight them directly in the dashboard. Use these logs to identify missing properties, incorrect indentation, or invalid values before saving your changes.
+
+<Frame caption="Review YAML configuration errors and line-level feedback in the dashboard.">
+  <img src="/images/errors.png" alt="YAML configuration error logs screen" width="600" />
+</Frame>

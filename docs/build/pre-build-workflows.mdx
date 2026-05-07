@@ -3,11 +3,20 @@ title: "Pre-Build Workflows"
 description: "Configure how Revolte reviews, summarizes, and prepares generated changes before they reach human reviewers."
 ---
 
-Pre-build workflows allow Revolte to perform automated review passes and summarization on generated changes. This ensures that every pull request is high-quality, well-documented, and follows your team's conventions before a human ever looks at it.
+Pre-build workflows let Revolte perform automated review passes and summarize generated changes before they reach human reviewers. Use them to keep pull request descriptions consistent and surface obvious issues early.
 
-## Open YML Configuration
+## Prerequisites
 
-To configure these workflows, select your project, open the application, and navigate to **YML Configuration**. Use the **Repo Preference** tab to manage pre-build behavior.
+Before configuring pre-build workflows, make sure you have:
+
+- A Revolte workspace with an application connected
+- Permission to edit the application's YAML configuration
+- Repository access for the application you want Revolte to review
+- Agreement on the pull request summary and review style your team wants
+
+## Open YAML Configuration
+
+To configure these workflows, select your project, open the application, and navigate to **YAML Configuration**. Use the **Repo Preference** tab to manage pre-build behavior.
 
 <Steps>
   <Step title="Select the project">
@@ -18,14 +27,18 @@ To configure these workflows, select your project, open the application, and nav
     Choose the application repository you want Revolte to configure.
   </Step>
 
-  <Step title="Open YML Configuration">
-    Select **YML Configuration**, then use **Repo Preference** to configure repository and pre-build behavior.
+  <Step title="Open YAML Configuration">
+    Select **YAML Configuration**, then use **Repo Preference** to configure repository and pre-build behavior.
   </Step>
 </Steps>
 
-## Code Review and Summarisation
+<Frame caption="Interface for managing automated review, summarization, and repository preferences.">
+  <img src="/images/pre-build-workflow.png" alt="Pre-build workflow configuration screen" width="600" />
+</Frame>
 
-The **Code Review and Summarisation** section defines how Revolte should comment on and document generated changes.
+## Code Review and Summarization
+
+The **Code Review and Summarization** section defines how Revolte should comment on and document generated changes.
 
 <CardGroup cols={2}>
   <Card title="Summarize Intent" icon="list">
@@ -45,10 +58,14 @@ The **Code Review and Summarisation** section defines how Revolte should comment
 ## When to Use
 
 Use pre-build workflows when:
-- You want to ensure consistent pull request descriptions across the team.
+
+- You want consistent pull request descriptions across the team.
 - You have a complex codebase where an initial automated review pass helps catch edge cases.
 - You want to reduce the "review fatigue" of human developers by catching simple issues early.
 
 <Note title="Manual Review Still Applies">
   While Revolte performs an automated pass, these workflows are designed to *assist* your team. Human review remains the final authority before merging code into production.
+</Note>
+<Note title="Configuration Validation">
+  If you encounter errors while editing your YAML, see [Handling Configuration Errors](/docs/build/validation-pipeline#handling-configuration-errors) for how to use the built-in error logs.
 </Note>

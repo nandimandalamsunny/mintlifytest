@@ -1,35 +1,45 @@
 ---
 title: "Cron + Database: Repo Preference & Environment Settings"
+description: "Configure repository preferences and environment settings for a cron service with a database."
 ---
 
 This guide explains how to configure a Cron service with an attached Database in Revolte, covering both Repo Preference and Environment Settings. Visual references are provided for each step.
+
+## Prerequisites
+
+Before you configure this preset, make sure you have:
+
+- A Revolte workspace with an application created
+- Repository access for the target application
+- Permission to edit YAML configuration and commit changes
+- Environment-specific values for QA, staging, production, and preview
 
 ## Step 1: Choose a Preset
 
 Select the **Cron + Database** preset to automate scheduled tasks with database read/write support.
 
-![Choose Cron + Database Preset](../../images/preset-5.png)
+![Choose Cron + Database Preset](/images/guides/repo_preference/preset-5.png)
 
 - **Cron + Database**: Schedule tasks with database read/write support (e.g., periodic data syncs, reporting jobs).
-- Other options include Webapp, Webservice, and combinations with storage or cache.
+- Other options include Web app, Web service, and combinations with storage or cache.
 
 ## Step 2: Repo Preference
 
-Configure repository interaction for your cron+database service:
+Configure repository interaction for your cron service with a database:
 
 - **Application and branch setting**: Choose the branch and framework for your scheduled job.
-- **Setup Agent Workflow**: Enable to automate developer workflows.
-- **Set up pre build Workflow**: Enable code review and summarization before builds.
+- **Agent workflow**: Enable to automate developer workflows.
+- **Pre-build workflow**: Enable code review and summarization before builds.
 - **Pipeline**: Configure code quality and test suite steps.
-- **Setup Build & deployment workflow**: Enable to automate build and deployment for your service.
+- **Build and deployment workflow**: Enable to automate build and deployment for your service.
 
 ## Step 3: Environment Settings
 
-After repo preferences, configure environment-specific settings for your cron+database service.
+After repo preferences, configure environment-specific settings for your cron service with a database.
 
 ### 3.1 Environment Settings Overview
 
-![Environment Settings Overview](../../images/environment_settings/envsettings-5.png)
+![Environment Settings Overview](/images/guides/environment_settings/envsettings-5.png)
 
 In the Environment Settings panel, select the **Cron** and **Database** tabs to configure scheduled job and database details for each environment (QA, Staging, Production, Preview).
 
@@ -59,7 +69,7 @@ In the Environment Settings panel, select the **Cron** and **Database** tabs to 
 
 ### 3.2 Example: Staging Environment
 
-![Staging Cron + Database Example](../../images/environment_settings/envsettings-5-1.png)
+![Staging Cron + Database Example](/images/guides/environment_settings/envsettings-5-1.png)
 
 This image shows a filled-out configuration for the Staging environment:
 
@@ -74,9 +84,9 @@ This image shows a filled-out configuration for the Staging environment:
   - **Retries**: 3
 - **Pre Script**: (empty)
 - **Variables**:
-  - **DATA_SOURCE_URL**: https://api.example.com/data
+  - **DATA_SOURCE_URL**: `<data-source-url>`
 
-![Staging Database Example](../../images/environment_settings/envsettings-5-2.png)
+![Staging Database Example](/images/guides/environment_settings/envsettings-5-2.png)
 
 - **Database Type**: PostgreSQL
 - **Database Name**: revolte_db
@@ -120,4 +130,4 @@ At the bottom of the configuration panel, you will find **Commit Details**:
 
 > **Tip:** Always review your configuration and commit with a clear message to maintain traceability.
 
-For more details, refer to the [Guide Overview](./overview.mdx).
+For more details, refer to the [configuration guide overview](/docs/guides/overview).

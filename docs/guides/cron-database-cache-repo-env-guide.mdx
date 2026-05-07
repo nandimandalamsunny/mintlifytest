@@ -1,14 +1,24 @@
 ---
 title: "Cron + Database + Cache: Repo Preference & Environment Settings"
+description: "Configure repository preferences and environment settings for a cron service with database and cache."
 ---
 
 This guide explains how to configure a Cron service with both a Database and a Cache in Revolte, covering Repo Preference and Environment Settings. Visual references are provided for each step.
+
+## Prerequisites
+
+Before you configure this preset, make sure you have:
+
+- A Revolte workspace with an application created
+- Repository access for the target application
+- Permission to edit YAML configuration and commit changes
+- Environment-specific values for QA, staging, production, and preview
 
 ## Step 1: Choose a Preset
 
 Select the **Cron + Database + Cache** preset to automate scheduled tasks with both database and cache support.
 
-![Choose Cron + Database + Cache Preset](../../images/preset-11.png)
+![Choose Cron + Database + Cache Preset](/images/guides/repo_preference/preset-11.png)
 
 - **Cron + Database + Cache**: Schedule tasks with database and cache support (e.g., periodic jobs with persistent data and fast access).
 
@@ -17,10 +27,10 @@ Select the **Cron + Database + Cache** preset to automate scheduled tasks with b
 Configure repository interaction for your service:
 
 - **Application and branch setting**: Choose the branch and framework for your scheduled job.
-- **Setup Agent Workflow**: Enable to automate developer workflows.
-- **Set up pre build Workflow**: Enable code review and summarization before builds.
+- **Agent workflow**: Enable to automate developer workflows.
+- **Pre-build workflow**: Enable code review and summarization before builds.
 - **Pipeline**: Configure code quality and test suite steps.
-- **Setup Build & deployment workflow**: Enable to automate build and deployment for your service.
+- **Build and deployment workflow**: Enable to automate build and deployment for your service.
 
 ## Step 3: Environment Settings
 
@@ -28,7 +38,7 @@ After repo preferences, configure environment-specific settings for your service
 
 ### 3.1 Environment Settings Overview
 
-![Environment Settings Overview](../../images/environment_settings/envsettings-11.png)
+![Environment Settings Overview](/images/guides/environment_settings/envsettings-11.png)
 
 In the Environment Settings panel, select the **Cron**, **Database**, and **Cache** tabs to configure scheduled job, database, and cache details for each environment (QA, Staging, Production, Preview).
 
@@ -63,7 +73,7 @@ In the Environment Settings panel, select the **Cron**, **Database**, and **Cach
 
 ### 3.2 Example: Staging Environment
 
-![Staging Cron + Database + Cache Example](../../images/environment_settings/envsettings-11-1.png)
+![Staging Cron + Database + Cache Example](/images/guides/environment_settings/envsettings-11-1.png)
 
 - **Service Name**: data-cache-cron
 - **Entry Point**: index.js
@@ -77,7 +87,7 @@ In the Environment Settings panel, select the **Cron**, **Database**, and **Cach
 - **Pre Script**: (empty)
 - **Variables**: CACHE_URL, DB_CONNECTION_STRING
 
-![Staging Database Example](../../images/environment_settings/envsettings-11-2.png)
+![Staging Database Example](/images/guides/environment_settings/envsettings-11-2.png)
 
 - **Database Type**: PostgreSQL
 - **Database Name**: revolte_db
@@ -87,7 +97,7 @@ In the Environment Settings panel, select the **Cron**, **Database**, and **Cach
 - **Backup & Restore**: Configure as needed
 - **Variables**: Set DB connection variables for your app
 
-![Staging Cache Example](../../images/environment_settings/envsettings-11-3.png)
+![Staging Cache Example](/images/guides/environment_settings/envsettings-11-3.png)
 
 - **Cache Type**: Redis
 - **Cache Name**: revolte-cache
@@ -110,4 +120,4 @@ At the bottom of the configuration panel, you will find **Commit Details**:
 
 > **Tip:** Always review your configuration and commit with a clear message to maintain traceability.
 
-For more details, refer to the [Guide Overview](./overview.mdx).
+For more details, refer to the [configuration guide overview](/docs/guides/overview).

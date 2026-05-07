@@ -8,7 +8,7 @@ The **Business Analyst (BA) Agent** is the first point of contact for every requ
 
 ## Core Responsibilities
 
-The BA Agent performs several critical tasks during the [Requirement Analysis](/docs/build/pipeline#pipeline-stages) phase:
+The BA Agent performs several critical tasks during the [Requirement Analysis](/docs/build/code-generation-flow#flow-stages) phase:
 
 <CardGroup cols={2}>
   <Card title="Intent Clarification" icon="magnifying-glass">
@@ -21,7 +21,7 @@ The BA Agent performs several critical tasks during the [Requirement Analysis](/
     Expands vague prompts into detailed, actionable requirements that include acceptance criteria.
   </Card>
   <Card title="Implementation Safety" icon="shield-check">
-    Ensures the requested change doesn't conflict with existing system behavior or patterns.
+    Checks whether the requested change conflicts with existing system behavior or repository patterns.
   </Card>
 </CardGroup>
 
@@ -41,4 +41,4 @@ The best way to work with the BA Agent is to provide clear, behavior-focused req
 
 ## How the BA Agent Helps Reviewers
 
-Because the BA Agent understands the *intent* behind a change, it automatically generates the [Implementation Summary](/docs/build/pre-build-workflows#code-review-and-summarisation) found in your pull requests. This helps your team understand not just what changed, but why the BA Agent made those specific implementation choices.
+Because the BA Agent understands the *intent* behind a change, it automatically generates the [Implementation Summary](/docs/build/pre-build-workflows#code-review-and-summarization) found in your pull requests. This helps your team understand not just what changed, but why the BA Agent made those specific implementation choices.

@@ -1,17 +1,43 @@
 ---
 title: "Integrations"
-description: "Connect Revolte with your favorite tools and platforms."
+description: "Connect Revolte with source control, cloud, observability, and team collaboration systems."
 ---
 
-Revolte seamlessly integrates with the tools you already use to build and deploy applications.
+Integrations connect Revolte to the systems your team already uses for source control, deployment, alerts, and operational visibility.
 
-## Popular Integrations
+## Before you connect
 
-- **GitHub**: Automate deployments from your repositories.
-- **Slack**: Receive notifications for deployment events and alerts.
-- **AWS / GCP / Azure**: Deploy your applications to the cloud of your choice.
-- **Datadog / New Relic**: Export metrics and logs for advanced observability.
+Prepare these details before adding an integration:
 
-## API & Webhooks
+- Administrator access to the external tool
+- Permission to install apps, create tokens, or approve OAuth access
+- The workspace, project, or repository Revolte should connect to
+- Any security review requirements your organization applies to third-party access
 
-Build custom integrations using our robust API and webhook system.
+## Integration categories
+
+| Category | Typical use |
+| --- | --- |
+| Source control | Connect repositories, create branches, and open pull requests |
+| Project management | Link requirements, issues, and delivery status |
+| Cloud providers | Configure infrastructure targets and runtime credentials |
+| Collaboration | Route deployment, build, and incident notifications |
+| Observability | Export or correlate logs, metrics, and alerts |
+
+## Operating guidance
+
+- Grant the narrowest permissions that support the workflow.
+- Connect production systems only after testing the integration in a lower-risk workspace or environment.
+- Rotate credentials according to your internal security policy.
+- Review integration access when team ownership or repository ownership changes.
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Create Your First Feature" href="/docs/build/quick-start">
+    Connect source control while setting up your first application.
+  </Card>
+  <Card title="Security & Access Control" href="/docs/platform/security">
+    Review how access boundaries apply across the platform.
+  </Card>
+</CardGroup>

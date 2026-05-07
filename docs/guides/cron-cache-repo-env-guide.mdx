@@ -1,35 +1,45 @@
 ---
 title: "Cron + Cache: Repo Preference & Environment Settings"
+description: "Configure repository preferences and environment settings for a cron service with cache."
 ---
 
 This guide explains how to configure a Cron service with an attached Cache in Revolte, covering both Repo Preference and Environment Settings. Visual references are provided for each step.
+
+## Prerequisites
+
+Before you configure this preset, make sure you have:
+
+- A Revolte workspace with an application created
+- Repository access for the target application
+- Permission to edit YAML configuration and commit changes
+- Environment-specific values for QA, staging, production, and preview
 
 ## Step 1: Choose a Preset
 
 Select the **Cron + Cache** preset to automate scheduled tasks with managed caching.
 
-![Choose Cron + Cache Preset](../../images/preset-9.png)
+![Choose Cron + Cache Preset](/images/guides/repo_preference/preset-9.png)
 
 - **Cron + Cache**: Schedule tasks with cache support (e.g., periodic jobs that use Redis or Memcached).
-- Other options include Webapp, Webservice, and combinations with databases or storage.
+- Other options include Web app, Web service, and combinations with databases or storage.
 
 ## Step 2: Repo Preference
 
-Configure repository interaction for your cron+cache service:
+Configure repository interaction for your cron service with cache:
 
 - **Application and branch setting**: Choose the branch and framework for your scheduled job.
-- **Setup Agent Workflow**: Enable to automate developer workflows.
-- **Set up pre build Workflow**: Enable code review and summarization before builds.
+- **Agent workflow**: Enable to automate developer workflows.
+- **Pre-build workflow**: Enable code review and summarization before builds.
 - **Pipeline**: Configure code quality and test suite steps.
-- **Setup Build & deployment workflow**: Enable to automate build and deployment for your service.
+- **Build and deployment workflow**: Enable to automate build and deployment for your service.
 
 ## Step 3: Environment Settings
 
-After repo preferences, configure environment-specific settings for your cron+cache service.
+After repo preferences, configure environment-specific settings for your cron service with cache.
 
 ### 3.1 Environment Settings Overview
 
-![Environment Settings Overview](../../images/environment_settings/envsettings-9.png)
+![Environment Settings Overview](/images/guides/environment_settings/envsettings-9.png)
 
 In the Environment Settings panel, select the **Cron** and **Cache** tabs to configure scheduled job and cache details for each environment (QA, Staging, Production, Preview).
 
@@ -55,7 +65,7 @@ In the Environment Settings panel, select the **Cron** and **Cache** tabs to con
 
 ### 3.2 Example: Staging Environment
 
-![Staging Cron + Cache Example](../../images/environment_settings/envsettings-9-1.png)
+![Staging Cron + Cache Example](/images/guides/environment_settings/envsettings-9-1.png)
 
 - **Service Name**: cache-sync-cron
 - **Entry Point**: index.js
@@ -69,7 +79,7 @@ In the Environment Settings panel, select the **Cron** and **Cache** tabs to con
 - **Pre Script**: (empty)
 - **Variables**: CACHE_URL
 
-![Staging Cache Example](../../images/environment_settings/envsettings-9-2.png)
+![Staging Cache Example](/images/guides/environment_settings/envsettings-9-2.png)
 
 - **Cache Type**: Redis
 - **Cache Name**: revolte-cache
@@ -92,4 +102,4 @@ At the bottom of the configuration panel, you will find **Commit Details**:
 
 > **Tip:** Always review your configuration and commit with a clear message to maintain traceability.
 
-For more details, refer to the [Guide Overview](./overview.mdx).
+For more details, refer to the [configuration guide overview](/docs/guides/overview).

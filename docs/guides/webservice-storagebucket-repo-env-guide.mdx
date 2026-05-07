@@ -1,37 +1,47 @@
 ---
-title: "Webservice + StorageBucket: Repo Preference & Environment Settings"
+title: "Web Service + Storage Bucket: Repo Preference & Environment Settings"
+description: "Configure repository preferences and environment settings for a web service with storage."
 ---
 
-This guide explains how to configure a Webservice with an attached StorageBucket in Revolte, covering both Repo Preference and Environment Settings. Visual references are provided for each step.
+This guide explains how to configure a Web service with an attached Storage Bucket in Revolte, covering both Repo Preference and Environment Settings. Visual references are provided for each step.
+
+## Prerequisites
+
+Before you configure this preset, make sure you have:
+
+- A Revolte workspace with an application created
+- Repository access for the target application
+- Permission to edit YAML configuration and commit changes
+- Environment-specific values for QA, staging, production, and preview
 
 ## Step 1: Choose a Preset
 
-Select the **Webservice + StorageBucket** preset to deploy a backend service with managed object storage.
+Select the **Web service + Storage Bucket** preset to deploy a backend service with managed object storage.
 
-![Choose Webservice + StorageBucket Preset](../../images/preset-6.png)
+![Choose Web Service + Storage Bucket Preset](/images/guides/repo_preference/preset-6.png)
 
-- **Webservice + StorageBucket**: Backend service for APIs or microservices with object storage support (e.g., file uploads, static asset storage).
-- Other options include Webapp, Cron, and combinations with databases or cache.
+- **Web service + Storage Bucket**: Backend service for APIs or microservices with object storage support (e.g., file uploads, static asset storage).
+- Other options include Web app, Cron, and combinations with databases or cache.
 
 ## Step 2: Repo Preference
 
-Configure repository interaction for your webservice+storagebucket service:
+Configure repository interaction for your web service with storage:
 
 - **Application and branch setting**: Choose the branch and framework for your backend service.
-- **Setup Agent Workflow**: Enable to automate developer workflows.
-- **Set up pre build Workflow**: Enable code review and summarization before builds.
+- **Agent workflow**: Enable to automate developer workflows.
+- **Pre-build workflow**: Enable code review and summarization before builds.
 - **Pipeline**: Configure code quality and test suite steps.
-- **Setup Build & deployment workflow**: Enable to automate build and deployment for your service.
+- **Build and deployment workflow**: Enable to automate build and deployment for your service.
 
 ## Step 3: Environment Settings
 
-After repo preferences, configure environment-specific settings for your webservice+storagebucket service.
+After repo preferences, configure environment-specific settings for your web service with storage.
 
 ### 3.1 Environment Settings Overview
 
-![Environment Settings Overview](../../images/environment_settings/envsettings-6.png)
+![Environment Settings Overview](/images/guides/environment_settings/envsettings-6.png)
 
-In the Environment Settings panel, select the **Web service** and **StorageBucket** tabs to configure backend and storage details for each environment (QA, Staging, Production, Preview).
+In the Environment Settings panel, select the **Web service** and **Storage Bucket** tabs to configure backend and storage details for each environment (QA, Staging, Production, Preview).
 
 #### Fields in Web Service Tab:
 
@@ -52,7 +62,7 @@ In the Environment Settings panel, select the **Web service** and **StorageBucke
   - **Disk**: Select disk insights (used, total, free)
 - **Variables**: Set environment variables (e.g., STORAGE_BUCKET_URL)
 
-#### Fields in StorageBucket Tab:
+#### Fields in Storage Bucket Tab:
 
 - **Bucket Name**: Name for your storage bucket
 - **Region**: Storage region (e.g., us-east-1)
@@ -63,7 +73,7 @@ In the Environment Settings panel, select the **Web service** and **StorageBucke
 
 ### 3.2 Example: Staging Environment
 
-![Staging Webservice + StorageBucket Example](../../images/environment_settings/envsettings-6-1.png)
+![Staging Web Service + Storage Bucket Example](/images/guides/environment_settings/envsettings-6-1.png)
 
 This image shows a filled-out configuration for the Staging environment:
 
@@ -83,9 +93,9 @@ This image shows a filled-out configuration for the Staging environment:
   - **Memory**: total memory, free memory
   - **Disk**: disk used, disk total, disk free
 - **Variables**:
-  - **STORAGE_BUCKET_URL**: https://bucket.example.com
+  - **STORAGE_BUCKET_URL**: `<storage-bucket-url>`
 
-![Staging StorageBucket Example](../../images/environment_settings/envsettings-6-2.png)
+![Staging Storage Bucket Example](/images/guides/environment_settings/envsettings-6-2.png)
 
 - **Bucket Name**: revolte-bucket
 - **Region**: us-east-1
@@ -108,7 +118,7 @@ This image shows a filled-out configuration for the Staging environment:
 8. **Load Balancer Mode**: Choose dedicated for isolated traffic or shared for cost savings.
 9. **Insights**: Select which metrics to monitor for CPU, swap, memory, and disk.
 10. **Variables**: Add environment variables required by your service.
-11. **StorageBucket Tab**: Fill in bucket name, region, access policy, lifecycle rules, and storage class.
+11. **Storage Bucket Tab**: Fill in bucket name, region, access policy, lifecycle rules, and storage class.
 
 #### How to Configure Each Tab
 
@@ -129,4 +139,4 @@ At the bottom of the configuration panel, you will find **Commit Details**:
 
 > **Tip:** Always review your configuration and commit with a clear message to maintain traceability.
 
-For more details, refer to the [Guide Overview](./overview.mdx).
+For more details, refer to the [configuration guide overview](/docs/guides/overview).

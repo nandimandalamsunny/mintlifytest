@@ -1,26 +1,36 @@
 ---
-title: "Cron + StorageBucket + Cache: Repo Preference & Environment Settings"
+title: "Cron + Storage Bucket + Cache: Repo Preference & Environment Settings"
+description: "Configure repository preferences and environment settings for a cron service with storage and cache."
 ---
 
-This guide explains how to configure a Cron service with both a StorageBucket and a Cache in Revolte, covering Repo Preference and Environment Settings. Visual references are provided for each step.
+This guide explains how to configure a Cron service with both a Storage Bucket and a Cache in Revolte, covering Repo Preference and Environment Settings. Visual references are provided for each step.
+
+## Prerequisites
+
+Before you configure this preset, make sure you have:
+
+- A Revolte workspace with an application created
+- Repository access for the target application
+- Permission to edit YAML configuration and commit changes
+- Environment-specific values for QA, staging, production, and preview
 
 ## Step 1: Choose a Preset
 
-Select the **Cron + StorageBucket + Cache** preset to automate scheduled tasks with object storage and cache support.
+Select the **Cron + Storage Bucket + Cache** preset to automate scheduled tasks with object storage and cache support.
 
-![Choose Cron + StorageBucket + Cache Preset](../../images/preset-13.png)
+![Choose Cron + Storage Bucket + Cache Preset](/images/guides/repo_preference/preset-13.png)
 
-- **Cron + StorageBucket + Cache**: Schedule tasks with object storage and cache (e.g., periodic jobs with file uploads and fast access).
+- **Cron + Storage Bucket + Cache**: Schedule tasks with object storage and cache (e.g., periodic jobs with file uploads and fast access).
 
 ## Step 2: Repo Preference
 
 Configure repository interaction for your service:
 
 - **Application and branch setting**: Choose the branch and framework for your scheduled job.
-- **Setup Agent Workflow**: Enable to automate developer workflows.
-- **Set up pre build Workflow**: Enable code review and summarization before builds.
+- **Agent workflow**: Enable to automate developer workflows.
+- **Pre-build workflow**: Enable code review and summarization before builds.
 - **Pipeline**: Configure code quality and test suite steps.
-- **Setup Build & deployment workflow**: Enable to automate build and deployment for your service.
+- **Build and deployment workflow**: Enable to automate build and deployment for your service.
 
 ## Step 3: Environment Settings
 
@@ -28,9 +38,9 @@ After repo preferences, configure environment-specific settings for your service
 
 ### 3.1 Environment Settings Overview
 
-![Environment Settings Overview](../../images/environment_settings/envsettings-13.png)
+![Environment Settings Overview](/images/guides/environment_settings/envsettings-13.png)
 
-In the Environment Settings panel, select the **Cron**, **StorageBucket**, and **Cache** tabs to configure scheduled job, storage, and cache details for each environment (QA, Staging, Production, Preview).
+In the Environment Settings panel, select the **Cron**, **Storage Bucket**, and **Cache** tabs to configure scheduled job, storage, and cache details for each environment (QA, Staging, Production, Preview).
 
 #### Fields in Cron Tab:
 - **Service Name**: Unique name for the cron job (e.g., storage-cache-cron)
@@ -45,7 +55,7 @@ In the Environment Settings panel, select the **Cron**, **StorageBucket**, and *
 - **Pre Script**: List of scripts to run before the job starts (empty by default)
 - **Variables**: Set environment variables (e.g., STORAGE_BUCKET_URL, CACHE_URL)
 
-#### Fields in StorageBucket Tab:
+#### Fields in Storage Bucket Tab:
 - **Bucket Name**: Name for your storage bucket
 - **Region**: Storage region (e.g., us-east-1)
 - **Access Policy**: Public or private access
@@ -62,7 +72,7 @@ In the Environment Settings panel, select the **Cron**, **StorageBucket**, and *
 
 ### 3.2 Example: Staging Environment
 
-![Staging Cron + StorageBucket + Cache Example](../../images/environment_settings/envsettings-13-1.png)
+![Staging Cron + Storage Bucket + Cache Example](/images/guides/environment_settings/envsettings-13-1.png)
 
 - **Service Name**: storage-cache-cron
 - **Entry Point**: index.js
@@ -76,7 +86,7 @@ In the Environment Settings panel, select the **Cron**, **StorageBucket**, and *
 - **Pre Script**: (empty)
 - **Variables**: STORAGE_BUCKET_URL, CACHE_URL
 
-![Staging StorageBucket Example](../../images/environment_settings/envsettings-13-2.png)
+![Staging Storage Bucket Example](/images/guides/environment_settings/envsettings-13-2.png)
 
 - **Bucket Name**: revolte-bucket
 - **Region**: us-east-1
@@ -85,7 +95,7 @@ In the Environment Settings panel, select the **Cron**, **StorageBucket**, and *
 - **Storage Class**: Standard
 - **Variables**: Set storage access variables for your app
 
-![Staging Cache Example](../../images/environment_settings/envsettings-13-3.png)
+![Staging Cache Example](/images/guides/environment_settings/envsettings-13-3.png)
 
 - **Cache Type**: Redis
 - **Cache Name**: revolte-cache
@@ -94,7 +104,7 @@ In the Environment Settings panel, select the **Cron**, **StorageBucket**, and *
 - **Variables**: Set cache connection variables for your app
 
 #### How to Configure Each Field
-1. Fill in all required fields for Cron, StorageBucket, and Cache tabs as described above.
+1. Fill in all required fields for Cron, Storage Bucket, and Cache tabs as described above.
 2. Repeat for each environment tab (QA, Staging, Production, Preview) as needed.
 
 ### Commit Details
@@ -108,4 +118,4 @@ At the bottom of the configuration panel, you will find **Commit Details**:
 
 > **Tip:** Always review your configuration and commit with a clear message to maintain traceability.
 
-For more details, refer to the [Guide Overview](./overview.mdx).
+For more details, refer to the [configuration guide overview](/docs/guides/overview).

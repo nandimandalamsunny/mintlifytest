@@ -1,26 +1,36 @@
 ---
-title: "Webservice + StorageBucket + Cache: Repo Preference & Environment Settings"
+title: "Web Service + Storage Bucket + Cache: Repo Preference & Environment Settings"
+description: "Configure repository preferences and environment settings for a web service with storage and cache."
 ---
 
-This guide explains how to configure a Webservice with both a StorageBucket and a Cache in Revolte, covering Repo Preference and Environment Settings. Visual references are provided for each step.
+This guide explains how to configure a Web service with both a Storage Bucket and a Cache in Revolte, covering Repo Preference and Environment Settings. Visual references are provided for each step.
+
+## Prerequisites
+
+Before you configure this preset, make sure you have:
+
+- A Revolte workspace with an application created
+- Repository access for the target application
+- Permission to edit YAML configuration and commit changes
+- Environment-specific values for QA, staging, production, and preview
 
 ## Step 1: Choose a Preset
 
-Select the **Webservice + StorageBucket + Cache** preset to deploy a backend service with object storage and cache support.
+Select the **Web service + Storage Bucket + Cache** preset to deploy a backend service with object storage and cache support.
 
-![Choose Webservice + StorageBucket + Cache Preset](../../images/preset-12.png)
+![Choose Web Service + Storage Bucket + Cache Preset](/images/guides/repo_preference/preset-12.png)
 
-- **Webservice + StorageBucket + Cache**: Backend service with object storage and cache (e.g., APIs with file uploads and fast access).
+- **Web service + Storage Bucket + Cache**: Backend service with object storage and cache (e.g., APIs with file uploads and fast access).
 
 ## Step 2: Repo Preference
 
 Configure repository interaction for your service:
 
 - **Application and branch setting**: Choose the branch and framework for your backend service.
-- **Setup Agent Workflow**: Enable to automate developer workflows.
-- **Set up pre build Workflow**: Enable code review and summarization before builds.
+- **Agent workflow**: Enable to automate developer workflows.
+- **Pre-build workflow**: Enable code review and summarization before builds.
 - **Pipeline**: Configure code quality and test suite steps.
-- **Setup Build & deployment workflow**: Enable to automate build and deployment for your service.
+- **Build and deployment workflow**: Enable to automate build and deployment for your service.
 
 ## Step 3: Environment Settings
 
@@ -28,9 +38,9 @@ After repo preferences, configure environment-specific settings for your service
 
 ### 3.1 Environment Settings Overview
 
-![Environment Settings Overview](../../images/environment_settings/envsettings-12.png)
+![Environment Settings Overview](/images/guides/environment_settings/envsettings-12.png)
 
-In the Environment Settings panel, select the **Web service**, **StorageBucket**, and **Cache** tabs to configure backend, storage, and cache details for each environment (QA, Staging, Production, Preview).
+In the Environment Settings panel, select the **Web service**, **Storage Bucket**, and **Cache** tabs to configure backend, storage, and cache details for each environment (QA, Staging, Production, Preview).
 
 #### Fields in Web Service Tab:
 - **Service Name**: Unique name for the service (e.g., storage-cache-api)
@@ -46,7 +56,7 @@ In the Environment Settings panel, select the **Web service**, **StorageBucket**
 - **Insights**: Select metrics for CPU, swap, memory, and disk
 - **Variables**: Set environment variables (e.g., STORAGE_BUCKET_URL, CACHE_URL)
 
-#### Fields in StorageBucket Tab:
+#### Fields in Storage Bucket Tab:
 - **Bucket Name**: Name for your storage bucket
 - **Region**: Storage region (e.g., us-east-1)
 - **Access Policy**: Public or private access
@@ -63,7 +73,7 @@ In the Environment Settings panel, select the **Web service**, **StorageBucket**
 
 ### 3.2 Example: Staging Environment
 
-![Staging Webservice + StorageBucket + Cache Example](../../images/environment_settings/envsettings-12-1.png)
+![Staging Web Service + Storage Bucket + Cache Example](/images/guides/environment_settings/envsettings-12-1.png)
 
 - **Service Name**: storage-cache-api
 - **Entry Point**: index.js
@@ -78,7 +88,7 @@ In the Environment Settings panel, select the **Web service**, **StorageBucket**
 - **Insights**: idle, system, user, swap usage, total/free memory, disk used/total/free
 - **Variables**: STORAGE_BUCKET_URL, CACHE_URL
 
-![Staging StorageBucket Example](../../images/environment_settings/envsettings-12-2.png)
+![Staging Storage Bucket Example](/images/guides/environment_settings/envsettings-12-2.png)
 
 - **Bucket Name**: revolte-bucket
 - **Region**: us-east-1
@@ -87,7 +97,7 @@ In the Environment Settings panel, select the **Web service**, **StorageBucket**
 - **Storage Class**: Standard
 - **Variables**: Set storage access variables for your app
 
-![Staging Cache Example](../../images/environment_settings/envsettings-12-3.png)
+![Staging Cache Example](/images/guides/environment_settings/envsettings-12-3.png)
 
 - **Cache Type**: Redis
 - **Cache Name**: revolte-cache
@@ -96,7 +106,7 @@ In the Environment Settings panel, select the **Web service**, **StorageBucket**
 - **Variables**: Set cache connection variables for your app
 
 #### How to Configure Each Field
-1. Fill in all required fields for Web Service, StorageBucket, and Cache tabs as described above.
+1. Fill in all required fields for Web Service, Storage Bucket, and Cache tabs as described above.
 2. Repeat for each environment tab (QA, Staging, Production, Preview) as needed.
 
 ### Commit Details
@@ -110,4 +120,4 @@ At the bottom of the configuration panel, you will find **Commit Details**:
 
 > **Tip:** Always review your configuration and commit with a clear message to maintain traceability.
 
-For more details, refer to the [Guide Overview](./overview.mdx).
+For more details, refer to the [configuration guide overview](/docs/guides/overview).

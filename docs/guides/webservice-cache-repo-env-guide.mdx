@@ -1,35 +1,45 @@
 ---
-title: "Webservice + Cache: Repo Preference & Environment Settings"
+title: "Web Service + Cache: Repo Preference & Environment Settings"
+description: "Configure repository preferences and environment settings for a web service with cache."
 ---
 
-This guide explains how to configure a Webservice with an attached Cache in Revolte, covering both Repo Preference and Environment Settings. Visual references are provided for each step.
+This guide explains how to configure a Web service with an attached Cache in Revolte, covering both Repo Preference and Environment Settings. Visual references are provided for each step.
+
+## Prerequisites
+
+Before you configure this preset, make sure you have:
+
+- A Revolte workspace with an application created
+- Repository access for the target application
+- Permission to edit YAML configuration and commit changes
+- Environment-specific values for QA, staging, production, and preview
 
 ## Step 1: Choose a Preset
 
-Select the **Webservice + Cache** preset to deploy a backend service with managed caching for faster responses.
+Select the **Web service + Cache** preset to deploy a backend service with managed caching for faster responses.
 
-![Choose Webservice + Cache Preset](../../images/preset-8.png)
+![Choose Web Service + Cache Preset](/images/guides/repo_preference/preset-8.png)
 
-- **Webservice + Cache**: Backend service with caching for faster responses (e.g., APIs with Redis or Memcached).
-- Other options include Webapp, Cron, and combinations with databases or storage.
+- **Web service + Cache**: Backend service with caching for faster responses (e.g., APIs with Redis or Memcached).
+- Other options include Web app, Cron, and combinations with databases or storage.
 
 ## Step 2: Repo Preference
 
-Configure repository interaction for your webservice+cache service:
+Configure repository interaction for your web service with cache:
 
 - **Application and branch setting**: Choose the branch and framework for your backend service.
-- **Setup Agent Workflow**: Enable to automate developer workflows.
-- **Set up pre build Workflow**: Enable code review and summarization before builds.
+- **Agent workflow**: Enable to automate developer workflows.
+- **Pre-build workflow**: Enable code review and summarization before builds.
 - **Pipeline**: Configure code quality and test suite steps.
-- **Setup Build & deployment workflow**: Enable to automate build and deployment for your service.
+- **Build and deployment workflow**: Enable to automate build and deployment for your service.
 
 ## Step 3: Environment Settings
 
-After repo preferences, configure environment-specific settings for your webservice+cache service.
+After repo preferences, configure environment-specific settings for your web service with cache.
 
 ### 3.1 Environment Settings Overview
 
-![Environment Settings Overview](../../images/environment_settings/envsettings-8.png)
+![Environment Settings Overview](/images/guides/environment_settings/envsettings-8.png)
 
 In the Environment Settings panel, select the **Web service** and **Cache** tabs to configure backend and cache details for each environment (QA, Staging, Production, Preview).
 
@@ -56,7 +66,7 @@ In the Environment Settings panel, select the **Web service** and **Cache** tabs
 
 ### 3.2 Example: Staging Environment
 
-![Staging Webservice + Cache Example](../../images/environment_settings/envsettings-8-1.png)
+![Staging Web Service + Cache Example](/images/guides/environment_settings/envsettings-8-1.png)
 
 - **Service Name**: cache-api-service
 - **Entry Point**: index.js
@@ -71,7 +81,7 @@ In the Environment Settings panel, select the **Web service** and **Cache** tabs
 - **Insights**: idle, system, user, swap usage, total/free memory, disk used/total/free
 - **Variables**: CACHE_URL
 
-![Staging Cache Example](../../images/environment_settings/envsettings-8-2.png)
+![Staging Cache Example](/images/guides/environment_settings/envsettings-8-2.png)
 
 - **Cache Type**: Redis
 - **Cache Name**: revolte-cache
@@ -94,4 +104,4 @@ At the bottom of the configuration panel, you will find **Commit Details**:
 
 > **Tip:** Always review your configuration and commit with a clear message to maintain traceability.
 
-For more details, refer to the [Guide Overview](./overview.mdx).
+For more details, refer to the [configuration guide overview](/docs/guides/overview).
