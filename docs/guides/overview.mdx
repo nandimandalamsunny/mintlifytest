@@ -6,7 +6,7 @@ After creating your application with Revolte, the next step is configuration. Th
 
 ## Prerequisite
 
-Before proceeding, make sure you have completed the application creation process. If not, start with the [Quick Start guide](../../build/quick-start).
+Before proceeding, make sure you have completed the application creation process. If not, start with the [Quick Start guide](../build/quick-start).
 
 ## What Comes Next
 
@@ -17,9 +17,31 @@ Once your application is created, configuration is divided into two main areas:
     Define how Revolte interacts with your code repository. Set up branch mappings, enable agent workflows, and configure pre-build steps to match your team's development process.
   </Step>
   <Step title="Environment Settings">
-    Specify environment variables, secrets, and deployment targets for each service. This ensures that every environment—production, staging, QA, and preview—has the correct configuration and access controls.
+    Specify environment variables, secrets, and deployment targets for each service. This ensures that every environment—QA and preview—has the correct configuration and access controls.
   </Step>
 </Steps>
+
+## Repository Preference
+
+The **Repository Preference** tab is identical across all service presets. Configure the following sections once and apply to any service type.
+
+**Application Setup** — Select your application and the branch to deploy from.
+
+**Setup Agent Workflow** — Toggle on to enable automated developer workflows. When enabled:
+- **Developer Workflow** — Toggle on to activate the agent-driven workflow for your service.
+- **Enabled** — Toggle on to make the workflow active.
+
+**Set up pre build Workflow** — Toggle on to enable code review and summarization before each build. When enabled:
+- **Summarize** — Toggle on to generate an AI summary of code changes before each build.
+- **Suggest Fixes** — Toggle on to receive automated fix suggestions during review.
+- **Comment Style** — Choose how review comments appear: **Balanced**, **Concise**, or **Verbose**.
+- **Excludes** — Enter file names or extensions to skip from code review (e.g., `json` to exclude all JSON files).
+
+**Pipeline** — Configure code quality and testing:
+- **Code Quality → Code Style** — Select a code style framework. Clicking navigates to **Application and Branch Setting** above, where the framework is linked to your application.
+- **Test Suite** — Click to expand, then enter the command to run your tests (e.g., `npm test`).
+
+**Setup Build & deployment workflow** — Toggle on to automate build and deployment for each service in your preset.
 
 ## Why Configuration Matters
 

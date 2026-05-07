@@ -1,123 +1,89 @@
 ---
-title: "Cron + Database: Repo Preference & Environment Settings"
+title: "Cron with Database"
 ---
 
-This guide explains how to configure a Cron service with an attached Database in Revolte, covering both Repo Preference and Environment Settings. Visual references are provided for each step.
+This guide walks through configuring a Cron service with an attached Database in Revolte step by step.
 
-## Step 1: Choose a Preset
+<Steps>
+  <Step title="Choose a Preset">
+    ![Choose Cron + Database Preset](../../images/guides/repo_preference/preset-5.png)
 
-Select the **Cron + Database** preset to automate scheduled tasks with database read/write support.
+    The preset chooser shows a grid of service options. The **Cron + Database** tile is highlighted. Click **Cron + Database** to continue.
+  </Step>
 
-![Choose Cron + Database Preset](../../images/preset-5.png)
+  <Step title="Repo Preference">
+    Configure the following sections in the **Repo Preference** tab:
 
-- **Cron + Database**: Schedule tasks with database read/write support (e.g., periodic data syncs, reporting jobs).
-- Other options include Webapp, Webservice, and combinations with storage or cache.
+    **Application Setup** — Select your application and the branch to deploy from.
 
-## Step 2: Repo Preference
+    **Setup Agent Workflow** — Toggle on to enable automated developer workflows. When enabled:
+    - **Developer Workflow** — Toggle on to activate the agent-driven workflow for your service.
+    - **Enabled** — Toggle on to make the workflow active.
 
-Configure repository interaction for your cron+database service:
+    **Set up pre build Workflow** — Toggle on to enable code review and summarization before each build. When enabled:
+    - **Summarize** — Toggle on to generate an AI summary of code changes before each build.
+    - **Suggest Fixes** — Toggle on to receive automated fix suggestions during review.
+    - **Comment Style** — Choose how review comments appear: **Balanced**, **Concise**, or **Verbose**.
+    - **Excludes** — Enter file names or extensions to skip from code review (e.g., `json` to exclude all JSON files).
 
-- **Application and branch setting**: Choose the branch and framework for your scheduled job.
-- **Setup Agent Workflow**: Enable to automate developer workflows.
-- **Set up pre build Workflow**: Enable code review and summarization before builds.
-- **Pipeline**: Configure code quality and test suite steps.
-- **Setup Build & deployment workflow**: Enable to automate build and deployment for your service.
+    **Pipeline** — Configure code quality and testing:
+    - **Code Quality → Code Style** — Select a code style framework. Clicking navigates to **Application and Branch Setting** above, where the framework is linked to your application.
+    - **Test Suite** — Click to expand, then enter the command to run your tests (e.g., `npm test`).
 
-## Step 3: Environment Settings
+    **Setup Build & deployment workflow** — Toggle on to automate build and deployment for each service in your preset.
+  </Step>
 
-After repo preferences, configure environment-specific settings for your cron+database service.
+  <Step title="Cron — Environment Settings">
+    ![Cron tab — QA environment](../../images/guides/environment_settings/envsettings-5.png)
 
-### 3.1 Environment Settings Overview
+    The **QA** environment tab is selected. The left sidebar shows **Cron**, **Database**, and **Variables** under Build & deployment workflow. The center panel shows the Cron form:
 
-![Environment Settings Overview](../../images/environment_settings/envsettings-5.png)
+    - **Service Name** — Enter a unique identifier for this cron job (e.g., `cron_service`).
+    - **Entry Point** — The main file executed on each cron run (e.g., `index.js`).
+    - **Specifications**
+      - **CPU & Memory** — Choose a compute tier for this job (e.g., `2 CPU and 1 GB Memory`).
+      - **Storage value** — Disk space in GB allocated to the job (e.g., `30`).
+    - **Properties**
+      - **Scheduler** — Enter a cron expression to set when the job runs (e.g., `cron(* 20 * ? *)`).
+    - **Pre Script** — Commands to run before the job executes. Click **+ Add** to add a script.
+    - **Insights** — Select system metrics to monitor:
+      - **Cpu** — Options: idle, user, system.
+      - **Swap** — Options: swap usage.
+      - **Memory** — Options: total memory used, free memory.
+      - **Disk** — Options: disk used, disk total, disk free.
+  </Step>
 
-In the Environment Settings panel, select the **Cron** and **Database** tabs to configure scheduled job and database details for each environment (QA, Staging, Production, Preview).
+  <Step title="Database — Environment Settings">
+    ![Database tab — QA environment](../../images/guides/environment_settings/envsettings-5-1.png)
 
-#### Fields in Cron Tab:
+    The **QA** environment tab is selected with the **Database** tab active. The left sidebar shows **Cron**, **Database**, and **Variables**. The center panel shows the Database form:
 
-- **Service Name**: Unique name for the cron job (e.g., data-sync-cron)
-- **Entry Point**: Main file to launch (e.g., index.js)
-- **Schedule**: Cron expression defining when the job runs (e.g., `0 0 * * *` for daily at midnight)
-- **Specifications**: Define CPU, memory, and storage requirements
-- **CPU & Memory**: Set resource limits for the job
-- **Storage Value**: Specify disk storage allocation
-- **Properties**:
-  - **Job Timeout**: Maximum allowed runtime for the job
-  - **Retries**: Number of retry attempts on failure
-- **Pre Script**: List of scripts to run before the job starts (empty by default)
-- **Variables**: Set environment variables (e.g., DATA_SOURCE_URL)
+    - **Service Name** — Enter a unique identifier for this database instance (e.g., `my_database`).
+    - **Specifications**
+      - **Engine Type** — Select the database engine to use (e.g., MySQL, PostgreSQL).
+      - **CPU & Memory** — Choose a resource tier that matches your workload (e.g., `2 CPU and 1 GB Memory`).
+    - **Storage value** — Disk space in GB allocated to the database (e.g., `30`).
+  </Step>
 
-#### Fields in Database Tab:
+  <Step title="Variables & Secrets">
+    ![Variables & Secrets tab — QA environment](../../images/guides/environment_settings/envsettings-5-2.png)
 
-- **Database Type**: e.g., PostgreSQL, MySQL
-- **Database Name**: Name for your database
-- **User/Password**: Credentials for database access
-- **Connection String**: Auto-generated or custom
-- **Storage**: Disk allocation for the database
-- **Backup & Restore**: Options for data safety
-- **Variables**: Environment variables for database connection
+    The **QA** environment tab is selected with the **Secrets** sub-tab active. The left sidebar shows **Cron**, **Database**, and **Variables**. The center panel shows:
 
-### 3.2 Example: Staging Environment
+    - **Secret Engine** — **Revolte secrets** is the built-in provider for storing encrypted key-value pairs.
+    - **Add Secrets** button — Click to add a secret. Enter a key (e.g., `DATABASE_URL`) and its value (e.g., a connection string or API key).
+    - Secrets appear as rows in the table once added. The table is empty until the first secret is created.
+  </Step>
 
-![Staging Cron + Database Example](../../images/environment_settings/envsettings-5-1.png)
+  <Step title="Commit">
+    At the bottom of the panel, fill in the **Commit Details**:
 
-This image shows a filled-out configuration for the Staging environment:
+    - **File Name** — The configuration file to create or update in your repository (e.g., `revolte.yml`).
+    - **Commit Message** — A short description of what you configured (e.g., `Add cron service with database`).
+    - **Choose Branch** — The branch where the configuration file will be committed.
 
-- **Service Name**: data-sync-cron
-- **Entry Point**: index.js
-- **Schedule**: `0 0 * * *` (runs daily at midnight)
-- **Specifications**: Set as needed for your workload
-- **CPU & Memory**: Configure based on expected usage
-- **Storage Value**: Allocate disk space
-- **Properties**:
-  - **Job Timeout**: 30m
-  - **Retries**: 3
-- **Pre Script**: (empty)
-- **Variables**:
-  - **DATA_SOURCE_URL**: https://api.example.com/data
+    Click **Commit** to save the configuration to your repository, or **Skip & deploy** to deploy immediately without committing.
+  </Step>
+</Steps>
 
-![Staging Database Example](../../images/environment_settings/envsettings-5-2.png)
-
-- **Database Type**: PostgreSQL
-- **Database Name**: revolte_db
-- **User/Password**: Set credentials for access
-- **Connection String**: Provided for application use
-- **Storage**: Allocate disk space for the database
-- **Backup & Restore**: Configure as needed
-- **Variables**: Set DB connection variables for your app
-
-#### How to Configure Each Field
-
-1. **Service Name**: Enter a unique, descriptive name for the cron job.
-2. **Entry Point**: Specify the main file to start the job.
-3. **Schedule**: Enter a valid cron expression for the job schedule.
-4. **Specifications**: Define CPU, memory, and storage needs.
-5. **CPU & Memory**: Set resource limits for performance and cost control.
-6. **Storage Value**: Allocate disk space for the job.
-7. **Properties**:
-   - **Job Timeout**: Set the maximum allowed runtime.
-   - **Retries**: Set the number of retry attempts on failure.
-8. **Pre Script**: Add any scripts to run before the job starts (optional).
-9. **Variables**: Add environment variables required by your job.
-10. **Database Tab**: Fill in database type, name, credentials, storage, and backup options.
-
-#### How to Configure Each Tab
-
-- **QA**: Use for internal testing. Set variables and properties to mimic production, but with test data or endpoints.
-- **Staging**: Mirror production settings for final validation.
-- **Production**: Set all variables and properties for live jobs. Optimize resources and enable monitoring.
-- **Preview**: Use for feature branches. Set variables to point to test endpoints or mock services.
-
-### Commit Details
-
-At the bottom of the configuration panel, you will find **Commit Details**:
-
-- **File Name**: The YAML file to be committed (e.g., revolte.yml)
-- **Commit Message**: Enter a descriptive message for your changes.
-- **Choose Branch**: Select the branch to commit the configuration to.
-- **Commit**: Save and apply your configuration.
-- **Skip & deploy**: Skip commit and proceed to deployment (not recommended for production).
-
-> **Tip:** Always review your configuration and commit with a clear message to maintain traceability.
-
-For more details, refer to the [Guide Overview](./overview.mdx).
+> **Tip:** Always commit with a clear message before deploying to keep a traceable configuration history.
