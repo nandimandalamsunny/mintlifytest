@@ -67,7 +67,7 @@
                   "docs/build/overview",
                   "docs/build/quick-start",
                   "docs/build/review-output",
-                  "docs/build/code-generation-flow",
+                  "docs/build/automation-configurations",
                   "docs/build/environment-configuration",
                   {
                     "group": "Advanced Configuration",
@@ -126,48 +126,6 @@
                   "docs/platform/ci-cd",
                   "docs/platform/observability",
                   "docs/platform/security"
-                ]
-              },
-              {
-                "group": "Guides",
-                "expanded": false,
-                "pages": [
-                  "docs/guides/overview",
-                  {
-                    "group": "Webapp",
-                    "expanded": false,
-                    "pages": [
-                      "docs/guides/webapp-repo-env-guide"
-                    ]
-                  },
-                  {
-                    "group": "Webservice",
-                    "expanded": false,
-                    "pages": [
-                      "docs/guides/webservice-overview",
-                      "docs/guides/webservice-repo-env-guide",
-                      "docs/guides/webservice-cache-repo-env-guide",
-                      "docs/guides/webservice-storagebucket-repo-env-guide",
-                      "docs/guides/webservice-storagebucket-cache-repo-env-guide",
-                      "docs/guides/webservice-database-repo-env-guide",
-                      "docs/guides/webservice-database-cache-repo-env-guide",
-                      "docs/guides/webservice-database-storagebucket-repo-env-guide",
-                      "docs/guides/webservice-database-storagebucket-cache-repo-env-guide"
-                    ]
-                  },
-                  {
-                    "group": "Cron",
-                    "expanded": false,
-                    "pages": [
-                      "docs/guides/cron-overview",
-                      "docs/guides/cron-repo-env-guide",
-                      "docs/guides/cron-cache-repo-env-guide",
-                      "docs/guides/cron-database-repo-env-guide",
-                      "docs/guides/cron-database-cache-repo-env-guide",
-                      "docs/guides/cron-storagebucket-cache-repo-env-guide",
-                      "docs/guides/cron-database-storagebucket-cache-repo-env-guide"
-                    ]
-                  }
                 ]
               }
             ]
