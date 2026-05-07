@@ -1,8 +1,10 @@
 ---
 title: "Webservice with Database"
+description: "Configure repository preferences and environment settings for a web service with database."
 ---
 
 This guide walks through configuring a Webservice with an attached Database in Revolte step by step.
+
 
 <Steps>
   <Step title="Choose a Preset">
@@ -12,25 +14,7 @@ This guide walks through configuring a Webservice with an attached Database in R
   </Step>
 
   <Step title="Repo Preference">
-    Configure the following sections in the **Repo Preference** tab:
-
-    **Application Setup** — Select your application and the branch to deploy from.
-
-    **Setup Agent Workflow** — Toggle on to enable automated developer workflows. When enabled:
-    - **Developer Workflow** — Toggle on to activate the agent-driven workflow for your service.
-    - **Enabled** — Toggle on to make the workflow active.
-
-    **Set up pre build Workflow** — Toggle on to enable code review and summarization before each build. When enabled:
-    - **Summarize** — Toggle on to generate an AI summary of code changes before each build.
-    - **Suggest Fixes** — Toggle on to receive automated fix suggestions during review.
-    - **Comment Style** — Choose how review comments appear: **Balanced**, **Concise**, or **Verbose**.
-    - **Excludes** — Enter file names or extensions to skip from code review (e.g., `json` to exclude all JSON files).
-
-    **Pipeline** — Configure code quality and testing:
-    - **Code Quality → Code Style** — Select a code style framework. Clicking navigates to **Application and Branch Setting** above, where the framework is linked to your application.
-    - **Test Suite** — Click to expand, then enter the command to run your tests (e.g., `npm test`).
-
-    **Setup Build & deployment workflow** — Toggle on to automate build and deployment for each service in your preset.
+    The Repo Preference tab is identical across all service presets. See [Repository Preference](/docs/guides/overview#repository-preference) for a full walkthrough of each setting.
   </Step>
 
   <Step title="Webservice — Environment Settings">

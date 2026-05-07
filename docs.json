@@ -157,8 +157,10 @@
                 "expanded": false,
                 "pages": [
                   "docs/guides/webapp-repo-env-guide",
+                  "docs/guides/webservice/webservice-overview",
                   "docs/guides/webservice-repo-env-guide",
                   "docs/guides/webservice-cache-repo-env-guide",
+                  "docs/guides/webservice-database-repo-env-guide",
                   "docs/guides/webservice-database-cache-repo-env-guide",
                   "docs/guides/webservice-storagebucket-repo-env-guide",
                   "docs/guides/webservice-storagebucket-cache-repo-env-guide",
@@ -170,6 +172,7 @@
                 "group": "Cron Services",
                 "expanded": false,
                 "pages": [
+                  "docs/guides/cron/cron-overview",
                   "docs/guides/cron-repo-env-guide",
                   "docs/guides/cron-cache-repo-env-guide",
                   "docs/guides/cron-database-repo-env-guide",
