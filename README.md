@@ -1,40 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Revolte Documentation
 
-## Getting Started
+Customer-facing documentation for Revolte, including the Mintlify docs source and the local Next.js documentation preview.
 
-First, run the development server:
+## Repository Structure
+
+- `docs/` contains the Mintlify MDX pages.
+- `docs.json` defines Mintlify navigation, branding, and global settings.
+- `images/` contains Mintlify assets referenced by MDX pages.
+- `src/` contains the Next.js documentation preview experience.
+- `public/` contains static assets used by the Next.js app.
+
+## Local Development
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the Next.js preview:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Run the Mintlify preview:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run docs
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Validation Checklist
 
-## Learn More
+Before publishing documentation changes:
 
-To learn more about Next.js, take a look at the following resources:
+- Run `npm run lint`.
+- Run `npm run build`.
+- Confirm all internal MDX links and image references resolve.
+- Review changed pages for prerequisites, clear next steps, and customer-safe wording.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Documentation Standards
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# mintlifytest
-# mintlifytest
-# mintlifytest
-# mintlifytest
+- Use concise, customer-facing language.
+- Add a `description` to every MDX page for better search and previews.
+- Prefer absolute docs links such as `/docs/build/quick-start`.
+- Use absolute image paths such as `/images/quickstart/quick-start-1.png`.
+- Avoid placeholder content, unsupported claims, and links to unrelated vendors.

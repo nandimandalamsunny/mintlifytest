@@ -1,0 +1,53 @@
+---
+title: "Environment Configuration"
+description: "Manage branch mapping, framework settings, and environment-specific build behavior from a single surface."
+---
+
+The **YML Configuration** surface is the central control point for how Revolte understands and manages your application. From here, you can define how branches map to environments, select your framework, and configure specialized build and review workflows.
+
+<Frame caption="Manage all application and environment-specific configurations with ease.">
+  <img src="/images/env-config.png" alt="Environment configuration screen" width="600" />
+</Frame>
+
+## Centralized Management
+
+Environment Configuration allows you to manage the entire delivery lifecycle without jumping between separate tools. Use this surface to control how Revolte interacts with your repository and prepares changes for review.
+
+### Key Capabilities
+
+- **Branch Mapping**: Connect your `main`, `develop`, and feature branches to their respective environments (Production, Staging, QA, Preview).
+- **Framework Selection**: Ensure Revolte uses the correct build and runtime conventions for your specific application stack.
+- **Workflow Orchestration**: Enable or disable specialized AI-assisted workflows such as pre-build reviews and validation pipelines from one surface.
+
+### Dual-Mode Configuration
+
+Revolte provides two ways to manage your settings from the same surface:
+
+- **Interactive UI**: Use the dashboard to toggle settings, select frameworks, and map branches through a guided experience.
+- **YML Editor**: Use the integrated editor on the right side of the screen to view and edit the `revolte.yml` directly. 
+
+Any changes made in the UI are automatically reflected in the YAML, and direct edits to the YAML will update the corresponding UI controls.
+
+## Managed Workflows
+
+The following specialized workflows are all configured and managed within the Environment Configuration surface:
+
+<CardGroup cols={3}>
+  <Card title="Build Overview" icon="sparkles" href="/docs/build/overview">
+    Understand the core Build module and its role in delivery.
+  </Card>
+  <Card title="Pre-Build Workflows" icon="message-square" href="/docs/build/pre-build-workflows">
+    Configure automated review passes and implementation summaries.
+  </Card>
+  <Card title="Validation Pipeline" icon="vial" href="/docs/build/validation-pipeline">
+    Enable automated linting and test suite execution.
+  </Card>
+</CardGroup>
+
+## Error Handling
+
+If your configuration contains errors, Revolte surfaces them immediately within the dashboard. These validation logs help you identify missing properties, incorrect mappings, or syntax issues in your environment setup so you can resolve them before launching.
+
+<Frame caption="Review configuration errors and validation feedback directly in the dashboard.">
+  <img src="/images/errors.png" alt="Environment configuration error logs screen" width="600" />
+</Frame>

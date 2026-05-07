@@ -5,7 +5,16 @@ mode: "wide"
 description: "Centralized visibility into platform consumption, workflow activity, and operational usage."
 ---
 
-Revolte provides comprehensive transparency into your organization's platform utilization. By centralizing visibility across AI agent orchestration, build workflows, and deployment activity, Revolte ensures that engineering leads and operational owners can monitor consumption, manage quotas, and maintain governance across the entire software delivery lifecycle.
+Usage and billing gives administrators a single place to understand how teams consume Revolte across agent orchestration, build workflows, validation, and deployment activity. Use it to monitor consumption, manage limits, and support internal governance.
+
+## Before you start
+
+You need:
+
+- Administrator or billing access to the workspace
+- The workspace or organization you want to review
+- Agreement on who owns budget review and usage governance
+- Any internal reporting period, cost center, or project mapping your finance process requires
 
 ## Usage Overview
 
@@ -13,18 +22,18 @@ Platform usage in Revolte is measured by the execution of operational workflows 
 
 Key activities that contribute to platform usage include:
 
-*   **AI Orchestration**: Reasoning cycles executed by specialized agents (e.g., BA, Code Review, and QA agents).
-*   **Build Generation**: The processing required to analyze repositories and generate implementation pull requests.
-*   **Deployment Workflows**: Orchestrating the path to production, including environment initialization and verification.
-*   **Validation Pipelines**: Automated execution of quality gates, linting, and test suites within the Revolte ecosystem.
+- **AI orchestration**: Reasoning cycles executed by specialized agents such as BA, Code Review, and QA agents.
+- **Build generation**: Repository analysis and implementation work required to produce pull requests.
+- **Deployment workflows**: Release orchestration, environment initialization, and deployment verification.
+- **Validation pipelines**: Automated quality gates, linting, and test-suite execution.
 
 ## Workflow Consumption
 
 Usage is attributed directly to specific engineering workflows, providing teams with the granularity needed to optimize operational activity at scale. This attribution allows organizations to:
 
-*   **Identify High-Impact Workflows**: Understand which projects or applications are utilizing the most platform resources.
-*   **Optimize Consumption**: Review workflow execution patterns to eliminate redundant or inefficient platform activity.
-*   **Scalable Visibility**: Track how usage scales with team size and repository complexity to ensure predictable growth.
+- **Identify high-impact workflows**: Understand which projects or applications consume the most platform resources.
+- **Optimize consumption**: Review workflow execution patterns to reduce redundant or inefficient activity.
+- **Plan for growth**: Track how usage changes with team size, repository complexity, and delivery volume.
 
 ## Usage Credits & Limits
 
@@ -40,20 +49,20 @@ Credits are consumed based on the complexity and duration of the operational act
 
 Revolte provides enterprise-oriented billing dashboards that offer a single source of truth for all operational costs.
 
-*   **Centralized Tracking**: Monitor usage trends across multiple teams and projects from a single administrative view.
-*   **Consumption Forecasting**: Use historical data to forecast future resource needs and plan organizational budgets with confidence.
-*   **Audit-Ready Reporting**: Export detailed usage reports for internal accounting and engineering governance reviews.
+- **Centralized tracking**: Monitor usage trends across multiple teams and projects from one administrative view.
+- **Consumption forecasting**: Use historical data to plan future resource needs and budget expectations.
+- **Audit-ready reporting**: Export detailed usage reports for internal accounting and engineering governance reviews.
 
 ## Best Practices
 
-To maintain efficient platform utilization, we recommend the following operational habits:
+To keep platform usage predictable, use these operational habits:
 
 <CardGroup cols={2}>
   <Card title="Monitor Trends" icon="chart-line">
     Regularly review usage dashboards to identify trends and seasonal spikes in engineering activity.
   </Card>
   <Card title="Review Workflows" icon="magnifying-glass">
-    Periodically audit high-consumption workflows to ensure they are aligned with your current engineering priorities.
+    Periodically audit high-consumption workflows and confirm they match current engineering priorities.
   </Card>
   <Card title="Strategic Allocation" icon="users">
     Allocate credits across teams based on project priority and development velocity requirements.
