@@ -16,30 +16,34 @@ Metrics turn application and delivery activity into measurable trends. Use them 
 
 Logs explain individual events. Metrics show patterns across time. They help you see whether a release changed latency, whether memory usage is climbing, whether deployments are failing more often, or whether recovery time is improving.
 
-## Dashboard coverage
+## Advanced Dashboard Ecosystem
 
-Revolte supports multiple dashboard categories so teams can evaluate application health, delivery quality, and operational risk from the same product area.
+Revolte provides a suite of specialized dashboards designed for different stakeholders—from DevOps engineers to Product Owners. These dashboards turn raw system data into actionable business intelligence.
 
 <CardGroup cols={2}>
-  <Card title="Infrastructure Dashboard" icon="server">
-    Track CPU, memory, network throughput, and instance-level system behavior.
+  <Card title="DORA Dashboard" icon="gauge" href="/docs/observe/dora-metrics">
+    Measure delivery velocity and stability using industry-standard DevOps metrics.
   </Card>
-  <Card title="DORA Dashboard" icon="gauge">
-    Measure deployment frequency, lead time for changes, change failure rate, and mean time to recovery.
+  <Card title="Security & Compliance" icon="shield-check" href="/docs/observe/security-dashboard">
+    Monitor release-level exposure, delivery risk, and automated compliance signals across your SDLC.
   </Card>
-  <Card title="Delivery Quality Dashboard" icon="activity">
-    Review build success, deployment success, and release reliability trends over time.
+  <Card title="Maintainability & Debt" icon="wrench" href="/docs/observe/maintainability-dashboard">
+    Track code quality trends, technical debt accumulation, and long-term service health.
   </Card>
-  <Card title="Security Dashboard" icon="shield-check">
-    Monitor security posture, delivery risk, and release-level exposure signals.
+  <Card title="Infrastructure & Runtime" icon="server">
+    Deep-dive into CPU, memory, and network behavior with environment-aware granularity.
   </Card>
-  <Card title="Maintainability Dashboard" icon="wrench">
-    Understand code quality, technical debt, and long-term maintainability signals.
+  <Card title="Delivery Reliability" icon="activity">
+    Analyze build/deploy success rates and identify systemic bottlenecks in your release process.
   </Card>
-  <Card title="Productivity Dashboard" icon="zap">
-    Measure engineering throughput, execution efficiency, and team delivery trends.
+  <Card title="Team Productivity" icon="zap">
+    Measure engineering throughput and execution efficiency to optimize resource allocation.
   </Card>
 </CardGroup>
+
+<Note>
+  **Elite Observability**: While DORA is our flagship metric system, Revolte is actively expanding the native intelligence for Security, Maintainability, and Productivity dashboards to provide a 360-degree view of your engineering health.
+</Note>
 
 ## System metrics
 
@@ -65,18 +69,11 @@ These help teams balance speed and reliability.
 
 ## DORA metrics
 
-DORA metrics give teams a delivery-level view of engineering performance. In Revolte, they help connect release velocity and operational reliability in the same workflow.
+DORA metrics provide a standardized way to measure the performance of your engineering team's delivery process. Revolte captures these metrics natively across all environments to help you balance delivery speed with system stability.
 
-Track these indicators over time:
-
-- Deployment frequency
-- Lead time for changes
-- Change failure rate
-- Mean time to recovery
-
-Use them to understand whether the team is shipping quickly, whether releases are stable, and whether incidents are resolved efficiently.
-
-![Revolte DORA dashboard showing deployment frequency, lead time, change failure rate, and recovery metrics](/images/docs/doc-info-4.png)
+<Card title="DORA Metrics Guide" icon="gauge" href="/docs/observe/dora-metrics">
+  Learn how to measure and optimize your Deployment Frequency, Lead Time, Change Failure Rate, and MTTR.
+</Card>
 
 ![Revolte delivery quality dashboard showing build success rate and deployment success rate trends](/images/docs/doc-info-5.png)
 
