@@ -1,0 +1,58 @@
+---
+title: "Validation Pipeline"
+description: "Configure automated code quality and test checks that run before a generated change is finalized."
+---
+
+The **Pipeline** section in the YML Configuration allows you to enforce quality standards on every generated commit. This ensures that any code produced by Revolte passes your repository's linting rules and test suite before it reaches the review stage.
+
+<Note title="Note on Terminology">
+  In this context, **Pipeline** refers to pre-build validation checks, not the CI/CD deployment pipeline that releases your application to production.
+</Note>
+
+## Code Quality (Linting)
+
+Use the **Code Quality** settings to decide whether Revolte should run lint or style checks after generating commits. This catches formatting and style issues early, keeping the human review focused on logic and architecture.
+
+<CardGroup cols={2}>
+  <Card title="Enable Checks" icon="toggle-left">
+    Toggle whether Code Quality checks should block a pull request from being ready for review.
+  </Card>
+  <Card title="Rule Configuration" icon="list-checks">
+    Configure which linting rules (e.g., ESLint, Prettier) apply to the repository.
+  </Card>
+  <Card title="Path Exclusions" icon="file-x">
+    Skip generated assets, lockfiles, or snapshots that should not be subjected to lint checks.
+  </Card>
+  <Card title="Clean Commits" icon="target">
+     catch formatting issues automatically so your Git history stays clean.
+  </Card>
+</CardGroup>
+
+## Test Suite
+
+The **Test Suite** configuration allows you to run your existing repository tests against generated changes. Revolte will report the results as part of the implementation context.
+
+### Configuration
+
+Enter the exact command your repository uses to run tests. Revolte will execute this command in the repository context.
+
+```bash
+npm run test
+```
+
+You can use any command your team trusts, such as:
+- `npm run test:unit`
+- `pnpm test`
+- `yarn test`
+- `vitest run`
+
+<Tip title="Start Reliable">
+  Begin with your fastest, most reliable test commands. As your Revolte workflow stabilizes, you can expand the suite to include integration or end-to-end tests.
+</Tip>
+
+## Configuration Workflow
+
+1. Go to **Projects** and select your application.
+2. Open **YML Configuration**.
+3. Select the **Repo Preference** tab.
+4. Navigate to the **Pipeline** section to enable Code Quality and Test Suite checks.

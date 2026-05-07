@@ -1,10 +1,12 @@
 ---
 title: "Environment Variables"
+sidebarTitle: "Variables"
 ---
 
-> ⚠️ **Prerequisite**  
-> You need an active workspace and application.  
-> → Start with [Deploy Your Application](/docs/deploy/quick-start)
+<Note>
+  <strong>Prerequisite</strong><br />
+  You need an active workspace and application. Start with [Deploy Your Application](/docs/deploy/quick-start).
+</Note>
 
 Environment variables are configuration values injected into your application at build time or runtime. They keep deployment-specific values out of source code and let each environment run with the right settings.
 
@@ -42,7 +44,7 @@ Secrets should:
 - Be visible only to authorized users
 - Be rotated when access changes
 
-> ⚠️ **Do not commit secrets**  
+> **Do not commit secrets**  
 > If a value grants access to data, infrastructure, or third-party services, store it as a secret instead of putting it in the repository.
 
 ## Scope by environment

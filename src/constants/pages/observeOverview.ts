@@ -75,7 +75,7 @@ export const OBSERVE_OVERVIEW_CONTENT: MainContentProps = {
     },
 
     // =============================
-    // INSIGHTS LAYER (🔥 NEW)
+    // INSIGHTS LAYER (NEW)
     // =============================
     {
       id: "insights-layer",
