@@ -4,37 +4,48 @@ description: "Use Revolte documentation to build, deploy, observe, and govern AI
 sidebarTitle: "Welcome"
 ---
 
-<div className="text-center pb-10">
-  <h1 className="text-7xl font-extrabold tracking-tighter leading-none">
+<div className="text-center py-12">
+  <h1 className="text-6xl font-extrabold tracking-tighter leading-none">
     Modern AI
-    <span className="text-primary">Developer Infrastructure</span>
+    <span className="text-primary"> Developer Infrastructure</span>
   </h1>
 </div>
-<Frame caption="Move from initial developer intent to production in one unified AI-native workflow.">
+
+<Frame caption="Move from initial intent to production in one unified AI-native workflow.">
   <img src="/images/heo-image.png" alt="Revolte AI-native software delivery workflow" />
 </Frame>
-## What Revolte enables
-<CardGroup cols={2}>
-  <Card title="AI-Generated Applications" icon="sparkles" href="/docs/build/quick-start">
-    Let specialized AI agents turn your requirements into reviewable code, tests, documentation, and delivery configuration.
+
+
+## What you can do with Revolte
+
+- **Describe the outcome, not the implementation.** Revolte's AI agents turn high-level intent into production-ready code, tests, and configuration.
+- **Ship with built-in safety.** Every change is automatically validated and reviewed before it ever reaches your production environment.
+- **Automate your entire SDLC.** From repository setup and CI/CD to environment management and DORA metrics—everything is handled in one place.
+- **Scale without DevOps bottlenecks.** Revolte manages the underlying infrastructure so your team can focus on building features, not pipelines.
+
+## Core capabilities
+
+<CardGroup cols={3}>
+  <Card title="Build" icon="sparkles" href="/docs/build/overview">
+    AI-assisted implementation, automated testing, and requirement refinement.
   </Card>
-  <Card title="AI-Assisted Delivery" icon="git-pull-request" href="/docs/build/review-output">
-    Automate implementation and let AI perform initial code reviews before your team merges the final pull request.
+  <Card title="Deploy" icon="rocket" href="/docs/deploy/overview">
+    Automated release pipelines, preview environments, and safe production promotion.
   </Card>
-  <Card title="Automated Release Pipelines" icon="rocket" href="/docs/deploy/quick-start">
-    Safely promote AI-generated changes through preview, staging, and production with managed environments.
-  </Card>
-  <Card title="AI-Enhanced Observability" icon="activity" href="/docs/observe/quick-start">
-    Combine intelligent debugging with logs, metrics, and deployment activity to verify releases and diagnose issues.
-  </Card>
-  <Card title="Unified Governance" icon="shield-check" href="/docs/control/users-roles">
-    Manage users, roles, and environment secrets to safely control AI operations across your repositories.
-  </Card>
-  <Card title="End-to-End AI SDLC" icon="waypoints" href="/docs/quick-start">
-    Use Revolte as a complete AI-native Software Development Life Cycle or introduce capabilities progressively.
+  <Card title="Observe" icon="activity" href="/docs/observe/overview">
+    Intelligence-driven metrics, live logs, and automated DORA performance tracking.
   </Card>
 </CardGroup>
-## Start here
 
-1. [Quick Start](/docs/quick-start)
-2. [Key Concepts](/docs/key-concepts)
+## How Revolte works
+
+1. **Describe your Intent**: Submit requirements in natural language through the Dashboard or CLI.
+2. **AI Agents Execute**: Specialized agents generate your code, tests, and deployment configurations.
+3. **Review & Iterate**: Preview your changes instantly in managed environments and perform AI-assisted reviews.
+4. **Deploy & Scale**: Promote to production with confidence and monitor performance natively.
+
+## Getting started
+
+- [Quick Start](/docs/quick-start) — Go from zero to production in under 10 minutes.
+- [Key Concepts](/docs/key-concepts) — Understand the architecture of the Revolte platform.
+- [CLI Guide](/docs/build/cli-workflow) — Integrate Revolte into your local development terminal.

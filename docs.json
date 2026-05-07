@@ -107,14 +107,27 @@
                   "docs/observe/overview",
                   "docs/observe/quick-start",
                   "docs/observe/logs",
-                  "docs/observe/metrics",
+                  {
+                    "group": "Intelligence Dashboards",
+                    "expanded": false,
+                    "pages": [
+                      "docs/observe/metrics",
+                      "docs/observe/dora-metrics",
+                      "docs/observe/security-dashboard",
+                      "docs/observe/maintainability-dashboard"
+                    ]
+                  },
                   "docs/troubleshooting/overview"
                 ]
               },
               {
                 "group": "Access & Control",
                 "expanded": false,
-                "pages": ["docs/control/overview", "docs/control/users-roles", "docs/control/services"]
+                "pages": [
+                  "docs/control/overview",
+                  "docs/control/users-roles",
+                  "docs/control/services"
+                ]
               },
               {
                 "group": "Platform Capabilities",
