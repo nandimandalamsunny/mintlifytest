@@ -1,0 +1,25 @@
+@media (min-width: 1024px) {
+  #body-content::before,
+  #body-content::after {
+    content: "";
+    position: fixed;
+    top: 4rem;
+    bottom: 0;
+    z-index: 20;
+    width: 1px;
+    pointer-events: none;
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  #body-content::before {
+    left: 17.5rem;
+  }
+
+  #body-content::after {
+    right: 19rem;
+  }
+
+  #table-of-contents-content {
+    height: 100%;
+  }
+}
