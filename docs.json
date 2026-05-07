@@ -37,7 +37,16 @@
         "groups": [
           {
             "group": "Start Here",
-            "pages": ["docs/index", "docs/quick-start", "docs/key-concepts"]
+            "pages": [
+              "docs/index",
+              "docs/quick-start",
+              "docs/key-concepts",
+              {
+                "group": "Choose your path",
+                "expanded": false,
+                "pages": ["docs/build/cli-workflow", "docs/build/web-workflow"]
+              }
+            ]
           },
           {
             "group": "Troubleshooting",
@@ -57,12 +66,17 @@
                 "pages": [
                   "docs/build/quick-start",
                   "docs/build/review-output",
+                  "docs/build/pipeline",
+                  {
+                    "group": "Advanced Configuration",
+                    "expanded": false,
+                    "pages": ["docs/build/pre-build-workflows", "docs/build/validation-pipeline"]
+                  },
                   {
                     "group": "Workflows",
                     "expanded": false,
                     "pages": ["docs/build/cli-workflow", "docs/build/web-workflow"]
-                  },
-                  "docs/build/pipeline"
+                  }
                 ]
               },
               {
@@ -157,11 +171,37 @@
         ]
       },
       {
+        "tab": "Agents",
+        "groups": [
+          {
+            "group": "Overview",
+            "pages": [
+              "docs/agents/overview",
+              "docs/agents/ba-agent",
+              "docs/agents/code-review-agent"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Roadmap",
+        "groups": [
+          {
+            "group": "Future",
+            "pages": ["docs/roadmap"]
+          }
+        ]
+      },
+      {
         "tab": "Enterprise",
         "groups": [
           {
-            "group": "Enterprise Features",
+            "group": "Enterprise",
             "pages": ["docs/enterprise/overview"]
+          },
+          {
+            "group": "Governance & Administration",
+            "pages": ["docs/usage-billing"]
           }
         ]
       },

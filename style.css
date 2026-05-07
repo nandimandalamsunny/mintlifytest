@@ -22,4 +22,38 @@
   #table-of-contents-content {
     height: 100%;
   }
+
+  #sidebar {
+    box-sizing: border-box;
+    width: 17.5rem;
+    max-width: 17.5rem;
+    padding-right: 0;
+    scrollbar-gutter: stable;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.35) transparent;
+  }
+
+  #sidebar > div {
+    padding-right: 1.75rem;
+  }
+
+  #sidebar::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+
+  #sidebar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  #sidebar::-webkit-scrollbar-thumb {
+    border: 2px solid #08080f;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.35);
+  }
+
+  #sidebar a,
+  #sidebar button {
+    font-weight: 600;
+    font-size: 30px;
+  }
 }

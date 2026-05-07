@@ -128,7 +128,7 @@ export const METRICS_CONTENT: MainContentProps = {
     },
 
     // =============================
-    // EXTENDED INSIGHTS (🔥 NEW)
+    // EXTENDED INSIGHTS (NEW)
     // =============================
     {
       id: "extended-insights",
@@ -196,7 +196,7 @@ export const METRICS_CONTENT: MainContentProps = {
     },
 
     // =============================
-    // EMPTY STATE (🔥 NEW)
+    // EMPTY STATE (NEW)
     // =============================
     {
       id: "empty-state",

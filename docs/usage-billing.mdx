@@ -1,0 +1,81 @@
+---
+title: "Usage & Billing"
+sidebarTitle: "Usage & Billing"
+mode: "wide"
+description: "Centralized visibility into platform consumption, workflow activity, and operational usage."
+---
+
+Revolte provides comprehensive transparency into your organization's platform utilization. By centralizing visibility across AI agent orchestration, build workflows, and deployment activity, Revolte ensures that engineering leads and operational owners can monitor consumption, manage quotas, and maintain governance across the entire software delivery lifecycle.
+
+## Usage Overview
+
+Platform usage in Revolte is measured by the execution of operational workflows and the orchestration of specialized AI agents. Every action taken to plan, implement, or verify a change contributes to your organization's consumption.
+
+Key activities that contribute to platform usage include:
+
+*   **AI Orchestration**: Reasoning cycles executed by specialized agents (e.g., BA, Code Review, and QA agents).
+*   **Build Generation**: The processing required to analyze repositories and generate implementation pull requests.
+*   **Deployment Workflows**: Orchestrating the path to production, including environment initialization and verification.
+*   **Validation Pipelines**: Automated execution of quality gates, linting, and test suites within the Revolte ecosystem.
+
+## Workflow Consumption
+
+Usage is attributed directly to specific engineering workflows, providing teams with the granularity needed to optimize operational activity at scale. This attribution allows organizations to:
+
+*   **Identify High-Impact Workflows**: Understand which projects or applications are utilizing the most platform resources.
+*   **Optimize Consumption**: Review workflow execution patterns to eliminate redundant or inefficient platform activity.
+*   **Scalable Visibility**: Track how usage scales with team size and repository complexity to ensure predictable growth.
+
+## Usage Credits & Limits
+
+To simplify operational management, Revolte uses a credit-based system for platform consumption. Organizations are allocated credits that are consumed as workflows are executed by agents and deployment systems.
+
+### Allocation & Thresholds
+Administrators can configure organizational limits to prevent unexpected consumption spikes. Revolte provides automated notifications when consumption reaches specific thresholds (e.g., 80% and 95% of allocated capacity), allowing for proactive resource management without interrupting engineering velocity.
+
+### Resource Governance
+Credits are consumed based on the complexity and duration of the operational activity. A simple documentation update will consume fewer resources than a complex, multi-repository architectural refactor involving multiple specialized agents and validation cycles.
+
+## Billing Visibility
+
+Revolte provides enterprise-oriented billing dashboards that offer a single source of truth for all operational costs.
+
+*   **Centralized Tracking**: Monitor usage trends across multiple teams and projects from a single administrative view.
+*   **Consumption Forecasting**: Use historical data to forecast future resource needs and plan organizational budgets with confidence.
+*   **Audit-Ready Reporting**: Export detailed usage reports for internal accounting and engineering governance reviews.
+
+## Best Practices
+
+To maintain efficient platform utilization, we recommend the following operational habits:
+
+<CardGroup cols={2}>
+  <Card title="Monitor Trends" icon="chart-line">
+    Regularly review usage dashboards to identify trends and seasonal spikes in engineering activity.
+  </Card>
+  <Card title="Review Workflows" icon="magnifying-glass">
+    Periodically audit high-consumption workflows to ensure they are aligned with your current engineering priorities.
+  </Card>
+  <Card title="Strategic Allocation" icon="users">
+    Allocate credits across teams based on project priority and development velocity requirements.
+  </Card>
+  <Card title="Optimize Execution" icon="bolt">
+    Ensure that validation pipelines and pre-build workflows are optimized to run only when necessary.
+  </Card>
+</CardGroup>
+
+## Frequently Asked Questions
+
+<AccordionGroup>
+  <Accordion title="What activities consume usage credits?">
+    Credits are consumed by AI agent reasoning (e.g., planning and code review), implementation generation, and the orchestration of deployment and validation pipelines.
+  </Accordion>
+  <Accordion title="Are deployments included in usage tracking?">
+    Yes. The orchestration and verification of deployment workflows contribute to the overall platform consumption.
+  </Accordion>
+  <Accordion title="How do AI agents affect consumption?">
+    Each specialized agent involved in a workflow (BA, Code Review, etc.) consumes resources based on the depth of the analysis and implementation work required.
+  </Accordion>
+  <Accordion title="Can organizations configure limits?">
+    Yes. Administrators can set consumption limits at the organization level and configure automated alerts to monitor resource usage.
+  </Accordion>
+</AccordionGroup>
