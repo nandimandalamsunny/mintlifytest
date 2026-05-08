@@ -4,6 +4,7 @@ sidebarTitle: "Get Started"
 description: "Connect an application, configure its delivery context, and submit a focused Build request that produces a reviewable pull request."
 ---
 
+Build turns a clear product or engineering requirement into a reviewable pull request. Use it when you know the behavior you want and need Revolte to plan, implement, test, and package the change for review.
 
 This guide takes you from a fresh workspace to a first generated feature.
 
@@ -25,13 +26,32 @@ This guide takes you from a fresh workspace to a first generated feature.
   You need access to the target Git repository and permission to connect it to Revolte.
 </Note>
 
+## How Build Fits
+
+Build is the first step in the Revolte delivery loop. The goal is not just to generate code, but to produce work that can move through review, deployment, and observation with enough context for your team to trust it.
+
+<CardGroup cols={4}>
+  <Card title="Build" icon="sparkles">
+    Describe the change and let Revolte prepare the implementation.
+  </Card>
+  <Card title="Review" icon="file-check">
+    Inspect the pull request, tests, configuration, and implementation summary.
+  </Card>
+  <Card title="Deploy" icon="rocket">
+    Release approved changes through preview, QA, staging, or production.
+  </Card>
+  <Card title="Observe" icon="activity">
+    Confirm the release using logs, metrics, and deployment history.
+  </Card>
+</CardGroup>
+
 <Tip>
   <strong>Need the product overview first?</strong>
   <br />
   Read [Introduction to Revolte](/docs) to understand the full platform in 2 to 5 minutes.
 </Tip>
 
-<-- ## Before you start
+## Before you start
 
 Prepare these details before opening the setup flow:
 
@@ -117,6 +137,36 @@ You can customize how Revolte handles code reviews, linting, and testing through
 - [Pre-Build Workflows](/docs/build/pre-build-workflows): Set up automated code review and summarization.
 - [Validation Pipeline](/docs/build/validation-pipeline): Enable automated linting and test suite execution.
 
+## Submit your first build
+
+After the application is connected and the YAML workflows are configured, submit a small, reviewable requirement. A first request should prove that Revolte understands the repository and can produce a clean pull request.
+
+<Steps>
+  <Step title="Open the application">
+    Select the project and application you want to change. Revolte uses this context to understand repository structure, framework conventions, branch mapping, and deployment targets.
+  </Step>
+
+  <Step title="Describe the requirement">
+    Write the requirement in plain language. Focus on behavior, inputs, outputs, validation, and edge cases.
+
+    ```txt
+    Add a REST endpoint that returns a user's recent activity with pagination, authentication, and tests.
+    ```
+
+  </Step>
+
+  <Step title="Let Revolte generate the change">
+    Revolte analyzes the repository, plans the implementation, modifies code, creates tests, and prepares supporting documentation where needed.
+  </Step>
+
+  <Step title="Review the pull request">
+    Inspect the generated pull request like any teammate's change. Check the diff, tests, configuration updates, and implementation summary before approving.
+  </Step>
+
+  <Step title="Merge when ready">
+    After approval, merge the pull request. Deploy can then release the application according to your configured pipeline and environment rules.
+  </Step>
+</Steps>
 
 ## Write a strong requirement
 
@@ -157,6 +207,14 @@ Use this checklist when writing your first request:
   </Card>
 </CardGroup>
 
+## What you should receive
+
+Treat the first result as a review packet. A strong Build output should include:
+
+- Source changes scoped to the requirement
+- Unit or integration tests for the new behavior
+- Documentation updates when the change affects usage or operation
+- A pull request with implementation context and validation evidence
 
 <Note>
   Review the generated pull request before merging. Revolte accelerates implementation, but your team's review standards still apply.

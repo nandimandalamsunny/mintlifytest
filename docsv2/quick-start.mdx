@@ -1,126 +1,83 @@
 ---
-title: "Quick Start"
-description: "Install the Revolte CLI, connect a repository, and deploy your first service."
+title: "Create Your First Feature"
+sidebarTitle: "Get Started"
+description: "Connect an application, configure its delivery context, and submit a focused Build request that produces a reviewable pull request."
 ---
 
-Use this guide to deploy a service from a repository into a Revolte environment. You will install the CLI, authenticate, initialize configuration, and run the first deployment.
-
-## Requirements
-
-| Requirement | Minimum |
-| --- | --- |
-| Node.js | 20 or later for JavaScript projects |
-| Git | A repository hosted on GitHub, GitLab, or Bitbucket |
-| Permissions | Ability to connect the repository and create deployments |
-| Revolte account | Workspace access with project creation rights |
-
-<Note>
-  Start with a non-production environment for the first deployment. Promote to production after logs and metrics confirm the service is healthy.
-</Note>
-
-## Install the CLI
-
-<Tabs>
-  <Tab title="npm">
-    <CodeBlock language="bash" filename="Terminal">
-{`npm install -g revolte
-revolte --version`}
-    </CodeBlock>
-  </Tab>
-  <Tab title="Homebrew">
-    <CodeBlock language="bash" filename="Terminal">
-{`brew tap revolte-dev/tap
-brew install revolte`}
-    </CodeBlock>
-  </Tab>
-  <Tab title="curl">
-    <CodeBlock language="bash" filename="Terminal">
-{`curl -fsSL https://revolte.dev/install.sh | sh
-revolte doctor`}
-    </CodeBlock>
-  </Tab>
-</Tabs>
-
-## Deploy the first service
-
 <Steps>
-  <Step title="Authenticate">
-    Sign in and bind your local session to the workspace that owns the service.
-
-    <CodeBlock language="bash" filename="Terminal">
-{`revolte auth login
-revolte workspace use acme-platform`}
-    </CodeBlock>
+  <Step title="Sign up">
+    [Create your Revolte account](https://console.revolte.ai/auth/login) and open the onboarding flow.
   </Step>
-  <Step title="Initialize configuration">
-    Generate a starter Revolte configuration at the repository root.
 
-    <CodeBlock language="bash" filename="Terminal">
-{`revolte init --project commerce --service checkout-api --type web-service`}
-    </CodeBlock>
+  <Step title="Complete workspace details">
+    Add your organization details and role so Revolte can tailor the workspace context.
+
+    <div style={{ display: "flex", justifyContent: "center" }}>
+      <img src="/docsv2/image-v2/setup/quick-start-1.png" width="600" alt="Workspace details modal" />
+    </div>
+
   </Step>
-  <Step title="Review the generated file">
-    Confirm the build command, start command, port, and target environment.
 
-    <CodeBlock language="yaml" filename="revolte.yaml">
-{`version: "1"
-project: commerce
+  <Step title="Select a cloud target">
+    Choose where Revolte should run and manage the application infrastructure.
 
-services:
-  - name: checkout-api
-    type: web_service
-    source:
-      root: apps/checkout-api
-      build: npm ci && npm run build
-      start: npm run start
-    ports:
-      - internal: 3000
-        public: true
-    deploy:
-      strategy: rolling
-      healthCheck: /healthz
+    <div style={{ display: "flex", justifyContent: "center" }}>
+      <img src="/docsv2/image-v2/setup/quick-start-2.png" width="600" alt="Cloud target selection" />
+    </div>
 
-environments:
-  staging:
-    branch: main
-    variables:
-      NODE_ENV: production`}
-    </CodeBlock>
   </Step>
-  <Step title="Deploy to staging">
-    Run the deployment and stream logs until the health check passes.
 
-    <CodeBlock language="bash" filename="Terminal">
-{`revolte deploy checkout-api --env staging --follow`}
-    </CodeBlock>
+  <Step title="Connect source control">
+    Connect the Git provider that contains the repository Revolte should use for generated work.
+
+    <div style={{ display: "flex", justifyContent: "center" }}>
+      <img src="/docsv2/image-v2/setup/quick-start-3.png" width="600" alt="Source control integration" />
+    </div>
+
+  </Step>
+
+  <Step title="Connect project management">
+    Optionally connect a product management tool so issues or requirements can be linked to build workflows.
+
+    <div style={{ display: "flex", justifyContent: "center" }}>
+      <img src="/docsv2/image-v2/setup/quick-start-4.png" width="600" alt="Project management integration" />
+    </div>
+
+  </Step>
+
+  <Step title="Create the project">
+    Create or select the project that groups related applications under the same product context.
+
+    <div style={{ display: "flex", justifyContent: "center" }}>
+      <img src="/docsv2/image-v2/setup/quick-start-5.png" width="600" alt="Project creation form" />
+    </div>
+
+  </Step>
+
+  <Step title="Create the application">
+    Name the application and select the repository Revolte should manage.
+
+    <div style={{ display: "flex", justifyContent: "center" }}>
+      <img src="/docsv2/image-v2/setup/quick-start-6.png" width="600" alt="Application creation form" />
+    </div>
+
+  </Step>
+
+  <Step title="Configure the YAML">
+    Review the generated `revolte.yml`, framework selection, branch mapping, workflow toggles, and validation settings.
+
+    <div style={{ display: "flex", justifyContent: "center" }}>
+      <img src="/docsv2/image-v2/setup/quick-start-7.png" width="600" alt="Pipeline configuration screen" />
+    </div>
+
+  </Step>
+
+  <Step title="Launch the application">
+    Confirm the launch checklist and let Revolte initialize the application workflow.
+
+    <div style={{ display: "flex", justifyContent: "center" }}>
+      <img src="/docsv2/image-v2/setup/quick-start-8.png" width="600" alt="Launch confirmation checklist" />
+    </div>
+
   </Step>
 </Steps>
-
-## Verify the release
-
-After the deploy finishes, check the deployment timeline and runtime health.
-
-| Signal | What to check |
-| --- | --- |
-| Deployment logs | Build command, artifact upload, service start, health check result |
-| Application logs | Startup errors, missing environment variables, request failures |
-| Metrics | CPU, memory, latency, request rate, and error rate |
-| Insights | AI-detected anomalies or follow-up recommendations |
-
-<Tip>
-  Keep the first deploy small. A simple health endpoint and one public route are enough to validate repository access, build settings, service startup, and observability.
-</Tip>
-
-## Next Steps
-
-<CardGroup cols={3}>
-  <Card title="Services" icon="boxes" href="/deployments/services/overview">
-    Pick the right service type for the rest of your stack.
-  </Card>
-  <Card title="Initialize Environment" icon="layers" href="/setup/initialize-environment">
-    Add environment variables, secrets, and branch mappings.
-  </Card>
-  <Card title="CLI Commands" icon="terminal" href="/cli/commands">
-    Use the full command reference for daily workflows.
-  </Card>
-</CardGroup>

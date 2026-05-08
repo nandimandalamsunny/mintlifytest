@@ -52,15 +52,14 @@
         "groups": [
           {
             "group": "Get Started",
-            "pages": ["docsv2/introduction", "docsv2/quick-start", "docsv2/core-concepts"]
+            "pages": ["docsv2/quick-start"]
           },
 
           {
             "group": "Setup",
             "pages": [
               "docsv2/setup/create-project",
-              "docsv2/setup/connect-repository",
-              "docsv2/setup/initialize-environment"
+              "docsv2/setup/create-application"
             ]
           },
 
@@ -72,7 +71,7 @@
                 "group": "Cloud",
                 "expanded": false,
 
-                "pages": ["docsv2/integrations/cloud/overview", "docsv2/integrations/cloud/aws"]
+                "pages": ["docsv2/integrations/cloud/overview"]
               },
 
               {
@@ -81,7 +80,6 @@
 
                 "pages": [
                   "docsv2/integrations/repository/github",
-                  "docsv2/integrations/repository/preferences",
 
                   {
                     "group": "GitLab",

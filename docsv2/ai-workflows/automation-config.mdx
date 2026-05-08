@@ -1,0 +1,50 @@
+---
+title: "Automation Config"
+description: "Configure pipeline automation, auto-merge rules, and deployment gates for Revolte AI Workflows."
+---
+
+Automation configuration controls what Revolte can do without manual intervention. Use it to define validation steps, auto-merge thresholds, promotion gates, and deployment strategies.
+
+<div style={{ display: "flex", justifyContent: "center" }}>
+  <img src="/docsv2/image-v2/ai-workflow/automation-form.png" width="600" />
+</div>
+
+## Automation areas
+
+| Area          | Controls                                                         |
+| ------------- | ---------------------------------------------------------------- |
+| Pull requests | Summaries, risk scoring, preview deployments, auto-merge.        |
+| Validation    | Build, lint, tests, security checks, and policy checks.          |
+| Deployment    | Environment triggers, rollout strategy, approval gates.          |
+| Recovery      | Automatic pause, rollback suggestions, and incident annotations. |
+
+## Gate behavior
+
+| Gate                   | Blocks when                                          |
+| ---------------------- | ---------------------------------------------------- |
+| maxRiskScore           | AI risk score exceeds the configured threshold.      |
+| manualApproval         | Required reviewers have not approved.                |
+| requirePassingInsights | Active high-severity insight exists for the service. |
+| validation.commands    | A configured command fails.                          |
+
+<Tip>
+  Start automation in preview and staging. Move production automation from advisory to enforcing
+  only after the team trusts the signals.
+</Tip>
+
+## Enable safely
+
+<Steps>
+  <Step title="Configure validation">
+    Add deterministic commands that already run locally or in CI.
+  </Step>
+  <Step title="Run in advisory mode">
+    Let Revolte score risk and suggest actions without blocking releases.
+  </Step>
+  <Step title="Enforce staging gates">Require passing checks before staging deploys.</Step>
+  <Step title="Add production policy">
+    Require approvals and low active-risk signals before production promotion.
+  </Step>
+</Steps>
+
+## Related
