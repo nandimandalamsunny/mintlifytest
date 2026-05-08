@@ -64,8 +64,8 @@
                 "group": "Build Applications",
                 "expanded": false,
                 "pages": [
-                  "docs/build/overview",
                   "docs/build/quick-start",
+                  "docs/build/overview",
                   "docs/build/review-output",
                   "docs/build/automation-configurations",
                   "docs/build/environment-configuration",
@@ -85,8 +85,8 @@
                 "group": "Deploy & Release",
                 "expanded": false,
                 "pages": [
-                  "docs/deploy/overview",
                   "docs/deploy/quick-start",
+                  "docs/deploy/overview",
                   "docs/deploy/environments",
                   {
                     "group": "Configuration",
@@ -104,8 +104,8 @@
                 "group": "Monitor & Debug",
                 "expanded": false,
                 "pages": [
-                  "docs/observe/overview",
                   "docs/observe/quick-start",
+                  "docs/observe/overview",
                   "docs/observe/logs",
                   {
                     "group": "Intelligence Dashboards",
