@@ -1,121 +1,84 @@
 ---
-title: "Cron + Storage Bucket + Cache: Repo Preference & Environment Settings"
+title: "Cron with Storage Bucket & Cache"
 description: "Configure repository preferences and environment settings for a cron service with storage and cache."
 ---
 
 This guide explains how to configure a Cron service with both a Storage Bucket and a Cache in Revolte, covering Repo Preference and Environment Settings. Visual references are provided for each step.
 
-## Prerequisites
 
-Before you configure this preset, make sure you have:
+<Steps>
+  <Step title="Choose a Preset">
+    ![Choose Cron + StorageBucket + Cache Preset](../../images/guides/repo_preference/preset-13.png)
 
-- A Revolte workspace with an application created
-- Repository access for the target application
-- Permission to edit YAML configuration and commit changes
-- Environment-specific values for QA, staging, production, and preview
+    The preset chooser shows a grid of service options. The **Cron + Storage Bucket + Cache** tile is highlighted. Click **Cron + Storage Bucket + Cache** to continue.
+  </Step>
 
-## Step 1: Choose a Preset
+  <Step title="Repo Preference">
+    The Repo Preference tab is identical across all service presets. See [Repository Preference](/docs/guides/overview#repository-preference) for a full walkthrough of each setting.
+  </Step>
 
-Select the **Cron + Storage Bucket + Cache** preset to automate scheduled tasks with object storage and cache support.
+  <Step title="Cron — Environment Settings">
+    ![Cron tab — QA environment](../../images/guides/environment_settings/envsettings-13.png)
 
-![Choose Cron + Storage Bucket + Cache Preset](/images/guides/repo_preference/preset-13.png)
+    The **QA** environment tab is selected. The left sidebar shows **Cron**, **Storage Bucket**, **Cache**, and **Variables** under Build & deployment workflow. The center panel shows the Cron form:
 
-- **Cron + Storage Bucket + Cache**: Schedule tasks with object storage and cache (e.g., periodic jobs with file uploads and fast access).
+    - **Service Name** — Enter a unique identifier for this cron job (e.g., `cron_service`).
+    - **Entry Point** — The main file executed on each cron run (e.g., `index.js`).
+    - **Specifications**
+      - **CPU & Memory** — Choose a compute tier for this job (e.g., `2 CPU and 1 GB Memory`).
+      - **Storage value** — Disk space in GB allocated to the job (e.g., `30`).
+    - **Properties**
+      - **Scheduler** — Enter a cron expression to set when the job runs (e.g., `cron(* 20 * ? *)`).
+    - **Pre Script** — Commands to run before the job executes. Click **+ Add** to add a script.
+    - **Insights** — Select system metrics to monitor:
+      - **Cpu** — Options: idle, user, system.
+      - **Swap** — Options: swap usage.
+      - **Memory** — Options: total memory used, free memory.
+      - **Disk** — Options: disk used, disk total, disk free.
+  </Step>
 
-## Step 2: Repo Preference
+  <Step title="Storage Bucket — Environment Settings">
+    ![Storage Bucket tab — QA environment](../../images/guides/environment_settings/envsettings-13-1.png)
 
-Configure repository interaction for your service:
+    The **QA** environment tab is selected with the **Storage Bucket** tab active. The left sidebar shows **Cron**, **Storage Bucket**, **Cache**, and **Variables**. The center panel shows the Storage Bucket form:
 
-- **Application and branch setting**: Choose the branch and framework for your scheduled job.
-- **Agent workflow**: Enable to automate developer workflows.
-- **Pre-build workflow**: Enable code review and summarization before builds.
-- **Pipeline**: Configure code quality and test suite steps.
-- **Build and deployment workflow**: Enable to automate build and deployment for your service.
+    - **Service Name** — Enter a unique identifier for this storage bucket service (e.g., `my_storage`).
+    - **Configurations**
+      - **Bucket Name** — Enter a globally unique name for the bucket (e.g., `my-app-assets`).
+      - **Bucket Versioning** — Toggle on to keep a history of object versions for rollback or audit.
+      - **Enable Public Access** — Toggle on to make bucket contents publicly accessible via URL.
+    - **Cors Rules** — Define allowed origins, methods, and headers for cross-origin requests. Click **+ Add** to add a rule.
+  </Step>
 
-## Step 3: Environment Settings
+  <Step title="Cache — Environment Settings">
+    ![Cache tab — QA environment](../../images/guides/environment_settings/envsettings-13-2.png)
 
-After repo preferences, configure environment-specific settings for your service.
+    The **QA** environment tab is selected with the **Cache** tab active. The left sidebar shows **Cron**, **Storage Bucket**, **Cache**, and **Variables**. The center panel shows the Cache form:
 
-### 3.1 Environment Settings Overview
+    - **Service Name** — Enter a unique identifier for this cache instance (e.g., `my_cache`).
+    - **Specifications**
+      - **CPU & Memory** — Choose a resource tier that matches your caching needs (e.g., `2 CPU and 1 GB Memory`).
+  </Step>
 
-![Environment Settings Overview](/images/guides/environment_settings/envsettings-13.png)
+  <Step title="Variables & Secrets">
+    ![Variables & Secrets tab — QA environment](../../images/guides/environment_settings/envsettings-13-3.png)
 
-In the Environment Settings panel, select the **Cron**, **Storage Bucket**, and **Cache** tabs to configure scheduled job, storage, and cache details for each environment (QA, Staging, Production, Preview).
+    The **QA** environment tab is selected with the **Secrets** sub-tab active. The left sidebar shows **Cron**, **Storage Bucket**, **Cache**, and **Variables**. The center panel shows:
 
-#### Fields in Cron Tab:
-- **Service Name**: Unique name for the cron job (e.g., storage-cache-cron)
-- **Entry Point**: Main file to launch (e.g., index.js)
-- **Schedule**: Cron expression defining when the job runs (e.g., `0 0 * * *` for daily at midnight)
-- **Specifications**: Define CPU, memory, and storage requirements
-- **CPU & Memory**: Set resource limits for the job
-- **Storage Value**: Specify disk storage allocation
-- **Properties**:
-  - **Job Timeout**: Maximum allowed runtime for the job
-  - **Retries**: Number of retry attempts on failure
-- **Pre Script**: List of scripts to run before the job starts (empty by default)
-- **Variables**: Set environment variables (e.g., STORAGE_BUCKET_URL, CACHE_URL)
+    - **Secret Engine** — **Revolte secrets** is the built-in provider for storing encrypted key-value pairs.
+    - **Add Secrets** button — Click to add a secret. Enter a key (e.g., `DATABASE_URL`) and its value (e.g., a connection string or API key).
+    - Secrets appear as rows in the table once added. The table is empty until the first secret is created.
+  </Step>
 
-#### Fields in Storage Bucket Tab:
-- **Bucket Name**: Name for your storage bucket
-- **Region**: Storage region (e.g., us-east-1)
-- **Access Policy**: Public or private access
-- **Lifecycle Rules**: Configure object expiration or transitions
-- **Storage Class**: Standard, infrequent access, etc.
-- **Variables**: Environment variables for storage access
+  <Step title="Commit">
+    At the bottom of the panel, fill in the **Commit Details**:
 
-#### Fields in Cache Tab:
-- **Cache Type**: e.g., Redis, Memcached
-- **Cache Name**: Name for your cache instance
-- **Max Memory**: Maximum memory allocation for the cache
-- **Eviction Policy**: How cache evicts entries (e.g., LRU, LFU)
-- **Variables**: Environment variables for cache connection
+    - **File Name** — The configuration file to create or update in your repository (e.g., `revolte.yml`).
+    - **Commit Message** — A short description of what you configured (e.g., `Add cron service with storage bucket and cache`).
+    - **Choose Branch** — The branch where the configuration file will be committed.
 
-### 3.2 Example: Staging Environment
+    Click **Commit** to save the configuration to your repository, or **Skip & deploy** to deploy immediately without committing.
+  </Step>
+</Steps>
 
-![Staging Cron + Storage Bucket + Cache Example](/images/guides/environment_settings/envsettings-13-1.png)
-
-- **Service Name**: storage-cache-cron
-- **Entry Point**: index.js
-- **Schedule**: `0 0 * * *` (runs daily at midnight)
-- **Specifications**: Set as needed for your workload
-- **CPU & Memory**: Configure based on expected usage
-- **Storage Value**: Allocate disk space
-- **Properties**:
-  - **Job Timeout**: 30m
-  - **Retries**: 3
-- **Pre Script**: (empty)
-- **Variables**: STORAGE_BUCKET_URL, CACHE_URL
-
-![Staging Storage Bucket Example](/images/guides/environment_settings/envsettings-13-2.png)
-
-- **Bucket Name**: revolte-bucket
-- **Region**: us-east-1
-- **Access Policy**: private
-- **Lifecycle Rules**: Set as needed for object management
-- **Storage Class**: Standard
-- **Variables**: Set storage access variables for your app
-
-![Staging Cache Example](/images/guides/environment_settings/envsettings-13-3.png)
-
-- **Cache Type**: Redis
-- **Cache Name**: revolte-cache
-- **Max Memory**: 512MB
-- **Eviction Policy**: LRU
-- **Variables**: Set cache connection variables for your app
-
-#### How to Configure Each Field
-1. Fill in all required fields for Cron, Storage Bucket, and Cache tabs as described above.
-2. Repeat for each environment tab (QA, Staging, Production, Preview) as needed.
-
-### Commit Details
-
-At the bottom of the configuration panel, you will find **Commit Details**:
-- **File Name**: The YAML file to be committed (e.g., revolte.yml)
-- **Commit Message**: Enter a descriptive message for your changes.
-- **Choose Branch**: Select the branch to commit the configuration to.
-- **Commit**: Save and apply your configuration.
-- **Skip & deploy**: Skip commit and proceed to deployment (not recommended for production).
-
-> **Tip:** Always review your configuration and commit with a clear message to maintain traceability.
-
-For more details, refer to the [configuration guide overview](/docs/guides/overview).
+> **Tip:** Always commit with a clear message before deploying to keep a traceable configuration history.

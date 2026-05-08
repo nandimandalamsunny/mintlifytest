@@ -165,20 +165,16 @@
                 "expanded": false,
 
                 "pages": [
-                  "docsv2/yaml/repo-preferences/overview",
-                  "docsv2/yaml/repo-preferences/app-branch-settings",
-                  "docsv2/yaml/repo-preferences/agent-workflow",
-                  "docsv2/yaml/repo-preferences/prebuild-workflow",
-                  {
-                    "group": "Pipeline",
-                    "expanded": false,
-                    "pages": [
-                      "docsv2/yaml/repo-preferences/pipeline/overview",
-                      "docsv2/yaml/repo-preferences/pipeline/code-quality",
-                      "docsv2/yaml/repo-preferences/pipeline/test-suite"
-                    ]
-                  },
-                  "docsv2/yaml/repo-preferences/preset-service"
+                  "docs/guides/webapp-repo-env-guide",
+                  "docs/guides/webservice/webservice-overview",
+                  "docs/guides/webservice-repo-env-guide",
+                  "docs/guides/webservice-cache-repo-env-guide",
+                  "docs/guides/webservice-database-repo-env-guide",
+                  "docs/guides/webservice-database-cache-repo-env-guide",
+                  "docs/guides/webservice-storagebucket-repo-env-guide",
+                  "docs/guides/webservice-storagebucket-cache-repo-env-guide",
+                  "docs/guides/webservice-database-storagebucket-repo-env-guide",
+                  "docs/guides/webservice-database-storagebucket-cache-repo-env-guide"
                 ]
               },
 
@@ -187,19 +183,13 @@
                 "expanded": false,
 
                 "pages": [
-                  "docsv2/yaml/environment-settings/services",
-                  {
-                    "group": "Resource Specifications",
-                    "expanded": false,
-                    "pages": [
-                      "docsv2/yaml/environment-settings/resource-specifications/overview",
-                      "docsv2/yaml/environment-settings/resource-specifications/web-service",
-                      "docsv2/yaml/environment-settings/resource-specifications/database",
-                      "docsv2/yaml/environment-settings/resource-specifications/storage-bucket",
-                      "docsv2/yaml/environment-settings/resource-specifications/cache"
-                    ]
-                  },
-                  "docsv2/yaml/environment-settings/variables"
+                  "docs/guides/cron/cron-overview",
+                  "docs/guides/cron-repo-env-guide",
+                  "docs/guides/cron-cache-repo-env-guide",
+                  "docs/guides/cron-database-repo-env-guide",
+                  "docs/guides/cron-database-cache-repo-env-guide",
+                  "docs/guides/cron-storagebucket-cache-repo-env-guide",
+                  "docs/guides/cron-database-storagebucket-cache-repo-env-guide"
                 ]
               }
             ]

@@ -1,16 +1,16 @@
 ---
-title: "Web Service with Database & Cache"
-description: "Configure repository preferences and environment settings for a web service with database and cache."
+title: "Webservice with Database"
+description: "Configure repository preferences and environment settings for a web service with database."
 ---
 
-This guide explains how to configure a Web service with both a Database and a Cache in Revolte, covering Repo Preference and Environment Settings. Visual references are provided for each step.
+This guide walks through configuring a Webservice with an attached Database in Revolte step by step.
 
 
 <Steps>
   <Step title="Choose a Preset">
-    ![Choose Webservice + Database + Cache Preset](../../images/guides/repo_preference/preset-10.png)
+    ![Choose Webservice + Database Preset](../../images/guides/repo_preference/preset-3.png)
 
-    The preset chooser shows a grid of service options. The **Webservice + Database + Cache** tile is highlighted. Click **Webservice + Database + Cache** to continue.
+    The preset chooser shows a grid of service options. The **Webservice + Database** tile is highlighted, described as a backend service with auto-managed database support. Click **Webservice + Database** to continue.
   </Step>
 
   <Step title="Repo Preference">
@@ -20,7 +20,7 @@ This guide explains how to configure a Web service with both a Database and a Ca
   <Step title="Webservice — Environment Settings">
     ![Webservice tab — QA environment](../../images/guides/environment_settings/envsettings-2.png)
 
-    The **QA** environment tab is selected. The left sidebar shows **Webservice**, **Database**, **Cache**, and **Variables** under Build & deployment workflow. The center panel shows the Webservice form:
+    The **QA** environment tab is selected. The left sidebar shows **Webservice**, **Database**, and **Variables** under Build & deployment workflow. The center panel shows the Webservice form:
 
     - **Service Name** — Enter a unique identifier for this service (e.g., `web_service`).
     - **Entry Point** — The main file that starts the service (e.g., `index.js`).
@@ -38,11 +38,11 @@ This guide explains how to configure a Web service with both a Database and a Ca
       - **Memory** — Options: total memory used, free memory.
       - **Disk** — Options: disk used, disk total, disk free.
   </Step>
-  
-  <Step title="Database — Environment Settings">
-    ![Database tab — QA environment](../../images/guides/environment_settings/envsettings-10-1.png)
 
-    The **QA** environment tab is selected with the **Database** tab active. The left sidebar shows **Web service**, **Database**, **Cache**, and **Variables**. The center panel shows the Database form:
+  <Step title="Database — Environment Settings">
+    ![Database tab — QA environment](../../images/guides/environment_settings/envsettings-3-1.png)
+
+    The **QA** environment tab is selected with the **Database** tab active. The left sidebar shows **Web service**, **Database**, and **Variables**. The center panel shows the Database form:
 
     - **Service Name** — Enter a unique identifier for this database instance (e.g., `my_database`).
     - **Specifications**
@@ -51,20 +51,10 @@ This guide explains how to configure a Web service with both a Database and a Ca
     - **Storage value** — Disk space in GB allocated to the database (e.g., `30`).
   </Step>
 
-  <Step title="Cache — Environment Settings">
-    ![Cache tab — QA environment](../../images/guides/environment_settings/envsettings-10-2.png)
-
-    The **QA** environment tab is selected with the **Cache** tab active. The left sidebar shows **Web service**, **Database**, **Cache**, and **Variables**. The center panel shows the Cache form:
-
-    - **Service Name** — Enter a unique identifier for this cache instance (e.g., `my_cache`).
-    - **Specifications**
-      - **CPU & Memory** — Choose a resource tier that matches your caching needs (e.g., `2 CPU and 1 GB Memory`).
-  </Step>
-
   <Step title="Variables & Secrets">
-    ![Variables & Secrets tab — QA environment](../../images/guides/environment_settings/envsettings-10-3.png)
+    ![Variables & Secrets tab — QA environment](../../images/guides/environment_settings/envsettings-3-2.png)
 
-    The **QA** environment tab is selected with the **Secrets** sub-tab active. The left sidebar shows **Web service**, **Database**, **Cache**, and **Variables**. The center panel shows:
+    The **QA** environment tab is selected with the **Secrets** sub-tab active. The left sidebar shows **Web service**, **Database**, and **Variables**. The center panel shows:
 
     - **Secret Engine** — **Revolte secrets** is the built-in provider for storing encrypted key-value pairs.
     - **Add Secrets** button — Click to add a secret. Enter a key (e.g., `DATABASE_URL`) and its value (e.g., a connection string or API key).
@@ -75,7 +65,7 @@ This guide explains how to configure a Web service with both a Database and a Ca
     At the bottom of the panel, fill in the **Commit Details**:
 
     - **File Name** — The configuration file to create or update in your repository (e.g., `revolte.yml`).
-    - **Commit Message** — A short description of what you configured (e.g., `Add webservice with database and cache`).
+    - **Commit Message** — A short description of what you configured (e.g., `Add webservice with database`).
     - **Choose Branch** — The branch where the configuration file will be committed.
 
     Click **Commit** to save the configuration to your repository, or **Skip & deploy** to deploy immediately without committing.

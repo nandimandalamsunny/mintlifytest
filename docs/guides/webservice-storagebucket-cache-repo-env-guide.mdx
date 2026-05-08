@@ -1,123 +1,86 @@
 ---
-title: "Web Service + Storage Bucket + Cache: Repo Preference & Environment Settings"
+title: "Web Service with Storage Bucket & Cache"
 description: "Configure repository preferences and environment settings for a web service with storage and cache."
 ---
 
 This guide explains how to configure a Web service with both a Storage Bucket and a Cache in Revolte, covering Repo Preference and Environment Settings. Visual references are provided for each step.
 
-## Prerequisites
 
-Before you configure this preset, make sure you have:
+<Steps>
+  <Step title="Choose a Preset">
+    ![Choose Webservice + StorageBucket + Cache Preset](../../images/guides/repo_preference/preset-12.png)
 
-- A Revolte workspace with an application created
-- Repository access for the target application
-- Permission to edit YAML configuration and commit changes
-- Environment-specific values for QA, staging, production, and preview
+    The preset chooser shows a grid of service options. The **Webservice + Storage Bucket + Cache** tile is highlighted. Click **Webservice + Storage Bucket + Cache** to continue.
+  </Step>
 
-## Step 1: Choose a Preset
+  <Step title="Repo Preference">
+    The Repo Preference tab is identical across all service presets. See [Repository Preference](/docs/guides/overview#repository-preference) for a full walkthrough of each setting.
+  </Step>
 
-Select the **Web service + Storage Bucket + Cache** preset to deploy a backend service with object storage and cache support.
+  <Step title="Webservice — Environment Settings">
+    ![Webservice tab — QA environment](../../images/guides/environment_settings/envsettings-2.png)
 
-![Choose Web Service + Storage Bucket + Cache Preset](/images/guides/repo_preference/preset-12.png)
+    The **QA** environment tab is selected. The left sidebar shows **Webservice**, **Storage Bucket**, **Cache**, and **Variables** under Build & deployment workflow. The center panel shows the Webservice form:
 
-- **Web service + Storage Bucket + Cache**: Backend service with object storage and cache (e.g., APIs with file uploads and fast access).
+    - **Service Name** — Enter a unique identifier for this service (e.g., `web_service`).
+    - **Entry Point** — The main file that starts the service (e.g., `index.js`).
+    - **Specifications**
+      - **CPU & Memory** — Choose a compute tier for this service (e.g., `2 CPU and 1 GB Memory`).
+      - **Storage value** — Disk space in GB allocated to the service (e.g., `30`).
+    - **Properties**
+      - **Health EndPoint** — The URL path Revolte checks to confirm the service is running (e.g., `/health`).
+      - **Port** — The port your service listens on (e.g., `8080`).
+    - **Pre Script** — Commands to run before the service starts. Click **+ Add** to add a script.
+    - **Load Balancer Mode** — How incoming traffic is routed. Choose **Dedicated** for an isolated load balancer or **Shared** to share one across services.
+    - **Insights** — Select system metrics to monitor:
+      - **Cpu** — Options: idle, user, system.
+      - **Swap** — Options: swap usage.
+      - **Memory** — Options: total memory used, free memory.
+      - **Disk** — Options: disk used, disk total, disk free.
+  </Step>
 
-## Step 2: Repo Preference
+  <Step title="Storage Bucket — Environment Settings">
+    ![Storage Bucket tab — QA environment](../../images/guides/environment_settings/envsettings-12-1.png)
 
-Configure repository interaction for your service:
+    The **QA** environment tab is selected with the **Storage Bucket** tab active. The left sidebar shows **Web service**, **Storage Bucket**, **Cache**, and **Variables**. The center panel shows the Storage Bucket form:
 
-- **Application and branch setting**: Choose the branch and framework for your backend service.
-- **Agent workflow**: Enable to automate developer workflows.
-- **Pre-build workflow**: Enable code review and summarization before builds.
-- **Pipeline**: Configure code quality and test suite steps.
-- **Build and deployment workflow**: Enable to automate build and deployment for your service.
+    - **Service Name** — Enter a unique identifier for this storage bucket service (e.g., `my_storage`).
+    - **Configurations**
+      - **Bucket Name** — Enter a globally unique name for the bucket (e.g., `my-app-assets`).
+      - **Bucket Versioning** — Toggle on to keep a history of object versions for rollback or audit.
+      - **Enable Public Access** — Toggle on to make bucket contents publicly accessible via URL.
+    - **Cors Rules** — Define allowed origins, methods, and headers for cross-origin requests. Click **+ Add** to add a rule.
+  </Step>
 
-## Step 3: Environment Settings
+  <Step title="Cache — Environment Settings">
+    ![Cache tab — QA environment](../../images/guides/environment_settings/envsettings-12-2.png)
 
-After repo preferences, configure environment-specific settings for your service.
+    The **QA** environment tab is selected with the **Cache** tab active. The left sidebar shows **Web service**, **Storage Bucket**, **Cache**, and **Variables**. The center panel shows the Cache form:
 
-### 3.1 Environment Settings Overview
+    - **Service Name** — Enter a unique identifier for this cache instance (e.g., `my_cache`).
+    - **Specifications**
+      - **CPU & Memory** — Choose a resource tier that matches your caching needs (e.g., `2 CPU and 1 GB Memory`).
+  </Step>
 
-![Environment Settings Overview](/images/guides/environment_settings/envsettings-2.png)
+  <Step title="Variables & Secrets">
+    ![Variables & Secrets tab — QA environment](../../images/guides/environment_settings/envsettings-12-3.png)
 
-In the Environment Settings panel, select the **Web service**, **Storage Bucket**, and **Cache** tabs to configure backend, storage, and cache details for each environment (QA, Staging, Production, Preview).
+    The **QA** environment tab is selected with the **Secrets** sub-tab active. The left sidebar shows **Web service**, **Storage Bucket**, **Cache**, and **Variables**. The center panel shows:
 
-#### Fields in Web Service Tab:
-- **Service Name**: Unique name for the service (e.g., storage-cache-api)
-- **Entry Point**: Main file to launch (e.g., index.js)
-- **Specifications**: Define CPU, memory, and storage requirements
-- **CPU & Memory**: Set resource limits for the service
-- **Storage Value**: Specify disk storage allocation
-- **Properties**:
-  - **Health Endpoint**: Path for health checks (e.g., /health)
-  - **Port**: Port number for the service (e.g., 8080)
-- **Pre Script**: List of scripts to run before service starts (empty by default)
-- **Load Balancer Mode**: Choose between dedicated or shared load balancer
-- **Insights**: Select metrics for CPU, swap, memory, and disk
-- **Variables**: Set environment variables (e.g., STORAGE_BUCKET_URL, CACHE_URL)
+    - **Secret Engine** — **Revolte secrets** is the built-in provider for storing encrypted key-value pairs.
+    - **Add Secrets** button — Click to add a secret. Enter a key (e.g., `DATABASE_URL`) and its value (e.g., a connection string or API key).
+    - Secrets appear as rows in the table once added. The table is empty until the first secret is created.
+  </Step>
 
-#### Fields in Storage Bucket Tab:
-- **Bucket Name**: Name for your storage bucket
-- **Region**: Storage region (e.g., us-east-1)
-- **Access Policy**: Public or private access
-- **Lifecycle Rules**: Configure object expiration or transitions
-- **Storage Class**: Standard, infrequent access, etc.
-- **Variables**: Environment variables for storage access
+  <Step title="Commit">
+    At the bottom of the panel, fill in the **Commit Details**:
 
-#### Fields in Cache Tab:
-- **Cache Type**: e.g., Redis, Memcached
-- **Cache Name**: Name for your cache instance
-- **Max Memory**: Maximum memory allocation for the cache
-- **Eviction Policy**: How cache evicts entries (e.g., LRU, LFU)
-- **Variables**: Environment variables for cache connection
+    - **File Name** — The configuration file to create or update in your repository (e.g., `revolte.yml`).
+    - **Commit Message** — A short description of what you configured (e.g., `Add webservice with storage bucket and cache`).
+    - **Choose Branch** — The branch where the configuration file will be committed.
 
-### 3.2 Example: Staging Environment
+    Click **Commit** to save the configuration to your repository, or **Skip & deploy** to deploy immediately without committing.
+  </Step>
+</Steps>
 
-![Staging Web Service + Storage Bucket + Cache Example](/images/guides/environment_settings/envsettings-12-1.png)
-
-- **Service Name**: storage-cache-api
-- **Entry Point**: index.js
-- **Specifications**: Set as needed for your workload
-- **CPU & Memory**: Configure based on expected usage
-- **Storage Value**: Allocate disk space
-- **Properties**:
-  - **Health Endpoint**: /health
-  - **Port**: 8080
-- **Pre Script**: (empty)
-- **Load Balancer Mode**: dedicated
-- **Insights**: idle, system, user, swap usage, total/free memory, disk used/total/free
-- **Variables**: STORAGE_BUCKET_URL, CACHE_URL
-
-![Staging Storage Bucket Example](/images/guides/environment_settings/envsettings-12-2.png)
-
-- **Bucket Name**: revolte-bucket
-- **Region**: us-east-1
-- **Access Policy**: private
-- **Lifecycle Rules**: Set as needed for object management
-- **Storage Class**: Standard
-- **Variables**: Set storage access variables for your app
-
-![Staging Cache Example](/images/guides/environment_settings/envsettings-12-3.png)
-
-- **Cache Type**: Redis
-- **Cache Name**: revolte-cache
-- **Max Memory**: 512MB
-- **Eviction Policy**: LRU
-- **Variables**: Set cache connection variables for your app
-
-#### How to Configure Each Field
-1. Fill in all required fields for Web Service, Storage Bucket, and Cache tabs as described above.
-2. Repeat for each environment tab (QA, Staging, Production, Preview) as needed.
-
-### Commit Details
-
-At the bottom of the configuration panel, you will find **Commit Details**:
-- **File Name**: The YAML file to be committed (e.g., revolte.yml)
-- **Commit Message**: Enter a descriptive message for your changes.
-- **Choose Branch**: Select the branch to commit the configuration to.
-- **Commit**: Save and apply your configuration.
-- **Skip & deploy**: Skip commit and proceed to deployment (not recommended for production).
-
-> **Tip:** Always review your configuration and commit with a clear message to maintain traceability.
-
-For more details, refer to the [configuration guide overview](/docs/guides/overview).
+> **Tip:** Always commit with a clear message before deploying to keep a traceable configuration history.
