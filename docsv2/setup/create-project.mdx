@@ -1,0 +1,59 @@
+---
+title: "Create Project"
+description: "Create a Revolte project from the dashboard or CLI and define its delivery boundary."
+---
+
+A project groups repositories, environments, services, deployment policies, and team access. Create one project per product, platform service, or independently operated system.
+
+## Choose a project boundary
+
+| Boundary            | Use when                                                             |
+| ------------------- | -------------------------------------------------------------------- |
+| Product             | Multiple services ship together and share release ownership.         |
+| Platform capability | Internal infrastructure services have their own owners and policies. |
+| Monorepo domain     | A large repository contains several independently deployed domains.  |
+
+<Tip>
+  Keep project boundaries operational, not organizational. If two services are deployed, observed,
+  and rolled back together, they usually belong in the same project.
+</Tip>
+
+## Create from the dashboard
+
+![Create Project](/docsv2/image-v2/project-create.png)
+
+<Steps>
+  <Step title="Open the workspace">Go to the workspace that should own the project.</Step>
+  <Step title="Create a project">
+    Select New Project, enter a stable slug such as commerce, and choose the default region.
+  </Step>
+  <Step title="Assign owners">
+    Add the engineering team responsible for repositories, environments, and production approvals.
+  </Step>
+  <Step title="Select defaults">
+    Choose default deployment strategy, log retention, and review gate behavior.
+  </Step>
+</Steps>
+
+## Project settings
+
+| Setting              | Recommended value                                                     |
+| -------------------- | --------------------------------------------------------------------- |
+| Slug                 | Short lowercase identifier, for example commerce or identity-platform |
+| Default environment  | staging for new services                                              |
+| Production approvals | Required for customer-facing services                                 |
+| Log retention        | 14 to 30 days for application logs                                    |
+
+## Related
+
+<CardGroup cols={3}>
+  <Card title="Connect Repository" icon="git-branch" href="/setup/connect-repository">
+    Attach source control to the project.
+  </Card>
+  <Card title="Initialize Environment" icon="layers" href="/setup/initialize-environment">
+    Define preview, staging, and production scope.
+  </Card>
+  <Card title="Core Concepts" icon="network" href="/core-concepts">
+    Review how projects relate to services and environments.
+  </Card>
+</CardGroup>

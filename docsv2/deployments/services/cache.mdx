@@ -1,0 +1,62 @@
+---
+title: "Cache"
+description: "Provision Redis and Memcached with persistence, clustering, and service bindings."
+---
+
+Cache services provide low-latency data access for sessions, rate limits, queues, and computed values. Revolte manages connection injection and environment scope so applications do not hardcode cache endpoints.
+
+## Supported engines
+
+| Engine | Description |
+| :--- | :--- |
+| **Redis** | Recommended for sessions, queues, rate limits, and pub/sub workloads. |
+| **Memcached** | Simple ephemeral object caching without persistence. |
+
+## Configuration
+
+Define your cache service in `revolte.yaml` to control versions, persistence, and clustering.
+
+<CodeBlock language="yaml" filename="revolte.yaml">
+  {`revolte:
+  version: '1.0'
+  project: Demo Project
+  appName: demo-project
+  env:
+    production:
+      branch: main
+      services:
+        rid_cache_1:
+          type: CACHE
+          name: main-cache
+          properties:
+            engine: redis
+            version: "7"
+            persistence: true
+            shards: 3`}
+</CodeBlock>
+
+## Bind cache to a service
+
+Inject cache connection strings into application services using environment variable mapping.
+
+<CodeBlock language="yaml" filename="revolte.yaml">
+  {`revolte:
+  env:
+    production:
+      services:
+        rid_api_1:
+          type: WEB_SERVICE
+          properties:
+            variables:
+              REDIS_URL: '#{rid_cache_1.connectionString}'`}
+</CodeBlock>
+
+<Warning>
+  Do not use cache as the only source of truth for critical data. Rollbacks and resizes may clear ephemeral cache state.
+</Warning>
+
+## Related
+
+- [Databases](/deployments/services/databases)
+- [Secrets](/deployments/services/secrets)
+- [Web Services](/deployments/services/web-services)

@@ -1,0 +1,86 @@
+---
+title: "Introduction"
+description: "Understand Revolte's AI-native delivery loop, platform capabilities, and documentation paths."
+---
+
+Revolte is an AI-native software delivery platform for turning engineering intent into deployed, observable software. It connects build automation, deployment orchestration, runtime telemetry, and feedback into one delivery loop.
+
+## Delivery loop
+
+Revolte models delivery as a continuous system:
+
+| Stage   | What Revolte does                                                                                               |
+| ------- | --------------------------------------------------------------------------------------------------------------- |
+| Intent  | Reads commit messages, pull requests, diffs, tickets, and developer prompts to understand the requested change. |
+| Build   | Detects the project shape, runs configured build steps, and packages deployable services.                       |
+| Review  | Scores deployment risk and applies manual or automated review gates.                                            |
+| Deploy  | Releases services with rolling, blue/green, or canary strategies.                                               |
+| Observe | Streams logs, metrics, and AI-powered anomalies for the running deployment.                                     |
+| Improve | Uses runtime data to tune future build, deploy, and review decisions.                                           |
+
+## Platform capabilities
+
+<CardGroup cols={3}>
+  <Card title="Services" icon="boxes" href="/deployments/services/overview">
+    Deploy web apps, APIs, cron jobs, databases, object storage, caches, and secrets as typed
+    services.
+  </Card>
+  <Card title="AI Workflows" icon="sparkles" href="/ai-workflows/overview">
+    Connect repository context, risk scoring, review gates, and delivery automation.
+  </Card>
+  <Card title="Observability" icon="activity" href="/deployments/observability">
+    Monitor deployments with logs, metrics, anomaly detection, and release-aware insights.
+  </Card>
+  <Card title="Rollbacks" icon="rotate-ccw" href="/deployments/rollbacks">
+    Compare past deployments and recover production with guided rollback workflows.
+  </Card>
+  <Card title="YAML Configuration" icon="file-code-2" href="/yaml/repository-preferences">
+    Define builds, services, environments, secrets, and deployment strategies in code.
+  </Card>
+  <Card title="CLI" icon="terminal" href="/cli/installation">
+    Work from the terminal when local repository context and automation speed matter.
+  </Card>
+</CardGroup>
+
+## How teams use Revolte
+
+Developers use Revolte to ship changes without hand-stitching CI, infrastructure, deployment history, and logs. Platform teams use the same system to standardize delivery policies, environment scoping, rollback controls, and service configuration across projects.
+
+<Info>
+  Revolte is built for technical teams. These docs assume you are configuring repositories,
+  services, environments, and deployment workflows directly.
+</Info>
+
+## Typical implementation path
+
+<Steps>
+  <Step title="Create a project">
+    Define the product boundary that owns repositories, environments, services, and permissions.
+  </Step>
+  <Step title="Connect a repository">
+    Authorize Revolte to read source code, create deployment metadata, and open review workflows.
+  </Step>
+  <Step title="Declare services">
+    Add web applications, APIs, workers, databases, caches, storage, and secrets to the project.
+  </Step>
+  <Step title="Deploy and observe">
+    Release to preview, staging, or production, then inspect logs, metrics, and AI insights.
+  </Step>
+</Steps>
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Quick Start" icon="play" href="/quick-start">
+    Deploy your first service from the CLI.
+  </Card>
+  <Card title="Core Concepts" icon="network" href="/core-concepts">
+    Learn the platform objects used across Revolte.
+  </Card>
+  <Card title="Services" icon="boxes" href="/deployments/services/overview">
+    Choose the service type you want to deploy.
+  </Card>
+  <Card title="AI Workflows" icon="sparkles" href="/ai-workflows/overview">
+    See how AI participates in the delivery loop.
+  </Card>
+</CardGroup>

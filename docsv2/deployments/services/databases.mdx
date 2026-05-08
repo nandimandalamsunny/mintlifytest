@@ -1,0 +1,85 @@
+---
+title: "Databases"
+description: "Provision PostgreSQL, MySQL, and MongoDB services with backups and connection policies."
+---
+
+## Supported engines
+
+| Engine     | Description                                                                                                                                                                                                         |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| PostgreSQL | Recommended relational database for most applications                                                                                                                                                               |
+| MySQL      | MySQL-compatible relational workloads                                                                                                                                                                               |
+| MongoDB    | Flexible document-based storage <span class="soon-pill">Coming Soon</span> |
+
+## Configuration
+
+Define your database service in `revolte.yaml` to configure engines, versions, storage, and backup policies.
+
+<CodeBlock language="yaml" filename="revolte.yaml">
+{`revolte:
+  version: '1.0'
+  project: Demo Project
+  appName: demo_project
+
+workflow:
+developerWorkflow:
+enabled: true
+
+env:
+staging:
+branch: staging
+
+      services:
+        rid_2:
+          type: WEB_SERVICE
+          name: web_service
+          entryPoint: index.js
+
+          properties:
+            health: /health
+            port: 8080
+            loadBalancerMode: dedicated
+
+            variables:
+              BASE_URL: /api/v1
+              DATABASE_URL: '#{db.dbUrl}'
+              DATABASE_PORT: '#{db.dbPort}'
+              DATABASE_USERNAME: '#{db.dbUsername}'
+              DATABASE_PASSWORD: '#{db.dbPassword}'
+              DATABASE_NAME: '#{db.dbName}'
+
+          specifications:
+            cpu: 2
+            memory: 1
+            storage: 30
+
+        rid_3:
+          type: DATABASE
+          name: db
+
+          specifications:
+            cpu: 2
+            memory: 1
+            storage: 30
+            engine: postgres`}
+
+</CodeBlock>
+
+## Deployment templates
+
+Preconfigured deployment patterns for database-backed services.
+
+- [Web Service with Database](/deployments/templates/web-service-database)
+
+- [Web Service with Database and Cache](/deployments/templates/web-service-database-cache)
+
+- [Web Service with Database and Storage Bucket](/deployments/templates/web-service-database-storage)
+
+- [Web Service with Database, Cache, and Storage Bucket](/deployments/templates/web-service-database-cache-storage)
+
+## Related
+
+- [Web Services](/deployments/services/web-services)
+- [Cache](/deployments/services/cache)
+- [Secrets](/deployments/services/secrets)
+- [Observability](/deployments/observability)

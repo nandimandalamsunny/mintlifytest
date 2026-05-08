@@ -1,0 +1,51 @@
+---
+title: "Overview"
+description: "Manage your entire application lifecycle through a single version-controlled file."
+---
+
+The `revolte.yaml` file is the brain of your project. It defines your services, environments, build pipelines, and AI workflows in a single, human-readable document.
+
+![YAML Configuration](/docsv2/image-v2/yaml/yml-overview.png)
+
+> [!IMPORTANT]
+> **The Source of Truth.** The `revolte.yaml` file centralizes your entire infrastructure and application state. From framework defaults to auto-scaling policies, every aspect of your lifecycle is managed here through version-controlled Infrastructure-as-Code (IaC).
+
+## Reference Example
+
+Think of `revolte.yaml` as your project's blueprint. It tells Revolte which Git branches to watch and how to configure your services (like your API and Database) for different stages like Staging and Production.
+
+```yaml revolte.yaml
+revolte:
+  version: "1.0"
+  project: PAMS
+  appName: pams-api-service
+  env:
+    staging:
+      branch: qa
+      services:
+        rid_7:
+          type: WEB_SERVICE
+          name: api-service
+          properties:
+            health: /health
+            port: 8080
+          specifications:
+            cpu: 2
+            memory: 2
+    production:
+      branch: main
+      services:
+        rid_1:
+          type: WEB_SERVICE
+          specifications:
+            autoScaling:
+              replica: { min: 1, max: 2 }
+```
+
+## Quick Links
+
+- [GitHub Integration](/docsv2/integrations/repository/github)
+- [Managed Cloud](/docsv2/integrations/cloud/overview)
+- [Deployments Overview](/docsv2/deployments/services/overview)
+- [Environment Settings](/docsv2/yaml/environment-settings)
+- [Repository Preferences](/docsv2/yaml/repository-preferences)

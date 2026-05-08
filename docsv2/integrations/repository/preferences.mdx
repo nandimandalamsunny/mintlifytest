@@ -1,0 +1,45 @@
+---
+title: "Repository Preferences"
+description: "Configure your application framework, branch mapping, and automated workflows."
+---
+
+After connecting your repository, Revolte helps you generate a core configuration that defines how your application is built, reviewed, and deployed.
+
+![Repo Preferences](/docsv2/image-v2/integrations/repo-preferences.png)
+
+## Application Setup
+
+Define the technical foundation of your service and how your source control relates to your infrastructure.
+
+- **Framework**: Select your application framework (e.g., Express.js, Next.js, Python). Revolte uses this to pre-fill build commands and environment defaults.
+- **Branch Mapping**: Map your Git branches to Revolte environments.
+  - **Production**: Usually mapped to `main` or `master`.
+  - **Staging/QA**: Mapped to your pre-production branches for automated testing.
+  - **Preview**: Any other branches will be treated as ephemeral preview environments by default.
+
+## Workflow Configuration
+
+Enable or disable specific AI and CI/CD capabilities for your repository.
+
+### Developer Workflows
+
+- **Setup Agent Workflow**: Enables Revolte's AI agent to assist with code generation, debugging, and task execution directly within your repository context.
+
+### Code Quality & Review
+
+- **Setup Pre-build Workflow**: Configures automated code reviews and summarization. This ensures every Pull Request is analyzed for quality and risk before it reaches the build stage.
+- **Pipeline Controls**: Toggle **Code Quality** and **Test Suite** execution to ensure only verified code enters your delivery pipeline.
+
+### Deployment Workflows
+
+- **Setup Build & Deployment**: Configures the automated path from a merged PR to a running service. This defines the "Preset and service" settings used during the rollout.
+
+## Configuration Preview (revolte.yaml)
+
+As you adjust these preferences, Revolte generates a `revolte.yaml` file in real-time. This file is the source of truth for your project configuration and can be committed to your repository for version-controlled infrastructure.
+
+## Quick Links
+
+- [GitHub Integration](/docsv2/integrations/repository/github)
+- [Jira Integration](/docsv2/integrations/project-management/jira)
+- [Managed Cloud](/docsv2/integrations/cloud/overview)
