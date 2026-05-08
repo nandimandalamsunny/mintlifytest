@@ -5,13 +5,25 @@ description: "Configure automated build and deployment workflows."
 
 The **Preset & Service** settings define the automated path from a merged Pull Request to a running service in your targeted environment.
 
-## Deployment Workflows
+<div style={{ display: "flex", justifyContent: "center" }}>
+  <img src="/docsv2/image-v2/yaml/preset.png" width="400" />
+</div>
 
-This configuration defines:
+## How to Enable
 
-- **Build Presets**: Pre-configured build steps for your chosen framework.
-- **Rollout Strategy**: How new versions are deployed (e.g., Rolling updates, Canary).
-- **Health Verification**: Defining the criteria for a successful deployment.
+Define your build presets and rollout strategies to automate your release cycle.
+
+<Steps>
+  <Step title="Select Build Preset">
+    Navigate to **YAML Configuration** > **Repo Preferences** and choose a build preset (e.g., Node.js, Python) that matches your application framework.
+  </Step>
+  <Step title="Configure Service Mapping">
+    Define which environments and branches should trigger automated deployments for your services.
+  </Step>
+  <Step title="Save & Sync">
+    Click **Save & Sync** to update your `revolte.yaml` with the new deployment presets.
+  </Step>
+</Steps>
 
 ## Configuration Example
 
@@ -29,5 +41,6 @@ revolte:
 ## Quick Links
 
 - [App & Branch Settings](/docsv2/yaml/repo-preferences/app-branch-settings)
-- [Prebuild Pipeline](/docsv2/yaml/repo-preferences/prebuild-pipeline)
+- [Prebuild Workflow](/docsv2/yaml/repo-preferences/prebuild-workflow)
+- [Deployments Overview](/docsv2/deployments/services/overview)
 - [YAML Overview](/docsv2/yaml/overview)

@@ -1,0 +1,27 @@
+---
+title: "Cache"
+description: "Cache services (like Redis) require prioritized memory to ensure low-latency data retrieval."
+---
+
+## Memory Allocation
+
+| Parameter           | Recommended   | Description                            |
+| ------------------- | ------------- | -------------------------------------- |
+| **Memory**          | `1 GB`        | Dedicated RAM for the caching layer.   |
+| **Eviction Policy** | `allkeys-lru` | How the cache handles memory pressure. |
+
+## Configuration
+
+```yaml revolte.yaml
+specifications:
+  memory: 2
+  type: REDIS
+```
+
+## Quick Links
+
+- [Overview](/docsv2/yaml/environment-settings/resource-specifications/overview)
+- [Web Service](/docsv2/yaml/environment-settings/resource-specifications/web-service)
+- [Database](/docsv2/yaml/environment-settings/resource-specifications/database)
+- [Storage Bucket](/docsv2/yaml/environment-settings/resource-specifications/storage-bucket)
+- [Variables & Secrets](/docsv2/yaml/environment-settings/variables)

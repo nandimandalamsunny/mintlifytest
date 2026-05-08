@@ -1,17 +1,13 @@
 ---
-title: "Resource Specifications"
+title: "Overview"
 description: "Configure CPU, memory, storage, and auto-scaling policies."
 ---
 
 Specifications define the infrastructure requirements for your services. You can set these globally or override them per environment (e.g., smaller instances for `staging`, larger for `production`).
 
-## Compute & Storage
-
-| Parameter | Example | Description |
-| --- | --- | --- |
-| **CPU** | `2` | Number of vCPUs allocated to the instance. |
-| **Memory** | `4` | Memory in GB allocated to the instance. |
-| **Storage** | `30` | Persistent storage in GB (for Database types). |
+<div style={{ display: "flex", justifyContent: "center" }}>
+  <img src="/docsv2/image-v2/yaml/resource-specification.png" width="500" />
+</div>
 
 ## Auto-scaling
 
@@ -32,6 +28,8 @@ specifications:
 
 ## Quick Links
 
-- [Service Definitions](/docsv2/yaml/environment-settings/services)
-- [Variables & Secrets](/docsv2/yaml/environment-settings/variables)
+- [Web Service](/docsv2/yaml/environment-settings/resource-specifications/web-service)
+- [Database](/docsv2/yaml/environment-settings/resource-specifications/database)
+- [Storage Bucket](/docsv2/yaml/environment-settings/resource-specifications/storage-bucket)
+- [Cache](/docsv2/yaml/environment-settings/resource-specifications/cache)
 - [YAML Overview](/docsv2/yaml/overview)

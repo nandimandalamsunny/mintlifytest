@@ -1,0 +1,45 @@
+---
+title: "Web Service"
+description: "Configure compute resources and scaling for web-facing services."
+---
+
+Web Services require consistent compute and memory allocation to handle incoming traffic. You can define these resources per environment to optimize for cost and performance.
+
+## Resource Allocation
+
+| Parameter | Recommended (Prod) | Recommended (Staging) |
+| --- | --- | --- |
+| **CPU** | `2` | `1` |
+| **Memory** | `4 GB` | `2 GB` |
+
+## Configuration
+
+Define your compute resources and monitoring insights in `revolte.yaml`.
+
+```yaml revolte.yaml
+insights:
+  cpu:
+    - cpu_time_idle
+  swap:
+    - swap_used
+  mem:
+    - mem_total
+  disk:
+    - disk_used
+specifications:
+  cpu: 2
+  memory: 1
+  storage: 30
+  autoScaling:
+    replica: { min: 2, max: 10 }
+    utilization:
+      cpu: 70
+```
+
+## Quick Links
+
+- [Overview](/docsv2/yaml/environment-settings/resource-specifications/overview)
+- [Database](/docsv2/yaml/environment-settings/resource-specifications/database)
+- [Storage Bucket](/docsv2/yaml/environment-settings/resource-specifications/storage-bucket)
+- [Cache](/docsv2/yaml/environment-settings/resource-specifications/cache)
+- [Variables & Secrets](/docsv2/yaml/environment-settings/variables)

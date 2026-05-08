@@ -167,9 +167,19 @@
                 "expanded": false,
 
                 "pages": [
+                  "docsv2/yaml/repo-preferences/overview",
                   "docsv2/yaml/repo-preferences/app-branch-settings",
                   "docsv2/yaml/repo-preferences/agent-workflow",
-                  "docsv2/yaml/repo-preferences/prebuild-pipeline",
+                  "docsv2/yaml/repo-preferences/prebuild-workflow",
+                  {
+                    "group": "Pipeline",
+                    "expanded": false,
+                    "pages": [
+                      "docsv2/yaml/repo-preferences/pipeline/overview",
+                      "docsv2/yaml/repo-preferences/pipeline/code-quality",
+                      "docsv2/yaml/repo-preferences/pipeline/test-suite"
+                    ]
+                  },
                   "docsv2/yaml/repo-preferences/preset-service"
                 ]
               },
@@ -179,9 +189,18 @@
                 "expanded": false,
 
                 "pages": [
-                  "docsv2/yaml/environment-settings/overview",
                   "docsv2/yaml/environment-settings/services",
-                  "docsv2/yaml/environment-settings/specifications",
+                  {
+                    "group": "Resource Specifications",
+                    "expanded": false,
+                    "pages": [
+                      "docsv2/yaml/environment-settings/resource-specifications/overview",
+                      "docsv2/yaml/environment-settings/resource-specifications/web-service",
+                      "docsv2/yaml/environment-settings/resource-specifications/database",
+                      "docsv2/yaml/environment-settings/resource-specifications/storage-bucket",
+                      "docsv2/yaml/environment-settings/resource-specifications/cache"
+                    ]
+                  },
                   "docsv2/yaml/environment-settings/variables"
                 ]
               }
@@ -312,4 +331,3 @@
     ]
   }
 }
- 

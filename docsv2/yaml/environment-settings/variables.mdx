@@ -21,8 +21,8 @@ Use the `#{service_name.property}` syntax to inject connection strings and other
 
 ```yaml revolte.yaml
 variables:
-  DATABASE_HOST: '#{db.dbUrl}'
-  DATABASE_PORT: '#{db.dbPort}'
+  DATABASE_HOST: "#{db.dbUrl}"
+  DATABASE_PORT: "#{db.dbPort}"
 ```
 
 ## Secret Injection
@@ -31,8 +31,8 @@ Secure values like API keys or certificates should be marked as secrets.
 
 ```yaml revolte.yaml
 variables:
-  STRIPE_SECRET_KEY: '#{STRIPE_SECRET_KEY}'
-  AWS_ACCESS_KEY_ID: '#{AWS_ACCESS_KEY_ID}'
+  STRIPE_SECRET_KEY: "#{STRIPE_SECRET_KEY}"
+  AWS_ACCESS_KEY_ID: "#{AWS_ACCESS_KEY_ID}"
 ```
 
 ## Quick Links
