@@ -5,7 +5,7 @@ description: "Configure your application framework and environment branch mappin
 
 The **Application Setup** defines the technical foundation of your service and how your source control relates to your infrastructure.
 
-<div style={{ textAlign: "center" }}>
+<div style={{ display: "flex", justifyContent: "center" }}>
   <img src="/docsv2/image-v2/yaml/app-branch-settings.png" width="200" />
 </div>
 
@@ -18,10 +18,11 @@ Map your Git branches to Revolte environments to enable automated deployments.
 | `main`         | **Production**      | Live production traffic and primary rollout target.         |
 | `staging`      | **UAT**             | Pre-production validation and user acceptance testing.      |
 | `qa`           | **QA**              | Automated testing and quality assurance cycles.             |
-| \* (Any other) | **Preview** | Ephemeral environments; automatically deleted after 3 days. |
+| \* (Any other) | **Preview**         | Ephemeral environments; automatically deleted after 3 days. |
 
 <Note>
-  You can customize the 3-day retention period for preview environments in your [Environment Settings](/docsv2/yaml/environment-settings/overview).
+  You can customize the 3-day retention period for preview environments in your [Environment
+  Settings](/docsv2/yaml/environment-settings/overview).
 </Note>
 
 ## Quick Links
