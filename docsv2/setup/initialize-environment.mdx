@@ -1,0 +1,92 @@
+---
+title: "Initialize Environment"
+description: "Create environments, scope variables, and prepare safe promotion paths."
+---
+
+Environments define where a service runs and which configuration it receives. Most teams start with preview, staging, and production.
+
+## Environment model
+
+| Environment | Purpose | Typical trigger |
+| --- | --- | --- |
+| Preview | Validate pull requests and branch work. | Pull request opened or updated |
+| Staging | Test production-like behavior before release. | Merge to main or manual deploy |
+| Production | Serve customer traffic. | Approved promotion |
+
+## Initialize environments
+
+<Steps>
+  <Step title="Create preview">
+    Use preview for short-lived deployments tied to pull requests.
+
+    <CodeBlock language="bash" filename="Terminal">
+{`revolte env create preview --project commerce --type preview`}
+    </CodeBlock>
+  </Step>
+  <Step title="Create staging">
+    Map staging to the default integration branch.
+
+    <CodeBlock language="bash" filename="Terminal">
+{`revolte env create staging --project commerce --branch main`}
+    </CodeBlock>
+  </Step>
+  <Step title="Create production">
+    Require approvals before production receives a deployment.
+
+    <CodeBlock language="bash" filename="Terminal">
+{`revolte env create production --project commerce --branch main --approvals 2`}
+    </CodeBlock>
+  </Step>
+  <Step title="Add variables and secrets">
+    Store public values as variables and sensitive values as secrets.
+  </Step>
+</Steps>
+
+## Environment configuration
+
+<CodeBlock language="yaml" filename="revolte.yaml">
+{`environments:
+  preview:
+    branchPattern: pull-request/*
+    variables:
+      APP_ENV: preview
+  staging:
+    branch: main
+    variables:
+      APP_ENV: staging
+      LOG_LEVEL: debug
+  production:
+    branch: main
+    approvals:
+      required: 2
+    variables:
+      APP_ENV: production
+      LOG_LEVEL: info`}
+</CodeBlock>
+
+## Scoping rules
+
+| Scope | Use for |
+| --- | --- |
+| Project | Values shared by every service in the project. |
+| Service | Values only one service should receive. |
+| Environment | Values that change between preview, staging, and production. |
+| Secret | Sensitive values that should never appear in logs or source control. |
+
+<Tip>
+  Prefer environment-specific secrets over global secrets. It prevents preview and staging deployments from accidentally using production credentials.
+</Tip>
+
+## Next Steps
+
+<CardGroup cols={3}>
+  <Card title="Quick Start" icon="play" href="/quick-start">
+    Deploy a service into the environment.
+  </Card>
+  <Card title="Secrets" icon="lock" href="/deployments/services/secrets">
+    Add encrypted values safely.
+  </Card>
+  <Card title="Environment Settings" icon="settings" href="/yaml/environment-settings">
+    Define environment overrides in YAML.
+  </Card>
+</CardGroup>

@@ -1,8 +1,8 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "luma",
-  "name": "Revolte Documentation",
-  "description": "Documentation for building, deploying, observing, and controlling applications with Revolte.",
+  "name": "Revolte",
+  "description": "Developer documentation for Revolte, an AI-native software delivery platform.",
   "logo": {
     "light": "/images/brand/revolte-logo.svg",
     "dark": "/images/brand/revolte-logo.svg"
@@ -19,237 +19,143 @@
     "library": "lucide"
   },
   "colors": {
-    "primary": "#8B5CF6",
-    "light": "#A78BFA",
-    "dark": "#8B5CF6"
+    "primary": "#6366f1",
+    "light": "#818cf8",
+    "dark": "#4f46e5"
+  },
+  "styling": {
+    "eyebrows": "breadcrumbs",
+    "codeblocks": "dark"
   },
   "navbar": {
     "primary": {
       "type": "button",
       "label": "Get Started",
-      "href": "https://console.revolte.ai"
+      "href": "https://app.revolte.dev/signup"
     }
   },
   "navigation": {
-    "tabs": [
+    "groups": [
       {
-        "tab": "Overview",
-        "groups": [
+        "group": "Get Started",
+        "pages": ["docsv2/introduction", "docsv2/quick-start", "docsv2/core-concepts"]
+      },
+      {
+        "group": "Setup",
+        "pages": [
+          "docsv2/setup/create-project",
+          "docsv2/setup/connect-repository",
+          "docsv2/setup/initialize-environment"
+        ]
+      },
+      {
+        "group": "Integrations",
+        "pages": [
           {
-            "group": "Start Here",
+            "group": "Cloud",
+            "expanded": false,
+            "pages": ["docsv2/integrations/cloud/overview"]
+          },
+          {
+            "group": "Repository",
+            "expanded": false,
             "pages": [
-              "docs/index",
-              "docs/quick-start",
-              "docs/key-concepts",
-              {
-                "group": "Choose your path",
-                "expanded": false,
-                "pages": ["docs/build/cli-workflow", "docs/build/web-workflow"]
-              }
+              "docsv2/integrations/repository/github",
+              { "group": "GitLab", "tag": "SOON", "pages": [] },
+              { "group": "Bitbucket", "tag": "SOON", "pages": [] }
             ]
           },
           {
-            "group": "Troubleshooting",
-            "pages": ["docs/troubleshooting/common-issues"]
-          }
-        ]
-      },
-      {
-        "tab": "Platform",
-        "groups": [
-          {
-            "group": "Platform",
+            "group": "Project Management",
+            "expanded": false,
             "pages": [
-              {
-                "group": "Build Applications",
-                "expanded": false,
-                "pages": [
-                  "docs/build/quick-start",
-                  "docs/build/overview",
-                  "docs/build/review-output",
-                  "docs/build/automation-configurations",
-                  "docs/build/environment-configuration",
-                  {
-                    "group": "Advanced Configuration",
-                    "expanded": false,
-                    "pages": ["docs/build/pre-build-workflows", "docs/build/validation-pipeline"]
-                  },
-                  {
-                    "group": "Workflows",
-                    "expanded": false,
-                    "pages": ["docs/build/cli-workflow", "docs/build/web-workflow"]
-                  }
-                ]
-              },
-              {
-                "group": "Deploy & Release",
-                "expanded": false,
-                "pages": [
-                  "docs/deploy/quick-start",
-                  "docs/deploy/overview",
-                  "docs/deploy/environments",
-                  {
-                    "group": "Configuration",
-                    "expanded": false,
-                    "pages": ["docs/deploy/environment-variables", "docs/deploy/preview"]
-                  },
-                  {
-                    "group": "Deployment History",
-                    "expanded": false,
-                    "pages": ["docs/deploy/deployment-activity", "docs/deploy/past-deployments"]
-                  }
-                ]
-              },
-              {
-                "group": "Monitor & Debug",
-                "expanded": false,
-                "pages": [
-                  "docs/observe/quick-start",
-                  "docs/observe/overview",
-                  "docs/observe/logs",
-                  {
-                    "group": "Intelligence Dashboards",
-                    "expanded": false,
-                    "pages": [
-                      "docs/observe/metrics",
-                      "docs/observe/dora-metrics",
-                      "docs/observe/security-dashboard",
-                      "docs/observe/maintainability-dashboard"
-                    ]
-                  },
-                  "docs/troubleshooting/overview"
-                ]
-              },
-              {
-                "group": "Access & Control",
-                "expanded": false,
-                "pages": [
-                  "docs/control/overview",
-                  "docs/control/users-roles",
-                  "docs/control/services"
-                ]
-              },
-              {
-                "group": "Platform Capabilities",
-                "expanded": false,
-                "pages": [
-                  "docs/platform/overview",
-                  "docs/platform/environments",
-                  "docs/platform/preview",
-                  "docs/platform/ci-cd",
-                  "docs/platform/observability",
-                  "docs/platform/security"
-                ]
-              }
+              "docsv2/integrations/project-management/overview",
+              "docsv2/integrations/project-management/jira",
+              { "group": "Linear", "tag": "SOON", "pages": [] },
+              { "group": "Azure DevOps", "tag": "SOON", "pages": [] }
             ]
           }
         ]
       },
       {
-        "tab": "Guides",
-        "groups": [
+        "group": "YAML Configuration",
+        "pages": [
+          "docsv2/yaml/overview",
           {
-            "group": "Configuration Guides",
+            "group": "Repo Preferences",
             "pages": [
-              "docs/guides/overview",
-              {
-                "group": "Web Services",
-                "expanded": false,
-                "pages": [
-                  "docs/guides/webapp-repo-env-guide",
-                  "docs/guides/webservice-repo-env-guide",
-                  "docs/guides/webservice-cache-repo-env-guide",
-                  "docs/guides/webservice-database-cache-repo-env-guide",
-                  "docs/guides/webservice-storagebucket-repo-env-guide",
-                  "docs/guides/webservice-storagebucket-cache-repo-env-guide",
-                  "docs/guides/webservice-database-storagebucket-repo-env-guide",
-                  "docs/guides/webservice-database-storagebucket-cache-repo-env-guide"
-                ]
-              },
-              {
-                "group": "Cron Services",
-                "expanded": false,
-                "pages": [
-                  "docs/guides/cron-repo-env-guide",
-                  "docs/guides/cron-cache-repo-env-guide",
-                  "docs/guides/cron-database-repo-env-guide",
-                  "docs/guides/cron-database-cache-repo-env-guide",
-                  "docs/guides/cron-storagebucket-cache-repo-env-guide",
-                  "docs/guides/cron-database-storagebucket-cache-repo-env-guide"
-                ]
-              }
+              "docsv2/yaml/repo-preferences/app-branch-settings",
+              "docsv2/yaml/repo-preferences/agent-workflow",
+              "docsv2/yaml/repo-preferences/prebuild-pipeline",
+              "docsv2/yaml/repo-preferences/preset-service"
             ]
-          }
-        ]
-      },
-      {
-        "tab": "Agents",
-        "groups": [
-          {
-            "group": "Overview",
-            "pages": [
-              "docs/agents/overview",
-              "docs/agents/ba-agent",
-              "docs/agents/code-review-agent"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Roadmap",
-        "groups": [
-          {
-            "group": "Future",
-            "pages": ["docs/roadmap"]
-          }
-        ]
-      },
-      {
-        "tab": "Enterprise",
-        "groups": [
-          {
-            "group": "Enterprise",
-            "pages": ["docs/enterprise/overview"]
           },
           {
-            "group": "Governance & Administration",
-            "pages": ["docs/usage-billing"]
+            "group": "Environment Settings",
+            "pages": [
+              "docsv2/yaml/environment-settings/overview",
+              "docsv2/yaml/environment-settings/services",
+              "docsv2/yaml/environment-settings/specifications",
+              "docsv2/yaml/environment-settings/variables"
+            ]
           }
         ]
       },
       {
-        "tab": "Integrations",
-        "groups": [
+        "group": "Deployments",
+        "pages": [
           {
-            "group": "Integrations",
-            "pages": ["docs/integrations/overview"]
+            "group": "Services",
+            "expanded": false,
+            "pages": [
+              "docsv2/deployments/services/overview",
+              "docsv2/deployments/services/web-applications",
+              "docsv2/deployments/services/web-services",
+              "docsv2/deployments/services/cron-jobs",
+              "docsv2/deployments/services/databases",
+              "docsv2/deployments/services/object-storage",
+              "docsv2/deployments/services/cache",
+              "docsv2/deployments/services/secrets"
+            ]
+          },
+          {
+            "group": "Observability",
+            "expanded": false,
+            "pages": [
+              "docsv2/deployments/observability/index",
+              "docsv2/deployments/observability/deployment-logs",
+              "docsv2/deployments/observability/application-logs",
+              "docsv2/deployments/observability/metrics",
+              "docsv2/deployments/observability/insights"
+            ]
+          },
+          {
+            "group": "Rollbacks",
+            "expanded": false,
+            "pages": ["docsv2/deployments/rollbacks"]
           }
         ]
       },
 
       {
-        "tab": "Resources",
-        "icon": "book-open",
-        "menu": [
-          {
-            "item": "Changelog",
-            "icon": "list-timeline",
-            "description": "Latest updates and releases",
-            "href": "/docs/changelog"
-          },
-          {
-            "item": "Configuration Guides",
-            "icon": "settings",
-            "description": "Service preset setup walkthroughs",
-            "href": "/docs/guides/overview"
-          },
-          {
-            "item": "Troubleshooting",
-            "icon": "circle-help",
-            "description": "Common issues and debugging paths",
-            "href": "/docs/troubleshooting/common-issues"
-          }
+        "group": "AI Workflows",
+        "pages": [
+          "docsv2/ai-workflows/overview",
+          "docsv2/ai-workflows/development-workflow",
+          "docsv2/ai-workflows/automation-config"
         ]
+      },
+      {
+        "group": "YAML Configuration",
+        "pages": ["docsv2/yaml/repository-preferences", "docsv2/yaml/environment-settings"]
+      },
+      {
+        "group": "CLI",
+        "pages": ["docsv2/cli/installation", "docsv2/cli/commands"]
+      },
+      {
+        "group": "Platform",
+        "pages": ["docsv2/users", "docsv2/pricing"]
       }
     ]
   }

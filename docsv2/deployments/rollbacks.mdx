@@ -1,0 +1,32 @@
+---
+title: "Overview"
+description: "Recover services by comparing past deployments and restoring known good versions."
+---
+
+## One-Click Revert
+
+The fastest way to recover is to select a previous deployment from your history and promote it back to production.
+
+<img src="/docsv2/image-v2/deployments/pastdeployment.png" width="600" />
+
+<Steps>
+  <Step title="Navigate to History">
+    Go to the **Deployments** tab in your project dashboard to see the timeline of all releases.
+  </Step>
+  <Step title="Select a Target">
+    Identify a "Healthy" deployment from the list that you wish to restore.
+  </Step>
+  <Step title="Revert">Click the **Revert to this version** button on the target deployment.</Step>
+  <Step title="Confirm Recovery">
+    Review the target version in the confirmation modal and click **Confirm**.
+    <img src="/docsv2/image-v2/deployments/revert-confirmation.png" width="400" />
+    Revolte will immediately begin a rolling update to replace the current version with your
+    selected target.
+  </Step>
+</Steps>
+
+## Quick Links
+
+- [Deployment Logs](/docsv2/deployments/observability/deployment-logs)
+- [Observability Overview](/docsv2/deployments/observability)
+- [Service Configuration](/docsv2/deployments/services/overview)

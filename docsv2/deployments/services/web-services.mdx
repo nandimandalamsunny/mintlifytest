@@ -1,0 +1,88 @@
+---
+title: "Web Services"
+description: "Deploy REST APIs, gRPC services, and backend microservices with scaling and release controls."
+---
+
+Web Services are backend runtime services deployed through Revolte.
+
+Use web services for APIs, internal services, webhook processors, background runtimes, and distributed microservices with managed scaling and deployment workflows.
+
+## Requirements
+
+- Node.js `18+`
+
+## Configuration
+
+Define your web service in `revolte.yaml` to control builds, scaling, and environment settings.
+
+<CodeBlock language="yaml" filename="revolte.yaml">
+  {`revolte:
+  version: '1.0'
+  project: Demo Project
+  appName: demo-project
+
+env:
+staging:
+branch: staging
+
+      services:
+        web-api_service:
+          type: WEB_SERVICE
+          entryPoint: server.js
+
+          properties:
+            port: 3000
+
+            scaling:
+              min: 2
+              max: 10
+
+            variables:
+              DB_HOST: '#{dbHost}'
+              REDIS_URL: '#{redisUrl}'`}
+
+</CodeBlock>
+
+## Deploy with dependent services
+
+<Steps>
+  <Step title="Provision dependencies">
+    Create databases, caches, object storage, and secrets before the API starts.
+  </Step>
+
+<Step title="Inject connection values">
+  Reference dependency URLs through environment variables or secret bindings.
+</Step>
+
+<Step title="Run migrations safely">
+  Execute schema migrations before traffic shifts to the new deployment.
+</Step>
+
+  <Step title="Observe rollout">
+    Monitor deployment logs, application logs, and runtime metrics.
+  </Step>
+</Steps>
+
+## Deployment templates
+
+Preconfigured deployment patterns for common backend architectures.
+
+- [Web Service](/deployments/templates/web-service)
+
+- [Web Service with Database](/deployments/templates/web-service-database)
+
+- [Web Service with Database and Storage Bucket](/deployments/templates/web-service-database-storage)
+
+- [Web Service with Cache](/deployments/templates/web-service-cache)
+
+- [Web Service with Database and Cache](/deployments/templates/web-service-database-cache)
+
+- [Web Service with Database, Cache, and Storage Bucket](/deployments/templates/web-service-database-cache-storage)
+
+## Related
+
+- [Databases](/deployments/services/databases)
+- [Cache](/deployments/services/cache)
+- [Secrets](/deployments/services/secrets)
+- [Observability](/deployments/observability)
+- [Rollbacks](/deployments/rollbacks)

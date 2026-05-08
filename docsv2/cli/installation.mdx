@@ -1,0 +1,69 @@
+---
+title: "Installation"
+description: "Install the Revolte CLI with npm, Homebrew, or curl and verify local requirements."
+---
+
+The Revolte CLI lets developers initialize projects, connect repositories, deploy services, stream logs, query metrics, and manage secrets from the terminal.
+
+## Requirements
+
+| Requirement | Minimum | Notes |
+| --- | --- | --- |
+| Node.js | 20 | Required for npm installation and many JavaScript builds. |
+| Git | 2.40 | Required for repository-aware workflows. |
+| Shell | bash, zsh, or fish | Used by install scripts and command examples. |
+| Network | HTTPS access | Required for Revolte API and provider integrations. |
+
+## Install
+
+<Tabs>
+  <Tab title="npm">
+    <CodeBlock language="bash" filename="Terminal">
+{`npm install -g revolte
+revolte --version`}
+    </CodeBlock>
+  </Tab>
+  <Tab title="Homebrew">
+    <CodeBlock language="bash" filename="Terminal">
+{`brew tap revolte-dev/tap
+brew install revolte
+revolte doctor`}
+    </CodeBlock>
+  </Tab>
+  <Tab title="curl">
+    <CodeBlock language="bash" filename="Terminal">
+{`curl -fsSL https://revolte.dev/install.sh | sh
+revolte doctor`}
+    </CodeBlock>
+  </Tab>
+</Tabs>
+
+## Authenticate
+
+<CodeBlock language="bash" filename="Terminal">
+{`revolte auth login
+revolte workspace list
+revolte workspace use acme-platform`}
+</CodeBlock>
+
+## Verify the environment
+
+<CodeBlock language="bash" filename="Terminal">
+{`revolte doctor
+revolte config validate --file revolte.yaml`}
+</CodeBlock>
+
+<Tip>
+  Run revolte doctor before debugging deployments. It catches expired sessions, missing Git remotes, and unsupported local runtimes quickly.
+</Tip>
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="CLI Commands" icon="terminal" href="/cli/commands">
+    Use the full command reference.
+  </Card>
+  <Card title="Quick Start" icon="play" href="/quick-start">
+    Deploy your first service with the CLI.
+  </Card>
+</CardGroup>

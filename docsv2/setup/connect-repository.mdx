@@ -1,0 +1,73 @@
+---
+title: "Connect Repository"
+description: "Connect GitHub, GitLab, or Bitbucket repositories to a Revolte project."
+---
+
+Connect a repository so Revolte can analyze intent, read configuration, build services, create review metadata, and deploy changes into environments.
+
+## Supported providers
+
+| Provider | Connection method | Notes |
+| --- | --- | --- |
+| GitHub | GitHub App | Recommended for branch protections, checks, and pull request metadata. |
+| GitLab | OAuth or project token | Use scoped tokens for self-managed GitLab instances. |
+| Bitbucket | OAuth | Works with workspace-level repository permissions. |
+
+<Note>
+  Revolte needs read access to the repository and write access for deployment checks. Pull request creation requires branch write permissions.
+</Note>
+
+## Connect from the dashboard
+
+<Steps>
+  <Step title="Choose provider">
+    Open Project Settings, select Repositories, and choose GitHub, GitLab, or Bitbucket.
+  </Step>
+  <Step title="Authorize access">
+    Grant access only to the repositories Revolte should build and deploy.
+  </Step>
+  <Step title="Select repository">
+    Pick the repository, default branch, and root directory used for configuration discovery.
+  </Step>
+  <Step title="Verify checks">
+    Confirm that Revolte can create status checks on a test pull request or branch.
+  </Step>
+</Steps>
+
+## Connect from the CLI
+
+<CodeBlock language="bash" filename="Terminal">
+{`revolte repo connect github acme/checkout \
+  --project commerce \
+  --default-branch main \
+  --config revolte.yaml`}
+</CodeBlock>
+
+## Repository discovery
+
+Revolte looks for configuration in this order:
+
+| Priority | Source |
+| --- | --- |
+| 1 | Explicit config path passed during setup |
+| 2 | revolte.yaml at the repository root |
+| 3 | Framework detection from package files, Dockerfiles, or build manifests |
+| 4 | Manual service configuration in the dashboard |
+
+<Warning>
+  Do not connect a production repository with a personal access token owned by one engineer. Use provider apps or service accounts so deployments survive account changes.
+</Warning>
+
+## Related
+
+<CardGroup cols={3}>
+  <Card title="Create Project" icon="folder-plus" href="/setup/create-project">
+    Create the project that will own the repository.
+  </Card>
+  <Card title="Repository Preferences" icon="file-code-2" href="/yaml/repository-preferences">
+    Configure build and deploy behavior in revolte.yaml.
+  </Card>
+  <Card title="Development Workflow" icon="git-pull-request" href="/ai-workflows/development-workflow">
+    See how repository events drive AI workflows.
+  </Card>
+</CardGroup>

@@ -1,0 +1,53 @@
+---
+title: "Overview"
+description: "Understand how Revolte AI Workflows connect intent, risk scoring, review gates, and runtime feedback."
+icon: "sparkles"
+---
+
+AI Workflows coordinate the delivery loop from intent to improvement. They use repository context, deployment history, runtime telemetry, and policy settings to automate safe work without hiding engineering review.
+
+## What AI Workflows does
+
+<CardGroup cols={2}>
+  <Card title="Intent analysis" icon="brain">
+    Reads commits, diffs, pull requests, tickets, and prompts to understand what changed.
+  </Card>
+  <Card title="Risk scoring" icon="shield-alert">
+    Scores deployment risk using service type, environment, file changes, ownership, and recent incidents.
+  </Card>
+  <Card title="Review gates" icon="git-pull-request">
+    Applies manual or automated gates before merge, deploy, promotion, or rollback.
+  </Card>
+  <Card title="Feedback learning" icon="activity">
+    Uses logs, metrics, and outcomes to improve future recommendations.
+  </Card>
+</CardGroup>
+
+## Delivery loop
+
+| Loop step | AI role |
+| --- | --- |
+| Intent | Summarizes change purpose and affected services. |
+| Build | Recommends build commands and validates generated artifacts. |
+| Review | Flags risky files, migrations, dependency changes, or missing tests. |
+| Deploy | Chooses gates and rollout strategies based on risk. |
+| Observe | Detects anomalies and links them to deployment context. |
+| Improve | Adjusts future review and deploy recommendations. |
+
+<Info>
+  AI Workflows operate inside configured project policy. Production gates, approvals, and environment rules still control what automation can do.
+</Info>
+
+## Related
+
+<CardGroup cols={3}>
+  <Card title="Development Workflow" icon="git-pull-request" href="/ai-workflows/development-workflow">
+    See how Git events trigger review and risk scoring.
+  </Card>
+  <Card title="Automation Config" icon="workflow" href="/ai-workflows/automation-config">
+    Configure auto-merge, deployment gates, and pipeline rules.
+  </Card>
+  <Card title="Insights" icon="sparkles" href="/deployments/observability/insights">
+    Review runtime recommendations produced by the loop.
+  </Card>
+</CardGroup>

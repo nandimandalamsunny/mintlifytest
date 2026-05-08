@@ -1,0 +1,31 @@
+---
+title: "App & Branch Settings"
+description: "Configure your application framework and environment branch mapping."
+---
+
+The **Application Setup** defines the technical foundation of your service and how your source control relates to your infrastructure.
+
+<div style={{ textAlign: "center" }}>
+  <img src="/docsv2/image-v2/yaml/app-branch-settings.png" width="200" />
+</div>
+
+## Branch Mapping
+
+Map your Git branches to Revolte environments to enable automated deployments.
+
+| Git Branch     | Revolte Environment | Behavior                                                    |
+| -------------- | ------------------- | ----------------------------------------------------------- |
+| `main`         | **Production**      | Live production traffic and primary rollout target.         |
+| `staging`      | **UAT**             | Pre-production validation and user acceptance testing.      |
+| `qa`           | **QA**              | Automated testing and quality assurance cycles.             |
+| \* (Any other) | **Preview** | Ephemeral environments; automatically deleted after 3 days. |
+
+<Note>
+  You can customize the 3-day retention period for preview environments in your [Environment Settings](/docsv2/yaml/environment-settings/overview).
+</Note>
+
+## Quick Links
+
+- [Agent Workflow](/docsv2/yaml/repo-preferences/agent-workflow)
+- [Prebuild Pipeline](/docsv2/yaml/repo-preferences/prebuild-pipeline)
+- [YAML Overview](/docsv2/yaml/overview)
