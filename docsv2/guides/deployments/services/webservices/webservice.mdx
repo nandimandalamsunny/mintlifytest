@@ -1,16 +1,16 @@
 ---
-title: "Web Service with Storage Bucket"
-description: "Configure repository preferences and environment settings for a web service with storage."
+title: "Web Service"
+description: "Configure repository preferences and environment settings for a web service."
 ---
 
-This guide explains how to configure a Web service with an attached Storage Bucket in Revolte, covering both Repo Preference and Environment Settings. Visual references are provided for each step.
+This guide explains how to configure a Web service as your next service in Revolte, covering both Repo Preference and Environment Settings. Visual references are provided for each step.
 
 
 <Steps>
   <Step title="Choose a Preset">
-    ![Choose Webservice + StorageBucket Preset](../../images/guides/repo_preference/preset-6.png)
+    ![Choose Webservice Preset](/images/guides/repo_preference/preset-2.png)
 
-    The preset chooser shows a grid of service options. The **Webservice + Storage Bucket** tile is highlighted. Click **Webservice + Storage Bucket** to continue.
+    The preset chooser shows a grid of service options. The **Webservice** tile is highlighted, described as a standard service for APIs or microservices. Click **Web Service** to continue.
   </Step>
 
   <Step title="Repo Preference">
@@ -18,9 +18,9 @@ This guide explains how to configure a Web service with an attached Storage Buck
   </Step>
 
   <Step title="Webservice — Environment Settings">
-    ![Webservice tab — QA environment](../../images/guides/environment_settings/envsettings-2.png)
+    ![Webservice tab — QA environment](/images/guides/environment_settings/envsettings-2.png)
 
-    The **QA** environment tab is selected. The left sidebar shows **Webservice**, **Storage Bucket**, and **Variables** under Build & deployment workflow. The center panel shows the Webservice form:
+    The **QA** environment tab is selected. The left sidebar shows **Webservice** and **Variables** under Build & deployment workflow. The center panel shows the Webservice form:
 
     - **Service Name** — Enter a unique identifier for this service (e.g., `web_service`).
     - **Entry Point** — The main file that starts the service (e.g., `index.js`).
@@ -39,23 +39,10 @@ This guide explains how to configure a Web service with an attached Storage Buck
       - **Disk** — Options: disk used, disk total, disk free.
   </Step>
 
-  <Step title="Storage Bucket — Environment Settings">
-    ![Storage Bucket tab — QA environment](../../images/guides/environment_settings/envsettings-6-1.png)
-
-    The **QA** environment tab is selected with the **Storage Bucket** tab active. The left sidebar shows **Web service**, **Storage Bucket**, and **Variables**. The center panel shows the Storage Bucket form:
-
-    - **Service Name** — Enter a unique identifier for this storage bucket service (e.g., `my_storage`).
-    - **Configurations**
-      - **Bucket Name** — Enter a globally unique name for the bucket (e.g., `my-app-assets`).
-      - **Bucket Versioning** — Toggle on to keep a history of object versions for rollback or audit.
-      - **Enable Public Access** — Toggle on to make bucket contents publicly accessible via URL.
-    - **Cors Rules** — Define allowed origins, methods, and headers for cross-origin requests. Click **+ Add** to add a rule.
-  </Step>
-
   <Step title="Variables & Secrets">
-    ![Variables & Secrets tab — QA environment](../../images/guides/environment_settings/envsettings-6-2.png)
+    ![Variables & Secrets tab — QA environment](/images/guides/environment_settings/envsettings-2-1.png)
 
-    The **QA** environment tab is selected with the **Secrets** sub-tab active. The left sidebar shows **Web service**, **Storage Bucket**, and **Variables**. The center panel shows:
+    The **QA** environment tab is selected with the **Secrets** sub-tab active. The left sidebar shows **Web service** and **Variables**. The center panel shows:
 
     - **Secret Engine** — **Revolte secrets** is the built-in provider for storing encrypted key-value pairs.
     - **Add Secrets** button — Click to add a secret. Enter a key (e.g., `DATABASE_URL`) and its value (e.g., a connection string or API key).
@@ -66,7 +53,7 @@ This guide explains how to configure a Web service with an attached Storage Buck
     At the bottom of the panel, fill in the **Commit Details**:
 
     - **File Name** — The configuration file to create or update in your repository (e.g., `revolte.yml`).
-    - **Commit Message** — A short description of what you configured (e.g., `Add webservice with storage bucket`).
+    - **Commit Message** — A short description of what you configured (e.g., `Add web service`).
     - **Choose Branch** — The branch where the configuration file will be committed.
 
     Click **Commit** to save the configuration to your repository, or **Skip & deploy** to deploy immediately without committing.

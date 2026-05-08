@@ -1,16 +1,16 @@
 ---
-title: "Web Service"
-description: "Configure repository preferences and environment settings for a web service."
+title: "Web Service with Cache"
+description: "Configure repository preferences and environment settings for a web service with cache."
 ---
 
-This guide explains how to configure a Web service as your next service in Revolte, covering both Repo Preference and Environment Settings. Visual references are provided for each step.
+This guide explains how to configure a Web service with an attached Cache in Revolte, covering both Repo Preference and Environment Settings. Visual references are provided for each step.
 
 
 <Steps>
   <Step title="Choose a Preset">
-    ![Choose Webservice Preset](../../images/guides/repo_preference/preset-2.png)
+    ![Choose Webservice + Cache Preset](/images/guides/repo_preference/preset-8.png)
 
-    The preset chooser shows a grid of service options. The **Webservice** tile is highlighted, described as a standard service for APIs or microservices. Click **Web Service** to continue.
+    The preset chooser shows a grid of service options. The **Webservice + Cache** tile is highlighted. Click **Webservice + Cache** to continue.
   </Step>
 
   <Step title="Repo Preference">
@@ -18,9 +18,9 @@ This guide explains how to configure a Web service as your next service in Revol
   </Step>
 
   <Step title="Webservice — Environment Settings">
-    ![Webservice tab — QA environment](../../images/guides/environment_settings/envsettings-2.png)
+    ![Webservice tab — QA environment](/images/guides/environment_settings/envsettings-2.png)
 
-    The **QA** environment tab is selected. The left sidebar shows **Webservice** and **Variables** under Build & deployment workflow. The center panel shows the Webservice form:
+    The **QA** environment tab is selected. The left sidebar shows **Webservice**, **Cache**, and **Variables** under Build & deployment workflow. The center panel shows the Webservice form:
 
     - **Service Name** — Enter a unique identifier for this service (e.g., `web_service`).
     - **Entry Point** — The main file that starts the service (e.g., `index.js`).
@@ -39,10 +39,20 @@ This guide explains how to configure a Web service as your next service in Revol
       - **Disk** — Options: disk used, disk total, disk free.
   </Step>
 
-  <Step title="Variables & Secrets">
-    ![Variables & Secrets tab — QA environment](../../images/guides/environment_settings/envsettings-2-1.png)
+  <Step title="Cache — Environment Settings">
+    ![Cache tab — QA environment](/images/guides/environment_settings/envsettings-8-1.png)
 
-    The **QA** environment tab is selected with the **Secrets** sub-tab active. The left sidebar shows **Web service** and **Variables**. The center panel shows:
+    The **QA** environment tab is selected with the **Cache** tab active. The left sidebar shows **Webservice**, **Cache**, and **Variables**. The center panel shows the Cache form:
+
+    - **Service Name** — Enter a unique identifier for this cache instance (e.g., `my_cache`).
+    - **Specifications**
+      - **CPU & Memory** — Choose a resource tier that matches your caching needs (e.g., `2 CPU and 1 GB Memory`).
+  </Step>
+
+  <Step title="Variables & Secrets">
+    ![Variables & Secrets tab — QA environment](/images/guides/environment_settings/envsettings-8-2.png)
+
+    The **QA** environment tab is selected with the **Secrets** sub-tab active. The left sidebar shows **Webservice**, **Cache**, and **Variables**. The center panel shows:
 
     - **Secret Engine** — **Revolte secrets** is the built-in provider for storing encrypted key-value pairs.
     - **Add Secrets** button — Click to add a secret. Enter a key (e.g., `DATABASE_URL`) and its value (e.g., a connection string or API key).
@@ -53,7 +63,7 @@ This guide explains how to configure a Web service as your next service in Revol
     At the bottom of the panel, fill in the **Commit Details**:
 
     - **File Name** — The configuration file to create or update in your repository (e.g., `revolte.yml`).
-    - **Commit Message** — A short description of what you configured (e.g., `Add web service`).
+    - **Commit Message** — A short description of what you configured (e.g., `Add webservice with cache`).
     - **Choose Branch** — The branch where the configuration file will be committed.
 
     Click **Commit** to save the configuration to your repository, or **Skip & deploy** to deploy immediately without committing.

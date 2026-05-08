@@ -1,16 +1,16 @@
 ---
-title: "Web Service with Database & Storage Bucket"
-description: "Configure repository preferences and environment settings for a web service with database and storage."
+title: "Web Service with Storage Bucket"
+description: "Configure repository preferences and environment settings for a web service with storage."
 ---
 
-This guide explains how to configure a Web service with both a Database and a Storage Bucket in Revolte, covering Repo Preference and Environment Settings. Visual references are provided for each step.
+This guide explains how to configure a Web service with an attached Storage Bucket in Revolte, covering both Repo Preference and Environment Settings. Visual references are provided for each step.
 
 
 <Steps>
   <Step title="Choose a Preset">
-    ![Choose Webservice + Database + StorageBucket Preset](../../images/guides/repo_preference/preset-7.png)
+    ![Choose Webservice + StorageBucket Preset](/images/guides/repo_preference/preset-6.png)
 
-    The preset chooser shows a grid of service options. The **Webservice + Database + Storage Bucket** tile is highlighted. Click **Webservice + Database + Storage Bucket** to continue.
+    The preset chooser shows a grid of service options. The **Webservice + Storage Bucket** tile is highlighted. Click **Webservice + Storage Bucket** to continue.
   </Step>
 
   <Step title="Repo Preference">
@@ -18,9 +18,9 @@ This guide explains how to configure a Web service with both a Database and a St
   </Step>
 
   <Step title="Webservice — Environment Settings">
-    ![Webservice tab — QA environment](../../images/guides/environment_settings/envsettings-2.png)
+    ![Webservice tab — QA environment](/images/guides/environment_settings/envsettings-2.png)
 
-    The **QA** environment tab is selected. The left sidebar shows **Webservice**, **Database**, **Storage Bucket**, and **Variables** under Build & deployment workflow. The center panel shows the Webservice form:
+    The **QA** environment tab is selected. The left sidebar shows **Webservice**, **Storage Bucket**, and **Variables** under Build & deployment workflow. The center panel shows the Webservice form:
 
     - **Service Name** — Enter a unique identifier for this service (e.g., `web_service`).
     - **Entry Point** — The main file that starts the service (e.g., `index.js`).
@@ -39,22 +39,10 @@ This guide explains how to configure a Web service with both a Database and a St
       - **Disk** — Options: disk used, disk total, disk free.
   </Step>
 
-  <Step title="Database — Environment Settings">
-    ![Database tab — QA environment](../../images/guides/environment_settings/envsettings-7-1.png)
-
-    The **QA** environment tab is selected with the **Database** tab active. The left sidebar shows **Web service**, **Database**, **Storage Bucket**, and **Variables**. The center panel shows the Database form:
-
-    - **Service Name** — Enter a unique identifier for this database instance (e.g., `my_database`).
-    - **Specifications**
-      - **Engine Type** — Select the database engine to use (e.g., MySQL, PostgreSQL).
-      - **CPU & Memory** — Choose a resource tier that matches your workload (e.g., `2 CPU and 1 GB Memory`).
-    - **Storage value** — Disk space in GB allocated to the database (e.g., `30`).
-  </Step>
-
   <Step title="Storage Bucket — Environment Settings">
-    ![Storage Bucket tab — QA environment](../../images/guides/environment_settings/envsettings-7-2.png)
+    ![Storage Bucket tab — QA environment](/images/guides/environment_settings/envsettings-6-1.png)
 
-    The **QA** environment tab is selected with the **Storage Bucket** tab active. The left sidebar shows **Web service**, **Database**, **Storage Bucket**, and **Variables**. The center panel shows the Storage Bucket form:
+    The **QA** environment tab is selected with the **Storage Bucket** tab active. The left sidebar shows **Web service**, **Storage Bucket**, and **Variables**. The center panel shows the Storage Bucket form:
 
     - **Service Name** — Enter a unique identifier for this storage bucket service (e.g., `my_storage`).
     - **Configurations**
@@ -65,9 +53,9 @@ This guide explains how to configure a Web service with both a Database and a St
   </Step>
 
   <Step title="Variables & Secrets">
-    ![Variables & Secrets tab — QA environment](../../images/guides/environment_settings/envsettings-7-3.png)
+    ![Variables & Secrets tab — QA environment](/images/guides/environment_settings/envsettings-6-2.png)
 
-    The **QA** environment tab is selected with the **Secrets** sub-tab active. The left sidebar shows **Web service**, **Database**, **Storage Bucket**, and **Variables**. The center panel shows:
+    The **QA** environment tab is selected with the **Secrets** sub-tab active. The left sidebar shows **Web service**, **Storage Bucket**, and **Variables**. The center panel shows:
 
     - **Secret Engine** — **Revolte secrets** is the built-in provider for storing encrypted key-value pairs.
     - **Add Secrets** button — Click to add a secret. Enter a key (e.g., `DATABASE_URL`) and its value (e.g., a connection string or API key).
@@ -78,7 +66,7 @@ This guide explains how to configure a Web service with both a Database and a St
     At the bottom of the panel, fill in the **Commit Details**:
 
     - **File Name** — The configuration file to create or update in your repository (e.g., `revolte.yml`).
-    - **Commit Message** — A short description of what you configured (e.g., `Add webservice with database and storage bucket`).
+    - **Commit Message** — A short description of what you configured (e.g., `Add webservice with storage bucket`).
     - **Choose Branch** — The branch where the configuration file will be committed.
 
     Click **Commit** to save the configuration to your repository, or **Skip & deploy** to deploy immediately without committing.

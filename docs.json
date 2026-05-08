@@ -237,8 +237,30 @@
                 "pages": [
                   "docsv2/guides/deployments/services/overview",
                   "docsv2/guides/deployments/services/webapplications",
-                  "docsv2/guides/deployments/services/webservices",
-                  "docsv2/guides/deployments/services/cron-jobs",
+                  {
+                    "group": "Web Services",
+                    "pages": [
+                      "docsv2/guides/deployments/services/webservices/webservice",
+                      "docsv2/guides/deployments/services/webservices/webservice-cache",
+                      "docsv2/guides/deployments/services/webservices/webservice-storagebucket",
+                      "docsv2/guides/deployments/services/webservices/webservice-storagebucket-cache",
+                      "docsv2/guides/deployments/services/webservices/webservice-database",
+                      "docsv2/guides/deployments/services/webservices/webservice-database-cache",
+                      "docsv2/guides/deployments/services/webservices/webservice-database-storagebucket",
+                      "docsv2/guides/deployments/services/webservices/webservice-database-storagebucket-cache"
+                    ]
+                  },
+                  {
+                    "group": "Cron Jobs",
+                    "pages": [
+                      "docsv2/guides/deployments/services/cron-jobs/cron",
+                      "docsv2/guides/deployments/services/cron-jobs/cron-cache",
+                      "docsv2/guides/deployments/services/cron-jobs/cron-database",
+                      "docsv2/guides/deployments/services/cron-jobs/cron-database-cache",
+                      "docsv2/guides/deployments/services/cron-jobs/cron-storagebucket-cache",
+                      "docsv2/guides/deployments/services/cron-jobs/cron-database-storagebucket-cache"
+                    ]
+                  },
                   "docsv2/guides/deployments/services/databases",
                   "docsv2/guides/deployments/services/object-storage",
                   "docsv2/guides/deployments/services/cache",
