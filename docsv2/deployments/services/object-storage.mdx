@@ -1,0 +1,64 @@
+---
+title: "Object Storage"
+description: "Use S3-compatible object storage with CDN delivery and access policies."
+---
+
+Object storage is used for uploads, exports, media, backups, and artifacts. Revolte provisions S3-compatible buckets and injects access values into services by environment.
+
+## Storage patterns
+
+| Pattern | Use for |
+| :--- | :--- |
+| **Private Bucket** | User uploads, exports, and internal backups. |
+| **Public CDN** | Static assets, images, and public downloads. |
+| **Temporary** | Short-lived files created by jobs or previews. |
+
+## Configuration
+
+Define your storage bucket in `revolte.yaml` to control access policies, CDN settings, and lifecycles.
+
+<CodeBlock language="yaml" filename="revolte.yaml">
+  {`revolte:
+  version: '1.0'
+  project: Demo Project
+  appName: demo-project
+  env:
+    production:
+      branch: main
+      services:
+        rid_storage_1:
+          type: OBJECT_STORAGE
+          name: assets-bucket
+          properties:
+            region: iad
+            publicRead: false
+            cdn: true
+            expiry: 180d`}
+</CodeBlock>
+
+## Bind storage to a service
+
+Inject bucket names and endpoints into application services using environment variable mapping.
+
+<CodeBlock language="yaml" filename="revolte.yaml">
+  {`revolte:
+  env:
+    production:
+      services:
+        rid_api_1:
+          type: WEB_SERVICE
+          properties:
+            variables:
+              BUCKET_NAME: '#{rid_storage_1.bucketName}'
+              BUCKET_ENDPOINT: '#{rid_storage_1.endpoint}'`}
+</CodeBlock>
+
+<Tip>
+  Use separate buckets for public assets and private user content. The policies, CDN behavior, and audit requirements are usually different.
+</Tip>
+
+## Related
+
+- [Web Services](/deployments/services/web-services)
+- [Cron Jobs](/deployments/services/cron-jobs)
+- [Secrets](/deployments/services/secrets)

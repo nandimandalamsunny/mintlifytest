@@ -1,0 +1,54 @@
+---
+title: "Services"
+description: "Deploy and manage every layer of your stack as a Revolte service."
+---
+
+Services are typed runtime units inside a Revolte project. Use them to deploy applications, APIs, jobs, data stores, caches, object storage, and secrets with consistent environment and deployment controls.
+
+<CardGroup cols={2}>
+  <Card title="Web Applications" icon="globe" href="/deployments/services/web-applications">
+    Full-stack, SSR, static, and edge applications with framework-aware builds.
+  </Card>
+  <Card title="Web Services" icon="bolt" href="/deployments/services/web-services">
+    REST APIs, gRPC services, and backend microservices with scaling controls.
+  </Card>
+  <Card title="Cron Jobs" icon="calendar-clock" href="/deployments/services/cron-jobs">
+    Scheduled tasks with retries, failure alerts, and environment-scoped execution.
+  </Card>
+  <Card title="Databases" icon="database" href="/deployments/services/databases">
+    Managed PostgreSQL, MySQL, and MongoDB with backups and connection policies.
+  </Card>
+  <Card title="Object Storage" icon="archive" href="/deployments/services/object-storage">
+    S3-compatible storage with CDN delivery and access policies.
+  </Card>
+  <Card title="Cache" icon="cpu" href="/deployments/services/cache">
+    Redis and Memcached services with clustering and persistence options.
+  </Card>
+  <Card title="Secrets" icon="lock" href="/deployments/services/secrets">
+    Encrypted environment variables, service injection, and rotation workflows.
+  </Card>
+</CardGroup>
+
+## Service lifecycle
+
+| Phase | What happens |
+| --- | --- |
+| Define | Add the service to revolte.yaml or create it in the dashboard. |
+| Build | Revolte runs configured build steps or provisions managed infrastructure. |
+| Deploy | The service is released into the target environment with the selected strategy. |
+| Observe | Logs, metrics, and insights stay tied to the service and deployment. |
+| Improve | Runtime outcomes feed risk scoring and future deployment recommendations. |
+
+## Related
+
+<CardGroup cols={3}>
+  <Card title="Observability" icon="activity" href="/deployments/observability">
+    Monitor service health after deployment.
+  </Card>
+  <Card title="Rollbacks" icon="rotate-ccw" href="/deployments/rollbacks">
+    Recover a service from a known good deployment.
+  </Card>
+  <Card title="Environment Settings" icon="settings" href="/yaml/environment-settings">
+    Scope service configuration by environment.
+  </Card>
+</CardGroup>

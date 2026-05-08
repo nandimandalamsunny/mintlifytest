@@ -1,0 +1,32 @@
+---
+title: "Database"
+description: "Define storage and instance sizing for your data layer."
+---
+
+Databases require persistent storage and prioritized memory for query performance.
+
+## Storage Configuration
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| **Storage** | `30 GB` | Persistent disk space for your database. |
+| **IOPS** | `3000` | Provisioned throughput for high-performance databases. |
+
+## Instance Sizing
+
+Choose an instance size that matches your dataset and concurrency needs.
+
+```yaml revolte.yaml
+specifications:
+  cpu: 4
+  memory: 8
+  storage: 50
+```
+
+## Quick Links
+
+- [Overview](/docsv2/yaml/environment-settings/resource-specifications/overview)
+- [Web Service](/docsv2/yaml/environment-settings/resource-specifications/web-service)
+- [Storage Bucket](/docsv2/yaml/environment-settings/resource-specifications/storage-bucket)
+- [Cache](/docsv2/yaml/environment-settings/resource-specifications/cache)
+- [Variables & Secrets](/docsv2/yaml/environment-settings/variables)

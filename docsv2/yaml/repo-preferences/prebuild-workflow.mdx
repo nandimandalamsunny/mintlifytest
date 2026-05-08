@@ -1,0 +1,44 @@
+---
+title: "Prebuild Workflow"
+description: "Configure automated code reviews, quality checks, and summarization."
+---
+
+The **Prebuild Workflow** ensures that every Pull Request is analyzed for quality, risk, and compliance before it reaches the build stage.
+
+<div style={{ display: "flex", justifyContent: "center" }}>
+  <img src="/docsv2/image-v2/yaml/prebuild.png" width="300" />
+</div>
+
+## How to Enable
+
+Activate AI-native code reviews and quality gates for your repository.
+
+<Steps>
+  <Step title="Open Prebuild Settings">
+    Navigate to **YAML Configuration** > **Repo Preferences** and locate the **Prebuild Workflow** section.
+  </Step>
+  <Step title="Configure Code Review">
+    Toggle **Summarization** and **Fix Suggestions** based on your team's review requirements.
+  </Step>
+  <Step title="Save & Sync">
+    Click **Save & Sync** to update your `revolte.yaml` with the chosen pipeline configuration.
+  </Step>
+</Steps>
+
+## Pipeline Controls
+
+You can toggle specific checks within your `revolte.yaml`:
+
+```yaml revolte.yaml
+config:
+  codeReview:
+    summarize: true
+    suggestFixes: true
+    commentStyle: Balanced
+```
+
+## Quick Links
+
+- [Agent Workflow](/docsv2/yaml/repo-preferences/agent-workflow)
+- [Preset & Service](/docsv2/yaml/repo-preferences/preset-service)
+- [YAML Overview](/docsv2/yaml/overview)

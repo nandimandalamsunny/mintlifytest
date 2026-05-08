@@ -1,0 +1,42 @@
+---
+title: "Rollbacks"
+description: "Recover services by comparing past deployments and restoring known good versions."
+---
+
+Rollbacks help teams recover when a deployment harms service health. Revolte keeps deployment history, configuration, logs, metrics, and review context together so operators can choose the safest recovery target.
+
+<CardGroup cols={2}>
+  <Card title="Past Deployments" icon="history" href="/deployments/rollbacks/past-deployments">
+    Browse release history, compare builds, and inspect deployment metadata.
+  </Card>
+  <Card title="Recovery Workflow" icon="life-buoy" href="/deployments/rollbacks/recovery-workflow">
+    Follow an incident-ready rollback process from detection to verification.
+  </Card>
+</CardGroup>
+
+## When to roll back
+
+| Signal | Rollback indicator |
+| --- | --- |
+| Error rate | User-facing failures exceed the service error budget. |
+| Latency | p95 or p99 latency regresses after release. |
+| Logs | New fatal errors or missing configuration appears after deploy. |
+| Insights | AI anomaly recommends pausing or reverting the rollout. |
+
+<Warning>
+  Confirm database and queue compatibility before rolling back application code. Schema migrations and asynchronous jobs can make some rollbacks unsafe.
+</Warning>
+
+## Related
+
+<CardGroup cols={3}>
+  <Card title="Past Deployments" icon="history" href="/deployments/rollbacks/past-deployments">
+    Choose a known good deployment.
+  </Card>
+  <Card title="Recovery Workflow" icon="life-buoy" href="/deployments/rollbacks/recovery-workflow">
+    Execute the rollback safely.
+  </Card>
+  <Card title="Observability" icon="activity" href="/deployments/observability">
+    Gather the signals that justify recovery.
+  </Card>
+</CardGroup>

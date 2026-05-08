@@ -1,0 +1,42 @@
+---
+title: "Variables & Secrets"
+description: "Manage environment variables and secure secret injection."
+---
+
+Revolte uses a powerful variable system that allows you to reference other services and manage sensitive secrets across environments.
+
+## Environment Variables
+
+Define flat key-value pairs that your application can access at runtime.
+
+```yaml revolte.yaml
+variables:
+  NODE_ENV: production
+  LOG_LEVEL: info
+```
+
+## Dynamic References
+
+Use the `#{service_name.property}` syntax to inject connection strings and other metadata from your service mesh.
+
+```yaml revolte.yaml
+variables:
+  DATABASE_HOST: "#{db.dbUrl}"
+  DATABASE_PORT: "#{db.dbPort}"
+```
+
+## Secret Injection
+
+Secure values like API keys or certificates should be marked as secrets.
+
+```yaml revolte.yaml
+variables:
+  STRIPE_SECRET_KEY: "#{STRIPE_SECRET_KEY}"
+  AWS_ACCESS_KEY_ID: "#{AWS_ACCESS_KEY_ID}"
+```
+
+## Quick Links
+
+- [Service Definitions](/docsv2/yaml/environment-settings/services)
+- [Resource Specifications](/docsv2/yaml/environment-settings/specifications)
+- [YAML Overview](/docsv2/yaml/overview)

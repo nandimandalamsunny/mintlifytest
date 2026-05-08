@@ -1,0 +1,77 @@
+---
+title: "Cron Jobs"
+description: "Run scheduled tasks with retries, failure alerts, and environment-scoped configuration."
+---
+
+Cron jobs execute scheduled work inside a Revolte environment. Use them for cleanup tasks, report generation, cache warming, reconciliation, and periodic integrations.
+
+## Before you start
+
+- Node.js `18+`
+
+## Schedule syntax
+
+| Syntax         | Runs                      |
+| :------------- | :------------------------ |
+| `0 3 * * *`    | Every day at 03:00 UTC    |
+| `*/15 * * * *` | Every 15 minutes          |
+| `0 */6 * * *`  | Every 6 hours             |
+| `0 9 * * MON`  | Every Monday at 09:00 UTC |
+
+<Note>
+  Schedules use UTC by default. Store timezone-specific behavior in the command or application code
+  when business rules require it.
+</Note>
+
+## Configuration
+
+Define your cron job in `revolte.yaml` to control schedules, commands, and retry behavior.
+
+<CodeBlock language="yaml" filename="revolte.yaml">
+  {`revolte:
+  version: '1.0'
+  project: Demo Project
+  appName: demo-project
+  env:
+    production:
+      branch: main
+      services:
+        rid_job_1:
+          type: CRON_JOB
+          name: invoice-reconciliation
+          entryPoint: reconcile.js
+          properties:
+            schedule: "0 3 * * *"
+            retries: 3
+            variables:
+              DB_HOST: '#{dbHost}'`}
+</CodeBlock>
+
+## Create and test a job
+
+<Steps>
+  <Step title="Define job">
+    Add the `CRON_JOB` service block with schedule, command, and retry behavior.
+  </Step>
+  <Step title="Inject dependencies">
+    Bind databases, caches, object storage, and secrets needed by the task.
+  </Step>
+  <Step title="Run manually">
+    Execute the job once in staging before enabling the schedule.
+
+    <CodeBlock language="bash" filename="Terminal">
+
+{`revolte cron run invoice-reconciliation --env staging --follow`}
+</CodeBlock>
+
+  </Step>
+  <Step title="Enable schedule">
+    Promote the job to production after logs confirm expected behavior.
+  </Step>
+</Steps>
+
+## Related
+
+- [Deployment Logs](/deployments/observability/deployment-logs)
+- [Application Logs](/deployments/observability/application-logs)
+- [Secrets](/deployments/services/secrets)

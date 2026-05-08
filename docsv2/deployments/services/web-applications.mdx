@@ -1,0 +1,86 @@
+---
+title: "Web Applications"
+description: "Deploy SSR, static, and edge web applications with framework-aware builds."
+---
+
+Web Applications are frontend and full-stack services deployed through Revolte with support for static deployments, SSR applications, and edge runtimes through framework-aware build detection and managed deployment workflows.
+
+Required: `Node.js 18+` · `Revolte CLI v1.12.0+`
+
+## Supported runtimes
+
+| Framework | Modes             |
+| --------- | ----------------- |
+| Next.js   | Static, SSR, Edge |
+| Remix     | SSR               |
+| Vite      | Static            |
+| Astro     | Static, SSR       |
+| SvelteKit | Static, SSR       |
+
+<Note>
+  Revolte respects explicit repository configuration before applying framework detection defaults.
+</Note>
+
+## Example Web App Configuration
+
+<CodeBlock language="yaml" filename="revolte.yaml">
+{`revolte:
+  version: '1.0'
+  project: Demo Project
+  appName: demo-project
+
+env:
+production:
+branch: main
+
+      services:
+        rid_1:
+          type: WEB_APP
+          name: web-app_service
+          entryPoint: index.js
+
+          properties:
+            indexPage: index.html
+            errorPage: index.html
+
+            variables:
+              VITE_API_HOST: '#{apiHost}'
+              VITE_APP_ENV: production`}
+
+</CodeBlock>
+
+## Dashboard configuration
+
+![Create Web App](/docsv2/image-v2/app-create.png)
+
+## Deployment workflow
+
+<Steps>
+  <Step title="Connect repository">
+    Follow the [repository integration guide](/guides/connect-repository) to connect and validate application metadata.
+  </Step>
+
+<Step title="Configure service">
+  Follow the [service configuration guide](/guides/web-applications/configuration) to define the web
+  application through YAML or the dashboard.
+</Step>
+
+<Step title="Configure runtime">
+  Follow the [runtime configuration guide](/guides/runtime-configuration) to configure environment
+  variables, secrets, domains, and deployment settings.
+</Step>
+
+  <Step title="Deploy application">
+    Follow the [deployment guide](/guides/deployments) to deploy applications to preview, staging, or production environments.
+  </Step>
+</Steps>
+
+## Guides
+
+- [Deploy a Web Application](/guides/web-application)
+
+## Related
+
+- [Web Services](/deployments/services/web-services)
+- [Secrets](/deployments/services/secrets)
+- [Deployment Logs](/deployments/observability/deployment-logs)

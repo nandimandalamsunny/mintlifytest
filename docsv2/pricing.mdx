@@ -1,0 +1,60 @@
+---
+title: "Pricing"
+description: "Review Revolte plan structure, included capabilities, and usage-based billing dimensions."
+---
+
+Pricing combines plan-level capabilities with usage-based billing for compute, managed services, storage, and AI workflow execution. Use this page as an implementation placeholder until contract-specific pricing is finalized.
+
+## Plans
+
+| Plan | Best for | Includes |
+| --- | --- | --- |
+| Developer | Individual projects and evaluation | CLI, preview environments, basic deployments, logs. |
+| Team | Small engineering teams | Shared projects, managed services, review gates, metrics. |
+| Business | Production teams | Advanced rollouts, AI insights, RBAC, audit history, priority support. |
+| Enterprise | Regulated and large organizations | SSO, custom retention, dedicated controls, security review, custom limits. |
+
+## Usage dimensions
+
+| Dimension | Examples |
+| --- | --- |
+| Build minutes | Install, test, compile, and package time. |
+| Runtime compute | Web applications, APIs, jobs, and service instances. |
+| Managed services | Databases, cache, object storage, and backups. |
+| Observability | Log retention, metrics retention, insight generation. |
+| AI workflows | Risk scoring, summaries, automation decisions, recommendations. |
+
+<Info>
+  Production usage should be monitored by project and environment. That makes it easier to attribute spend to the teams operating each service.
+</Info>
+
+## Cost controls
+
+<Steps>
+  <Step title="Set project budgets">
+    Define monthly budget alerts per project.
+  </Step>
+  <Step title="Right-size preview">
+    Keep preview environments small and short-lived.
+  </Step>
+  <Step title="Tune retention">
+    Set log and metric retention based on operational needs.
+  </Step>
+  <Step title="Review managed services">
+    Watch database storage, backups, cache size, and object storage lifecycle rules.
+  </Step>
+</Steps>
+
+## Related
+
+<CardGroup cols={3}>
+  <Card title="Users" icon="users" href="/users">
+    Manage roles and plan-level access.
+  </Card>
+  <Card title="Services" icon="boxes" href="/deployments/services/overview">
+    Understand billable runtime resources.
+  </Card>
+  <Card title="Metrics" icon="chart-no-axes-combined" href="/deployments/observability/metrics">
+    Monitor operational load by service.
+  </Card>
+</CardGroup>

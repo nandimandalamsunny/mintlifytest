@@ -1,0 +1,35 @@
+---
+title: "Overview"
+description: "Configure CPU, memory, storage, and auto-scaling policies."
+---
+
+Specifications define the infrastructure requirements for your services. You can set these globally or override them per environment (e.g., smaller instances for `staging`, larger for `production`).
+
+<div style={{ display: "flex", justifyContent: "center" }}>
+  <img src="/docsv2/image-v2/yaml/resource-specification.png" width="500" />
+</div>
+
+## Auto-scaling
+
+For `WEB_SERVICE` types, you can define fluid scaling based on traffic or resource pressure.
+
+```yaml revolte.yaml
+specifications:
+  autoScaling:
+    replica:
+      min: 1
+      max: 5
+    utilization:
+      cpu:
+        target: 70
+      memory:
+        target: 70
+```
+
+## Quick Links
+
+- [Web Service](/docsv2/yaml/environment-settings/resource-specifications/web-service)
+- [Database](/docsv2/yaml/environment-settings/resource-specifications/database)
+- [Storage Bucket](/docsv2/yaml/environment-settings/resource-specifications/storage-bucket)
+- [Cache](/docsv2/yaml/environment-settings/resource-specifications/cache)
+- [YAML Overview](/docsv2/yaml/overview)

@@ -1,0 +1,50 @@
+---
+title: "Overview"
+description: "Master your repository-level configurations, from branch mappings to automated pipelines."
+---
+
+Repository Preferences allow you to define how Revolte interacts with your source code and orchestrates your development lifecycle. These settings are applied globally to the application across all environments.
+
+## Configuration Modules
+
+Explore the key areas of repository configuration:
+
+<CardGroup cols={2}>
+  <Card
+    title="App & Branch Settings"
+    icon="code-branch"
+    href="/docsv2/yaml/repo-preferences/app-branch-settings"
+  >
+    Define your main application and map Git branches to Revolte environments.
+  </Card>
+  <Card title="Agent Workflow" icon="robot" href="/docsv2/yaml/repo-preferences/agent-workflow">
+    Enable AI-assisted coding, debugging, and automated task execution.
+  </Card>
+  <Card
+    title="Prebuild Workflow"
+    icon="microscope"
+    href="/docsv2/yaml/repo-preferences/prebuild-workflow"
+  >
+    Configure automated code reviews, PR summarization, and fix suggestions.
+  </Card>
+  <Card title="Pipeline" icon="gears" href="/docsv2/yaml/repo-preferences/pipeline/overview">
+    Automate code quality checks, style enforcement, and test suite execution.
+  </Card>
+  <Card
+    title="Preset & Service"
+    icon="layer-group"
+    href="/docsv2/yaml/repo-preferences/preset-service"
+  >
+    Define build presets and automated rollout strategies for your services.
+  </Card>
+</CardGroup>
+
+## Why it Matters
+
+Consistency in repository preferences ensures that every developer on your team follows the same quality standards and deployment patterns. By centralizing these in `revolte.yaml`, you maintain a version-controlled "Source of Truth" for your entire delivery process.
+
+## Next Steps
+
+- [Map your first branch](/docsv2/yaml/repo-preferences/app-branch-settings)
+- [Configure your test suite](/docsv2/yaml/repo-preferences/pipeline/test-suite)
+- [Set up build presets](/docsv2/yaml/repo-preferences/preset-service)
