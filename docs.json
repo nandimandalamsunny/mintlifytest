@@ -273,44 +273,6 @@
                   "docsv2/guides/deployments/services/cache",
                   "docsv2/guides/deployments/services/secrets"
                 ]
-              },
-
-              {
-                "group": "Observability",
-                "expanded": false,
-
-                "pages": [
-                  "docsv2/deployments/observability/index",
-                  "docsv2/deployments/observability/deployment-logs",
-                  "docsv2/deployments/observability/application-logs",
-                  "docsv2/deployments/observability/metrics",
-                  "docsv2/deployments/observability/insights"
-                ]
-              },
-
-              {
-                "group": "Rollbacks",
-                "expanded": false,
-
-                "pages": [
-                  "docsv2/deployments/rollbacks/index",
-                  "docsv2/deployments/rollbacks/past-deployments",
-                  "docsv2/deployments/rollbacks/recovery-workflow"
-                ]
-              },
-
-              {
-                "group": "Templates",
-                "expanded": false,
-
-                "pages": [
-                  "docsv2/deployments/templates/web-service",
-                  "docsv2/deployments/templates/web-service-database",
-                  "docsv2/deployments/templates/web-service-cache",
-                  "docsv2/deployments/templates/web-service-database-cache",
-                  "docsv2/deployments/templates/web-service-database-storage",
-                  "docsv2/deployments/templates/web-service-database-cache-storage"
-                ]
               }
             ]
           }

@@ -11,8 +11,9 @@
     background: rgba(255, 255, 255, 0.08);
   }
 
+  /* Outer border line sits on top of the scrollbar — same vertical position */
   #body-content::before {
-    left: 17.5rem;
+    left: 20rem;
   }
 
   #body-content::after {
@@ -25,37 +26,64 @@
 
   #sidebar {
     box-sizing: border-box;
-    width: 17.5rem;
-    max-width: 17.5rem;
+    width: 20rem;
+    max-width: 20rem;
     padding-right: 0;
-    scrollbar-gutter: stable;
+    overflow-y: auto;
     scrollbar-width: thin;
-    scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
-    border-right: 1px solid rgba(255, 255, 255, 0.05); /* Subtle Mastra-style border */
+    scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  /* 4px scrollbar sits at the sidebar's right edge — same pixel as ::before */
+  #sidebar::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  #sidebar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  #sidebar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.18);
+    border-radius: 999px;
+  }
+
+  #sidebar::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.32);
   }
 
   #sidebar > div {
-    padding-right: 1.25rem;
+    padding-right: 0.3rem;
+    padding-left: 0.4rem;
   }
 
-  /* --- Mastra-style Nested Group Connector --- */
+  /* --- Nested Group Connector --- */
   #sidebar-content ul {
-    border-left: 1px solid rgba(255, 255, 255, 0.1); /* The vertical line */
-    margin-left: 0.5rem;
-    padding-left: 0.35rem;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    margin-left: 0.05rem;
+    padding-left: 0.1rem;
   }
 
-   /* Shrink font + tighten spacing at deeper nesting levels */
   #sidebar-content ul ul {
-    font-size: 0.8125rem; /* 13px */
-    margin-left: 0.35rem;
-    padding-left: 0.25rem;
+    margin-left: 0.04rem;
+    padding-left: 0.06rem;
   }
-  
+
   #sidebar-content ul ul ul {
-    font-size: 0.75rem; /* 12px */
-    margin-left: 0.25rem;
-    padding-left: 0.2rem;
+    margin-left: 0.04rem;
+    padding-left: 0.05rem;
+  }
+
+  /*
+    min-width: 0 is the critical fix for flex containers:
+    without it, flex children expand beyond the parent and
+    overflow: hidden / text-overflow: ellipsis never fires.
+  */
+  #sidebar-content ul,
+  #sidebar-content ul li {
+    min-width: 0;
+    overflow: hidden;
   }
 
   /* --- Active Page Segment Highlight --- */
@@ -65,11 +93,10 @@
     font-weight: 600;
   }
 
-  /* This creates the 'active' colored segment on the vertical line */
   #sidebar-content a[data-active="true"]::before {
     content: "";
     position: absolute;
-    left: -1.25rem; /* Aligns perfectly over the ul border */
+    left: -1.25rem;
     top: 0.25rem;
     bottom: 0.25rem;
     width: 2px;
@@ -78,25 +105,53 @@
     z-index: 10;
   }
 
+  /* Every link: one line, ellipsis on overflow, min-width 0 for flex */
   #sidebar a,
   #sidebar button {
+    display: block;
+    min-width: 0;
+    width: 100%;
     font-weight: 500;
     font-size: 0.875rem;
-    /* REMOVED white-space: nowrap — was causing congestion */
-    white-space: normal;
-    word-break: break-word;
-    overflow: visible;
-    line-height: 1.4;
-    padding-top: 0.2rem;
-    padding-bottom: 0.2rem;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    line-height: 1.55;
+    padding-top: 0.35rem;
+    padding-bottom: 0.35rem;
+    transition: color 0.2s ease;
+  }
+
+  /* Inner span/div Mintlify may render text inside — force same constraints */
+  #sidebar a > span,
+  #sidebar a > div,
+  #sidebar button > span,
+  #sidebar button > div {
     display: block;
-    transition: all 0.2s ease;
+    min-width: 0;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
   }
 
   #sidebar a:hover,
   #sidebar button:hover {
     color: var(--color-primary);
   }
+}
+
+/* ─── Move Docs/Guides tabs to left next to Revolte logo ─────────────────── */
+
+/* Remove flex-1 from the logo container so the tabs nav flows right after the logo */
+#navbar div[class*="gap-x-4"] {
+  flex: 0 0 auto !important;
+}
+
+/* Add a subtle separator between logo and tabs */
+#navbar nav[class*="justify-center"] {
+  margin-left: 0.25rem;
+  padding-left: 0.5rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .soon-pill {
