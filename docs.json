@@ -55,13 +55,6 @@
             "pages": ["docsv2/quick-start"]
           },
 
-          {
-            "group": "Setup",
-            "pages": [
-              "docsv2/setup/create-project",
-              "docsv2/setup/create-application"
-            ]
-          },
 
           {
             "group": "Integrations",
