@@ -122,7 +122,14 @@
                   "docsv2/deployments/services/web-applications",
                   "docsv2/deployments/services/web-services",
                   "docsv2/deployments/services/cron-jobs",
-                  "docsv2/deployments/services/databases",
+                  {
+                    "group": "Databases",
+                    "expanded": false,
+                    "pages": [
+                      "docsv2/deployments/services/databases/overview",
+                      "docsv2/deployments/services/databases/connect"
+                    ]
+                  },
                   "docsv2/deployments/services/object-storage",
                   "docsv2/deployments/services/cache",
                   "docsv2/deployments/services/domains",
