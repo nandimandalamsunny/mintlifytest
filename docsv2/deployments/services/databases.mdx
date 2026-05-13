@@ -11,58 +11,51 @@ description: "Provision PostgreSQL, MySQL, and MongoDB services with backups and
 | MySQL      | MySQL-compatible relational workloads                                      |
 | MongoDB    | Flexible document-based storage <span class="soon-pill">Coming Soon</span> |
 
+![Provision Database](/docsv2/image-v2/deployments/db/db-1.png)
+
+## Dashboard Configuration
+
+You can configure your database directly through the Revolte dashboard for a visual, guided experience.
+
+<Steps>
+  <Step title="Navigate to Application">
+    Select the application you wish to configure from your workspace.
+  </Step>
+  <Step title="Access YAML Configuration">
+    Click on the **YAML Configuration** tab in the top navigation bar.
+  </Step>
+  <Step title="Environment Settings">
+    Select **Environment Settings** from the left sidebar to manage environment-specific infrastructure.
+  </Step>
+  <Step title="Build & Deployment Workflow">
+    Locate and select the **Build & Deployment Workflow** section.
+  </Step>
+  <Step title="Manage Database">
+    Click on **Database** to provision a new instance or modify existing configuration settings.
+  </Step>
+</Steps>
+
 ## Example Configuration
 
-Define your database service in `revolte.yaml` to configure engines, versions, storage, and backup policies.
+Define your database service in `revolte.yaml` to configure engines, versions, storage, and backup policies manually.
 
 <CodeBlock language="yaml" filename="revolte.yaml">
-{`revolte:
+  {`revolte:
   version: '1.0'
-  project: Demo Project
-  appName: demo_project
-
-workflow:
-developerWorkflow:
-enabled: true
-
-env:
-staging:
-branch: staging
-
+  project: Demo-Project
+  appName: demo-app
+  env:
+    production:
+      branch: main
       services:
-        rid_2:
-          type: WEB_SERVICE
-          name: web_service
-          entryPoint: index.js
-
-          properties:
-            health: /health
-            port: 8080
-            loadBalancerMode: dedicated
-
-            variables:
-              BASE_URL: /api/v1
-              DATABASE_URL: '#{db.dbUrl}'
-              DATABASE_PORT: '#{db.dbPort}'
-              DATABASE_USERNAME: '#{db.dbUsername}'
-              DATABASE_PASSWORD: '#{db.dbPassword}'
-              DATABASE_NAME: '#{db.dbName}'
-
-          specifications:
-            cpu: 2
-            memory: 1
-            storage: 30
-
-        rid_3:
+        rid_8:
           type: DATABASE
           name: db
-
           specifications:
             cpu: 2
             memory: 1
             storage: 30
             engine: postgres`}
-
 </CodeBlock>
 
 ## Deployment templates
@@ -81,5 +74,6 @@ Preconfigured deployment patterns for database-backed services.
 
 - [Web Services](/docsv2/deployments/services/web-services)
 - [Cache](/docsv2/deployments/services/cache)
+- [Environment Settings](/docsv2/yaml/environment-settings/services)
 - [Secrets](/docsv2/deployments/services/secrets)
 - [Observability](/docsv2/deployments/observability)
