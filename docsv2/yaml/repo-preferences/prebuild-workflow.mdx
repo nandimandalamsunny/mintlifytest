@@ -20,8 +20,8 @@ Activate AI-native code reviews and quality gates for your repository.
   <Step title="Configure Code Review">
     Toggle **Summarization** and **Fix Suggestions** based on your team's review requirements.
   </Step>
-  <Step title="Save & Sync">
-    Click **Save & Sync** to update your `revolte.yaml` with the chosen pipeline configuration.
+  <Step title="Commit Changes">
+    Enter a commit message and select your target branch to persist the changes. See [Syncing Changes](/docsv2/yaml/syncing) for a detailed walkthrough.
   </Step>
 </Steps>
 
@@ -30,11 +30,15 @@ Activate AI-native code reviews and quality gates for your repository.
 You can toggle specific checks within your `revolte.yaml`:
 
 ```yaml revolte.yaml
-config:
-  codeReview:
-    summarize: true
-    suggestFixes: true
-    commentStyle: Balanced
+revolte:
+  version: "1.0"
+  project: Demo-Project
+  appName: "demo-app"
+  config:
+    codeReview:
+      summarize: true
+      suggestFixes: true
+      commentStyle: Balanced
 ```
 
 ## Quick Links

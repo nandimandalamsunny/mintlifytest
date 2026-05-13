@@ -20,8 +20,8 @@ Follow these steps to activate the AI Agent for your repository.
   <Step title="Toggle Developer Workflow">
     Locate the **Developer Workflow** section and toggle the switch to **Enabled**.
   </Step>
-  <Step title="Sync your YAML">
-    Click **Save & Sync** to automatically update your `revolte.yaml` with the new workflow settings.
+  <Step title="Commit Changes">
+    Enter a commit message and select your target branch to persist the changes. See [Syncing Changes](/docsv2/yaml/syncing) for a detailed walkthrough.
   </Step>
 </Steps>
 
@@ -30,9 +30,13 @@ Follow these steps to activate the AI Agent for your repository.
 In your `revolte.yaml`, you can toggle this workflow globally:
 
 ```yaml revolte.yaml
-workflow:
-  developerWorkflow:
-    enabled: true
+revolte:
+  version: "1.0"
+  project: Demo-Project
+  appName: "demo-app"
+  workflow:
+    developerWorkflow:
+      enabled: true # Activates AI-assisted coding and debugging
 ```
 
 ## Quick Links

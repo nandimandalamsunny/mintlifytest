@@ -17,16 +17,30 @@ Databases require persistent storage and prioritized memory for query performanc
 Choose an instance size that matches your dataset and concurrency needs.
 
 ```yaml revolte.yaml
-specifications:
-  cpu: 4
-  memory: 8
-  storage: 50
+revolte:
+  version: "1.0"
+  project: Demo-Project
+  appName: "demo-app"
+  env:
+    production:
+      branch: main
+      services:
+        rid_1:
+          type: DATABASE
+          name: postgres-db
+          specifications:
+            cpu: 4
+            memory: 8
+            storage: 50
 ```
 
-## Quick Links
+## Related
 
-- [Overview](/docsv2/yaml/environment-settings/resource-specifications/overview)
 - [Web Service](/docsv2/yaml/environment-settings/resource-specifications/web-service)
-- [Storage Bucket](/docsv2/yaml/environment-settings/resource-specifications/storage-bucket)
-- [Cache](/docsv2/yaml/environment-settings/resource-specifications/cache)
 - [Variables & Secrets](/docsv2/yaml/environment-settings/variables)
+
+## Next Steps
+
+- [Configure Caching](/docsv2/yaml/environment-settings/resource-specifications/cache)
+- [Set up Storage Buckets](/docsv2/yaml/environment-settings/resource-specifications/storage-bucket)
+- [Sync your Changes](/docsv2/yaml/syncing)

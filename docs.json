@@ -167,6 +167,7 @@
             "group": "YML Configurations",
             "pages": [
               "docsv2/yaml/overview",
+              "docsv2/yaml/syncing",
               {
                 "group": "Repo Preferences",
                 "expanded": false,
@@ -181,18 +182,21 @@
                 "group": "Environment Settings",
                 "expanded": false,
                 "pages": [
-                  "docsv2/yaml/environment-settings/overview",
-                  "docsv2/yaml/environment-settings/variables",
-                  "docsv2/yaml/environment-settings/services",
+                  "docsv2/yaml/environment-settings/build",
                   {
-                    "group": "Resource Specs",
+                    "group": "Deployment workflow",
                     "expanded": false,
                     "pages": [
-                      "docsv2/yaml/environment-settings/resource-specifications/overview",
-                      "docsv2/yaml/environment-settings/resource-specifications/cache",
+                      {
+                        "group": "Web Service",
+                        "pages": [
+                          "docsv2/yaml/environment-settings/resource-specifications/web-service",
+                          "docsv2/yaml/environment-settings/variables"
+                        ]
+                      },
                       "docsv2/yaml/environment-settings/resource-specifications/database",
                       "docsv2/yaml/environment-settings/resource-specifications/storage-bucket",
-                      "docsv2/yaml/environment-settings/resource-specifications/web-service"
+                      "docsv2/yaml/environment-settings/resource-specifications/cache"
                     ]
                   }
                 ]

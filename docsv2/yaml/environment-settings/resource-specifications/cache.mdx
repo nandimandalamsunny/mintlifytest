@@ -13,15 +13,28 @@ description: "Cache services (like Redis) require prioritized memory to ensure l
 ## Configuration
 
 ```yaml revolte.yaml
-specifications:
-  memory: 2
-  type: REDIS
+revolte:
+  version: "1.0"
+  project: Demo-Project
+  appName: "demo-app"
+  env:
+    production:
+      branch: main
+      services:
+        rid_1:
+          type: DATABASE
+          name: redis-cache
+          specifications:
+            memory: 2
 ```
 
-## Quick Links
+## Related
 
-- [Overview](/docsv2/yaml/environment-settings/resource-specifications/overview)
 - [Web Service](/docsv2/yaml/environment-settings/resource-specifications/web-service)
 - [Database](/docsv2/yaml/environment-settings/resource-specifications/database)
-- [Storage Bucket](/docsv2/yaml/environment-settings/resource-specifications/storage-bucket)
-- [Variables & Secrets](/docsv2/yaml/environment-settings/variables)
+
+## Next Steps
+
+- [Manage Variables & Secrets](/docsv2/yaml/environment-settings/variables)
+- [Set up Storage Buckets](/docsv2/yaml/environment-settings/resource-specifications/storage-bucket)
+- [Sync your Changes](/docsv2/yaml/syncing)

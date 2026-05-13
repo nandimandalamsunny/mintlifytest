@@ -14,22 +14,31 @@ Specifications define the infrastructure requirements for your services. You can
 For `WEB_SERVICE` types, you can define fluid scaling based on traffic or resource pressure.
 
 ```yaml revolte.yaml
-specifications:
-  autoScaling:
-    replica:
-      min: 1
-      max: 5
-    utilization:
-      cpu:
-        target: 70
-      memory:
-        target: 70
+revolte:
+  version: "1.0"
+  project: Demo-Project
+  appName: "demo-app"
+  env:
+    production:
+      branch: main
+      services:
+        rid_1:
+          type: WEB_SERVICE
+          specifications:
+            autoScaling:
+              replica: { min: 1, max: 5 }
+              utilization:
+                cpu: { target: 70 }
+                memory: { target: 70 }
 ```
 
-## Quick Links
+## Related
 
-- [Web Service](/docsv2/yaml/environment-settings/resource-specifications/web-service)
-- [Database](/docsv2/yaml/environment-settings/resource-specifications/database)
-- [Storage Bucket](/docsv2/yaml/environment-settings/resource-specifications/storage-bucket)
-- [Cache](/docsv2/yaml/environment-settings/resource-specifications/cache)
-- [YAML Overview](/docsv2/yaml/overview)
+- [Service Definitions](/docsv2/yaml/environment-settings/services)
+- [Variables & Secrets](/docsv2/yaml/environment-settings/variables)
+
+## Next Steps
+
+- [Configure Web Services](/docsv2/yaml/environment-settings/resource-specifications/web-service)
+- [Set up Databases](/docsv2/yaml/environment-settings/resource-specifications/database)
+- [Learn about Syncing Changes](/docsv2/yaml/syncing)

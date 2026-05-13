@@ -10,33 +10,34 @@ Revolte uses a powerful variable system that allows you to reference other servi
 Define flat key-value pairs that your application can access at runtime.
 
 ```yaml revolte.yaml
-variables:
-  NODE_ENV: production
-  LOG_LEVEL: info
+revolte:
+  version: "1.0"
+  project: Demo-Project
+  appName: "demo-app"
+  env:
+    production:
+      branch: main
+      services:
+        rid_1:
+          type: WEB_SERVICE
+          properties:
+            variables:
+              # Static Variables
+              NODE_ENV: production
+              LOG_LEVEL: info
+              # Dynamic Reference
+              DATABASE_HOST: "#{db.dbUrl}"
+              # Secret Injection
+              STRIPE_SECRET_KEY: "#{STRIPE_SECRET_KEY}"
 ```
 
-## Dynamic References
-
-Use the `#{service_name.property}` syntax to inject connection strings and other metadata from your service mesh.
-
-```yaml revolte.yaml
-variables:
-  DATABASE_HOST: "#{db.dbUrl}"
-  DATABASE_PORT: "#{db.dbPort}"
-```
-
-## Secret Injection
-
-Secure values like API keys or certificates should be marked as secrets.
-
-```yaml revolte.yaml
-variables:
-  STRIPE_SECRET_KEY: "#{STRIPE_SECRET_KEY}"
-  AWS_ACCESS_KEY_ID: "#{AWS_ACCESS_KEY_ID}"
-```
-
-## Quick Links
+## Related
 
 - [Service Definitions](/docsv2/yaml/environment-settings/services)
-- [Resource Specifications](/docsv2/yaml/environment-settings/specifications)
-- [YAML Overview](/docsv2/yaml/overview)
+- [Web Service Configuration](/docsv2/yaml/environment-settings/resource-specifications/web-service)
+
+## Next Steps
+
+- [Configure Databases](/docsv2/yaml/environment-settings/resource-specifications/database)
+- [Set up Storage Buckets](/docsv2/yaml/environment-settings/resource-specifications/storage-bucket)
+- [Sync your Changes](/docsv2/yaml/syncing)
