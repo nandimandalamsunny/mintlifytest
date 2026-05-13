@@ -3,45 +3,110 @@ title: "Web Services"
 description: "Deploy REST APIs, gRPC services, and backend microservices with scaling and release controls."
 ---
 
-Web Services are backend runtime services deployed through Revolte.
-
-Use web services for APIs, internal services, webhook processors, background runtimes, and distributed microservices with managed scaling and deployment workflows.
-
 ## Requirements
 
 - Node.js `18+`
 
-## Configuration
+## Example Configuration
 
 Define your web service in `revolte.yaml` to control builds, scaling, and environment settings.
 
 <CodeBlock language="yaml" filename="revolte.yaml">
   {`revolte:
   version: '1.0'
-  project: Demo Project
-  appName: demo-project
-
-env:
-staging:
-branch: staging
-
+  project: Demo-Project
+  appName: demo-app
+  config:
+    codeReview:
+      summarize: false
+      suggestFixes: false
+      commentStyle: Balanced
+  workflow:
+    developerWorkflow:
+      enabled: true
+  env:
+    production:
+      branch: main
+      codeReview: false
       services:
-        web-api_service:
+        rid_1:
           type: WEB_SERVICE
-          entryPoint: server.js
-
+          name: web_service
+          entryPoint: index.js
           properties:
-            port: 3000
-
-            scaling:
-              min: 2
-              max: 10
-
+            health: /health
+            port: 8080
+            loadBalancerMode: dedicated
             variables:
-              DB_HOST: '#{dbHost}'
-              REDIS_URL: '#{redisUrl}'`}
-
+              APPLICATION_PORT: '8080'
+              APPLICATION_BASE_PATH: /api
+              MAX_LOG_FILE_DAYS: '30'
+              JWT_SECRET: '#{JWT_SECRET}'
+              CACHE_HOST: '#{cache.cacheHost}'
+              CACHE_PORT: '#{cache.cachePort}'
+              CACHE_PASSWORD: '#{cache.cachePassword}'
+              LOGIN_WEB_URL: https://app.demo.com/auth/login
+              RESET_PASSWORD_WEB_URL: https://app.demo.com/auth/reset-password
+          specifications:
+            cpu: 2
+            memory: 1
+            storage: 30
+            autoScaling:
+              replica:
+                min: 1
+                max: 3
+              utilization:
+                cpu:
+                  target: 70
+                memory:
+                  target: 70
+              behavior:
+                scaleDown:
+                  stabilizationWindow: 300
+        rid_2:
+          type: STORAGE_BUCKET
+          name: storage_bucket_service
+          configurations:
+            bucketName: demo-prod-bucket
+            versioningStatus: enabled
+            public: false
+            corsRules:
+              - methods:
+                  - GET
+                  - POST
+                  - PUT
+                  - DELETE
+                allowedHeaders:
+                  - '*'
+                exposeHeaders:
+                  - Etag
+                origins:
+                  - '*'
+        rid_3:
+          type: CACHE
+          name: cache
+          specifications:
+            cpu: 2
+            memory: 0.5
+            replica: 1
+        rid_5:
+          type: CRON
+          name: nightly_backup
+          properties:
+            schedule: "0 0 * * *"
+            command: npm run backup
+            variables:
+              BUCKET_NAME: '#{storage_bucket_service.bucketName}'`}
 </CodeBlock>
+
+## Additional Services
+
+Beyond standard web services, you can provision and manage your entire infrastructure stack in the same `revolte.yaml` file:
+
+- **Managed Databases**: Relational and document stores (e.g., MongoDB, PostgreSQL).
+- **Cron Jobs**: Scheduled background tasks and recurring execution.
+- **Managed Cache**: Low-latency Redis-compatible caching layers.
+- **Storage Buckets**: S3-compatible object storage for assets, uploads, and backups.
 
 ## Deploy with dependent services
 
