@@ -164,41 +164,37 @@
           },
 
           {
-            "group": "YAML Configuration",
-
+            "group": "YML Configurations",
             "pages": [
               "docsv2/yaml/overview",
-
               {
                 "group": "Repo Preferences",
                 "expanded": false,
-
                 "pages": [
-                  "docs/guides/webapp-repo-env-guide",
-                  "docs/guides/webservice/webservice-overview",
-                  "docs/guides/webservice-repo-env-guide",
-                  "docs/guides/webservice-cache-repo-env-guide",
-                  "docs/guides/webservice-database-repo-env-guide",
-                  "docs/guides/webservice-database-cache-repo-env-guide",
-                  "docs/guides/webservice-storagebucket-repo-env-guide",
-                  "docs/guides/webservice-storagebucket-cache-repo-env-guide",
-                  "docs/guides/webservice-database-storagebucket-repo-env-guide",
-                  "docs/guides/webservice-database-storagebucket-cache-repo-env-guide"
+                  "docsv2/yaml/repo-preferences/app-branch-settings",
+                  "docsv2/yaml/repo-preferences/agent-workflow",
+                  "docsv2/yaml/repo-preferences/prebuild-workflow",
+                  "docsv2/yaml/repo-preferences/preset-service"
                 ]
               },
-
               {
                 "group": "Environment Settings",
                 "expanded": false,
-
                 "pages": [
-                  "docs/guides/cron/cron-overview",
-                  "docs/guides/cron-repo-env-guide",
-                  "docs/guides/cron-cache-repo-env-guide",
-                  "docs/guides/cron-database-repo-env-guide",
-                  "docs/guides/cron-database-cache-repo-env-guide",
-                  "docs/guides/cron-storagebucket-cache-repo-env-guide",
-                  "docs/guides/cron-database-storagebucket-cache-repo-env-guide"
+                  "docsv2/yaml/environment-settings/overview",
+                  "docsv2/yaml/environment-settings/variables",
+                  "docsv2/yaml/environment-settings/services",
+                  {
+                    "group": "Resource Specs",
+                    "expanded": false,
+                    "pages": [
+                      "docsv2/yaml/environment-settings/resource-specifications/overview",
+                      "docsv2/yaml/environment-settings/resource-specifications/cache",
+                      "docsv2/yaml/environment-settings/resource-specifications/database",
+                      "docsv2/yaml/environment-settings/resource-specifications/storage-bucket",
+                      "docsv2/yaml/environment-settings/resource-specifications/web-service"
+                    ]
+                  }
                 ]
               }
             ]

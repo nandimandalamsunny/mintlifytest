@@ -60,19 +60,19 @@
 
   /* --- Nested Group Connector --- */
   #sidebar-content ul {
-    border-left: 1px solid rgba(255, 255, 255, 0.1);
-    margin-left: 0.05rem;
-    padding-left: 0.1rem;
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+    margin-left: 0.5rem;
+    padding-left: 0.5rem;
   }
 
   #sidebar-content ul ul {
-    margin-left: 0.04rem;
-    padding-left: 0.06rem;
+    margin-left: 0.8rem;
+    padding-left: 0.5rem;
   }
 
   #sidebar-content ul ul ul {
-    margin-left: 0.04rem;
-    padding-left: 0.05rem;
+    margin-left: 0.8rem;
+    padding-left: 0.5rem;
   }
 
   /*
@@ -114,8 +114,6 @@
     font-weight: 500;
     font-size: 0.875rem;
     white-space: nowrap !important;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
     line-height: 1.55;
     padding-top: 0.35rem;
     padding-bottom: 0.35rem;
@@ -130,8 +128,6 @@
     display: block;
     min-width: 0;
     white-space: nowrap !important;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
   }
 
   #sidebar a:hover,
@@ -166,4 +162,44 @@
   letter-spacing: 0.025em;
   display: inline-block;
   vertical-align: middle;
+}
+
+.stable-scrollbar-gutter {
+  width: 400px;
+  z-index: 1000;
+
+  & > div:first-of-type,
+  & > div:first-of-type * {
+    overflow: visible !important;
+  }
+
+  /* Specifically target Mintlify's sidebar elements to remove overflow constraints */
+  #sidebar-group,
+  #sidebar-group li,
+  #sidebar-group div {
+    overflow: visible !important;
+  }
+}
+
+/* Sidebar Expansion Transition */
+.sidebar-children-container {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.25s ease-out;
+  overflow: hidden;
+}
+
+.sidebar-children-container.open {
+  grid-template-rows: 1fr;
+}
+
+/* Nested Sidebar Gap and Connector */
+.sidebar-children {
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  margin-left: 1.15rem; /* Creates the requested gap */
+  padding-left: 0.5rem;
+}
+
+.sidebar-link--child {
+  padding-left: 0.75rem !important; /* Adjust padding for the new border */
 }
