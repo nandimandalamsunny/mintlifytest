@@ -130,7 +130,15 @@
                       "docsv2/deployments/services/databases/connect"
                     ]
                   },
-                  "docsv2/deployments/services/object-storage",
+                  {
+                    "group": "Object Storage",
+                    "expanded": false,
+                    "pages": [
+                      "docsv2/deployments/services/object-storage/overview",
+                      "docsv2/deployments/services/object-storage/explorer",
+                      "docsv2/deployments/services/object-storage/local-access"
+                    ]
+                  },
                   "docsv2/deployments/services/cache",
                   "docsv2/deployments/services/domains",
                   "docsv2/deployments/services/secrets"
