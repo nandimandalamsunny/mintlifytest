@@ -1,0 +1,43 @@
+---
+title: "Domains"
+description: "Manage custom domains, SSL/TLS certificates, and edge routing for your applications."
+---
+
+## Managed Domains
+
+Every service in Revolte is automatically assigned a system-generated domain (e.g., `service-name.revolte.io`). These domains are fully managed and secure by default, allowing you to preview and share your applications instantly.
+
+![Managed Domains](/docsv2/image-v2/deployments/domain/domain-1.png)
+
+## Custom Domain Mapping
+
+<Steps>
+  <Step title="Add Domain">
+    Click on **Add Domain** and enter your domain or subdomain (e.g., `app.yourcompany.com`). ![Add
+    Domain](/docsv2/image-v2/deployments/domain/domain-2.png)
+  </Step>
+  <Step title="Configure DNS">
+    Revolte will provide the necessary DNS records (CNAME or A records). Add these to your DNS
+    provider.
+  </Step>
+  <Step title="Live Verification">
+    Once records are detected, Revolte automatically provisions SSL certificates and begins routing
+    traffic. You can monitor the verification status and live stats directly from the dashboard.
+    ![Domain Stats](/docsv2/image-v2/deployments/domain/domain-3.png)
+  </Step>
+</Steps>
+
+## Edge Routing Features
+
+| Feature           | Description                                             |
+| :---------------- | :------------------------------------------------------ |
+| **Automatic SSL** | Managed Let's Encrypt certificates with auto-renewal.   |
+| **Global CDN**    | Edge caching and routing for low-latency delivery.      |
+| **Redirects**     | Configure root-to-www or custom path-based redirection. |
+| **HSTS**          | Enforce secure HTTPS connections for all users.         |
+
+## Related
+
+- [Web Applications](/docsv2/deployments/services/web-applications)
+- [Web Services](/docsv2/deployments/services/web-services)
+- [Secrets](/docsv2/deployments/services/secrets)

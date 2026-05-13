@@ -125,6 +125,7 @@
                   "docsv2/deployments/services/databases",
                   "docsv2/deployments/services/object-storage",
                   "docsv2/deployments/services/cache",
+                  "docsv2/deployments/services/domains",
                   "docsv2/deployments/services/secrets"
                 ]
               },
