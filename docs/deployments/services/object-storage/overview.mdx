@@ -1,0 +1,58 @@
+---
+title: "Overview"
+description: "Use S3-compatible object storage with CDN delivery and access policies."
+---
+
+## Storage patterns
+
+| Pattern            | Use for                                      |
+| :----------------- | :------------------------------------------- |
+| **Private Bucket** | User uploads, exports, and internal backups. |
+| **Public CDN**     | Static assets, images, and public downloads. |
+
+<div align="center">
+  <img src="/docs/image-v2/deployments/storage-buckets/storage-bucket-1.png" width="200" />
+</div>
+
+## Example Configuration
+
+Define your storage bucket in `revolte.yaml` to control access policies, CDN settings, and CORS rules.
+
+<CodeBlock language="yaml" filename="revolte.yaml">
+  {`revolte:
+  version: '1.0'
+  project: Demo-Project
+  appName: demo-app
+  env:
+    production:
+      branch: main
+      services:
+        rid_2:
+          type: STORAGE_BUCKET
+          name: storage_bucket_service
+          configurations:
+            bucketName: demo-prod-bucket
+            versioningStatus: enabled
+            public: false
+            corsRules:
+              - methods:
+                  - GET
+                  - POST
+                  - PUT
+                  - DELETE
+                allowedHeaders:
+                  - '*'
+                exposeHeaders:
+                  - Etag
+                origins:
+                  - '*'`}
+</CodeBlock>
+
+## Related
+
+- [Explorer](/docs/deployments/services/object-storage/explorer)
+- [Local Access & Credentials](/docs/deployments/services/object-storage/local-access)
+- [Web Services](/docs/deployments/services/web-services)
+- [Cron Jobs](/docs/deployments/services/cron-jobs)
+- [Environment Settings](/docs/yaml/environment-settings/services)
+- [Secrets](/docs/deployments/services/secrets)

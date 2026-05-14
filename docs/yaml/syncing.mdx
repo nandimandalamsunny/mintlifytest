@@ -1,0 +1,29 @@
+---
+title: "Syncing Changes"
+description: "Every change you make in the Revolte UI—whether in **Repo Preferences** or **Environment Settings**—must be committed back to your repository to take effect."
+---
+
+## The Commit Process
+
+To apply your changes, you must complete the **Commit Details** workflow. This ensures that every modification is recorded in your Git history.
+
+<Frame caption="The Commit Modal allows you to review your YAML changes and enter Git metadata.">
+  <img src="/docs/image-v2/yaml/commit.png" alt="Revolte Commit Modal" />
+</Frame>
+
+### Steps to Commit
+
+1. **Review YAML**: Review the updated `revolte.yml` configuration in the editor on the right.
+2. **Enter Commit Message**: Type a description of your changes in the **Commit Message** field.
+3. **Choose Branch**: Select the target branch from the **Choose Branch** dropdown menu.
+4. **Finalize**: Click the **Commit** button to save your changes to the repository.
+
+<Note>
+  **Important:** Edits made through the UI or YAML editor are not applied until they are committed.
+  You can also choose **Skip & deploy** if you want to test changes without committing, but these
+  will not be persisted in your `revolte.yml`.
+</Note>
+
+## Manual Updates
+
+If you prefer to edit your `revolte.yaml` directly in your code editor, simply commit and push your changes. Revolte will automatically detect the update and apply the new configuration.

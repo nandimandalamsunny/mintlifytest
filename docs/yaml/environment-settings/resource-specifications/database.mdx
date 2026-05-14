@@ -1,0 +1,47 @@
+---
+title: "Database"
+description: "Define storage and instance sizing for your data layer."
+---
+
+Databases require persistent storage and prioritized memory for query performance.
+
+## Storage Configuration
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| **Storage** | `30 GB` | Persistent disk space for your database. |
+| **IOPS** | `3000` | Provisioned throughput for high-performance databases. |
+
+## Instance Sizing
+
+Choose an instance size that matches your dataset and concurrency needs.
+
+```yaml revolte.yaml
+revolte:
+  version: "1.0"
+  project: Demo-Project
+  appName: "demo-app"
+  env:
+    production:
+      branch: main
+      services:
+        rid_2:
+          type: DATABASE
+          name: db
+          specifications:
+            cpu: 2
+            memory: 1
+            storage: 30
+            engine: postgres
+```
+
+## Related
+
+- [Web Service](/docs/yaml/environment-settings/resource-specifications/web-service)
+- [Variables & Secrets](/docs/yaml/environment-settings/resource-specifications/variables)
+
+## Next Steps
+
+- [Configure Caching](/docs/yaml/environment-settings/resource-specifications/cache)
+- [Set up Storage Buckets](/docs/yaml/environment-settings/resource-specifications/storage-bucket)
+- [Sync your Changes](/docs/yaml/syncing)

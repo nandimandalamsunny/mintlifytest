@@ -1,0 +1,66 @@
+---
+title: "Web Service"
+description: "Configure compute resources and scaling for web-facing services."
+---
+
+Web Services require consistent compute and memory allocation to handle incoming traffic. You can define these resources per environment to optimize for cost and performance.
+
+## Resource Allocation
+
+| Parameter   | Recommended (Prod) | Recommended (Staging) |
+| ----------- | ------------------ | --------------------- |
+| **CPU**     | `4`                | `2`                   |
+| **Memory**  | `16 GB`            | `8 GB`                |
+| **Storage** | `30 GB`            | `15 GB`               |
+
+## Configuration
+
+Define your compute resources and monitoring insights in `revolte.yaml`.
+
+```yaml revolte.yaml
+revolte:
+  version: "1.0"
+  project: Demo-Project
+  appName: "demo-app"
+
+  env:
+    production:
+      branch: main
+      services:
+        rid_1:
+          type: WEB_SERVICE
+          name: web_service
+          entryPoint: index.js
+          properties:
+            health: /health
+            port: 8080
+            loadBalancerMode: dedicated
+            variables:
+              JWT_TOKEN_SECRET: "#{JWT_TOKEN_SECRET}"
+              JWT_TOKEN_EXPIRY: "#{JWT_TOKEN_EXPIRY}"
+
+          insights:
+            cpu:
+              - cpu_time_idle
+            swap:
+              - swap_used
+            mem:
+              - mem_total
+            disk:
+              - disk_total
+          specifications:
+            cpu: 4
+            memory: 16
+            storage: 30
+```
+
+## Related
+
+- [Overview](/docs/yaml/environment-settings/resource-specifications/overview)
+- [Variables & Secrets](/docs/yaml/environment-settings/resource-specifications/variables)
+
+## Next Steps
+
+- [Configure Databases](/docs/yaml/environment-settings/resource-specifications/database)
+- [Set up Storage Buckets](/docs/yaml/environment-settings/resource-specifications/storage-bucket)
+- [Sync your Changes](/docs/yaml/syncing)

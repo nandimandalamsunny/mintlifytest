@@ -1,0 +1,35 @@
+---
+title: "Overview"
+description: "Manage deployment triggers, manual gates, and execution policies."
+---
+
+## Pipeline Components
+
+Pipelines in Revolte are composed of several automated stages to ensure software reliability:
+
+1. **Code Quality**: Automated static analysis and linting to maintain high standards of code maintainability and security.
+2. **Test Suite**: Execution of unit and integration tests to verify functional correctness.
+3. **Automation Test Suite** <span class="soon-pill">Coming Soon</span> : End-to-end and browser-based testing for full-system validation.
+
+## How to Configure
+
+Manage these components directly from the project dashboard.
+
+<Steps>
+  <Step title="Access Repo Preferences">
+    Navigate to **YAML Configuration** > **Repo Preferences** and locate the **Pipelines** section.
+  </Step>
+  <Step title="Toggle Quality Gates">
+    Enable or disable **[Code Quality](/docs/yaml/repo-preferences/pipelines/code-quality)** and **[Test Suite](/docs/yaml/repo-preferences/pipelines/test-suite)** execution for your repository.
+  </Step>
+  <Step title="Commit Changes">
+    Save your configuration to the repository. See [Syncing Changes](/docs/yaml/syncing) for a detailed walkthrough.
+  </Step>
+</Steps>
+
+## Quick Links
+
+- [YAML Overview](/docs/yaml/overview)
+- [Prebuild Workflow](/docs/yaml/repo-preferences/prebuild-workflow)
+- [Agent Workflow](/docs/yaml/repo-preferences/agent-workflow)
+- [Preset & Service](/docs/yaml/repo-preferences/preset-service)

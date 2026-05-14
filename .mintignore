@@ -1,7 +1,14 @@
-src/**
-public/**
-node_modules/**
-.next/**
+# Dependency directories
+node_modules
+.next
+.git
+
+# Build artifacts
+dist
+build
+out
+
+# Config files
 package-lock.json
 package.json
 next.config.ts
@@ -9,7 +16,13 @@ tsconfig.json
 tailwind.config.js
 postcss.config.mjs
 eslint.config.mjs
+
+# Source and public (Next.js specific)
+src/
+public/
+
+# Non-documentation markdown files
+README.md
 AGENTS.md
 CLAUDE.md
-README.md
 docs/README.md
