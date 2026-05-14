@@ -182,21 +182,19 @@
                 "group": "Environment Settings",
                 "expanded": false,
                 "pages": [
-                  "docsv2/yaml/environment-settings/build",
+                  "docsv2/yaml/environment-settings/overview",
+                  "docsv2/yaml/environment-settings/pre-build",
                   {
                     "group": "Deployment workflow",
+
                     "expanded": false,
                     "pages": [
-                      {
-                        "group": "Web Service",
-                        "pages": [
-                          "docsv2/yaml/environment-settings/resource-specifications/web-service",
-                          "docsv2/yaml/environment-settings/variables"
-                        ]
-                      },
+                      "docsv2/yaml/environment-settings/resource-specifications/web-app",
+                      "docsv2/yaml/environment-settings/resource-specifications/web-service",
                       "docsv2/yaml/environment-settings/resource-specifications/database",
                       "docsv2/yaml/environment-settings/resource-specifications/storage-bucket",
-                      "docsv2/yaml/environment-settings/resource-specifications/cache"
+                      "docsv2/yaml/environment-settings/resource-specifications/cache",
+                      "docsv2/yaml/environment-settings/resource-specifications/variables"
                     ]
                   }
                 ]

@@ -1,0 +1,47 @@
+---
+title: "Pre‑build Workflow"
+description: "Configure environment-specific pre‑build automation and quality gates."
+---
+
+<div style={{ display: "flex", justifyContent: "center" }}>
+  <img src="/docsv2/image-v2/yaml/prebuild.png" width="200" />
+</div>
+
+The **Pre‑build Workflow** allows you to define checks and automation that run before your service is built and deployed to a specific environment.
+
+## Configuration
+
+In your `revolte.yaml`, you can enable or disable pre‑build features per environment:
+
+```yaml revolte.yaml
+revolte:
+  version: "1.0"
+  project: Sideline HQ
+  appName: sideline-web-admin
+
+  env:
+    production:
+      branch: main
+      codeReview: true
+      codeQuality: true
+      testSuite: true
+      automationTestSuite: true
+```
+
+## Key Modules
+
+- **Code Review**: Activates AI‑driven PR summarization and fix suggestions.
+- **Code Quality**: Enforces linting and style rules.
+- **Test Suite**: Executes your unit and integration tests.
+- **Automation Test Suite**: Runs end‑to‑end automation tests.
+
+## Related
+
+- [Agent Workflow](/docsv2/yaml/repo-preferences/agent-workflow)
+- [Pipeline Overview](/docsv2/yaml/repo-preferences/pipeline/overview)
+
+## Next Steps
+
+- [Configure Deployment Workflow](/docsv2/yaml/environment-settings/services)
+- [Manage Variables & Secrets](/docsv2/yaml/environment-settings/resource-specifications/variables)
+- [Learn about Syncing Changes](/docsv2/yaml/syncing)

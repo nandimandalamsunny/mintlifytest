@@ -1,0 +1,41 @@
+---
+title: "Web App"
+description: "Configure static frontend applications with CDN and environment mapping."
+---
+
+**Web Apps** represent static frontend applications (React, Vue, Next.js static, etc.) that are served via CDN. Unlike Web Services, these do not require CPU/Memory specifications but focus on CDN and routing properties.
+
+## Configuration
+
+Define your static asset properties and frontend environment variables in `revolte.yaml`.
+
+```yaml revolte.yaml
+revolte:
+  version: "1.0"
+  project: Demo-Project
+  appName: "demo-app"
+  workflow:
+    developerWorkflow:
+      enabled: true
+  env:
+    production:
+      branch: main
+      services:
+        rid_1:
+          type: WEB_APP
+          name: web-app_service
+          entryPoint: index.js
+          properties:
+            indexPage: index.html
+            errorPage: index.html
+            enableCdn: false
+            variables:
+              VITE_API_HOST: "#{beBaseURL}"
+              VITE_GOOGLE_PLACES_API_KEY: "#{googlePlacesAPIKey}"
+```
+
+## Related
+
+- [Web Service Configuration](/docsv2/yaml/environment-settings/resource-specifications/web-service)
+- [Variables & Secrets](/docsv2/yaml/environment-settings/resource-specifications/variables)
+- [YAML Overview](/docsv2/yaml/overview)

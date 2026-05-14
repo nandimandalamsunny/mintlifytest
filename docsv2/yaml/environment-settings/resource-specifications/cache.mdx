@@ -21,11 +21,12 @@ revolte:
     production:
       branch: main
       services:
-        rid_1:
-          type: DATABASE
-          name: redis-cache
+        rid_4:
+          type: CACHE
+          name: cache
           specifications:
-            memory: 2
+            cpu: 2
+            memory: 0.5
 ```
 
 ## Related
@@ -35,6 +36,6 @@ revolte:
 
 ## Next Steps
 
-- [Manage Variables & Secrets](/docsv2/yaml/environment-settings/variables)
+- [Manage Variables & Secrets](/docsv2/yaml/environment-settings/resource-specifications/variables)
 - [Set up Storage Buckets](/docsv2/yaml/environment-settings/resource-specifications/storage-bucket)
 - [Sync your Changes](/docsv2/yaml/syncing)

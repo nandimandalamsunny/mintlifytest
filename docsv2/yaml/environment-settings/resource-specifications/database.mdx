@@ -25,19 +25,20 @@ revolte:
     production:
       branch: main
       services:
-        rid_1:
+        rid_2:
           type: DATABASE
-          name: postgres-db
+          name: db
           specifications:
-            cpu: 4
-            memory: 8
-            storage: 50
+            cpu: 2
+            memory: 1
+            storage: 30
+            engine: postgres
 ```
 
 ## Related
 
 - [Web Service](/docsv2/yaml/environment-settings/resource-specifications/web-service)
-- [Variables & Secrets](/docsv2/yaml/environment-settings/variables)
+- [Variables & Secrets](/docsv2/yaml/environment-settings/resource-specifications/variables)
 
 ## Next Steps
 
