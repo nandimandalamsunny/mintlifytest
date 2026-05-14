@@ -228,7 +228,6 @@
             ]
           },
 
-
           {
             "group": "Platform",
 
@@ -261,43 +260,36 @@
             "group": "Deployments",
 
             "pages": [
+              "docs/guides/deployments/quick-start",
+              "docs/guides/deployments/webapplications",
               {
-                "group": "Services",
-                "expanded": false,
-
+                "group": "Web Services",
                 "pages": [
-                  "docs/guides/deployments/services/overview",
-                  "docs/guides/deployments/services/webapplications",
-                  {
-                    "group": "Web Services",
-                    "pages": [
-                      "docs/guides/deployments/services/webservices/webservice",
-                      "docs/guides/deployments/services/webservices/webservice-cache",
-                      "docs/guides/deployments/services/webservices/webservice-storagebucket",
-                      "docs/guides/deployments/services/webservices/webservice-storagebucket-cache",
-                      "docs/guides/deployments/services/webservices/webservice-database",
-                      "docs/guides/deployments/services/webservices/webservice-database-cache",
-                      "docs/guides/deployments/services/webservices/webservice-database-storagebucket",
-                      "docs/guides/deployments/services/webservices/webservice-database-storagebucket-cache"
-                    ]
-                  },
-                  {
-                    "group": "Cron Jobs",
-                    "pages": [
-                      "docs/guides/deployments/services/cron-jobs/cron",
-                      "docs/guides/deployments/services/cron-jobs/cron-cache",
-                      "docs/guides/deployments/services/cron-jobs/cron-database",
-                      "docs/guides/deployments/services/cron-jobs/cron-database-cache",
-                      "docs/guides/deployments/services/cron-jobs/cron-storagebucket-cache",
-                      "docs/guides/deployments/services/cron-jobs/cron-database-storagebucket-cache"
-                    ]
-                  },
-                  "docs/guides/deployments/services/databases",
-                  "docs/guides/deployments/services/object-storage",
-                  "docs/guides/deployments/services/cache",
-                  "docs/guides/deployments/services/secrets"
+                  "docs/guides/deployments/webservices/webservice",
+                  "docs/guides/deployments/webservices/webservice-cache",
+                  "docs/guides/deployments/webservices/webservice-storagebucket",
+                  "docs/guides/deployments/webservices/webservice-storagebucket-cache",
+                  "docs/guides/deployments/webservices/webservice-database",
+                  "docs/guides/deployments/webservices/webservice-database-cache",
+                  "docs/guides/deployments/webservices/webservice-database-storagebucket",
+                  "docs/guides/deployments/webservices/webservice-database-storagebucket-cache"
                 ]
-              }
+              },
+              {
+                "group": "Cron Jobs",
+                "pages": [
+                  "docs/guides/deployments/cron-jobs/cron",
+                  "docs/guides/deployments/cron-jobs/cron-cache",
+                  "docs/guides/deployments/cron-jobs/cron-database",
+                  "docs/guides/deployments/cron-jobs/cron-database-cache",
+                  "docs/guides/deployments/cron-jobs/cron-storagebucket-cache",
+                  "docs/guides/deployments/cron-jobs/cron-database-storagebucket-cache"
+                ]
+              },
+              "docs/guides/deployments/databases",
+              "docs/guides/deployments/object-storage",
+              "docs/guides/deployments/cache",
+              "docs/guides/deployments/secrets"
             ]
           }
         ]

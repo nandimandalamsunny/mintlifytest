@@ -1,23 +1,45 @@
 ---
-title: "Overview"
-description: "Define per-environment overrides, variables, secrets, and deployment policies."
+title: "Guides"
+description: "Master the deployment and operation of services across your AI-native software delivery lifecycle."
 ---
 
-Environment settings change how the same services behave across preview, staging, and production. Use these to manage specific branches, variable overrides, and scaling rules for each stage of your project.
+Revolte guides provide step-by-step instructions and strategic patterns for managing your services, databases, and resources. Whether you are deploying a high-performance web service or orchestrating a complex background workflow, these guides help you navigate the full lifecycle of your applications.
 
-## Configuration Precedence
+## Deployment Strategy
 
-Revolte applies configuration using a hierarchical priority system.
+Software delivery in Revolte is built around **Environment Intelligence**. Instead of managing disparate scripts, you define how your services behave as they move from developer intent to production reality.
 
-| Priority | Source               | Description                                      |
-| -------- | -------------------- | ------------------------------------------------ |
-| **1**    | Environment Override | Settings defined within a specific `env` block.  |
-| **2**    | Service Default      | Settings defined in the global `services` block. |
-| **3**    | Project Default      | Top-level project defaults in `revolte.yaml`.    |
-| **4**    | Platform Default     | Revolte's internal system defaults.              |
+### How to use these guides
 
-## Quick Links
+*   **Service Operations**: Use these guides to understand the specific requirements for different runtime types (Web Apps, APIs, Cron Jobs).
+*   **Infrastructure management**: Learn how to provision and connect relational databases, caches, and object storage buckets.
+*   **Secure Configuration**: Implement best practices for managing secrets and environment-specific variables.
 
-- [Service Definitions](/docs/yaml/environment-settings/services)
-- [Resource Specifications](/docs/yaml/environment-settings/specifications)
-- [Variables & Secrets](/docs/yaml/environment-settings/resource-specifications/variables)
+## Core Deployment Concepts
+
+| Concept | Purpose | When to Use |
+| :--- | :--- | :--- |
+| **Preview Environments** | Isolated testing of new features. | Use for every Pull Request to validate changes. |
+| **Service Overrides** | Environment-specific scaling and specs. | Use when production requires more CPU/Memory than staging. |
+| **Secrets Engine** | Encrypted runtime credentials. | Use for API keys, DB passwords, and sensitive tokens. |
+
+## Quick Start Resources
+
+<CardGroup cols={2}>
+  <Card title="Deploy a Web App" icon="globe" href="/docs/guides/deployments/webapplications">
+    Launch React, Next.js, or static sites with managed edge delivery.
+  </Card>
+  <Card title="API & Web Services" icon="server" href="/docs/guides/deployments/webservices/webservice">
+    Deploy backend services with automated health checks and scaling.
+  </Card>
+  <Card title="Database Setup" icon="database" href="/docs/guides/deployments/databases">
+    Provision and connect managed PostgreSQL or MySQL instances.
+  </Card>
+  <Card title="Secrets Management" icon="key" href="/docs/guides/deployments/secrets">
+    Configure encrypted variables across your delivery pipeline.
+  </Card>
+</CardGroup>
+
+## Next Steps
+
+Once you have your services running, explore our [Reference Section](/docs/yaml/overview) for deep-dives into the `revolte.yaml` schema or check the [Observability](/docs/deployments/observability/index) guide to monitor your production performance.
