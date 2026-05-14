@@ -3,24 +3,29 @@ title: "Web App Service"
 description: "Configure repository preferences and environment settings for a web app service."
 ---
 
-This guide walks through configuring the first Web app service in Revolte, focusing on the Repo Preference and Environment Settings steps. Each section includes annotated explanations and visual references to help you set up your application confidently.
+This guide walks through configuring a **Web App** service in Revolte. This preset is framework-agnostic and can be used to deploy any **Frontend Application**—including React, Next.js, Vue, Angular, Svelte, or simple static HTML sites—with automated edge delivery.
+
+The configuration focuses on the Repo Preference and Environment Settings steps to help you set up your application confidently.
 
 
 <Steps>
   <Step title="Choose a Preset">
-    ![Choose Webapp Preset](/images/guides/repo_preference/preset-1.png)
+    ![Choose Webapp Preset](/docs/image-v2/guides/web-app/web-app-1.png)
 
-    The preset chooser shows a grid of service options. The **Webapp** tile is highlighted, described as "Build & deploy static apps instantly." Other visible tiles include Webservice, Webservice + Database, Cron, and Webservice + StorageBucket. Click **Webapp** to continue.
+     Click **Webapp** to continue.
   </Step>
 
   <Step title="Repo Preference">
-    The Repo Preference tab is identical across all service presets. See [Repository Preference](/docs/guides/overview#repository-preference) for a full walkthrough of each setting.
+    The Repo Preference tab is identical across all service presets. See [Repository Preference](/docs/yaml/repo-preferences/overview) for a full walkthrough of each setting.
   </Step>
 
   <Step title="Web App — Environment Settings">
-    ![Web App tab — QA environment](/images/guides/environment_settings/envsetting-1.png)
+    ![Web App tab — QA environment](/docs/image-v2/guides/web-app/web-app-2.png)
+    
 
-    The **QA** environment tab is selected. The left sidebar shows **Web app** and **Variables** under Build & deployment workflow. The center panel shows the Web App form:
+    The **QA** environment tab is selected. You can switch between **Preview**, **QA**, **Staging**, and **Production** tabs to define environment-specific configurations. Changes made in one environment do not affect the others, allowing you to tailor scaling and variables for each stage of your pipeline.
+
+    The center panel shows the Web App form for the active environment:
 
     - **Service Name** — Enter a unique identifier for this service (e.g., `web-app_service`).
     - **Entry Point** — The main file that starts the app (e.g., `index.js`).
@@ -31,7 +36,7 @@ This guide walks through configuring the first Web app service in Revolte, focus
   </Step>
 
   <Step title="Variables & Secrets">
-    ![Variables & Secrets tab — QA environment](/images/guides/environment_settings/envsetting-1-1.png)
+    ![Variables & Secrets tab — QA environment](/docs/image-v2/guides/web-app/web-app-3.png)
 
     The **QA** environment tab is selected and the **Secrets** sub-tab is active. The center panel shows:
 

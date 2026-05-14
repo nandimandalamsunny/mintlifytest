@@ -261,7 +261,7 @@
 
             "pages": [
               "docs/guides/deployments/quick-start",
-              "docs/guides/deployments/webapplications",
+              "docs/guides/deployments/web-apps",
               {
                 "group": "Web Services",
                 "pages": [
