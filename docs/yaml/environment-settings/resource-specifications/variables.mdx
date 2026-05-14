@@ -1,0 +1,42 @@
+---
+title: "Variables & Secrets"
+description: "Manage environment variables and secure secret injection."
+---
+
+Revolte provides a unified system to manage environment-specific configurations and sensitive data through two distinct categories: **Variables** and **Secrets**.
+
+## Secret Configuration Workflow
+
+Managing sensitive data follows a simple two-step process:
+
+1. **Define in YAML**: Declare the variable in your `revolte.yaml` using the injection syntax: `VARIABLE_NAME: "#{SECRET_KEY}"`.
+2. **Assign Value in Dashboard**: Go to the **Secret Engine** tab in your project dashboard and add the actual sensitive value for that `SECRET_KEY`.
+
+### Example: Configuring JWT Secrets
+
+In your `revolte.yaml`, you reference the secret key you intend to use:
+
+```yaml revolte.yaml
+revolte:
+  version: "1.0"
+  project: Demo-Project
+  appName: "demo-app"
+
+  env:
+    production:
+      branch: main
+      services:
+        rid_1:
+          type: WEB_SERVICE
+          properties:
+            variables:
+              JWT_SECRET: "#{JWT_SECRET}"
+```
+
+Once defined, navigate to the **Secret Engine** in the Revolte dashboard to add the actual value for `JWT_SECRET`. Revolte will then securely inject this value into your service at runtime.
+
+## Related
+
+- [Service Definitions](/docs/yaml/environment-settings/services)
+- [Web Service Configuration](/docs/yaml/environment-settings/resource-specifications/web-service)
+- [Database Configuration](/docs/yaml/environment-settings/resource-specifications/database)

@@ -1,0 +1,60 @@
+---
+title: "Overview"
+description: "Provision PostgreSQL, MySQL, and MongoDB services with backups and connection policies."
+---
+
+## Supported engines
+
+| Engine     | Description                                                                |
+| ---------- | -------------------------------------------------------------------------- |
+| PostgreSQL | Recommended relational database for most applications                      |
+| MySQL      | MySQL-compatible relational workloads                                      |
+| MongoDB    | Flexible document-based storage <span class="soon-pill">Coming Soon</span> |
+
+<div align="center">
+  <img src="/docs/image-v2/deployments/db/db-1.png" width="200" />
+</div>
+
+## Example Configuration
+
+Define your database service in `revolte.yaml` to configure engines, versions, storage, and backup policies manually.
+
+<CodeBlock language="yaml" filename="revolte.yaml">
+  {`revolte:
+  version: '1.0'
+  project: Demo-Project
+  appName: demo-app
+  env:
+    production:
+      branch: main
+      services:
+        rid_8:
+          type: DATABASE
+          name: db
+          specifications:
+            cpu: 2
+            memory: 1
+            storage: 30
+            engine: postgres`}
+</CodeBlock>
+
+## Deployment templates
+
+Preconfigured deployment patterns for database-backed services.
+
+- [Web Service with Database](/docs/guides/deployments/services/webservices/webservice-database)
+
+- [Web Service with Database and Cache](/docs/guides/deployments/services/webservices/webservice-database-cache)
+
+- [Web Service with Database and Storage Bucket](/docs/guides/deployments/services/webservices/webservice-database-storagebucket)
+
+- [Web Service with Database, Cache, and Storage Bucket](/docs/guides/deployments/services/webservices/webservice-database-storagebucket-cache)
+
+## Related
+
+- [Database Explorer](/docs/deployments/services/databases/connect)
+- [Web Services](/docs/deployments/services/web-services)
+- [Cache](/docs/deployments/services/cache)
+- [Environment Settings](/docs/yaml/environment-settings/services)
+- [Secrets](/docs/deployments/services/secrets)
+- [Observability](/docs/deployments/observability)

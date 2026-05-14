@@ -6,8 +6,8 @@
   "description": "Developer documentation for Revolte, an AI-native software delivery platform.",
 
   "logo": {
-    "light": "/docsv2/image-v2/dark-logo.svg",
-    "dark": "/docsv2/image-v2/light-logo.svg"
+    "light": "/docs/image-v2/dark-logo.svg",
+    "dark": "/docs/image-v2/light-logo.svg"
   },
 
   "favicon": "/images/brand/revolte-fav-icon.svg",
@@ -52,23 +52,23 @@
         "groups": [
           {
             "group": "Introduction",
-            "pages": ["docsv2/overview", "docsv2/quick-start"]
+            "pages": ["docs/overview", "docs/quick-start"]
           },
 
           {
             "group": "AI Workflows",
 
             "pages": [
-              "docsv2/ai-workflows/overview",
+              "docs/ai-workflows/overview",
               {
                 "group": "Development Workflow",
                 "pages": [
-                  "docsv2/ai-workflows/development-workflow/overview",
-                  "docsv2/ai-workflows/development-workflow/get-started"
+                  "docs/ai-workflows/development-workflow/overview",
+                  "docs/ai-workflows/development-workflow/get-started"
                 ]
               },
-              "docsv2/ai-workflows/quality-assurance",
-              "docsv2/ai-workflows/product-strategy"
+              "docs/ai-workflows/quality-assurance",
+              "docs/ai-workflows/product-strategy"
             ]
           },
 
@@ -80,7 +80,7 @@
                 "group": "Cloud",
                 "expanded": false,
 
-                "pages": ["docsv2/integrations/cloud/overview"]
+                "pages": ["docs/integrations/cloud/overview"]
               },
 
               {
@@ -88,7 +88,7 @@
                 "expanded": false,
 
                 "pages": [
-                  "docsv2/integrations/repository/github",
+                  "docs/integrations/repository/github",
 
                   {
                     "group": "GitLab",
@@ -109,8 +109,8 @@
                 "expanded": false,
 
                 "pages": [
-                  "docsv2/integrations/project-management/overview",
-                  "docsv2/integrations/project-management/jira",
+                  "docs/integrations/project-management/overview",
+                  "docs/integrations/project-management/jira",
 
                   {
                     "group": "Linear",
@@ -130,76 +130,76 @@
           {
             "group": "Deployments",
             "pages": [
-              "docsv2/deployments/overview",
-              "docsv2/deployments/pipeline",
+              "docs/deployments/overview",
               {
                 "group": "Services",
                 "expanded": false,
                 "pages": [
-                  "docsv2/deployments/services/overview",
-                  "docsv2/deployments/services/web-applications",
-                  "docsv2/deployments/services/web-services",
-                  "docsv2/deployments/services/cron-jobs",
+                  "docs/deployments/services/overview",
+                  "docs/deployments/services/web-applications",
+                  "docs/deployments/services/web-services",
+                  "docs/deployments/services/cron-jobs",
                   {
                     "group": "Databases",
                     "expanded": false,
                     "pages": [
-                      "docsv2/deployments/services/databases/overview",
-                      "docsv2/deployments/services/databases/connect"
+                      "docs/deployments/services/databases/overview",
+                      "docs/deployments/services/databases/connect"
                     ]
                   },
                   {
                     "group": "Object Storage",
                     "expanded": false,
                     "pages": [
-                      "docsv2/deployments/services/object-storage/overview",
-                      "docsv2/deployments/services/object-storage/explorer",
-                      "docsv2/deployments/services/object-storage/local-access"
+                      "docs/deployments/services/object-storage/overview",
+                      "docs/deployments/services/object-storage/explorer",
+                      "docs/deployments/services/object-storage/local-access"
                     ]
                   },
-                  "docsv2/deployments/services/cache",
-                  "docsv2/deployments/services/domains",
-                  "docsv2/deployments/services/secrets"
+                  "docs/deployments/services/cache",
+                  "docs/deployments/services/domains",
+                  "docs/deployments/services/secrets"
                 ]
               },
               {
                 "group": "Observability",
                 "expanded": false,
                 "pages": [
-                  "docsv2/deployments/observability/index",
-                  "docsv2/deployments/observability/deployment-logs",
-                  "docsv2/deployments/observability/application-logs",
-                  "docsv2/deployments/observability/metrics",
-                  "docsv2/deployments/observability/insights"
+                  "docs/deployments/observability/index",
+                  "docs/deployments/observability/deployment-logs",
+                  "docs/deployments/observability/application-logs",
+                  "docs/deployments/observability/metrics",
+                  "docs/deployments/observability/insights"
                 ]
               },
               {
                 "group": "Rollbacks",
                 "expanded": false,
-                "pages": ["docsv2/deployments/rollbacks"]
-              }
+                "pages": ["docs/deployments/rollbacks"]
+              },
+              "docs/deployments/pipeline"
             ]
           },
 
           {
             "group": "YML Configurations",
             "pages": [
-              "docsv2/yaml/overview",
-              "docsv2/yaml/syncing",
+              "docs/yaml/overview",
+              "docs/yaml/syncing",
               {
                 "group": "Repo Preferences",
                 "expanded": false,
                 "pages": [
-                  "docsv2/yaml/repo-preferences/app-branch-settings",
-                  "docsv2/yaml/repo-preferences/agent-workflow",
-                  "docsv2/yaml/repo-preferences/prebuild-workflow",
-                  "docsv2/yaml/repo-preferences/preset-service",
+                  "docs/yaml/repo-preferences/app-branch-settings",
+                  "docs/yaml/repo-preferences/agent-workflow",
+                  "docs/yaml/repo-preferences/prebuild-workflow",
+                  "docs/yaml/repo-preferences/preset-service",
                   {
                     "group": "Pipelines",
                     "pages": [
-                      "docsv2/yaml/repo-preferences/pipelines/overview",
-                      "docsv2/yaml/repo-preferences/pipelines/code-quality",
-                      "docsv2/yaml/repo-preferences/pipelines/test-suite"
+                      "docs/yaml/repo-preferences/pipelines/overview",
+                      "docs/yaml/repo-preferences/pipelines/code-quality",
+                      "docs/yaml/repo-preferences/pipelines/test-suite"
                     ]
                   }
                 ]
@@ -208,19 +208,19 @@
                 "group": "Environment Settings",
                 "expanded": false,
                 "pages": [
-                  "docsv2/yaml/environment-settings/overview",
-                  "docsv2/yaml/environment-settings/pre-build",
+                  "docs/yaml/environment-settings/overview",
+                  "docs/yaml/environment-settings/pre-build",
                   {
                     "group": "Deployment workflow",
 
                     "expanded": false,
                     "pages": [
-                      "docsv2/yaml/environment-settings/resource-specifications/web-app",
-                      "docsv2/yaml/environment-settings/resource-specifications/web-service",
-                      "docsv2/yaml/environment-settings/resource-specifications/database",
-                      "docsv2/yaml/environment-settings/resource-specifications/storage-bucket",
-                      "docsv2/yaml/environment-settings/resource-specifications/cache",
-                      "docsv2/yaml/environment-settings/resource-specifications/variables"
+                      "docs/yaml/environment-settings/resource-specifications/web-app",
+                      "docs/yaml/environment-settings/resource-specifications/web-service",
+                      "docs/yaml/environment-settings/resource-specifications/database",
+                      "docs/yaml/environment-settings/resource-specifications/storage-bucket",
+                      "docs/yaml/environment-settings/resource-specifications/cache",
+                      "docs/yaml/environment-settings/resource-specifications/variables"
                     ]
                   }
                 ]
@@ -237,11 +237,11 @@
                 "group": "CLI",
                 "expanded": false,
 
-                "pages": ["docsv2/cli/installation", "docsv2/cli/commands"]
+                "pages": ["docs/cli/installation", "docs/cli/commands"]
               },
 
-              "docsv2/users",
-              "docsv2/pricing"
+              "docs/users",
+              "docs/pricing"
             ]
           }
         ]
@@ -254,7 +254,7 @@
           {
             "group": "Overview",
 
-            "pages": ["docsv2/guides/index"]
+            "pages": ["docs/guides/index"]
           },
 
           {
@@ -266,36 +266,36 @@
                 "expanded": false,
 
                 "pages": [
-                  "docsv2/guides/deployments/services/overview",
-                  "docsv2/guides/deployments/services/webapplications",
+                  "docs/guides/deployments/services/overview",
+                  "docs/guides/deployments/services/webapplications",
                   {
                     "group": "Web Services",
                     "pages": [
-                      "docsv2/guides/deployments/services/webservices/webservice",
-                      "docsv2/guides/deployments/services/webservices/webservice-cache",
-                      "docsv2/guides/deployments/services/webservices/webservice-storagebucket",
-                      "docsv2/guides/deployments/services/webservices/webservice-storagebucket-cache",
-                      "docsv2/guides/deployments/services/webservices/webservice-database",
-                      "docsv2/guides/deployments/services/webservices/webservice-database-cache",
-                      "docsv2/guides/deployments/services/webservices/webservice-database-storagebucket",
-                      "docsv2/guides/deployments/services/webservices/webservice-database-storagebucket-cache"
+                      "docs/guides/deployments/services/webservices/webservice",
+                      "docs/guides/deployments/services/webservices/webservice-cache",
+                      "docs/guides/deployments/services/webservices/webservice-storagebucket",
+                      "docs/guides/deployments/services/webservices/webservice-storagebucket-cache",
+                      "docs/guides/deployments/services/webservices/webservice-database",
+                      "docs/guides/deployments/services/webservices/webservice-database-cache",
+                      "docs/guides/deployments/services/webservices/webservice-database-storagebucket",
+                      "docs/guides/deployments/services/webservices/webservice-database-storagebucket-cache"
                     ]
                   },
                   {
                     "group": "Cron Jobs",
                     "pages": [
-                      "docsv2/guides/deployments/services/cron-jobs/cron",
-                      "docsv2/guides/deployments/services/cron-jobs/cron-cache",
-                      "docsv2/guides/deployments/services/cron-jobs/cron-database",
-                      "docsv2/guides/deployments/services/cron-jobs/cron-database-cache",
-                      "docsv2/guides/deployments/services/cron-jobs/cron-storagebucket-cache",
-                      "docsv2/guides/deployments/services/cron-jobs/cron-database-storagebucket-cache"
+                      "docs/guides/deployments/services/cron-jobs/cron",
+                      "docs/guides/deployments/services/cron-jobs/cron-cache",
+                      "docs/guides/deployments/services/cron-jobs/cron-database",
+                      "docs/guides/deployments/services/cron-jobs/cron-database-cache",
+                      "docs/guides/deployments/services/cron-jobs/cron-storagebucket-cache",
+                      "docs/guides/deployments/services/cron-jobs/cron-database-storagebucket-cache"
                     ]
                   },
-                  "docsv2/guides/deployments/services/databases",
-                  "docsv2/guides/deployments/services/object-storage",
-                  "docsv2/guides/deployments/services/cache",
-                  "docsv2/guides/deployments/services/secrets"
+                  "docs/guides/deployments/services/databases",
+                  "docs/guides/deployments/services/object-storage",
+                  "docs/guides/deployments/services/cache",
+                  "docs/guides/deployments/services/secrets"
                 ]
               }
             ]

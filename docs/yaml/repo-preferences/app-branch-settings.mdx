@@ -1,0 +1,76 @@
+---
+title: "App & Branch Settings"
+description: "Configure your application framework and environment branch mapping."
+---
+
+<div style={{ display: "flex", justifyContent: "center" }}>
+  <img src="/docs/image-v2/yaml/app-branch-settings.png" width="200" />
+</div>
+
+## How to Configure
+
+Follow these steps to define your application identity and branch strategy.
+
+<Steps>
+  <Step title="Access Repo Preferences">
+    Navigate to **YAML Configuration** > **Repo Preferences** from your project dashboard.
+  </Step>
+  <Step title="Map Branches">
+    Assign specific Git branches to your **Production**, **UAT**, and **QA** environments.
+  </Step>
+  <Step title="Commit Changes">
+    Enter a commit message and select your target branch to persist the changes. See [Syncing Changes](/docs/yaml/syncing) for a detailed walkthrough.
+  </Step>
+</Steps>
+
+## Branch Mapping
+
+Map your Git branches to Revolte environments to enable automated deployments.
+
+| Git Branch     | Revolte Environment | Behavior                                                    |
+| -------------- | ------------------- | ----------------------------------------------------------- |
+| `main`         | **Production**      | Live production traffic and primary rollout target.         |
+| `staging`      | **UAT**             | Pre-production validation and user acceptance testing.      |
+| `qa`           | **QA**              | Automated testing and quality assurance cycles.             |
+| \* (Any other) | **Preview**         | Ephemeral environments; automatically deleted after 3 days. |
+
+```yaml revolte.yaml
+revolte:
+  version: "1.0"
+  project: Demo-Project
+  appName: "demo-app"
+  env:
+    production:
+      branch: main # Maps production environment to the main branch
+    staging:
+      branch: staging # Maps UAT environment to the staging branch
+    qa:
+      branch: qa # Maps QA environment to the qa branch
+```
+
+<Note>
+  You can customize the 3-day retention period for preview environments in your [Environment
+  Settings](/docs/yaml/environment-settings/overview).
+</Note>
+
+## Service Integration
+
+Branch mapping triggers automated deployments for all services in the environment.
+
+```yaml revolte.yaml
+revolte:
+  env:
+    production:
+      branch: main
+      services:
+        rid_1:
+          type: WEB_SERVICE
+          name: api-gateway
+          # Revolte deploys this service when code is pushed to 'main'
+```
+
+## Quick Links
+
+- [Agent Workflow](/docs/yaml/repo-preferences/agent-workflow)
+- [Prebuild Workflow](/docs/yaml/repo-preferences/prebuild-workflow)
+- [YAML Overview](/docs/yaml/overview)

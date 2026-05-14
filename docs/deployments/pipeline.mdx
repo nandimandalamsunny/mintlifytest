@@ -1,0 +1,36 @@
+---
+title: "Pipeline"
+description: "Monitor deployment execution and manage manual gates."
+---
+
+The **Pipeline** view in the Deployments tab provides real-time visibility into your software delivery process. It allows you to track the progress of every stage, from build to production promotion.
+
+<div style={{ display: "flex", justifyContent: "center" }}>
+  <img src="/docs/image-v2/deployments/pipeline-1.png" width="800" />
+</div>
+
+## Execution Monitoring
+
+While pipelines are defined in [Repo Preferences](/docs/yaml/repo-preferences/pipelines/overview), the Deployments tab is where you monitor their real-time execution and results.
+
+- **Stage Tracking**: View the status of Code Quality, Test Suite, and Build stages.
+- **Real-time Logs**: Stream logs directly from the pipeline runner to debug failures instantly.
+- **Execution History**: Access previous pipeline runs to compare performance and track changes.
+
+## Manual Gates & Approvals
+
+For sensitive environments, pipelines can be configured with manual gates through your repository's [YAML Pipeline Config](/docs/yaml/repo-preferences/pipelines/overview).
+
+<div style={{ display: "flex", justifyContent: "center" }}>
+  <img src="/docs/image-v2/deployments/pipeline-2.png" width="800" />
+</div>
+
+- **Approval Requests**: When a pipeline reaches a manual gate, designated team members are notified to review and approve the promotion.
+- **Audit Logs**: Every approval or rejection is logged with the user's details and timestamps for compliance.
+- **Environment Promotion**: Once approved, the pipeline automatically proceeds with the deployment to the target environment.
+
+## Related
+
+- [Observability](/docs/deployments/observability/index)
+- [Rollbacks](/docs/deployments/rollbacks)
+- [YAML Pipeline Config](/docs/yaml/repo-preferences/pipelines/overview)
