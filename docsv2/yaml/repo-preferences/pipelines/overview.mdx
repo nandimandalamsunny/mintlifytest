@@ -20,34 +20,16 @@ Manage these components directly from the project dashboard.
     Navigate to **YAML Configuration** > **Repo Preferences** and locate the **Pipelines** section.
   </Step>
   <Step title="Toggle Quality Gates">
-    Enable or disable **Code Quality** and **Test Suite** execution for your repository.
+    Enable or disable **[Code Quality](/docsv2/yaml/repo-preferences/pipelines/code-quality)** and **[Test Suite](/docsv2/yaml/repo-preferences/pipelines/test-suite)** execution for your repository.
   </Step>
   <Step title="Commit Changes">
     Save your configuration to the repository. See [Syncing Changes](/docsv2/yaml/syncing) for a detailed walkthrough.
   </Step>
 </Steps>
 
-## Configuration Example
-
-Define your pipeline policies in `revolte.yaml`:
-
-```yaml revolte.yaml
-revolte:
-  version: "1.0"
-  project: Demo-Project
-  appName: "demo-app"
-
-  config:
-    pipeline:
-      codeQuality: true
-      testSuite: true
-      automationTest: false # Coming Soon
-```
-
 ## Quick Links
 
-- [Code Quality](/docsv2/yaml/repo-preferences/pipelines/code-quality)
-- [Test Suite](/docsv2/yaml/repo-preferences/pipelines/test-suite)
+- [YAML Overview](/docsv2/yaml/overview)
 - [Prebuild Workflow](/docsv2/yaml/repo-preferences/prebuild-workflow)
 - [Agent Workflow](/docsv2/yaml/repo-preferences/agent-workflow)
 - [Preset & Service](/docsv2/yaml/repo-preferences/preset-service)
