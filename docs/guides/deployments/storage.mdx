@@ -3,15 +3,20 @@ title: "Storage Bucket"
 description: "Configure repository preferences and environment settings for cloud object storage."
 ---
 
-This guide explains how to configure a standalone Storage Bucket service in Revolte. For applications requiring both compute and object storage, Revolte also offers combined presets:
-- **Web Service + Storage Bucket**
-- **Web Service + Storage Bucket + Database**
+This guide explains how to configure a **Storage Bucket** resource in Revolte. Storage buckets are modular building blocks used for object storage, uploads, and asset delivery.
+
+## Combined Deployments
+If your application requires compute (API) alongside object storage, you should select one of the following presets during the **Choose a Preset** step:
+- **Webservice + StorageBucket**
+- **Webservice + Database + StorageBucket**
+- **Webservice + StorageBucket + Cache**
+- **Webservice + Database + StorageBucket + Cache**
+
+> **Note:** For all combined presets, the core configuration workflow is identical to a standard [Web Service](/docs/guides/deployments/web-services). This guide focuses specifically on the supplemental **Storage Bucket** settings described below.
 
 <Steps>
   <Step title="Choose a Preset">
-    Select the **Storage Bucket** tile for a standalone instance, or choose a combined preset like **Web Service + Storage Bucket + Database** for full-stack deployments.
-    
-    > **Note:** For combined presets, the core configuration workflow is identical to a standard [Web Service](/docs/guides/deployments/web-services). This guide focuses specifically on the supplemental **Storage Bucket** settings described below.
+    Select the **Storage Bucket** tile for a standalone instance, or choose one of the combined presets listed above for full-stack deployments.
   </Step>
 
   <Step title="Storage — Environment Settings">

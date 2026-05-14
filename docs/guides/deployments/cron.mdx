@@ -3,15 +3,21 @@ title: "Cron"
 description: "Configure repository preferences and environment settings for a scheduled background job."
 ---
 
-This guide explains how to configure a standalone Cron service in Revolte. For applications requiring recurring tasks or background processing, Revolte also offers combined presets:
-- **Web Service + Cron**
-- **Web Service + Database + Cron**
+This guide explains how to configure a **Cron** resource in Revolte. Cron jobs are modular building blocks used for recurring tasks and background processing.
+
+## Combined Deployments
+If your application requires compute (API) alongside a scheduled task, you should select one of the following presets during the **Choose a Preset** step:
+- **Webservice + Cron**
+- **Webservice + Database + Cron**
+- **Cron + Database**
+- **Cron + Cache**
+- **Cron + Database + Cache**
+
+> **Note:** For all combined presets, the core configuration workflow is identical to a standard [Web Service](/docs/guides/deployments/web-services). This guide focuses specifically on the supplemental **Cron** settings described below.
 
 <Steps>
   <Step title="Choose a Preset">
-    Select the **Cron** tile for a standalone scheduled task, or choose a combined preset for integrated deployments.
-    
-    > **Note:** For combined presets, the core configuration workflow is identical to a standard [Web Service](/docs/guides/deployments/web-services). This guide focuses specifically on the supplemental **Cron** settings described below.
+    Select the **Cron** tile for a standalone instance, or choose one of the combined presets listed above for integrated deployments.
   </Step>
 
   <Step title="Cron — Environment Settings">

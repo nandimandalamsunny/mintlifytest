@@ -3,15 +3,20 @@ title: "Database"
 description: "Configure repository preferences and environment settings for a managed database service."
 ---
 
-This guide explains how to configure a standalone Database service in Revolte. For applications requiring both compute and storage, Revolte also offers combined presets:
-- **Web Service + Database**
-- **Web Service + Storage Bucket + Database**
+This guide explains how to configure a **Database** resource in Revolte. Databases are modular building blocks that can be deployed standalone or as part of a combined full-stack preset.
+
+## Combined Deployments
+If your application requires compute (API) alongside a database, you should select one of the following presets during the **Choose a Preset** step:
+- **Webservice + Database**
+- **Webservice + Database + StorageBucket**
+- **Webservice + Database + Cache**
+- **Webservice + Database + StorageBucket + Cache**
+
+> **Note:** For all combined presets, the core configuration workflow is identical to a standard [Web Service](/docs/guides/deployments/web-services). This guide focuses specifically on the supplemental **Database** settings described below.
 
 <Steps>
   <Step title="Choose a Preset">
-    Select the **Database** tile for a standalone instance, or choose a combined preset like **Web Service + Storage Bucket + Database** for full-stack deployments.
-    
-    > **Note:** For combined presets, the core configuration workflow is identical to a standard [Web Service](/docs/guides/deployments/web-services). This guide focuses specifically on the supplemental **Database** settings described below.
+    Select the **Database** tile for a standalone instance, or choose one of the combined presets listed above for full-stack deployments.
   </Step>
 
   <Step title="Database — Environment Settings">

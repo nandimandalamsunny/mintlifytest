@@ -40,7 +40,7 @@
     "primary": {
       "type": "button",
       "label": "Get Started",
-      "href": "https://app.revolte.dev/signup"
+      "href": "https://revolte.ai/"
     }
   },
 
@@ -259,8 +259,13 @@
           {
             "group": "Deployments",
 
+            "pages": ["docs/guides/deployments/quick-start", "docs/guides/deployments/presets"]
+          },
+
+          {
+            "group": "Service Configuration",
+
             "pages": [
-              "docs/guides/deployments/quick-start",
               "docs/guides/deployments/web-apps",
               "docs/guides/deployments/web-services",
               "docs/guides/deployments/database",
