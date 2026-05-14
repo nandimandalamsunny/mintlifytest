@@ -56,6 +56,23 @@
           },
 
           {
+            "group": "AI Workflows",
+
+            "pages": [
+              "docsv2/ai-workflows/overview",
+              {
+                "group": "Development Workflow",
+                "pages": [
+                  "docsv2/ai-workflows/development-workflow/overview",
+                  "docsv2/ai-workflows/development-workflow/get-started"
+                ]
+              },
+              "docsv2/ai-workflows/quality-assurance",
+              "docsv2/ai-workflows/product-strategy"
+            ]
+          },
+
+          {
             "group": "Integrations",
 
             "pages": [
@@ -211,23 +228,6 @@
             ]
           },
 
-          {
-            "group": "AI Workflows",
-
-            "pages": [
-              "docsv2/ai-workflows/overview",
-              {
-                "group": "Development Workflow",
-                "pages": [
-                  "docsv2/ai-workflows/development-workflow/get-started",
-                  "docsv2/ai-workflows/development-workflow/overview"
-                ]
-              },
-              "docsv2/ai-workflows/quality-assurance",
-              "docsv2/ai-workflows/product-strategy",
-              "docsv2/ai-workflows/automation-config"
-            ]
-          },
 
           {
             "group": "Platform",

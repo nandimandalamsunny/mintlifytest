@@ -329,11 +329,9 @@ div[class*="lg:mt-8"],
 
 #sidebar-title {
   font-size: 14px !important;
-  color: white !important;
 }
 
 svg {
-  color: white !important;
   height: 28px !important;
   width: 14px !important;
 }
