@@ -1,0 +1,53 @@
+---
+title: "Overview"
+description: "Manage deployment triggers, manual gates, and execution policies."
+---
+
+## Pipeline Components
+
+Pipelines in Revolte are composed of several automated stages to ensure software reliability:
+
+1. **Code Quality**: Automated static analysis and linting to maintain high standards of code maintainability and security.
+2. **Test Suite**: Execution of unit and integration tests to verify functional correctness.
+3. **Automation Test Suite** <span class="soon-pill">Coming Soon</span> : End-to-end and browser-based testing for full-system validation.
+
+## How to Configure
+
+Manage these components directly from the project dashboard.
+
+<Steps>
+  <Step title="Access Repo Preferences">
+    Navigate to **YAML Configuration** > **Repo Preferences** and locate the **Pipelines** section.
+  </Step>
+  <Step title="Toggle Quality Gates">
+    Enable or disable **Code Quality** and **Test Suite** execution for your repository.
+  </Step>
+  <Step title="Commit Changes">
+    Save your configuration to the repository. See [Syncing Changes](/docsv2/yaml/syncing) for a detailed walkthrough.
+  </Step>
+</Steps>
+
+## Configuration Example
+
+Define your pipeline policies in `revolte.yaml`:
+
+```yaml revolte.yaml
+revolte:
+  version: "1.0"
+  project: Sideline HQ
+  appName: sideline-web-admin
+
+  config:
+    pipeline:
+      codeQuality: true
+      testSuite: true
+      automationTest: false # Coming Soon
+```
+
+## Quick Links
+
+- [Code Quality](/docsv2/yaml/repo-preferences/pipelines/code-quality)
+- [Test Suite](/docsv2/yaml/repo-preferences/pipelines/test-suite)
+- [Prebuild Workflow](/docsv2/yaml/repo-preferences/prebuild-workflow)
+- [Agent Workflow](/docsv2/yaml/repo-preferences/agent-workflow)
+- [Preset & Service](/docsv2/yaml/repo-preferences/preset-service)

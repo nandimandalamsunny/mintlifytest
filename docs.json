@@ -175,7 +175,15 @@
                   "docsv2/yaml/repo-preferences/app-branch-settings",
                   "docsv2/yaml/repo-preferences/agent-workflow",
                   "docsv2/yaml/repo-preferences/prebuild-workflow",
-                  "docsv2/yaml/repo-preferences/preset-service"
+                  "docsv2/yaml/repo-preferences/preset-service",
+                  {
+                    "group": "Pipelines",
+                    "pages": [
+                      "docsv2/yaml/repo-preferences/pipelines/overview",
+                      "docsv2/yaml/repo-preferences/pipelines/code-quality",
+                      "docsv2/yaml/repo-preferences/pipelines/test-suite"
+                    ]
+                  }
                 ]
               },
               {

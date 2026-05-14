@@ -1,0 +1,33 @@
+---
+title: "Test Suite"
+description: "Manage automated unit and integration testing."
+---
+
+The **Test Suite** component automates the execution of your project's tests. By integrating testing into your pipeline, you can ensure that new changes do not introduce regressions.
+
+## Configuration
+
+Enable the test suite in your `revolte.yaml` to trigger automated runs on every PR and promotion.
+
+```yaml revolte.yaml
+revolte:
+  version: "1.0"
+  project: Sideline HQ
+  appName: sideline-web-admin
+
+  config:
+    pipeline:
+      testSuite: true
+```
+
+## Testing Capabilities
+
+- **Unit Tests**: Rapid validation of individual functions and components.
+- **Integration Tests**: Verification of interactions between different parts of your system.
+- **Coverage Reports**: (Optional) View the percentage of code exercised by your tests.
+
+## Quick Links
+
+- [Code Quality](/docsv2/yaml/repo-preferences/pipelines/code-quality)
+- [Pipelines Overview](/docsv2/yaml/repo-preferences/pipelines/overview)
+- [Prebuild Workflow](/docsv2/yaml/repo-preferences/prebuild-workflow)

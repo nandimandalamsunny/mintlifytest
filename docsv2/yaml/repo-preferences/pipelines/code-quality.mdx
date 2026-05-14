@@ -1,0 +1,33 @@
+---
+title: "Code Quality"
+description: "Configure automated linting and static analysis for your repository."
+---
+
+**Code Quality** ensures that every commit adheres to your team's coding standards. Revolte integrates with industry-standard linters to provide immediate feedback on maintainability and potential bugs.
+
+## Configuration
+
+Enable code quality checks in your `revolte.yaml` to block promotions if standards are not met.
+
+```yaml revolte.yaml
+revolte:
+  version: "1.0"
+  project: Sideline HQ
+  appName: sideline-web-admin
+
+  config:
+    pipeline:
+      codeQuality: true
+```
+
+## Supported Features
+
+- **Static Analysis**: Detects anti-patterns and potential runtime errors.
+- **Linting**: Enforces consistent formatting and style rules.
+- **Complexity Metrics**: Identifies overly complex functions that may need refactoring.
+
+## Quick Links
+
+- [Test Suite](/docsv2/yaml/repo-preferences/pipelines/test-suite)
+- [Pipelines Overview](/docsv2/yaml/repo-preferences/pipelines/overview)
+- [Prebuild Workflow](/docsv2/yaml/repo-preferences/prebuild-workflow)
