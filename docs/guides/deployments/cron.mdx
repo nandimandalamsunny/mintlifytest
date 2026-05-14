@@ -1,0 +1,41 @@
+---
+title: "Cron"
+description: "Configure repository preferences and environment settings for a scheduled background job."
+---
+
+This guide explains how to configure a standalone Cron service in Revolte. For applications requiring recurring tasks or background processing, Revolte also offers combined presets:
+- **Web Service + Cron**
+- **Web Service + Database + Cron**
+
+<Steps>
+  <Step title="Choose a Preset">
+    Select the **Cron** tile for a standalone scheduled task, or choose a combined preset for integrated deployments.
+    
+    > **Note:** For combined presets, the core configuration workflow is identical to a standard [Web Service](/docs/guides/deployments/web-services). This guide focuses specifically on the supplemental **Cron** settings described below.
+  </Step>
+
+  <Step title="Cron — Environment Settings">
+    ![Cron tab — QA environment](/docs/image-v2/guides/web-service/cron.png)
+
+    The **QA** environment tab is selected. You can define independent schedules and resource specifications for **Preview**, **QA**, **Staging**, and **Production**.
+
+    The center panel shows the Cron form for the active environment:
+
+    - **Service Name** — Enter a unique identifier for this cron job (e.g., `daily_cleanup`).
+    - **Entry Point** — The script or command that starts the task (e.g., `scripts/cleanup.js`).
+    - **Specifications**
+      - **CPU & Memory** — Choose a compute tier appropriate for the job's complexity.
+      - **Storage value** — Disk space in GB allocated for the job's temporary files.
+    - **Properties**
+      - **Scheduler** — Define the execution frequency using standard cron syntax (e.g., `cron(0 0 * * *)` for daily at midnight).
+    - **Pre Script** — Commands to run before the main task (e.g., installing dependencies or setting up data).
+  </Step>
+</Steps>
+
+> **Tip:** Test your cron expressions using a validator to ensure they trigger at the expected intervals before committing.
+
+---
+
+**Quick Reference:**
+- [Technical Cron Overview](/docs/deployments/services/cron-jobs)
+- [Cron Resource Specifications](/docs/yaml/environment-settings/resource-specifications/cron)
