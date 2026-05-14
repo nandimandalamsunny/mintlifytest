@@ -51,8 +51,11 @@
 
         "groups": [
           {
-            "group": "Get Started",
-            "pages": ["docsv2/quick-start"]
+            "group": "Introduction",
+            "pages": [
+              "docsv2/overview",
+              "docsv2/quick-start"
+            ]
           },
 
           {
