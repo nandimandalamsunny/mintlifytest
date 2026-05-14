@@ -1,56 +1,38 @@
 ---
 title: "Overview"
-description: "Understand how Revolte AI Workflows connect intent, risk scoring, review gates, and runtime feedback."
+description: "Leverage AI Workflows to automate your delivery loop from intent to production."
 ---
 
-AI Workflows coordinate the delivery loop from intent to improvement. They use repository context, deployment history, runtime telemetry, and policy settings to automate safe work without hiding engineering review.
+**AI Workflows** provide the autonomous coordination layer for modern software delivery. By bridging the gap between intent and production, they handle the end-to-end execution of validation, risk scoring, and environment promotion—allowing engineering teams to scale velocity while maintaining absolute control.
 
-<div style={{ display: "flex", justifyContent: "center" }}>
-  <img src="/docsv2/image-v2/ai-workflow/workflow1.png" width="800" />
-</div>
+## Workflow Modules
 
-## What AI Workflows does
+Tailor AI automation to every role in your engineering organization:
 
 <CardGroup cols={2}>
-  <Card title="Intent analysis" icon="brain">
-    Reads commits, diffs, pull requests, tickets, and prompts to understand what changed.
+  <Card title="Development Lifecycle" icon="code" href="/docsv2/ai-workflows/development-workflow">
+    Accelerate delivery with automated code summaries, risk scoring, and intelligent PR reviews.
   </Card>
-  <Card title="Risk scoring" icon="shield-alert">
-    Scores deployment risk using service type, environment, file changes, ownership, and recent incidents.
+  <Card title="Quality Assurance" icon="microscope">
+    Automated test generation, regression analysis, and environment validation.
   </Card>
-  <Card title="Review gates" icon="git-pull-request">
-    Applies manual or automated gates before merge, deploy, promotion, or rollback.
-  </Card>
-  <Card title="Feedback learning" icon="activity">
-    Uses logs, metrics, and outcomes to improve future recommendations.
+  <Card title="Product Strategy" icon="clipboard-list">
+    AI-driven requirement analysis, ticket summarization, and roadmap mapping.
   </Card>
 </CardGroup>
 
-## Delivery loop
+## The Automated Delivery Loop
 
-| Loop step | AI role |
-| --- | --- |
-| Intent | Summarizes change purpose and affected services. |
-| Build | Recommends build commands and validates generated artifacts. |
-| Review | Flags risky files, migrations, dependency changes, or missing tests. |
-| Deploy | Chooses gates and rollout strategies based on risk. |
-| Observe | Detects anomalies and links them to deployment context. |
-| Improve | Adjusts future review and deploy recommendations. |
+| Stage        | Manual SDLC                        | Revolte AI Workflow              |
+| :----------- | :--------------------------------- | :------------------------------- |
+| **Analysis** | Manual ticket mapping & review     | **Automated Intent Discovery**   |
+| **Testing**  | Human-triggered test runs          | **Predictive Validation**        |
+| **Review**   | Time-consuming manual diff checks  | **AI-Powered Code Summaries**    |
+| **Release**  | Manual promotion & gate checks     | **Automated Risk-Based Gating**  |
+| **Feedback** | Reactive monitoring & post-mortems | **Continuous Learning & Tuning** |
 
 <Info>
-  AI Workflows operate inside configured project policy. Production gates, approvals, and environment rules still control what automation can do.
+  **Governance by Design**: While AI Workflows automate the work, you remain in control. All
+  automation follows your organization's compliance policies and requires explicit approval for
+  critical production paths.
 </Info>
-
-## Related
-
-<CardGroup cols={3}>
-  <Card title="Development Workflow" icon="git-pull-request" href="/docsv2/ai-workflows/development-workflow">
-    See how Git events trigger review and risk scoring.
-  </Card>
-  <Card title="Automation Config" icon="workflow" href="/docsv2/ai-workflows/automation-config">
-    Configure auto-merge, deployment gates, and pipeline rules.
-  </Card>
-  <Card title="Insights" icon="sparkles" href="/docsv2/deployments/observability/insights">
-    Review runtime recommendations produced by the loop.
-  </Card>
-</CardGroup>
