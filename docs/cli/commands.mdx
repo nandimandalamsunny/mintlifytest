@@ -1,74 +1,35 @@
 ---
 title: "Commands"
-description: "Reference Revolte CLI commands for projects, environments, services, deployments, logs, metrics, and secrets."
+description: "Reference Revolte CLI commands for starting workflows, executing development tasks, and managing authentication."
 ---
 
-Use the CLI for repository-aware workflows and repeatable operations. Commands follow the shape revolte resource action with flags for project, service, and environment scope.
+Use the Revolte CLI to manage your development lifecycle directly from the terminal. The CLI provides a streamlined set of commands to authenticate, start workflows, and execute development tasks.
 
-## Core commands
-
-| Command | Purpose |
-| --- | --- |
-| revolte auth login | Start a browser-based login flow. |
-| revolte workspace use | Select the active workspace. |
-| revolte project create | Create a project. |
-| revolte repo connect | Connect a Git repository. |
-| revolte init | Generate revolte.yaml for a repository. |
-| revolte config validate | Validate YAML configuration. |
-
-## Deployment commands
+## Available Commands
 
 | Command | Purpose |
 | --- | --- |
-| revolte deploy SERVICE | Deploy a service to an environment. |
-| revolte deploy list | List recent deployments. |
-| revolte deploy compare | Compare two deployments. |
-| revolte rollback SERVICE | Roll back a service to a past deployment. |
-| revolte cron run JOB | Run a cron job manually. |
+| `revolte start` | Start the Revolte workflow. |
+| `revolte develop` | Execute development tasks. |
+| `revolte login` | Authenticate the CLI with your Revolte account. |
+| `revolte help` | Show help for all commands. |
 
-## Observability commands
+## Global Options
 
-| Command | Purpose |
+| Option | Description |
 | --- | --- |
-| revolte logs deployment | Stream deployment pipeline logs. |
-| revolte logs app | Stream application logs. |
-| revolte metrics | Query runtime metrics. |
-| revolte insights list | List active AI insights. |
+| `--version` | Show the current version of the CLI. |
+| `--help` | Show help information. |
 
 ## Examples
 
 <CodeBlock language="bash" filename="Terminal">
-{`revolte deploy checkout-api --env staging --follow
-revolte logs app checkout-api --env production --level error --since 2h
-revolte metrics checkout-api --deployment dep_7f42c9 --compare previous
-revolte rollback checkout-api --env production --to dep_1a8e2b`}
+{`revolte start
+revolte develop
+revolte login
+revolte --version`}
 </CodeBlock>
 
-## Global flags
-
-| Flag | Description |
-| --- | --- |
-| --project | Project slug. |
-| --env | Target environment. |
-| --service | Service name when not part of the positional command. |
-| --file | Configuration file path. |
-| --output | Output format, such as table or json. |
-| --follow | Stream updates until the operation completes. |
-
 <Info>
-  Commands that change production state require the same permissions and approval policy as dashboard actions.
+  Use `revolte <command> --help` to get more details about a specific command.
 </Info>
-
-## Related
-
-<CardGroup cols={3}>
-  <Card title="CLI Installation" icon="download" href="/cli/installation">
-    Install and authenticate the CLI.
-  </Card>
-  <Card title="Quick Start" icon="play" href="/quick-start">
-    Use the CLI to deploy the first service.
-  </Card>
-  <Card title="Recovery Workflow" icon="life-buoy" href="/deployments/rollbacks/recovery-workflow">
-    Run incident rollback commands safely.
-  </Card>
-</CardGroup>
