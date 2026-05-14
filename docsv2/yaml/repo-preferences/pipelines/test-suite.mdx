@@ -3,11 +3,34 @@ title: "Test Suite"
 description: "Manage automated unit and integration testing."
 ---
 
-The **Test Suite** component automates the execution of your project's tests. By integrating testing into your pipeline, you can ensure that new changes do not introduce regressions.
+**Test Suite** component automates the execution of your project's tests. By integrating testing into your pipeline, you can ensure that new changes do not introduce regressions.
 
-## Configuration
+<div style={{ display: "flex", justifyContent: "center" }}>
+  <img src="/docsv2/image-v2/pipeline/test-suite.png" width="400" />
+</div>
 
-Enable the test suite in your `revolte.yaml` to trigger automated runs on every PR and promotion.
+## How to Configure
+
+Manage your testing automation through the project dashboard.
+
+<Steps>
+  <Step title="Access Repo Preferences">
+    Navigate to **YAML Configuration** > **Repo Preferences** and locate the **Pipelines** section.
+  </Step>
+  <Step title="Open Test Suite Settings">
+    Click on the **Test Suite** component to configure execution triggers.
+  </Step>
+  <Step title="Set Execution Policy">
+    Toggle automated runs for specific branches or promotion events.
+  </Step>
+  <Step title="Commit Changes">
+    Save your configuration to the repository. See [Syncing Changes](/docsv2/yaml/syncing) for a detailed walkthrough.
+  </Step>
+</Steps>
+
+## Configuration Example
+
+Enable the test suite in your `revolte.yaml`:
 
 ```yaml revolte.yaml
 revolte:
@@ -17,14 +40,13 @@ revolte:
 
   config:
     pipeline:
-      testSuite: true
+      testSuite:
+        command: npm run test
 ```
 
-## Testing Capabilities
+## Automation Test Suite <span class="soon-pill">Coming Soon</span>
 
-- **Unit Tests**: Rapid validation of individual functions and components.
-- **Integration Tests**: Verification of interactions between different parts of your system.
-- **Coverage Reports**: (Optional) View the percentage of code exercised by your tests.
+Expand your testing strategy with automated end-to-end and browser-based validation. This module will integrate with popular frameworks like Playwright and Cypress to provide full-system verification before every release.
 
 ## Quick Links
 

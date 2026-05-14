@@ -117,6 +117,7 @@
             "group": "Deployments",
             "pages": [
               "docsv2/deployments/overview",
+              "docsv2/deployments/pipeline",
               {
                 "group": "Services",
                 "expanded": false,
