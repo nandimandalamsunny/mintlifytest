@@ -1,0 +1,36 @@
+---
+title: "Get Started"
+description: "Launch your first AI-powered development workflow in minutes."
+---
+
+Follow this guide to activate repository-connected automation for your project.
+
+<Steps>
+  <Step title="Verify Repository Connectivity">
+    Ensure your GitHub, GitLab, or Bitbucket repository is correctly integrated. 
+    Navigate to **Project Settings** > **Integrations** to confirm the connection status.
+  </Step>
+  <Step title="Create your Workflow YAML">
+    Add the following basic configuration to your `revolte.yaml` file to enable PR summaries and risk scoring:
+
+    ```yaml
+    aiWorkflows:
+      development:
+        pullRequests:
+          summarize: true
+          riskScore: true
+    ```
+  </Step>
+  <Step title="Commit to Main">
+    Push the updated `revolte.yaml` to your default branch. Revolte will automatically sync the new policy.
+  </Step>
+  <Step title="Trigger your first Workflow">
+    Open a new Pull Request with any code change. You should see a **Revolte AI Summary** and **Risk Assessment** appear in your PR comments or checks.
+  </Step>
+</Steps>
+
+## Next Steps
+
+- [Configure Review Gates](/docsv2/ai-workflows/development-workflow/overview#configure-review-gates)
+- [Understand Risk Scoring](/docsv2/ai-workflows/development-workflow/overview#risk-scoring-inputs)
+- [Automation Config](/docsv2/ai-workflows/automation-config)

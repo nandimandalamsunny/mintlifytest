@@ -1,0 +1,115 @@
+---
+title: "Overview"
+description: "Use Git integration, risk scoring, and review gates to control AI-assisted delivery."
+---
+
+Development workflows allow you to **configure** how Revolte reacts to repository activity and **trigger** automated delivery cycles. By connecting your Git provider, you can automate pull request summaries, risk scoring, and deployment gates based on real-time code changes.
+
+```carousel
+<div style={{ display: "flex", justifyContent: "center" }}>
+  <img src="/docsv2/image-v2/ai-workflow/workflow2.png" width="800" />
+</div>
+<!-- slide -->
+<div style={{ display: "flex", justifyContent: "center" }}>
+  <img src="/docsv2/image-v2/ai-workflow/workflow3.png" width="800" />
+</div>
+```
+
+## Git events
+
+Revolte **triggers** specific workflow actions based on Git events received from your connected repository:
+
+| Event               | Typical workflow                                              |
+| ------------------- | ------------------------------------------------------------- |
+| Pull request opened | Summarize intent, identify affected services, deploy preview. |
+| Commit pushed       | Refresh risk score and rerun validation.                      |
+| Review approved     | Unlock staging deployment or auto-merge if policy allows.     |
+| Main branch updated | Deploy staging or begin production promotion.                 |
+
+## Risk scoring inputs
+
+| Input               | Example risk signal                                                  |
+| ------------------- | -------------------------------------------------------------------- |
+| File changes        | Database migration, auth logic, payment code, infrastructure config. |
+| Service criticality | Public API and production database changes score higher.             |
+| Test coverage       | Missing tests for changed surface increases review requirement.      |
+| Runtime history     | Recent incidents increase gate strictness.                           |
+
+## How to Configure
+
+Follow these steps to set up and activate your development workflow:
+
+<Steps>
+  <Step title="Connect Repository">
+    Navigate to **Project Settings** > **Integrations** and ensure your Git provider is connected.
+  </Step>
+  <Step title="Initialize YAML">
+    Create or update your `revolte.yaml` with an `aiWorkflows` section to define your delivery rules.
+  </Step>
+  <Step title="Define Risk Policy">
+    Set your `maxRiskScore` thresholds and required approvals for different environment gates.
+  </Step>
+  <Step title="Commit and Sync">
+    Push your `revolte.yaml` changes to your repository to activate the automated triggers.
+  </Step>
+</Steps>
+
+## Configure review gates
+
+Use `revolte.yaml` to **configure** how these triggers behave and which gates are applied to your delivery loop:
+
+<CodeBlock language="yaml" filename="revolte.yaml">
+  {`aiWorkflows:
+  development:
+    pullRequests:
+      summarize: true
+      riskScore: true
+      previewDeployments: true
+    gates:
+      lowRisk:
+        autoMerge: true
+        maxRiskScore: 35
+      production:
+        requiredApprovals: 2
+        requirePassingInsights: true`}
+</CodeBlock>
+
+<Warning>
+  Do not enable auto-merge until branch protection, required checks, and ownership rules are
+  configured in the Git provider.
+</Warning>
+
+## Workflow steps
+
+<Steps>
+  <Step title="Connect repository events">
+    Install the provider app and allow Revolte to receive pull request and branch events.
+  </Step>
+  <Step title="Map services">
+    Ensure each service in revolte.yaml points to the correct root directory.
+  </Step>
+  <Step title="Define risk policy">
+    Configure thresholds, required approvals, and production gates.
+  </Step>
+  <Step title="Validate on a pull request">
+    Open a low-risk change and confirm the summary, score, checks, and preview behavior.
+  </Step>
+</Steps>
+
+## Related
+
+<CardGroup cols={3}>
+  <Card title="Automation Config" icon="workflow" href="/docsv2/ai-workflows/automation-config">
+    Tune pipeline and deployment automation.
+  </Card>
+  <Card title="Repo Preferences" icon="file-code-2" href="/docsv2/yaml/repo-preferences/overview">
+    Define service roots and build preferences.
+  </Card>
+  <Card
+    title="Deployment Logs"
+    icon="terminal"
+    href="/docsv2/deployments/observability/deployment-logs"
+  >
+    Inspect preview and deployment output.
+  </Card>
+</CardGroup>

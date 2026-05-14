@@ -367,3 +367,10 @@ svg {
   align-items: center !important;
   margin-right: 1rem !important;
 }
+
+/*  make sure we are not blovking mobile */
+
+/* Remove Powered by Mintlify */
+a[href*="mintlify.com"] {
+  display: none !important;
+}

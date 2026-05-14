@@ -52,10 +52,7 @@
         "groups": [
           {
             "group": "Introduction",
-            "pages": [
-              "docsv2/overview",
-              "docsv2/quick-start"
-            ]
+            "pages": ["docsv2/overview", "docsv2/quick-start"]
           },
 
           {
@@ -219,7 +216,15 @@
 
             "pages": [
               "docsv2/ai-workflows/overview",
-              "docsv2/ai-workflows/development-workflow",
+              {
+                "group": "Development Workflow",
+                "pages": [
+                  "docsv2/ai-workflows/development-workflow/get-started",
+                  "docsv2/ai-workflows/development-workflow/overview"
+                ]
+              },
+              "docsv2/ai-workflows/quality-assurance",
+              "docsv2/ai-workflows/product-strategy",
               "docsv2/ai-workflows/automation-config"
             ]
           },
