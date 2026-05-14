@@ -5,9 +5,37 @@ description: "Connect your GitHub repositories to Revolte."
 
 ## Setup
 
-![GitHub Integration](/docsv2/image-v2/integrations/integrate-git.png)
+Revolte offers two ways to connect your GitHub repositories. Choose the method that best fits your workflow.
 
-## Supported Platforms
+<Tabs>
+  <Tab title="Direct Integration">
+    Follow these steps to connect your GitHub account directly.
+
+    <Steps>
+      <Step title="Initialize Connection">
+        Click on the GitHub integration button to begin the connection process.
+        <img src="/docsv2/image-v2/integrations/github-1.png" width="400" />
+      </Step>
+      <Step title="Authorize Access">
+        Authorize Revolte to access your repositories and manage automated workflows.
+        <img src="/docsv2/image-v2/integrations/github-2.png" width="500" />
+      </Step>
+    </Steps>
+
+  </Tab>
+  <Tab title="Personal Access Token">
+    For advanced security or specific access requirements, you can manually provide a GitHub Personal Access Token (PAT).
+    
+    1. Generate a PAT in your GitHub Developer Settings.
+    2. Ensure the token has `repo` and `workflow` scopes.
+    3. Paste the token into the Revolte configuration field.
+
+    <img src="/docsv2/image-v2/integrations/github-3.png" width="400" />
+
+  </Tab>
+</Tabs>
+
+## Supported Sources
 
 - [GitHub](/docsv2/integrations/repository/github)
 - GitLab <span class="soon-pill">Coming Soon</span>

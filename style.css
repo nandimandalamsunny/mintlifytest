@@ -1,3 +1,28 @@
+:root {
+  --partition-border: rgba(255, 255, 255, 0.08);
+  --partition-border-strong: rgba(255, 255, 255, 0.12);
+  --scrollbar-thumb: rgba(255, 255, 255, 0.18);
+  --scrollbar-thumb-hover: rgba(255, 255, 255, 0.32);
+  --card-bg: rgba(255, 255, 255, 0.02);
+  --card-border: rgba(255, 255, 255, 0.06);
+  --card-hover-bg: rgba(255, 255, 255, 0.04);
+  --card-hover-border: rgba(255, 255, 255, 0.12);
+}
+
+/* Override variables for light mode */
+.light :root,
+html:not(.dark) :root,
+html.light {
+  --partition-border: rgba(0, 0, 0, 0.08);
+  --partition-border-strong: rgba(0, 0, 0, 0.12);
+  --scrollbar-thumb: rgba(0, 0, 0, 0.18);
+  --scrollbar-thumb-hover: rgba(0, 0, 0, 0.32);
+  --card-bg: rgba(0, 0, 0, 0.02);
+  --card-border: rgba(0, 0, 0, 0.06);
+  --card-hover-bg: rgba(0, 0, 0, 0.04);
+  --card-hover-border: rgba(0, 0, 0, 0.12);
+}
+
 @media (min-width: 1024px) {
   #body-content::before,
   #body-content::after {
@@ -8,7 +33,7 @@
     z-index: 20;
     width: 1px;
     pointer-events: none;
-    background: rgba(255, 255, 255, 0.08);
+    background: var(--partition-border);
   }
 
   /* Outer border line sits on top of the scrollbar — same vertical position */
@@ -31,8 +56,8 @@
     padding-right: 0;
     overflow-y: auto;
     scrollbar-width: thin;
-    scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
-    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    scrollbar-color: var(--scrollbar-thumb) transparent;
+    border-right: 1px solid var(--partition-border);
   }
 
   /* 4px scrollbar sits at the sidebar's right edge — same pixel as ::before */
@@ -45,12 +70,12 @@
   }
 
   #sidebar::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.18);
+    background: var(--scrollbar-thumb);
     border-radius: 999px;
   }
 
   #sidebar::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.32);
+    background: var(--scrollbar-thumb-hover);
   }
 
   #sidebar > div {
@@ -60,7 +85,7 @@
 
   /* --- Nested Group Connector --- */
   #sidebar-content ul {
-    border-left: 1px solid rgba(255, 255, 255, 0.08);
+    border-left: 1px solid var(--partition-border);
     margin-left: 0.5rem;
     padding-left: 0.5rem;
   }
@@ -105,7 +130,7 @@
     z-index: 10;
   }
 
-  /* Every link: one line, ellipsis on overflow, min-width 0 for flex */
+  /* Tighten vertical spacing for sidebar links and buttons */
   #sidebar a,
   #sidebar button {
     display: block;
@@ -114,10 +139,27 @@
     font-weight: 500;
     font-size: 0.875rem;
     white-space: nowrap !important;
-    line-height: 1.55;
-    padding-top: 0.35rem;
-    padding-bottom: 0.35rem;
+    line-height: 1.3 !important;
+    padding-top: 0.15rem !important;
+    padding-bottom: 0.15rem !important;
     transition: color 0.2s ease;
+  }
+
+  /* Reduce space between group label and the first item */
+  #sidebar-content p,
+  #sidebar-content [class*="sidebar-label"] {
+    margin-bottom: 0 !important;
+    margin-top: 0.5rem !important;
+  }
+
+  #sidebar-content ul {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  #sidebar-content li {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
   }
 
   /* Inner span/div Mintlify may render text inside — force same constraints */
@@ -147,7 +189,7 @@
 #navbar nav[class*="justify-center"] {
   margin-left: 0.25rem;
   padding-left: 0.5rem;
-  border-left: 1px solid rgba(255, 255, 255, 0.12);
+  border-left: 1px solid var(--partition-border-strong);
 }
 
 .soon-pill {
@@ -165,7 +207,7 @@
 }
 
 .stable-scrollbar-gutter {
-  width: 400px;
+  width: 450px;
   z-index: 1000;
 
   & > div:first-of-type,
@@ -195,11 +237,117 @@
 
 /* Nested Sidebar Gap and Connector */
 .sidebar-children {
-  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  border-left: 1px solid var(--partition-border);
   margin-left: 1.15rem; /* Creates the requested gap */
   padding-left: 0.5rem;
 }
 
 .sidebar-link--child {
   padding-left: 0.75rem !important; /* Adjust padding for the new border */
+}
+
+/* Global Image Styling */
+img {
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Force override Mintlify's Tailwind margins - Absolute Precedence */
+div[class*="mt-6"],
+div[class*="mt-8"],
+div[class*="lg:mt-8"],
+#sidebar-content div[class*="mt-"] {
+  margin-top: 1rem !important;
+}
+
+.space-y-px {
+  li {
+    button {
+      padding-left: 0.5rem !important;
+    }
+    a {
+      padding-left: 0.5rem !important;
+    }
+  }
+}
+
+.hyphens-auto {
+  /* padding-left: 0.5rem !important; */
+}
+
+/* Move expand/chevron icons to the right */
+#sidebar-content li button,
+#sidebar-content li a {
+  display: flex !important;
+  width: 100% !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+}
+
+/* Push the second child (icon wrapper) to the far right */
+#sidebar-content li button > div:nth-child(2),
+#sidebar-content li a > div:nth-child(2),
+#sidebar-content li button > svg,
+#sidebar-content li a > svg {
+  margin-left: auto !important;
+  flex-shrink: 0 !important;
+  margin-right: 9rem !important;
+}
+
+/* Force override Mintlify's Tailwind margins - Absolute Precedence */
+div[class*="mt-6"],
+div[class*="mt-8"],
+div[class*="lg:mt-8"],
+#sidebar-content div[class*="mt-"] {
+  margin-top: 0.5rem !important;
+}
+
+/* Force override Mintlify's Tailwind margins - Absolute Precedence */
+div[class*="mt-6"],
+div[class*="mt-8"],
+div[class*="lg:mt-8"],
+#sidebar-content div[class*="mt-"] {
+  margin-top: 1rem !important;
+}
+
+#sidebar-title {
+  font-size: 14px !important;
+  color: white !important;
+}
+
+svg {
+  color: white !important;
+  height: 28px !important;
+  width: 14px !important;
+}
+
+#sidebar-content li button > div:nth-child(2),
+#sidebar-content li a > div:nth-child(2),
+#sidebar-content li button > svg,
+/* Force sidebar-content to show overflow (removes clipping) */
+#sidebar-content {
+  overflow: visible !important;
+}
+
+#sidebar,
+#sidebar-content,
+#sidebar *,
+#sidebar-content * {
+  scrollbar-width: none !important; /* Firefox */
+  -ms-overflow-style: none !important; /* IE/Edge */
+}
+
+#sidebar::-webkit-scrollbar,
+#sidebar-content::-webkit-scrollbar,
+#sidebar *::-webkit-scrollbar,
+#sidebar-content *::-webkit-scrollbar {
+  display: none !important; /* Chrome/Safari/Opera */
+}
+/* Inline Prebuild and Deployment workflow items */
+#sidebar-content li[data-title="Prebuild Workflow"],
+#sidebar-content li[data-title="Deployment Workflow"] {
+  display: inline-flex !important;
+  align-items: center !important;
+  margin-right: 1rem !important;
 }

@@ -6,8 +6,8 @@
   "description": "Developer documentation for Revolte, an AI-native software delivery platform.",
 
   "logo": {
-    "light": "/images/brand/revolte-logo.svg",
-    "dark": "/images/brand/revolte-logo.svg"
+    "light": "/docsv2/image-v2/dark-logo.svg",
+    "dark": "/docsv2/image-v2/light-logo.svg"
   },
 
   "favicon": "/images/brand/revolte-fav-icon.svg",
@@ -54,7 +54,6 @@
             "group": "Get Started",
             "pages": ["docsv2/quick-start"]
           },
-
 
           {
             "group": "Integrations",
@@ -114,6 +113,7 @@
           {
             "group": "Deployments",
             "pages": [
+              "docsv2/deployments/overview",
               {
                 "group": "Services",
                 "expanded": false,
