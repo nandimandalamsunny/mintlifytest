@@ -1,0 +1,41 @@
+---
+title: "Reference"
+description: "Detailed technical reference for Revolte CLI requirements, commands, and global options."
+---
+
+The Revolte CLI is designed to be a lightweight but powerful interface for managing your AI-native development workflows. Use this reference to understand system requirements and the full command suite.
+
+## System Requirements
+
+Ensure your local environment meets these minimum specifications before installing the Revolte CLI.
+
+| Requirement | Minimum | Notes |
+| --- | --- | --- |
+| Node.js | 20 | Required for npm installation and many JavaScript builds. |
+| Git | 2.40 | Required for repository-aware workflows. |
+| Shell | bash, zsh, or fish | Used by install scripts and command examples. |
+| Network | HTTPS access | Required for Revolte API and provider integrations. |
+
+## Installation
+
+If you haven't installed the CLI yet, run the following command globally:
+
+<CodeBlock language="bash" filename="Terminal">
+{`npm install -g @revolte.ai/cli`}
+</CodeBlock>
+
+---
+
+## Command Reference
+
+| Command | Purpose |
+| --- | --- |
+| `revolte --start` | Start the Revolte AI workflow in your current directory. |
+| `revolte --login` | Authenticate the CLI with your Revolte account. |
+| `revolte --help` | Show help for all commands. |
+| `revolte --version` | Show the current version of the CLI. |
+
+
+<Info>
+  Use `revolte <command> --help` to get more details about a specific command's arguments and flags.
+</Info>

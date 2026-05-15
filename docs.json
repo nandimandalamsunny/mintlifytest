@@ -41,7 +41,13 @@
       "type": "button",
       "label": "Get Started",
       "href": "https://revolte.ai/"
-    }
+    },
+    "links": [
+      {
+        "label": "Talk to Us",
+        "href": "https://revolte.ai/contact"
+      }
+    ]
   },
 
   "navigation": {
@@ -236,7 +242,7 @@
                 "group": "CLI",
                 "expanded": false,
 
-                "pages": ["docs/cli/installation", "docs/cli/commands"]
+                "pages": ["docs/cli/reference", "docs/cli/quick-start"]
               },
 
               "docs/users",
