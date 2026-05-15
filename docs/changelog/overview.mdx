@@ -1,0 +1,62 @@
+---
+title: "Changelog"
+description: "Recent updates and improvements to Revolte."
+---
+
+## May 15, 2026
+
+The first release of Revolte is now generally available — an AI-native software delivery platform that connects planning, code generation, validation, deployment, and observability into a single governed workflow.
+
+### New features
+
+<Update label="AI Workflows" tags={["new"]}>
+  Run autonomous workflows that turn intent into production-ready pull requests. The first release includes the **Development Lifecycle** workflow for code summaries, risk scoring, and PR reviews, plus previews of **Quality Assurance** and **Product Strategy** workflows.
+
+  Learn more in [AI Workflows](/docs/ai-workflows/overview).
+</Update>
+
+<Update label="Deployments" tags={["new"]}>
+  Ship across four standard environments — **Production**, **Staging**, **QA**, and **Preview** — with one unified deployment pipeline. Configure web applications, web services, cron jobs, databases, caches, object storage, secrets, and custom domains from a single place.
+
+  See the [Deployments overview](/docs/deployments/overview) and [Services](/docs/deployments/services/overview).
+</Update>
+
+<Update label="Observability" tags={["new"]}>
+  Inspect builds and runtime behavior with [Deployment Logs](/docs/deployments/observability/deployment-logs), [Application Logs](/docs/deployments/observability/application-logs), and AI-generated [Insights](/docs/deployments/observability/insights) that surface anomalies and deployment recommendations.
+</Update>
+
+<Update label="One-click rollbacks" tags={["new"]}>
+  Recover quickly by comparing past deployments and promoting any healthy release back to production in a single step.
+
+  See [Rollbacks](/docs/deployments/rollbacks).
+</Update>
+
+<Update label="DORA dashboard" tags={["new"]}>
+  Track deployment frequency, lead time for changes, change failure rate, and mean time to recovery across your production services — out of the box.
+
+  Open the [DORA Dashboard](/docs/dashboard/dora).
+</Update>
+
+<Update label="Revolte CLI" tags={["new"]}>
+  Trigger development workflows directly from your terminal. Install with `npm install -g @revolte.ai/cli` and follow the [CLI Quick Start](/docs/cli/quick-start).
+</Update>
+
+<Update label="YAML configuration" tags={["new"]}>
+  Define repo preferences, branch-to-environment mapping, pipelines, pre-build steps, and resource specifications as code.
+
+  See the [YAML overview](/docs/yaml/overview).
+</Update>
+
+### Integrations
+
+<Update label="GitHub" tags={["new"]}>
+  Connect repositories through direct OAuth integration or a self-managed GitHub App. See [GitHub](/docs/integrations/repository/github).
+</Update>
+
+<Update label="Jira" tags={["new"]}>
+  Sync tickets between Revolte and Jira with automatic labeling for linked applications. See [Jira](/docs/integrations/project-management/jira).
+</Update>
+
+<Update label="Cloud" tags={["new"]}>
+  Deploy to your own cloud account. AWS is available today; GCP and Azure are coming soon. See [Cloud integrations](/docs/integrations/cloud/overview).
+</Update>
