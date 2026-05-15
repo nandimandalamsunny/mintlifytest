@@ -188,6 +188,11 @@
           },
 
           {
+            "group": "Dashboard",
+            "pages": ["docs/dashboard/dora"]
+          },
+
+          {
             "group": "YML Configurations",
             "pages": [
               "docs/yaml/overview",

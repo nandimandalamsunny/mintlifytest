@@ -328,12 +328,16 @@ div[class*="lg:mt-8"],
 }
 
 #sidebar-title {
-  font-size: 14px !important;
+  font-size: 16px !important;
 }
 
 svg {
   height: 28px !important;
   width: 14px !important;
+}
+
+#sidebar-content .transition-transform {
+  color: white !important;
 }
 
 #sidebar-content li button > div:nth-child(2),
