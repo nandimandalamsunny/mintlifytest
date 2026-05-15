@@ -47,28 +47,7 @@ Define your cron job in `revolte.yaml` to control schedules, commands, and retry
               DB_HOST: '#{dbHost}'`}
 </CodeBlock>
 
-## Create and test a job
 
-<Steps>
-  <Step title="Define job">
-    Add the `CRON_JOB` service block with schedule, command, and retry behavior.
-  </Step>
-  <Step title="Inject dependencies">
-    Bind databases, caches, object storage, and secrets needed by the task.
-  </Step>
-  <Step title="Run manually">
-    Execute the job once in staging before enabling the schedule.
-
-    <CodeBlock language="bash" filename="Terminal">
-
-{`revolte cron run invoice-reconciliation --env staging --follow`}
-</CodeBlock>
-
-  </Step>
-  <Step title="Enable schedule">
-    Promote the job to production after logs confirm expected behavior.
-  </Step>
-</Steps>
 
 ## Related
 

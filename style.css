@@ -381,33 +381,63 @@ a[href*="mintlify.com"] {
   display: none !important;
 }
 
-/* Custom Docs Footer Styling */
-.docs-footer {
-  margin-top: 5rem;
-  padding-top: 2rem;
+/* AI-readable docs links */
+.llms-inline-links {
+  margin-top: 1.75rem;
+  padding-top: 1.25rem;
   border-top: 1px solid var(--partition-border);
+  color: #111827;
 }
 
-.docs-footer-text {
-  font-size: 14px;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
+.llms-inline-links__text {
   margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.7;
 }
 
-.docs-footer-link {
-  color: #fff !important;
-  text-decoration: underline !important;
-  text-underline-offset: 3px !important;
-  font-weight: 500;
-  transition: opacity 0.2s ease;
+.llms-inline-links__icon {
+  display: inline-block;
+  margin-right: 0.35rem;
 }
 
-.docs-footer-link:hover {
-  opacity: 0.7;
+html.light .llms-inline-links,
+html:not(.dark) .llms-inline-links,
+html[data-theme="light"] .llms-inline-links {
+  color: #111827;
 }
 
+html.dark .llms-inline-links,
+html[data-theme="dark"] .llms-inline-links {
+  color: #ffffff;
+}
 
+html.dark .llms-inline-links a,
+html[data-theme="dark"] .llms-inline-links a {
+  color: #9ca3af !important;
+}
 
+.llms-inline-links a {
+  color: #6b7280 !important;
+  text-decoration: underline;
+  text-decoration-color: currentColor;
+  text-underline-offset: 3px;
+  transition:
+    opacity 0.18s ease,
+    text-underline-offset 0.18s ease;
+}
+
+.llms-inline-links a:hover {
+  opacity: 0.72;
+  text-underline-offset: 4px;
+}
+
+@media (max-width: 640px) {
+  .llms-inline-links {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+  }
+
+  .llms-inline-links__text {
+    font-size: 0.8125rem;
+  }
+}
