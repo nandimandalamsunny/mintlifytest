@@ -4,126 +4,160 @@ description: "Revolte — Autonomous AI SDLC for Modern Software Delivery"
 ---
 
 Revolte is an AI-native software delivery platform that helps engineering teams move from intent to production through one connected execution system.
- It brings planning, code generation, validation, pull request review, deployment, and observability into a governed workflow where AI executes the work and teams remain in control.
 
-In many organizations, engineering leaders already have strong teams, modern tools, and capable developers. What is often missing is not effort, but a connected operating layer that turns ideas, tickets, code, reviews, environments, deployments, and runtime feedback into one reliable delivery motion. Revolte is designed to become that layer.
+It brings planning, code generation, validation, pull request review, deployment, and observability into a governed workflow where AI executes the work and teams remain in control.
 
-<div style={{ display: "flex", justifyContent: "center" }}>
-  <img src="/docs/image-v2/heo-image.png" width="800" />
-</div>
+<Frame>
+  <img src="/docs/image-v2/hero-1.png" />
+</Frame>
 
-## What you can do with Revolte
+---
 
-- **From Intent to Delivery.** Convert requirements, tickets, deployments, and operational requests into executable AI SDLC workflows across the delivery lifecycle.
+## Why Revolte?
 
-- **Context-Aware AI Execution.** Continuously enrich AI workflows using repositories, runtime telemetry, infrastructure state, organizational workflows, and operational context.
+Modern software delivery is often slowed down by disconnected tools.
 
-- **AI Systems Across the SDLC.** Coordinate specialized, custom, and marketplace AI agents across implementation, validation, testing, deployment, operations, and organization-specific engineering workflows.
+Requirements start in planning tools, code evolves in repositories, and deployments are managed through isolated pipelines. When these systems don't talk to each other, you lose context, handoffs fail, and validation becomes a manual bottleneck.
 
-- **Workflow-Driven Software Delivery.** Shape customizable AI SDLC workflows around how your organization plans, builds, validates, deploys, and operates software.
+**Revolte closes these gaps.** It connects your entire delivery lifecycle—from the first ticket to the final deployment health check—into a single, context-aware workflow.
 
-- **Beyond Traditional CI/CD.** Connect validation, preview environments, deployment orchestration, rollback coordination, runtime awareness, and operational visibility into one governed execution workflow.
+---
 
-- **Continuous Delivery Intelligence.** Continuously connect runtime telemetry, deployment performance, observability, and operational feedback back into the software delivery workflow.
+## Unified Delivery Architecture
 
-## Comparison: Revolte vs. others
+<CardGroup cols={2}>
+  <Card title="Unified Workflow Context" icon="right-left">
+    Revolte understands your repositories, environments, and deployment systems as part of a single workflow.
+  </Card>
 
-<table style={{ width: "100%", borderCollapse: "collapse" }}>
+  <Card title="Full-Cycle Delivery" icon="rocket">
+    Execution goes beyond code generation to include automated validation, deployment, and runtime verification.
+  </Card>
+
+  <Card title="Integrated Guardrails" icon="shield-check">
+    Your organizational standards and security policies are built directly into the workflow, ensuring every PR is safe to ship.
+  </Card>
+
+  <Card title="Runtime Feedback" icon="brain">
+    Signals from production feed back into future workflows, helping Revolte make deployment-aware decisions over time.
+  </Card>
+</CardGroup>
+
+---
+
+## Core Platform Capabilities
+
+- **Execute from Intent** — Turn planning tickets into production-ready PRs with full repository context.
+- **Automate Governance** — Enforce security, architectural, and quality standards before human review.
+- **Orchestrate Deployments** — Manage ephemeral environments and production rollouts with automated health checks.
+- **Close the Feedback Loop** — Integrate runtime signals directly into the development cycle for faster recovery and refinement.
+- **Scale Team Standards** — Use reusable templates to ensure consistent delivery across microservices and platform tools.
+
+---
+
+## Beyond Coding: The Autonomous SDLC
+
+While standalone AI assistants (like Cursor or Codium) excel at helping individual developers write code or summarize files, Revolte is built to orchestrate the entire software delivery process.
+
+- **End-to-End Orchestration** — Move beyond file-level edits. Revolte manages the transition from a planning ticket to a verified, deployed service.
+- **Contextual Intelligence** — Execution is informed by your entire ecosystem—including infrastructure state, deployment histories, and security policies—not just active code.
+- **Autonomous Verification** — The platform doesn't just generate drafts; it executes automated validation loops to ensure every PR meets production standards.
+- **Production-Aware Development** — Runtime signals feed directly back into the development workflow, enabling autonomous incident resolution and performance tuning.
+
+---
+
+## The Connected Delivery Lifecycle
+
+Revolte acts as an operating layer across every stage of development:
+
+- **Planning** — Turn high-level intent into scoped, executable tasks with full repository context.
+- **Development** — Delegate implementation, refactoring, and boilerplate to parallel workflows while you focus on architecture.
+- **Validation** — Submit PRs that are already verified against your security and testing policies.
+- **Release** — Coordinate rollouts with integrated health checks and automated recovery controls.
+- **Operations** — Resolve production issues using the same governed systems you use for new features.
+
+---
+
+## Recommended Practices
+
+- **Write Clear Requirements** — Execution quality depends on clarity. Provide explicit acceptance criteria for the best results.
+- **Index Your Repositories** — Connect your codebase so Revolte has the full context of your architecture and dependencies.
+- **Define Your Guardrails** — Use policy configurations to automate your team's standards and security requirements.
+- **Delegate Repetitive Work** — Let Revolte handle migrations, test generation, and boilerplate so you can reclaim deep-work time.
+- **Review with Confidence** — Treat Revolte's output as an operationally verified draft ready for final expert review.
+
+---
+
+## Platform Comparison
+
+<table style={{ width: "100%", borderCollapse: "collapse", fontSize: "14px" }}>
   <thead>
     <tr style={{ borderBottom: "1px solid var(--partition-border)" }}>
-      <th style={{ textAlign: "left", padding: "12px" }}>Capability</th>
-      <th style={{ textAlign: "left", padding: "12px" }}>Traditional / Manual SDLC</th>
-      <th style={{ textAlign: "left", padding: "12px" }}>Revolte AI-Native SDLC</th>
-      <th style={{ textAlign: "left", padding: "12px" }}>Standalone AI Tools</th>
+      <th style={{ textAlign: "left", padding: "12px 8px", fontWeight: 600 }}>Capability</th>
+      <th style={{ textAlign: "left", padding: "12px 8px", fontWeight: 600 }}>Traditional SDLC</th>
+      <th style={{ textAlign: "left", padding: "12px 8px", fontWeight: 600, color: "#ffffff" }}>Revolte</th>
+      <th style={{ textAlign: "left", padding: "12px 8px", fontWeight: 600 }}>Standalone AI</th>
     </tr>
   </thead>
   <tbody>
     {[
-      {
-        capability: "Workflow",
-        traditional: { icon: "▼", color: "#ef4444", text: "Fragmented tools, approvals, and manual handoffs across teams." },
-        revolte: { icon: "▲", color: "#22c55e", text: "One connected workflow from requirements to production." },
-        standalone: { icon: "▼", color: "#ef4444", text: "Prompt-driven workflows disconnected from delivery systems." }
-      },
-      {
-        capability: "Implementation",
-        traditional: { icon: "▼", color: "#ef4444", text: "Manual coding, setup, and repetitive engineering work." },
-        revolte: { icon: "▲", color: "#22c55e", text: "Context-aware implementation connected to repositories, environments, and runtime systems." },
-        standalone: { icon: "▼", color: "#ef4444", text: "Generates code without delivery or operational awareness." }
-      },
-      {
-        capability: "Validation",
-        traditional: { icon: "▼", color: "#ef4444", text: "Testing and reviews depend heavily on manual effort." },
-        revolte: { icon: "▲", color: "#22c55e", text: "Automated validation, reviews, and governance built into delivery workflows." },
-        standalone: { icon: "▼", color: "#ef4444", text: "Outputs still require manual validation and coordination." }
-      },
-      {
-        capability: "Deployment",
-        traditional: { icon: "▼", color: "#ef4444", text: "CI/CD, infrastructure, and releases managed across separate systems." },
-        revolte: { icon: "▲", color: "#22c55e", text: "Integrated deployments with environment awareness and governed release workflows." },
-        standalone: { icon: "▼", color: "#ef4444", text: "Limited deployment orchestration and environment awareness." }
-      },
-      {
-        capability: "Observability",
-        traditional: { icon: "▼", color: "#ef4444", text: "Monitoring and operational visibility spread across multiple tools." },
-        revolte: { icon: "▲", color: "#22c55e", text: "Connected logs, metrics, deployment visibility, and runtime intelligence in one platform." },
-        standalone: { icon: "▼", color: "#ef4444", text: "No native runtime visibility or operational intelligence." }
-      },
-      {
-        capability: "Context Awareness",
-        traditional: { icon: "▼", color: "#ef4444", text: "Teams manually coordinate repositories, runtime systems, and operational workflows." },
-        revolte: { icon: "▲", color: "#22c55e", text: "Shared context engine across repositories, infrastructure, telemetry, and organizational systems." },
-        standalone: { icon: "▼", color: "#ef4444", text: "Relies heavily on prompts, uploaded files, and manually assembled context." }
-      },
-      {
-        capability: "Scalability",
-        traditional: { icon: "▼", color: "#ef4444", text: "Scaling delivery increases operational complexity and coordination overhead." },
-        revolte: { icon: "▲", color: "#22c55e", text: "Standardized workflows, governance, and automation designed for multi-team operations." },
-        standalone: { icon: "▼", color: "#ef4444", text: "Primarily optimized for individual developer productivity." }
-      },
-      {
-        capability: "Governance",
-        traditional: { icon: "▼", color: "#ef4444", text: "Difficult to standardize delivery across teams and environments." },
-        revolte: { icon: "▲", color: "#22c55e", text: "Centralized governance, operational controls, and customizable enterprise workflows." },
-        standalone: { icon: "▼", color: "#ef4444", text: "Limited organizational governance and operational controls." }
-      }
+      { cap: "Workflow",          bad: "Fragmented tools, manual handoffs",          good: "One connected, governed system",             meh: "Disconnected, prompt-driven tasks" },
+      { cap: "Implementation",    bad: "Manual coding, repetitive setup",             good: "Context-aware implementation",                meh: "Code without system context" },
+      { cap: "Validation",        bad: "Manual testing and review cycles",            good: "Integrated policy and logic checks",          meh: "Requires manual verification" },
+      { cap: "Deployment",        bad: "Separate CI/CD and infra pipelines",         good: "Environment-aware rollout loops",             meh: "No native deployment support" },
+      { cap: "Observability",     bad: "Disconnected monitoring tools",                good: "Direct feedback from production",             meh: "No runtime visibility" },
+      { cap: "Context Awareness", bad: "Manually assembled task context",              good: "System-wide context across the SDLC",           meh: "Relies on manual prompts" },
+      { cap: "Scalability",       bad: "Increased coordination overhead",              good: "Standardized, multi-team delivery",             meh: "Built for individual productivity" },
+      { cap: "Governance",        bad: "Hard to standardize across teams",            good: "Centralized controls and guardrails",          meh: "Limited organizational controls" },
     ].map((row, i) => (
       <tr key={i} style={{ borderBottom: "1px solid var(--partition-border)" }}>
-        <td style={{ padding: "12px", fontWeight: "bold" }}>{row.capability}</td>
-        <td style={{ padding: "12px" }}>
-          <div style={{ display: "flex", gap: "8px", alignItems: "flex-start" }}>
-            <span style={{ color: row.traditional.color }}>{row.traditional.icon}</span>
-            <span>{row.traditional.text}</span>
+        <td style={{ padding: "12px 8px", fontWeight: 600, verticalAlign: "top" }}>{row.cap}</td>
+        <td style={{ padding: "12px 8px", color: "#6b7280", verticalAlign: "top" }}>
+          <div style={{ display: "flex", alignItems: "flex-start", gap: "8px" }}>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ef4444" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: "3px" }}><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            <span>{row.bad}</span>
           </div>
         </td>
-        <td style={{ padding: "12px" }}>
-          <div style={{ display: "flex", gap: "8px", alignItems: "flex-start" }}>
-            <span style={{ color: row.revolte.color }}>{row.revolte.icon}</span>
-            <span>{row.revolte.text}</span>
+        <td style={{ padding: "12px 8px", color: "white", verticalAlign: "top" }}>
+          <div style={{ display: "flex", alignItems: "flex-start", gap: "8px" }}>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: "3px" }}><polyline points="20 6 9 17 4 12"/></svg>
+            <span>{row.good}</span>
           </div>
         </td>
-        <td style={{ padding: "12px" }}>
-          <div style={{ display: "flex", gap: "8px", alignItems: "flex-start" }}>
-            <span style={{ color: row.standalone.color }}>{row.standalone.icon}</span>
-            <span>{row.standalone.text}</span>
+        <td style={{ padding: "12px 8px", color: "#6b7280", verticalAlign: "top" }}>
+          <div style={{ display: "flex", alignItems: "flex-start", gap: "8px" }}>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ef4444" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: "3px" }}><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            <span>{row.meh}</span>
           </div>
         </td>
       </tr>
     ))}
-
   </tbody>
 </table>
 
+---
 
-## Key modules
+## Platform Systems
 
-- **[AI Workflows](/docs/ai-workflows/overview)**: Move from intent to production with autonomous code generation and review.
-- **[YML Configurations](/docs/yaml/overview)**: Manage your entire project infrastructure through a single `revolte.yaml`.
-- **[Deployments](/docs/deployments/overview)**: Orchestrate services, databases, and resources across multiple environments.
-- **[Integrations](/docs/integrations/cloud/overview)**: Connect your existing tools like GitHub, Jira, and cloud providers.
+- **[AI Workflows](/docs/ai-workflows/overview)** — Autonomous implementation, automated validation, and governed execution.
+- **[YAML Configuration](/docs/yaml/overview)** — Define your execution systems and delivery policies through the `revolte.yaml` specification.
+- **[Deployments](/docs/deployments/overview)** — Coordinate services, infrastructure, and operational runtime workflows.
+- **[Integrations](/docs/integrations/cloud/overview)** — Connect your planning tools, repositories, and cloud providers into a unified layer.
 
-## Next steps
+---
 
-- [Quick Start Guide](/docs/quick-start)
-- [Project Configuration](/docs/yaml/overview)
-- [Explore AI Workflows](/docs/ai-workflows/overview)
+## Next Steps
+
+<CardGroup cols={3}>
+  <Card title="Quick Start" icon="play" href="/docs/quick-start">
+    Initialize Revolte and execute your first governed workflow in minutes.
+  </Card>
+
+  <Card title="Execution Configuration" icon="file-code" href="/docs/yaml/overview">
+    Configure orchestration, governance, and policies using `revolte.yaml`.
+  </Card>
+
+  <Card title="Execution Workflows" icon="diagram-project" href="/docs/ai-workflows/overview">
+    Explore implementation, validation, and runtime-aware orchestration.
+  </Card>
+</CardGroup>
