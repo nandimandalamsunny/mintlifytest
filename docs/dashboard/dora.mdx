@@ -5,25 +5,43 @@ description: "Monitor your team's software delivery performance using industry-s
 
 The Revolte Dashboard provides a comprehensive view of your software delivery lifecycle through **DORA (DevOps Research and Assessment)** metrics. These metrics help teams measure their velocity, stability, and overall effectiveness.
 
+<img src="/docs/image-v2/dora.png" alt="DORA Dashboard" />
+
 ## Key Metrics
 
 Revolte automatically tracks the four key DORA metrics across your production services.
 
 ### 1. Deployment Frequency
-**Measure of Velocity**
-Track how often your team successfully releases to production. High-performing teams aim for frequent, smaller deployments to reduce risk and deliver value faster.
+**How often the organization successfully releases to production.** High-performing teams aim for frequent, smaller deployments to reduce risk and deliver value faster.
 
 ### 2. Lead Time for Changes
-**Measure of Efficiency**
-Calculate the time it takes for a commit to reach production. This metric highlights bottlenecks in your development and deployment pipeline.
+**The time from commit to deployment to production.** This metric highlights bottlenecks in your development and deployment pipeline.
 
 ### 3. Change Failure Rate
-**Measure of Stability**
-The percentage of deployments that cause a failure in production. A lower rate indicates more stable releases and robust testing processes.
+**The percentage of deployments causing production failures.** A lower rate indicates more stable releases and robust testing processes.
 
-### 4. Time to Restore Service
-**Measure of Recovery**
-How long it takes to recover from a failure in production. This metric reflects your team's ability to respond to incidents and restore service quickly.
+### 4. Mean Time to Recovery
+**The average time to resolve production issues.** This metric reflects your team's ability to respond to incidents and restore service quickly.
+
+---
+
+## Performance Insights
+
+Beyond the core DORA metrics, the dashboard provides granular insights into your build and deployment health.
+
+<CardGroup cols={2}>
+  <Card title="Build Success Rate" icon="square-check">
+    Track the percentage of successful builds. High success rates indicate a stable CI process.
+  </Card>
+  <Card title="Deployment Success Rate" icon="rocket">
+    Monitor the reliability of your deployments as they move to production.
+  </Card>
+</CardGroup>
+
+### Build vs Deployment Trends
+The dashboard includes a detailed timeline of **Builds vs Deployments**, allowing you to visualize:
+- **Success vs Failure**: Identify patterns in build or deployment failures.
+- **Volume Correlation**: See how build frequency correlates with deployment volume over time.
 
 ---
 
@@ -31,9 +49,9 @@ How long it takes to recover from a failure in production. This metric reflects 
 
 Access the DORA Dashboard from your Revolte workspace to:
 
-- **Filter by Service**: View metrics for individual web applications or services.
-- **Time Range Selection**: Compare performance across weeks, months, or custom quarters.
-- **Trend Analysis**: Identify whether your delivery performance is improving or declining over time.
+- **Filter by Environment**: Switch between `production`, `qa`, and other environments to see stage-specific metrics.
+- **Time Range Selection**: Analyze performance across specific months or custom timeframes.
+- **Service-Level Insights**: Drill down into metrics for individual web applications and services.
 
 <Tip>
   Consistent monitoring of DORA metrics is the first step toward building a high-performing engineering culture. Use these insights to drive process improvements and automate bottlenecks.

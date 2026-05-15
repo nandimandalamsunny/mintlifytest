@@ -35,6 +35,10 @@
     "eyebrows": "breadcrumbs",
     "codeblocks": "dark"
   },
+  "variables": {
+    "version": "2.0.0",
+    "api-url": "https://api.example.com"
+  },
 
   "navbar": {
     "primary": {
@@ -86,7 +90,20 @@
                 "group": "Cloud",
                 "expanded": false,
 
-                "pages": ["docs/integrations/cloud/overview"]
+                "pages": [
+                  "docs/integrations/cloud/overview",
+
+                  {
+                    "group": "GCP",
+                    "tag": "SOON",
+                    "pages": []
+                  },
+                  {
+                    "group": "Azure",
+                    "tag": "SOON",
+                    "pages": []
+                  }
+                ]
               },
 
               {
@@ -94,6 +111,7 @@
                 "expanded": false,
 
                 "pages": [
+                  "docs/integrations/repository/overview",
                   "docs/integrations/repository/github",
 
                   {
@@ -174,7 +192,6 @@
                   "docs/deployments/observability/index",
                   "docs/deployments/observability/deployment-logs",
                   "docs/deployments/observability/application-logs",
-                  "docs/deployments/observability/metrics",
                   "docs/deployments/observability/insights"
                 ]
               },
@@ -189,7 +206,7 @@
 
           {
             "group": "Dashboard",
-            "pages": ["docs/dashboard/dora"]
+            "pages": ["docs/dashboard/overview", "docs/dashboard/dora"]
           },
 
           {

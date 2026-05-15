@@ -7,6 +7,7 @@
   --card-border: rgba(255, 255, 255, 0.06);
   --card-hover-bg: rgba(255, 255, 255, 0.04);
   --card-hover-border: rgba(255, 255, 255, 0.12);
+  --chevron-color: #ffffff;
 }
 
 /* Override variables for light mode */
@@ -21,6 +22,7 @@ html.light {
   --card-border: rgba(0, 0, 0, 0.06);
   --card-hover-bg: rgba(0, 0, 0, 0.04);
   --card-hover-border: rgba(0, 0, 0, 0.12);
+  --chevron-color: #374151;
 }
 
 @media (min-width: 1024px) {
@@ -331,13 +333,15 @@ div[class*="lg:mt-8"],
   font-size: 16px !important;
 }
 
-svg {
+/* svg {
   height: 28px !important;
   width: 14px !important;
-}
+} */
 
 #sidebar-content .transition-transform {
-  color: white !important;
+  color: var(--chevron-color) !important;
+  height: 28px !important;
+  width: 14px !important;
 }
 
 #sidebar-content li button > div:nth-child(2),
@@ -376,3 +380,34 @@ svg {
 a[href*="mintlify.com"] {
   display: none !important;
 }
+
+/* Custom Docs Footer Styling */
+.docs-footer {
+  margin-top: 5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--partition-border);
+}
+
+.docs-footer-text {
+  font-size: 14px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin: 0;
+}
+
+.docs-footer-link {
+  color: #fff !important;
+  text-decoration: underline !important;
+  text-underline-offset: 3px !important;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+.docs-footer-link:hover {
+  opacity: 0.7;
+}
+
+
+

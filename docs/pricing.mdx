@@ -1,60 +1,89 @@
 ---
-title: "Pricing"
-description: "Review Revolte plan structure, included capabilities, and usage-based billing dimensions."
+title: "Pricing & Plans"
+description: "Understand Revolte's tiers, usage limits, and product capabilities."
 ---
 
-Pricing combines plan-level capabilities with usage-based billing for compute, managed services, storage, and AI workflow execution. Use this page as an implementation placeholder until contract-specific pricing is finalized.
+Revolte offers flexible plans designed to scale with your engineering team—from individual builders to enterprise-grade organizations.
 
-## Plans
+## Plan Comparison
 
-| Plan | Best for | Includes |
-| --- | --- | --- |
-| Developer | Individual projects and evaluation | CLI, preview environments, basic deployments, logs. |
-| Team | Small engineering teams | Shared projects, managed services, review gates, metrics. |
-| Business | Production teams | Advanced rollouts, AI insights, RBAC, audit history, priority support. |
-| Enterprise | Regulated and large organizations | SSO, custom retention, dedicated controls, security review, custom limits. |
+| Feature | Free ($0) | Pro ($149/mo) | Enterprise |
+| :--- | :--- | :--- | :--- |
+| **AI Tokens (Harness)** | 5 Credits | 20 Credits | Custom |
+| **Services / Apps** | Up to 3 | Up to 25 | Unlimited |
+| **CI/CD Runs** | 500 /mo | 10,000 /mo | Unlimited |
+| **Environments** | 1 + 1 Preview | 8 (Upto 4 Preview) | Custom |
+| **Log Ingestion** | 5 GB /mo | 100 GB /mo | Custom |
+| **Cloud Hosting** | Revolte Cloud | Revolte Cloud + BYOC | Multi-Cloud + On-Prem |
 
-## Usage dimensions
+---
 
-| Dimension | Examples |
-| --- | --- |
-| Build minutes | Install, test, compile, and package time. |
-| Runtime compute | Web applications, APIs, jobs, and service instances. |
-| Managed services | Databases, cache, object storage, and backups. |
-| Observability | Log retention, metrics retention, insight generation. |
-| AI workflows | Risk scoring, summaries, automation decisions, recommendations. |
+## Products Included
 
-<Info>
-  Production usage should be monitored by project and environment. That makes it easier to attribute spend to the teams operating each service.
-</Info>
+### Harness Engineering
+- **Free**: Limited agents and basic workflows.
+- **Pro**: Full Harness Engineering with all agents and advanced workflows.
+- **Enterprise**: Unlimited usage with custom caps and dedicated success manager.
 
-## Cost controls
+### Platform (CI/CD, IaC, Observability)
+- **Free**: Basic pipelines and environment validation.
+- **Pro**: Advanced pipelines, full IaC (Terraform/Pulumi), and drift detection.
+- **Enterprise**: Custom SLAs, SOC2/GDPR compliance support, and white-glove onboarding.
 
-<Steps>
-  <Step title="Set project budgets">
-    Define monthly budget alerts per project.
-  </Step>
-  <Step title="Right-size preview">
-    Keep preview environments small and short-lived.
-  </Step>
-  <Step title="Tune retention">
-    Set log and metric retention based on operational needs.
-  </Step>
-  <Step title="Review managed services">
-    Watch database storage, backups, cache size, and object storage lifecycle rules.
-  </Step>
-</Steps>
+### Delivery Intelligence (DORA & Flow)
+- **Free**: Basic DORA & Flow dashboards.
+- **Pro**: Advanced AI security posture and efficiency dashboards.
+- **Enterprise**: Executive-level dashboards and custom data export.
 
-## Related
+---
 
-<CardGroup cols={3}>
-  <Card title="Users" icon="users" href="/users">
-    Manage roles and plan-level access.
-  </Card>
-  <Card title="Services" icon="boxes" href="/deployments/services/overview">
-    Understand billable runtime resources.
-  </Card>
-  <Card title="Metrics" icon="chart-no-axes-combined" href="/deployments/observability/metrics">
-    Monitor operational load by service.
-  </Card>
-</CardGroup>
+## Overages & Billing
+
+Usage beyond your plan limits is billed at the following PAYG (Pay-As-You-Go) rates:
+
+- **AI Tokens**: $0.20 per 1K tokens
+- **CI/CD Runs**: $0.01 per run
+- **Log Ingestion**: $0.50 per GB
+
+<Tip>
+  Production usage is monitored by project and environment, allowing you to attribute spend accurately across your organization.
+</Tip>
+
+## Support Tiers
+
+- **Free**: Community support & documentation.
+- **Pro**: Email & Slack support (48h SLA) + Dedicated success manager.
+- **Enterprise**: 4h priority support SLA + White-glove onboarding & migration.
+
+## Monitoring Usage
+
+You can track your consumption in real-time through the Revolte Dashboard to ensure your team remains within its plan limits.
+
+### Usage Dashboard
+Navigate to **Workspace Settings > Billing** to view:
+- **Progress Trackers**: Real-time bars for CI/CD runs, AI token consumption, and log ingestion.
+- **Service Quotas**: A breakdown of active Apps and Environments against your plan's maximum capacity.
+- **Overage Estimates**: (Pro Only) Projected PAYG costs based on your current daily usage velocity.
+
+### Quota Notifications
+Revolte automatically sends email and in-app notifications at the following thresholds:
+- **80% Usage**: A warning to help you plan for the remainder of the billing cycle.
+- **100% Usage**: A critical alert. For Free plans, certain actions may be paused; for Pro plans, Pay-As-You-Go pricing will automatically apply to any additional usage.
+
+<Tip>
+  Team owners can configure **Budget Alerts** to receive notifications when projected monthly spend exceeds a custom dollar amount.
+</Tip>
+
+## How Limits are Enforced
+
+Revolte provides clear feedback within the dashboard when you approach or reach your plan's capacity.
+
+### Service & Environment Caps
+If you reach your maximum number of active services (e.g., 3 services on the Free plan):
+- **Dashboard Feedback**: The "Create Service" button will be disabled, and a **"Limit Reached"** badge will appear.
+- **Resolution**: You can either delete an existing service to free up a slot or upgrade to the **Pro** plan for a higher capacity.
+
+### CI/CD & Token Limits
+For consumption-based limits like CI/CD runs or AI tokens:
+- **Free Plan**: Workflows will be paused once the monthly quota is exhausted. They will automatically resume at the start of the next billing cycle.
+- **Pro Plan**: Workflows continue uninterrupted. Any usage beyond the monthly quota is automatically billed at the Pay-As-You-Go overage rates.

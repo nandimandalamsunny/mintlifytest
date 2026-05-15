@@ -30,6 +30,11 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
             <article className="layout-article">
               {children}
               <Pagination />
+              <footer className="docs-footer">
+                <p className="docs-footer-text">
+                  ✦ LLM? Read <a href="/llms.txt" className="docs-footer-link">llms.txt</a> or <a href="/llms-full.txt" className="docs-footer-link">llms-full.txt</a>.
+                </p>
+              </footer>
             </article>
             <TOC />
           </div>
