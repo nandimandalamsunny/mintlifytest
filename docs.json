@@ -274,17 +274,6 @@
       },
 
       {
-        "tab": "Changelog",
-
-        "groups": [
-          {
-            "group": "Changelog",
-            "pages": ["docs/changelog/overview"]
-          }
-        ]
-      },
-
-      {
         "tab": "Guides",
 
         "groups": [
