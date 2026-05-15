@@ -267,7 +267,6 @@
                 "pages": ["docs/cli/reference", "docs/cli/quick-start"]
               },
 
-              "docs/users",
               "docs/pricing"
             ]
           }
