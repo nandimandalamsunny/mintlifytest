@@ -13,7 +13,7 @@ Before configuring your services, ensure you have:
 1.  [Connected your repository](/docs/integrations/repository/github).
 2.  Completed the initial application setup. If you haven't, start with the [Quick Start Guide](/docs/quick-start).
 
-## The Configuration Lifecycle
+## The configuration lifecycle
 
 Configuration in Revolte is split into two distinct areas. Understanding this distinction is key to a governed deployment workflow.
 
@@ -31,12 +31,12 @@ Configuration in Revolte is split into two distinct areas. Understanding this di
 
 The **Repository Preference** tab is the control center for your automation. These settings apply globally to the application across all environments.
 
-### AI Agent Workflows
+### AI agent workflows
 Enable autonomous developer workflows to accelerate delivery:
 *   **Developer Agent**: Toggle on to allow the AI to proactively implement tickets and handle routine PR work.
 *   **Pre-build Workflow**: Enable automated code summarization and fix suggestions. You can tune the **Comment Style** (Balanced, Concise, or Verbose) to match your team's review culture.
 
-### Pipeline Governance
+### Pipeline governance
 Standardize your quality gates before any code reaches a build stage:
 *   **Code Quality**: Link your application to a specific code style framework.
 *   **Test Suite**: Define the exact execution command (e.g., `npm test` or `pytest`) that must pass before a deployment is triggered.
@@ -49,13 +49,13 @@ While Repository Preferences stay the same, **Environment Settings** adapt to th
 *   **Secrets & Variables**: Manage encrypted credentials that are injected only at runtime for specific environments.
 *   **Deployment Policy**: Configure manual approval gates for sensitive environments to ensure human-in-the-loop governance.
 
-## Why Configuration Matters
+## Why configuration matters
 
 *   **Standardization**: Ensure every service follows the same validation and review lifecycle.
 *   **Security**: Isolate sensitive credentials and control access through environment-specific target settings.
 *   **Velocity**: Use AI agents and pre-build workflows to remove manual bottlenecks in the SDLC.
 
-## Next Steps
+## Next steps
 
 <CardGroup cols={2}>
   <Card title="Repository Preferences" icon="git-branch" href="/docs/yaml/repo-preferences/overview">

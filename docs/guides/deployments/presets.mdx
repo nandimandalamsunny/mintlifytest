@@ -5,7 +5,7 @@ description: "Overview of all available deployment presets in Revolte."
 
 Revolte provides a variety of service presets tailored for different application architectures. No matter which preset you choose, the configuration process always follows the same simple, modular workflow.
 
-## The Universal Workflow
+## The universal workflow
 Deploying any service in Revolte follows three consistent steps:
 
 <Steps>
@@ -20,7 +20,7 @@ Deploying any service in Revolte follows three consistent steps:
   </Step>
 </Steps>
 
-## Choosing the Right Preset
+## Choosing the right preset
 Use the table below to identify the best preset based on your application's requirements:
 
 | If you need to deploy... | Recommended Preset |
@@ -41,17 +41,17 @@ Use the table below to identify the best preset based on your application's requ
 | A task with storage and caching | **Cron + StorageBucket + Cache** |
 | A full-stack task with DB, Storage, and Cache | **Cron + Database + StorageBucket + Cache** |
 
-## Core Presets
+## Core presets
 These are the foundational service types in Revolte:
 
 - **Webapp** — Build & deploy static frontend applications (React, Next.js, etc.) instantly.
 - **Webservice** — Standard backend service for APIs, microservices, or long-running processes.
 - **Cron** — Automate tasks and background jobs on a recurring schedule.
 
-## Combined Presets
+## Combined presets
 For applications requiring compute alongside storage or caching, Revolte offers combined presets that allow you to configure multiple resources in a single workflow.
 
-### Web Service Combinations
+### Web service combinations
 - **Webservice + Database** — Backend service with a managed relational database.
 - **Webservice + StorageBucket** — Backend service with integrated object storage.
 - **Webservice + Cache** — Backend service with Redis caching for faster responses.
@@ -60,7 +60,7 @@ For applications requiring compute alongside storage or caching, Revolte offers 
 - **Webservice + StorageBucket + Cache** — Backend service with storage and caching integrations.
 - **Webservice + Database + StorageBucket + Cache** — The full enterprise stack with all managed resources.
 
-### Cron Job Combinations
+### Cron job combinations
 - **Cron + Database** — Scheduled tasks with database read/write support.
 - **Cron + Cache** — Automate tasks that require high-speed data access.
 - **Cron + Database + Cache** — Complex scheduled tasks with database and caching integration.
