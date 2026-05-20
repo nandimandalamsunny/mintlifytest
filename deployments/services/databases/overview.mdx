@@ -1,0 +1,57 @@
+---
+title: "Overview"
+description: "Provision PostgreSQL, MySQL, and MongoDB services with backups and connection policies."
+---
+
+## Supported engines
+
+| Engine     | Description                                                                |
+| ---------- | -------------------------------------------------------------------------- |
+| PostgreSQL | Recommended relational database for most applications                      |
+| MySQL      | MySQL-compatible relational workloads                                      |
+| MongoDB    | Flexible document-based storage <span class="soon-pill">Coming Soon</span> |
+
+<div align="center">
+  <img src="/image-v2/deployments/db/db-1.png" width="200" />
+</div>
+
+## Example configuration
+
+Define your database service in `revolte.yaml` to configure engines, versions, storage, and backup policies manually.
+
+<CodeBlock language="yaml" filename="revolte.yaml">
+  {`revolte:
+  version: '1.0'
+  project: Demo-Project
+  appName: demo-app
+  env:
+    production:
+      branch: main
+      services:
+        rid_8:
+          type: DATABASE
+          name: db
+          specifications:
+            cpu: 2
+            memory: 1
+            storage: 30
+            engine: postgres`}
+</CodeBlock>
+
+## Deployment templates
+
+Preconfigured deployment patterns for database-backed services.
+
+- [Web Service + Database](/guides/deployments/database)
+- [Web Service + Database + Cache](/guides/deployments/cache)
+- [Web Service + Database + Storage Bucket](/guides/deployments/storage)
+- [Web Service + Database, Cache, and Storage Bucket](/guides/deployments/presets)
+
+## Related
+
+- [Database Explorer](/deployments/services/databases/connect)
+- [Web Services](/deployments/services/web-services)
+- [Cache](/deployments/services/cache)
+- [Environment Settings](/yaml/environment-settings/services)
+- [Secrets](/deployments/services/secrets)
+- [Observability](/deployments/observability)

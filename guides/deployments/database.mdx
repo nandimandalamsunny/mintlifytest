@@ -1,0 +1,53 @@
+---
+title: "Database"
+description: "Configure repository preferences and environment settings for a managed database service."
+---
+
+This guide explains how to configure a **Database** resource in Revolte. Databases are modular building blocks that can be deployed standalone or as part of a combined full-stack preset.
+
+## Combined deployments
+If your application requires compute (API) alongside a database, you should select one of the following presets during the **Choose a Preset** step:
+- **Webservice + Database**
+- **Webservice + Database + StorageBucket**
+- **Webservice + Database + Cache**
+- **Webservice + Database + StorageBucket + Cache**
+
+> **Note:** For all combined presets, the core configuration workflow is identical to a standard [Web Service](/guides/deployments/web-services). This guide focuses specifically on the supplemental **Database** settings described below.
+
+<Steps>
+  <Step title="Choose a Preset">
+    Select the **Database** tile for a standalone instance, or choose one of the combined presets listed above for full-stack deployments.
+  </Step>
+
+  <Step title="Database — Environment Settings">
+    ![Database tab — QA environment](/image-v2/guides/web-service/database.png)
+
+    The **QA** environment tab is selected. You can define independent resource specifications for **Preview**, **QA**, **Staging**, and **Production**.
+
+    The center panel shows the Database form for the active environment:
+
+    - **Service Name** — Enter a unique identifier for this database instance (e.g., `production_db`).
+    - **Specifications**
+      - **Engine Type** — Choose between supported database engines (e.g., `PostgreSQL`, `MySQL`).
+      - **CPU & Memory** — Choose a compute tier for your database workload. Available options:
+        - `2 CPU and 1 GB Memory`
+        - `2 CPU and 2 GB Memory`
+        - `2 CPU and 4 GB Memory`
+        - `2 CPU and 8 GB Memory`
+        - `4 CPU and 16 GB Memory`
+        - `8 CPU and 32 GB Memory`
+        - `16 CPU and 64 GB Memory`
+        - `48 CPU and 192 GB Memory`
+        - `96 CPU and 384 GB Memory`
+      - **Storage value** — Disk space in GB allocated to the database (e.g., `50`).
+  </Step>
+
+</Steps>
+
+> **Tip:** Revolte automatically generates connection strings for your database and injects them as secrets into linked services.
+
+---
+
+**Quick Reference:**
+- [Technical Database Overview](/deployments/services/databases/overview)
+- [Connecting to your Database](/deployments/services/databases/connect)

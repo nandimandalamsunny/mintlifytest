@@ -1,36 +1,33 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "luma",
-
   "name": "Revolte",
   "description": "Developer documentation for Revolte, an AI-native software delivery platform.",
-
   "logo": {
-    "light": "/docs/image-v2/dark-logo.svg",
-    "dark": "/docs/image-v2/light-logo.svg"
+    "light": "/image-v2/dark-logo.svg",
+    "dark": "/image-v2/light-logo.svg"
   },
-
   "favicon": "/images/brand/revolte-fav-icon.svg",
-
   "appearance": {
     "default": "dark"
   },
-
   "contextual": {
     "display": "toc",
-    "options": ["copy", "chatgpt", "claude", "perplexity"]
+    "options": [
+      "copy",
+      "chatgpt",
+      "claude",
+      "perplexity"
+    ]
   },
-
   "icons": {
     "library": "lucide"
   },
-
   "colors": {
     "primary": "#6366f1",
     "light": "#818cf8",
     "dark": "#4f46e5"
   },
-
   "styling": {
     "eyebrows": "breadcrumbs",
     "codeblocks": "dark"
@@ -39,7 +36,6 @@
     "version": "2.0.0",
     "api-url": "https://api.example.com"
   },
-
   "navbar": {
     "primary": {
       "type": "button",
@@ -53,46 +49,41 @@
       }
     ]
   },
-
   "navigation": {
     "tabs": [
       {
         "tab": "Docs",
-
         "groups": [
           {
             "group": "Introduction",
-            "pages": ["docs/overview", "docs/quick-start"]
+            "pages": [
+              "overview",
+              "quick-start"
+            ]
           },
-
           {
             "group": "AI Workflows",
-
             "pages": [
-              "docs/ai-workflows/overview",
+              "ai-workflows/overview",
               {
                 "group": "Development Workflow",
                 "pages": [
-                  "docs/ai-workflows/development-workflow/overview",
-                  "docs/ai-workflows/development-workflow/get-started"
+                  "ai-workflows/development-workflow/overview",
+                  "ai-workflows/development-workflow/get-started"
                 ]
               },
-              "docs/ai-workflows/quality-assurance",
-              "docs/ai-workflows/product-strategy"
+              "ai-workflows/quality-assurance",
+              "ai-workflows/product-strategy"
             ]
           },
-
           {
             "group": "Integrations",
-
             "pages": [
               {
                 "group": "Cloud",
                 "expanded": false,
-
                 "pages": [
-                  "docs/integrations/cloud/overview",
-
+                  "integrations/cloud/overview",
                   {
                     "group": "GCP",
                     "tag": "SOON",
@@ -105,21 +96,17 @@
                   }
                 ]
               },
-
               {
                 "group": "Repository",
                 "expanded": false,
-
                 "pages": [
-                  "docs/integrations/repository/overview",
-                  "docs/integrations/repository/github",
-
+                  "integrations/repository/overview",
+                  "integrations/repository/github",
                   {
                     "group": "GitLab",
                     "tag": "SOON",
                     "pages": []
                   },
-
                   {
                     "group": "Bitbucket",
                     "tag": "SOON",
@@ -127,21 +114,17 @@
                   }
                 ]
               },
-
               {
                 "group": "Project Management",
                 "expanded": false,
-
                 "pages": [
-                  "docs/integrations/project-management/overview",
-                  "docs/integrations/project-management/jira",
-
+                  "integrations/project-management/overview",
+                  "integrations/project-management/jira",
                   {
                     "group": "Linear",
                     "tag": "SOON",
                     "pages": []
                   },
-
                   {
                     "group": "Azure DevOps",
                     "tag": "SOON",
@@ -154,80 +137,83 @@
           {
             "group": "Deployments",
             "pages": [
-              "docs/deployments/overview",
+              "deployments/overview",
               {
                 "group": "Services",
                 "expanded": false,
                 "pages": [
-                  "docs/deployments/services/overview",
-                  "docs/deployments/services/web-applications",
-                  "docs/deployments/services/web-services",
-                  "docs/deployments/services/cron-jobs",
+                  "deployments/services/overview",
+                  "deployments/services/web-applications",
+                  "deployments/services/web-services",
+                  "deployments/services/cron-jobs",
                   {
                     "group": "Databases",
                     "expanded": false,
                     "pages": [
-                      "docs/deployments/services/databases/overview",
-                      "docs/deployments/services/databases/connect"
+                      "deployments/services/databases/overview",
+                      "deployments/services/databases/connect"
                     ]
                   },
                   {
                     "group": "Object Storage",
                     "expanded": false,
                     "pages": [
-                      "docs/deployments/services/object-storage/overview",
-                      "docs/deployments/services/object-storage/explorer",
-                      "docs/deployments/services/object-storage/local-access"
+                      "deployments/services/object-storage/overview",
+                      "deployments/services/object-storage/explorer",
+                      "deployments/services/object-storage/local-access"
                     ]
                   },
-                  "docs/deployments/services/cache",
-                  "docs/deployments/services/domains",
-                  "docs/deployments/services/secrets"
+                  "deployments/services/cache",
+                  "deployments/services/domains",
+                  "deployments/services/secrets"
                 ]
               },
               {
                 "group": "Observability",
                 "expanded": false,
                 "pages": [
-                  "docs/deployments/observability/index",
-                  "docs/deployments/observability/deployment-logs",
-                  "docs/deployments/observability/application-logs",
-                  "docs/deployments/observability/insights"
+                  "deployments/observability/index",
+                  "deployments/observability/deployment-logs",
+                  "deployments/observability/application-logs",
+                  "deployments/observability/insights"
                 ]
               },
               {
                 "group": "Rollbacks",
                 "expanded": false,
-                "pages": ["docs/deployments/rollbacks"]
+                "pages": [
+                  "deployments/rollbacks"
+                ]
               },
-              "docs/deployments/pipeline"
+              "deployments/pipeline"
             ]
           },
-
           {
             "group": "Dashboard",
-            "pages": ["docs/dashboard/overview", "docs/dashboard/dora"]
+            "pages": [
+              "dashboard/overview",
+              "dashboard/dora"
+            ]
           },
-
           {
             "group": "YML Configurations",
             "pages": [
-              "docs/yaml/overview",
-              "docs/yaml/syncing",
+              "yaml/overview",
+              "yaml/syncing",
               {
                 "group": "Repo Preferences",
                 "expanded": false,
                 "pages": [
-                  "docs/yaml/repo-preferences/app-branch-settings",
-                  "docs/yaml/repo-preferences/agent-workflow",
-                  "docs/yaml/repo-preferences/prebuild-workflow",
-                  "docs/yaml/repo-preferences/preset-service",
+                  "yaml/repo-preferences/app-branch-settings",
+                  "yaml/repo-preferences/agent-workflow",
+                  "yaml/repo-preferences/prebuild-workflow",
+                  "yaml/repo-preferences/preset-service",
                   {
                     "group": "Pipelines",
                     "pages": [
-                      "docs/yaml/repo-preferences/pipelines/overview",
-                      "docs/yaml/repo-preferences/pipelines/code-quality",
-                      "docs/yaml/repo-preferences/pipelines/test-suite"
+                      "yaml/repo-preferences/pipelines/overview",
+                      "yaml/repo-preferences/pipelines/code-quality",
+                      "yaml/repo-preferences/pipelines/test-suite"
                     ]
                   }
                 ]
@@ -236,69 +222,65 @@
                 "group": "Environment Settings",
                 "expanded": false,
                 "pages": [
-                  "docs/yaml/environment-settings/overview",
-                  "docs/yaml/environment-settings/pre-build",
+                  "yaml/environment-settings/overview",
+                  "yaml/environment-settings/pre-build",
                   {
                     "group": "Deployment workflow",
-
                     "expanded": false,
                     "pages": [
-                      "docs/yaml/environment-settings/resource-specifications/web-app",
-                      "docs/yaml/environment-settings/resource-specifications/web-service",
-                      "docs/yaml/environment-settings/resource-specifications/database",
-                      "docs/yaml/environment-settings/resource-specifications/storage-bucket",
-                      "docs/yaml/environment-settings/resource-specifications/cache",
-                      "docs/yaml/environment-settings/resource-specifications/variables"
+                      "yaml/environment-settings/resource-specifications/web-app",
+                      "yaml/environment-settings/resource-specifications/web-service",
+                      "yaml/environment-settings/resource-specifications/database",
+                      "yaml/environment-settings/resource-specifications/storage-bucket",
+                      "yaml/environment-settings/resource-specifications/cache",
+                      "yaml/environment-settings/resource-specifications/variables"
                     ]
                   }
                 ]
               }
             ]
           },
-
           {
             "group": "Platform",
-
             "pages": [
               {
                 "group": "CLI",
                 "expanded": false,
-
-                "pages": ["docs/cli/reference", "docs/cli/quick-start"]
+                "pages": [
+                  "cli/reference",
+                  "cli/quick-start"
+                ]
               },
-
-              "docs/pricing"
+              "pricing"
             ]
           }
         ]
       },
-
       {
         "tab": "Guides",
-
         "groups": [
           {
             "group": "Overview",
-
-            "pages": ["docs/guides/index"]
+            "pages": [
+              "guides/index"
+            ]
           },
-
           {
             "group": "Deployments",
-
-            "pages": ["docs/guides/deployments/quick-start", "docs/guides/deployments/presets"]
+            "pages": [
+              "guides/deployments/quick-start",
+              "guides/deployments/presets"
+            ]
           },
-
           {
             "group": "Service Configuration",
-
             "pages": [
-              "docs/guides/deployments/web-apps",
-              "docs/guides/deployments/web-services",
-              "docs/guides/deployments/database",
-              "docs/guides/deployments/storage",
-              "docs/guides/deployments/cache",
-              "docs/guides/deployments/cron"
+              "guides/deployments/web-apps",
+              "guides/deployments/web-services",
+              "guides/deployments/database",
+              "guides/deployments/storage",
+              "guides/deployments/cache",
+              "guides/deployments/cron"
             ]
           }
         ]

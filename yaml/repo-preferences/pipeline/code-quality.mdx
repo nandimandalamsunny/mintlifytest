@@ -1,0 +1,35 @@
+---
+title: "Code Quality"
+description: "Enforce coding standards and security audits through automated static analysis."
+---
+
+Revolte's **Code Quality** module integrates with your repository to analyze every commit for potential bugs, security vulnerabilities, and style inconsistencies.
+
+<div style={{ display: "flex", justifyContent: "center" }}>
+  <img src="/images/pipeline.png" width="400" />
+</div>
+
+## Configuration
+
+You can enable specific code quality frameworks directly in your `revolte.yaml`.
+
+```yaml revolte.yaml
+pipeline:
+  codeQuality:
+    enabled: true
+    framework: "ESLint"
+    level: "Strict"
+    securityAudit: true
+```
+
+## Supported features
+
+- **Static Analysis**: Identifies logic errors and potential runtime issues without executing the code.
+- **Security Scans**: Detects hardcoded secrets, insecure dependencies, and common OWASP vulnerabilities.
+- **Style Enforcement**: Ensures that all code follows your team's defined formatting rules (e.g., Prettier, Black).
+
+## Quick links
+
+- [Pipeline Overview](/yaml/repo-preferences/pipeline/overview)
+- [Test Suite](/yaml/repo-preferences/pipeline/test-suite)
+- [Repo Preferences](/yaml/repo-preferences/overview)

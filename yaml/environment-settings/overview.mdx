@@ -1,0 +1,45 @@
+---
+title: "Overview"
+description: "Manage service-specific configurations across different environments."
+---
+
+<div style={{ display: "flex", justifyContent: "center" }}>
+  <img src="/image-v2/yaml/env-settings/env-settings-1.png" width="450" />
+</div>
+
+**Environment Settings** allow you to define and manage unique configurations for your services across all your Revolte environments, including **Production**, **UAT**, **QA**, and **Preview** environments.
+
+## How to navigate
+
+To manage these settings from the project dashboard:
+
+1. Select your project from the Revolte dashboard.
+2. Navigate to **YAML Configuration** > **Environment Settings**.
+3. Use the environment tabs to switch between settings for Production, UAT, QA, or Preview environments.
+
+## Environment-specific configuration
+
+In your `revolte.yaml`, you can specify different values for variables, resource limits, and automated workflows depending on the target environment.
+
+```yaml revolte.yaml
+revolte:
+  version: "1.0"
+  project: Sideline HQ
+  appName: sideline-web-admin
+  env:
+    production:
+      branch: main
+    staging:
+      branch: staging
+    qa:
+      branch: qa
+    preview:
+      # Settings applied to ephemeral preview environments
+      branch: "*"
+```
+
+## Key configuration areas
+
+- **[Pre-build Workflow](/yaml/environment-settings/pre-build)**: Configure environment-specific pre-build automation, quality gates, and automated reviews.
+- **[Services & Resources](/yaml/environment-settings/services)**: Define resource specifications (CPU, Memory) and scaling policies per environment.
+- **[Variables & Secrets](/yaml/environment-settings/resource-specifications/variables)**: Manage environment variables and secure secrets for different deployment targets.

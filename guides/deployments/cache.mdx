@@ -1,0 +1,57 @@
+---
+title: "Cache"
+description: "Configure repository preferences and environment settings for a managed Redis cache."
+---
+
+This guide explains how to configure a **Cache** resource in Revolte. Managed Redis caches are modular building blocks used for high-speed data retrieval and session management.
+
+## Combined deployments
+If your application requires compute (API) alongside a cache, you should select one of the following presets during the **Choose a Preset** step:
+- **Webservice + Cache**
+- **Webservice + Database + Cache**
+- **Webservice + StorageBucket + Cache**
+- **Webservice + Database + StorageBucket + Cache**
+
+> **Note:** For all combined presets, the core configuration workflow is identical to a standard [Web Service](/guides/deployments/web-services). This guide focuses specifically on the supplemental **Cache** settings described below.
+
+<Steps>
+  <Step title="Choose a Preset">
+    Select the **Cache** tile for a standalone instance, or choose one of the combined presets listed above for integrated deployments.
+  </Step>
+
+  <Step title="Cache — Environment Settings">
+    ![Cache tab — QA environment](/image-v2/guides/web-service/cache.png)
+
+    The **QA** environment tab is selected. You can define independent resource specifications for **Preview**, **QA**, **Staging**, and **Production**.
+
+    The center panel shows the Cache form for the active environment:
+
+    - **Service Name** — Enter a unique identifier for this cache instance (e.g., `app_cache`).
+    - **Specifications**
+      - **CPU & Memory** — Choose a compute tier that matches your caching workload. Available options:
+        - `2 CPU and .5 GB Memory`
+        - `2 CPU and 1.37 GB Memory`
+        - `2 CPU and 3.09 GB Memory`
+        - `2 CPU and 6.38 GB Memory`
+        - `2 CPU and 13.07 GB Memory`
+        - `4 CPU and 12.93 GB Memory`
+        - `4 CPU and 26.32 GB Memory`
+        - `8 CPU and 26.04 GB Memory`
+        - `8 CPU and 52.82 GB Memory`
+        - `16 CPU and 52.26 GB Memory`
+        - `16 CPU and 105.81 GB Memory`
+        - `32 CPU and 103.68 GB Memory`
+        - `32 CPU and 209.55 GB Memory`
+        - `48 CPU and 157.12 GB Memory`
+        - `48 CPU and 317.77 GB Memory`
+        - `64 CPU and 209.55 GB Memory`
+  </Step>
+</Steps>
+
+> **Tip:** Use a cache to store session data, frequently accessed database queries, or pre-rendered content to improve application response times.
+
+---
+
+**Quick Reference:**
+- [Technical Cache Overview](/deployments/services/cache)
+- [Cache Resource Specifications](/yaml/environment-settings/resource-specifications/cache)

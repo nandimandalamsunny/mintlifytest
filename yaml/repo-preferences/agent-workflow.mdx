@@ -1,0 +1,46 @@
+---
+title: "Setup Agent Workflow"
+description: "Enable AI-assisted coding, debugging, and task execution."
+---
+
+The **Agent Workflow** enables Revolte's AI agent to assist you directly within your repository context.
+
+<div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "20px" }}>
+  <img src="/image-v2/yaml/setup-agent-workflow.png" width="300" />
+</div>
+
+## How to enable
+
+Follow these steps to activate the AI Agent for your repository.
+
+<Steps>
+  <Step title="Navigate to Repo Preferences">
+    Open your project dashboard and select **YAML Configuration** > **Repo Preferences**.
+  </Step>
+  <Step title="Toggle Developer Workflow">
+    Locate the **Developer Workflow** section and toggle the switch to **Enabled**.
+  </Step>
+  <Step title="Commit Changes">
+    Enter a commit message and select your target branch to persist the changes. See [Syncing Changes](/yaml/syncing) for a detailed walkthrough.
+  </Step>
+</Steps>
+
+## Configuration
+
+In your `revolte.yaml`, you can toggle this workflow globally:
+
+```yaml revolte.yaml
+revolte:
+  version: "1.0"
+  project: Demo-Project
+  appName: "demo-app"
+  workflow:
+    developerWorkflow:
+      enabled: true # Activates AI-assisted coding and debugging
+```
+
+## Quick links
+
+- [App & Branch Settings](/yaml/repo-preferences/app-branch-settings)
+- [Prebuild Workflow](/yaml/repo-preferences/prebuild-workflow)
+- [YAML Overview](/yaml/overview)

@@ -1,0 +1,45 @@
+---
+title: "Storage Bucket"
+description: "Configure repository preferences and environment settings for cloud object storage."
+---
+
+This guide explains how to configure a **Storage Bucket** resource in Revolte. Storage buckets are modular building blocks used for object storage, uploads, and asset delivery.
+
+## Combined deployments
+If your application requires compute (API) alongside object storage, you should select one of the following presets during the **Choose a Preset** step:
+- **Webservice + StorageBucket**
+- **Webservice + Database + StorageBucket**
+- **Webservice + StorageBucket + Cache**
+- **Webservice + Database + StorageBucket + Cache**
+
+> **Note:** For all combined presets, the core configuration workflow is identical to a standard [Web Service](/guides/deployments/web-services). This guide focuses specifically on the supplemental **Storage Bucket** settings described below.
+
+<Steps>
+  <Step title="Choose a Preset">
+    Select the **Storage Bucket** tile for a standalone instance, or choose one of the combined presets listed above for full-stack deployments.
+  </Step>
+
+  <Step title="Storage — Environment Settings">
+    ![Storage Bucket tab — QA environment](/image-v2/guides/web-service/storage-bucket.png)
+
+    The **QA** environment tab is selected. You can define independent configurations for **Preview**, **QA**, **Staging**, and **Production**.
+
+    The center panel shows the Storage Bucket form for the active environment:
+
+    - **Service Name** — Enter a unique identifier for this storage service (e.g., `app_assets`).
+    - **Configurations**
+      - **Bucket Name** — A unique name for your storage bucket.
+      - **Bucket Versioning** — Enable to keep multiple versions of an object in the same bucket.
+      - **Enable Public Access** — Toggle to allow public read access to objects via URL.
+    - **CORS Rules** — Define cross-origin resource sharing rules to allow web applications to access bucket contents safely.
+  </Step>
+</Steps>
+
+> **Tip:** Use public access only for files intended for direct browser consumption, like images or CSS assets.
+
+---
+
+**Quick Reference:**
+- [Technical Storage Overview](/deployments/services/object-storage/overview)
+- [Storage Explorer](/deployments/services/object-storage/explorer)
+- [Local Access & SDKs](/deployments/services/object-storage/local-access)

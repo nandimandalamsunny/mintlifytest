@@ -1,0 +1,46 @@
+---
+title: "Preset & Service"
+description: "Configure automated build and deployment workflows."
+---
+
+The **Preset & Service** settings define the automated path from a merged Pull Request to a running service in your targeted environment.
+
+<div style={{ display: "flex", justifyContent: "center" }}>
+  <img src="/image-v2/yaml/preset.png" width="400" />
+</div>
+
+## How to enable
+
+Define your build presets and rollout strategies to automate your release cycle.
+
+<Steps>
+  <Step title="Select Build Preset">
+    Navigate to **YAML Configuration** > **Repo Preferences** and choose a build preset (e.g., Node.js, Reactjs, Nextjs) that matches your application framework.
+  </Step>
+  <Step title="Configure Service Mapping">
+    Define which environments and branches should trigger automated deployments for your services.
+  </Step>
+  <Step title="Commit Changes">
+    Enter a commit message and select your target branch to persist the changes. See [Syncing Changes](/yaml/syncing) for a detailed walkthrough.
+  </Step>
+</Steps>
+
+## Configuration example
+
+```yaml revolte.yaml
+revolte:
+  env:
+    production:
+      branch: main
+      services:
+        rid_1:
+          type: WEB_SERVICE
+          name: api-service
+```
+
+## Quick links
+
+- [App & Branch Settings](/yaml/repo-preferences/app-branch-settings)
+- [Prebuild Workflow](/yaml/repo-preferences/prebuild-workflow)
+- [Deployments Overview](/deployments/services/overview)
+- [YAML Overview](/yaml/overview)

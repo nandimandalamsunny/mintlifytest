@@ -1,0 +1,35 @@
+---
+title: "Overview"
+description: "Define automated quality checks and validation suites for your repository."
+---
+
+The **Pipeline** settings allow you to automate the verification of your codebase through integrated code quality analysis and comprehensive test suites.
+
+<div style={{ display: "flex", justifyContent: "center" }}>
+  <img src="/image-v2/yaml/pipeline1.png" width="400" />
+</div>
+
+## How to configure
+
+<Steps>
+  <Step title="Navigate to Pipeline Settings">
+    Go to **YAML Configuration** > **Repo Preferences** and select **Pipeline**.
+  </Step>
+  <Step title="Enable Quality Checks">
+    Select the static analysis tools and security scanners you want to run on your branches.
+  </Step>
+  <Step title="Configure Test Execution">
+    Define the commands (e.g., `npm test`, `pytest`) and environments required to run your test suites.
+  </Step>
+  <Step title="Save & Sync">
+    Click **Save & Sync** to update your `revolte.yaml` with the new pipeline configuration.
+  </Step>
+</Steps>
+
+## Quick links
+
+- [Code Quality](/yaml/repo-preferences/pipeline/code-quality)
+- [Test Suite](/yaml/repo-preferences/pipeline/test-suite)
+- [Prebuild Workflow](/yaml/repo-preferences/prebuild-workflow)
+- [Preset & Service](/yaml/repo-preferences/preset-service)
+- [YAML Overview](/yaml/overview)

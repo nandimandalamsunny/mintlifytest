@@ -1,0 +1,76 @@
+---
+title: "Quick Start"
+description: "Set up your first project and initiate development workflows using the Revolte CLI."
+---
+
+The Revolte CLI enables you to move from intent to code in seconds. Follow this guide to set up and trigger your first autonomous workflow.
+
+<Info>
+  **Prerequisite**: Ensure your current repository is associated with a Revolte application. You can manage your project associations in the [Revolte Console](https://console.revolte.ai/projects).
+</Info>
+
+<Steps>
+  <Step title="Install CLI">
+    Install the Revolte CLI globally using npm.
+    
+```bash Terminal
+npm install -g @revolte.ai/cli
+```
+  </Step>
+
+  <Step title="Authenticate">
+    Log in to connect your local environment with the Revolte AI. Running this command will open a browser window for you to complete the authentication securely.
+
+```bash Terminal
+revolte --login
+```
+
+    <Tip>
+      Once you log in through the browser, your terminal session will be automatically updated with the necessary credentials.
+    </Tip>
+  </Step>
+
+  <Step title="Initialize your Prompt">
+    Open the Revolte CLI in your project directory. You can enter any natural language prompt to describe the task you want to execute.
+
+```bash Terminal
+revolte --start
+```
+
+    <Prompt description="Enter a task for Revolte AI to execute." actions={["copy"]}>
+      Add a contact form component to the landing page with email validation.
+    </Prompt>
+
+    <Prompt description="Describe a bug or technical issue for Revolte AI to fix." actions={["copy"]}>
+      Fix the session invalidation bug in the authentication middleware.
+    </Prompt>
+
+    Once you hit **Enter**, Revolte AI begins analyzing your project context.
+  </Step>
+
+  <Step title="Autonomous Execution">
+    Revolte AI starts working directly in your local directory. It automatically identifies the necessary files, applies the changes, and ensures everything aligns with your existing architecture.
+
+    <Info>
+      If the tool requests permission to modify specific files, simply review the plan and approve it to proceed.
+    </Info>
+  </Step>
+
+  <Step title="Review and Push">
+    Once the task is complete, review the generated code locally. If you're satisfied with the results, commit and push the changes to your repository.
+
+```bash Terminal
+git add .
+git commit -m "feat: added contact form via Revolte AI"
+git push origin main
+```
+  </Step>
+</Steps>
+
+---
+
+## Next steps
+
+- [CLI Reference](/cli/reference)
+- [Configuration Overview](/yaml/overview)
+

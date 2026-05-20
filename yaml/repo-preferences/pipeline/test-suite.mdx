@@ -1,0 +1,31 @@
+---
+title: "Test Suite"
+description: "Automate your testing workflows to ensure application stability and reliability."
+---
+
+The **Test Suite** configuration allows you to define automated test runs that validate your code's functionality before it is merged or deployed.
+
+<div style={{ display: "flex", justifyContent: "center" }}>
+  <img src="/image-v2/yaml/pipeline3.png" width="400" />
+</div>
+![Test Suite Dashboard](/image-v2/yaml/testt-suite.png)
+
+## Configuration
+
+Define your test commands and environment requirements in `revolte.yaml`.
+
+```yaml revolte.yaml
+pipeline:
+  testSuite:
+    enabled: true
+    command: "npm run test:ci"
+    environment:
+      node_version: "18"
+    timeout: 300
+```
+
+## Quick links
+
+- [Pipeline Overview](/yaml/repo-preferences/pipeline/overview)
+- [Code Quality](/yaml/repo-preferences/pipeline/code-quality)
+- [Repo Preferences](/yaml/repo-preferences/overview)

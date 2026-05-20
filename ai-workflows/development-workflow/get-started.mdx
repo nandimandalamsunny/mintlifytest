@@ -1,0 +1,128 @@
+---
+title: "Get Started"
+description: "Follow this guide to activate repository-connected automation for your project."
+---
+
+Launch your first AI-powered development workflow in minutes by connecting your Jira workspace and defining your automation rules.
+
+<Steps>
+  <Step title="Initialize Workflow Automation">
+    Navigate to your application [integration settings](/integrations/project-management/jira). Under **Jira Configuration**, select **Configure Workflow Automation** to begin the setup process.
+    
+    <Frame>
+      <img src="/image-v2/agent/dev-agent/dev-agent-1.png" width="600" />
+    </Frame>
+  </Step>
+
+  <Step title="Access Automation Control">
+    Go to the **Automation Configurations** tab. If no workflows are active, you will see the initialization screen. Click **Configure Automation**.
+
+    <Frame>
+      <img src="/image-v2/agent/dev-agent/dev-agent-2.png" width="600" />
+    </Frame>
+
+  </Step>
+
+  <Step title="Map Status Transitions">
+    Define how Revolte should interact with your Jira statuses.
+    - **Action**: Select `Developer workflow`.
+    - **Mapping**: Choose which statuses trigger development (e.g., *To Do* to *In Progress*) and completion (e.g., *Done*).
+    - **Target Branch**: Specify the branch where AI changes should be proposed (e.g., `qa` or `main`).
+
+    <Frame>
+      <img src="/image-v2/agent/dev-agent/dev-agent-3.png" width="600" />
+    </Frame>
+
+  </Step>
+
+  <Step title="Confirm Workflow Creation">
+    Once saved, your new workflow will appear in the active configurations list, showing the branch mapping and status flow.
+
+    <Frame>
+      <img src="/image-v2/agent/dev-agent/dev-agent-4.png" width="600" />
+    </Frame>
+
+  </Step>
+
+  <Step title="Tag Jira Tickets">
+    To trigger the workflow for a specific task, add the label `revolte-app={your_app_name}` to any Jira Ticket.
+    
+    <Info>
+      See the [Jira Integration Guide](/integrations/project-management/jira#ticket-labeling) for detailed connection steps.
+    </Info>
+
+    <Frame>
+      <img src="/image-v2/agent/dev-agent/dev-agent-5.png" width="600" />
+    </Frame>
+
+  </Step>
+
+  <Step title="Execute Workflow">
+    With the label added, a **Revolte** section will appear in the Jira sidebar. Click **Run Workflow** to hand the task over to the AI agent.
+
+    <Frame>
+      <img src="/image-v2/agent/dev-agent/dev-agent-6.png" width="600" />
+    </Frame>
+
+  </Step>
+
+  <Step title="Monitor Live Progress">
+    Switch back to the Revolte dashboard under **Agent runs** to see the real-time status of your workflow.
+
+    <Frame>
+      <img src="/image-v2/agent/dev-agent/dev-agent-7.png" width="600" />
+    </Frame>
+
+  </Step>
+
+  <Step title="Review Execution Summary">
+    Once complete, drill down into the run to see the execution stages, including Sandbox Provisioning, Code Setup, and Token Usage statistics.
+
+    <Frame>
+      <img src="/image-v2/agent/dev-agent/dev-agent-8.png" width="600" />
+    </Frame>
+
+  </Step>
+
+  <Step title="Inspect Implementation Plan">
+    Navigate to the **Artifacts** tab to review the AI-generated implementation plan, including sub-tasks and proposed file changes.
+
+    <Frame>
+      <img src="/image-v2/agent/dev-agent/dev-agent-9.png" width="600" />
+    </Frame>
+
+  </Step>
+
+  <Step title="Analyze Code Diffs">
+    Finally, use the **Diff Summary** tab to inspect every line of code modified or created by the agent before finalizing the delivery.
+
+    <Frame>
+      <img src="/image-v2/agent/dev-agent/dev-agent-10.png" width="600" />
+    </Frame>
+
+  </Step>
+
+  <Step title="Review and Merge">
+    Once the agent finishes, it automatically opens a Pull Request on GitHub (or your configured Git provider) so you can review and merge the proposed changes.
+
+    <Frame>
+      <img src="/image-v2/agent/dev-agent/dev-agent-11.png" width="600" />
+    </Frame>
+
+  </Step>
+
+  <Step title="Deploy to Preview">
+    After merging, you can deploy the changes to a preview environment. Click **View Preview** and confirm the deployment using your [`revolte.yml`](/yaml/overview) configuration.
+
+    <Frame>
+      <img src="/image-v2/agent/dev-agent/dev-agent-12.png" width="600" />
+    </Frame>
+
+  </Step>
+</Steps>
+
+## Next steps
+
+- [Overview of Development Workflows](/ai-workflows/development-workflow/overview)
+- [Quality Assurance Gates](/ai-workflows/quality-assurance) (Coming Soon)
+- [Product Strategy Automation](/ai-workflows/product-strategy) (Coming Soon)
