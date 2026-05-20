@@ -1,6 +1,0 @@
-.flow-block { 
-  scrollbar-width: none; 
-  width: 100%;
-}
-.flow-block::-webkit-scrollbar { display: none; }
-
